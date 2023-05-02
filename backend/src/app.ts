@@ -22,3 +22,7 @@ app.use(cors({
 app.use(json());
 
 app.use(urlencoded({ extended: true }));
+
+app.use((error: Error, req: Request, res: Response) => {
+    res.status(500).json({ message: error.message });
+});
