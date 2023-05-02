@@ -1,1 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
 
+@layer base {
+  h1 {
+    @apply text-xl sm:text-2xl md:justify-center font-bold font-poppins;
+  }
+}
