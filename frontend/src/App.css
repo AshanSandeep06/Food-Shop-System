@@ -9,6 +9,9 @@
   height: 35px;
   border-radius: 4px;
   transition: all 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #scroll_up_btn:hover {
@@ -16,11 +19,7 @@
   transform: translateY(-10px);
 }
 
-#scroll_up_btn > i {
-  font-size: 19px;
+#scroll_up_btn > svg {
+  font-size: 25px;
   color: #fff;
-  line-height: 0;
-  position: absolute;
-  right: 10px;
-  top: 17px;
 }

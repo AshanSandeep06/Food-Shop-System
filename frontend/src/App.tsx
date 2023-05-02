@@ -1,12 +1,13 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 const App = () => {
   return (
     <div className="App">
       <a href="#" id="scroll_up_btn">
-        <i className="fa-solid fa-arrow-up"></i>
+        <ArrowUpwardIcon />
       </a>
     </div>
   );
