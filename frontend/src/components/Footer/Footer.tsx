@@ -38,15 +38,15 @@ const Footer = () => {
           Tyler's Cafe Inn
         </h1>
         <h5>
-          <PlaceIcon style={{ marginRight: "5px", fontSize: "15px" }} />
+          <PlaceIcon style={{ marginRight: "5px", fontSize: "19px" }} />
           Galle, Sri Lanka
         </h5>
         <h5>
-          <EmailIcon style={{ marginRight: "5px", fontSize: "15px" }} />
+          <EmailIcon style={{ marginRight: "5px", fontSize: "19px" }} />
           info@example.com
         </h5>
         <h5>
-          <WifiCalling3Icon style={{ marginRight: "5px", fontSize: "15px" }} />
+          <WifiCalling3Icon style={{ marginRight: "5px", fontSize: "19px" }} />
           +914579233
         </h5>
       </aside>
