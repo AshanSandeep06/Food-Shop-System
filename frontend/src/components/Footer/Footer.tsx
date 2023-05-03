@@ -12,19 +12,19 @@ const Footer = () => {
       <nav className="">
         <menu className="flex justify-center text-center">
           {/* xl:columns-2 md:columns-2 */}
-          <li className="w-full flex justify-center">
+          <li className="flex justify-center">
             <FacebookIcon className="!text-[36px]" />
           </li>
-          <li className="w-full flex justify-center">
+          <li className="flex justify-center">
             <InstagramIcon className="!text-[36px]" />
           </li>
-          <li className="w-full flex justify-center">
+          <li className="flex justify-center">
             <TwitterIcon className="!text-[36px]" />
           </li>
-          <li className="w-full flex justify-center">
+          <li className="flex justify-center">
             <GitHubIcon className="!text-[36px]" />
           </li>
-          <li className="w-full flex justify-center">
+          <li className="flex justify-center">
             <LinkedInIcon className="!text-[36px]" />
           </li>
         </menu>
