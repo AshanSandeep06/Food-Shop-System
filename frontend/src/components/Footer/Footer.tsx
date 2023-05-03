@@ -8,23 +8,24 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="columns-1 bg-[#16168B]">
+    <footer id="footer" className="columns-1 bg-[#16168B] !text-white">
       <nav className="">
-        <menu className="xl:columns-10 md:columns-5 justify-center text-center">
-          <li>
-            <FacebookIcon />
+        <menu className="flex justify-center text-center">
+          {/* xl:columns-2 md:columns-2 */}
+          <li className="w-full flex justify-center">
+            <FacebookIcon className="!text-[36px]" />
           </li>
-          <li>
-            <InstagramIcon />
+          <li className="w-full flex justify-center">
+            <InstagramIcon className="!text-[36px]" />
           </li>
-          <li>
-            <TwitterIcon />
+          <li className="w-full flex justify-center">
+            <TwitterIcon className="!text-[36px]" />
           </li>
-          <li>
-            <GitHubIcon />
+          <li className="w-full flex justify-center">
+            <GitHubIcon className="!text-[36px]" />
           </li>
-          <li>
-            <LinkedInIcon />
+          <li className="w-full flex justify-center">
+            <LinkedInIcon className="!text-[36px]" />
           </li>
         </menu>
       </nav>
