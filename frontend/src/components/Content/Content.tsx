@@ -2,8 +2,8 @@ import React from "react";
 
 const Content = () => {
   return (
-    <main>
-      
+    <main className="mt-20">
+
     </main>
   );
 };
