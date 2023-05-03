@@ -44,14 +44,6 @@ const Dashboard = () => {
         price: "200",
         imagePath: apple,
       },
-
-      {
-        id: 5,
-        title: "Chicken Plate",
-        description: "BBQ Chicken",
-        price: "800",
-        imagePath: chicken,
-      },
     ],
   };
 
