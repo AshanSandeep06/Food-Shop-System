@@ -1,0 +1,10 @@
+#foodMenuHeading::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 75px;
+  height: 4px;
+  background: #7461e2;
+  bottom: 0;
+  left: calc(50% - 35px);
+}
