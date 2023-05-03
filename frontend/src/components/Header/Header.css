@@ -29,3 +29,13 @@ header > div > ul > a {
   width: 43%;
   transition: width 0.3s;
 }
+
+#loginContainer:hover {
+  transition: all 0.5s ease;
+  transform: scale(1.15) translateZ(0px);
+}
+
+#loginContainer {
+  transition: all 0.5s ease;
+  transform: none;
+}

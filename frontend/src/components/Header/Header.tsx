@@ -80,7 +80,7 @@ const Header = () => {
         </ul>
 
         <div className="h-full flex items-center">
-          <NavLink to={"/login"} style={{ height: "max-content" }}>
+          <NavLink id="loginContainer" to={"/login"} style={{ height: "max-content" }}>
             <button className=" flex items-center gap-3 border border-slate-200 px-3 py-1 rounded-lg cursor-pointer">
               <LoginIcon className="!text-[20px]" />
               Login
