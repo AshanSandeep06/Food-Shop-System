@@ -45,7 +45,7 @@ footer > div:last-child > i {
   top: 0.7px;
 }
 
-footer > nav > menu > li i:hover {
+footer > nav > menu > li:hover {
   transition: all 0.4s;
   transform: translateY(-10px);
 }
