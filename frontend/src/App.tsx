@@ -14,7 +14,6 @@ const App = () => {
 
       {/* =========== Header =========== */}
       <Header />
-      <Content />
     </div>
   );
 };
