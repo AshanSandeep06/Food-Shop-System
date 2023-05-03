@@ -33,7 +33,7 @@ const Header = () => {
         <NavLink to={"/home"}>
           <h1
             style={{ letterSpacing: "2px" }}
-            className="h-max mb-[3px] !text-2xl !text-black"
+            className="h-max mb-[1px] !text-2xl !text-black"
           >
             Tyler's Cafe
           </h1>
@@ -43,7 +43,7 @@ const Header = () => {
       <div className="w-2/3 h-full flex justify-between pr-12">
         <ul
           id="optionList"
-          className="h-full flex items-center justify-start gap-[60px]"
+          className="h-full flex items-center justify-start gap-[60px] pt-1"
         >
           <NavLink
             to={"/home"}
@@ -73,7 +73,7 @@ const Header = () => {
             Profile
           </NavLink>
 
-          <IconButton aria-label="cart">
+          <IconButton aria-label="cart" className="!pb-[13px]">
             <StyledBadge badgeContent={"0"} color="error">
               <ShoppingCartIcon className="!text-[rgb(81,81,81)]" />
             </StyledBadge>
@@ -81,7 +81,11 @@ const Header = () => {
         </ul>
 
         <div className="h-full flex items-center">
-          <NavLink id="loginContainer" to={"/login"} style={{ height: "max-content" }}>
+          <NavLink
+            id="loginContainer"
+            to={"/login"}
+            style={{ height: "max-content" }}
+          >
             <button className=" flex items-center gap-3 border border-slate-200 px-3 py-1 rounded-lg cursor-pointer">
               <LoginIcon className="!text-[20px]" />
               Login
