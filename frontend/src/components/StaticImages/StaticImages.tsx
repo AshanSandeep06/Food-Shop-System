@@ -4,7 +4,7 @@ import { StaticFoodsList, StaticFoodItems } from "../../types/StaticFoodItems";
 
 const StaticImages: React.FunctionComponent<StaticFoodsList> = ({ items }) => {
   return (
-    <div className="w-full h-full absolute flex items-center justify-center top-6 left-0 lg:px-30 lg:py-4 gap-5 flex-wrap text-[#4a4343]">
+    <div className="w-full h-full absolute flex items-center justify-center top-6 left-0 lg:px-30 lg:py-4 gap-5 md:gap-8 flex-wrap text-[#4a4343]">
       {items.map((item, index) => (
         <div
           key={index}
