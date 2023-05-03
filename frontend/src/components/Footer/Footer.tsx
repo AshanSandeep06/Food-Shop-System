@@ -11,7 +11,7 @@ import WifiCalling3Icon from "@mui/icons-material/WifiCalling3";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="columns-1 bg-[#16168B] !text-white">
+    <footer id="footer" className="columns-1 bg-[#F5F3F3] !text-[#515151]">
       <nav className="">
         <menu className="flex justify-center text-center gap-16">
           {/* xl:columns-2 md:columns-2 */}

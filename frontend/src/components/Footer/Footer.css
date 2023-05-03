@@ -11,7 +11,8 @@ body > footer > nav:first-child > menu {
 }
 
 footer > aside {
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  /* text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); */
+  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.25);
 }
 
 footer > aside > h1:first-child {
