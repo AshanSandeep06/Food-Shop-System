@@ -59,9 +59,7 @@ const Footer = () => {
 
       <div className="">
         <i className="fa-regular fa-copyright"></i>
-        <small>
-          Copyright 2023 Tyler's Cafe Inn. All Rights Reserved.
-        </small>
+        <small>Copyright 2023 Tyler's Cafe Inn. All Rights Reserved.</small>
       </div>
     </footer>
   );
