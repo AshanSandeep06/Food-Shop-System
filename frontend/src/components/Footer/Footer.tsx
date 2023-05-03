@@ -10,22 +10,22 @@ const Footer = () => {
   return (
     <footer id="footer" className="columns-1 bg-[#16168B] !text-white">
       <nav className="">
-        <menu className="flex justify-center text-center">
+        <menu className="flex justify-center text-center gap-16">
           {/* xl:columns-2 md:columns-2 */}
           <li className="flex justify-center">
-            <FacebookIcon className="!text-[36px]" />
+            <FacebookIcon className="!text-[38px]" />
           </li>
           <li className="flex justify-center">
-            <InstagramIcon className="!text-[36px]" />
+            <InstagramIcon className="!text-[38px]" />
           </li>
           <li className="flex justify-center">
-            <TwitterIcon className="!text-[36px]" />
+            <TwitterIcon className="!text-[38px]" />
           </li>
           <li className="flex justify-center">
-            <GitHubIcon className="!text-[36px]" />
+            <GitHubIcon className="!text-[38px]" />
           </li>
           <li className="flex justify-center">
-            <LinkedInIcon className="!text-[36px]" />
+            <LinkedInIcon className="!text-[38px]" />
           </li>
         </menu>
       </nav>
