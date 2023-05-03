@@ -8,7 +8,7 @@ const StaticImages: React.FunctionComponent<StaticFoodsList> = ({ items }) => {
       {items.map((item, index) => (
         <div
           key={index}
-          className="cursor-pointer !h-[210px] w-[175px] lg:min-w-[200px] drop-shadow-lg p-2 bg-[rgba(256,256,256,0.4)] backdrop-blur-md rounded-xl flex flex-col items-center justify-center"
+          className="cursor-pointer !h-[210px] w-[150px] lg:min-w-[200px] drop-shadow-lg p-2 bg-[rgba(256,256,256,0.4)] backdrop-blur-md rounded-xl flex flex-col items-center justify-center"
         >
           <motion.img
             whileHover={{ scale: 1.1 }}

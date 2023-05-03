@@ -87,7 +87,7 @@ const Dashboard = () => {
         <img
           src={backgroundImage}
           alt=""
-          className="ml-auto lg:h-[550px] h-[420px] w-full lg:w-auto"
+          className="ml-auto lg:h-[550px] h-[420px] w-full lg:w-auto md:h-full"
         />
         <StaticImages items={staticData.items} />
       </div>
