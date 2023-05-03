@@ -83,7 +83,7 @@ const Dashboard = () => {
         </motion.button>
       </div>
 
-      <div className="py-2 flex-1 flex items-center relative mb-[35px]">
+      <div className="py-2 flex-1 flex items-center relative mb-[35px] ">
         <img
           src={backgroundImage}
           alt=""
