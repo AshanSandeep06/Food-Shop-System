@@ -26,7 +26,6 @@ const Header = () => {
 
   return (
     // <!--Header-->
-
     // backdrop-blur-md  bg-[hsla(0,0%,100%,.4)]
     <header className="flex w-full h-20 !text-[rgb(81,81,81)] z-10 fixed top-0">
       <div className="w-1/3 h-full flex items-center gap-2.5 pl-[38px]">
