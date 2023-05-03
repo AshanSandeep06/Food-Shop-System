@@ -1,9 +1,61 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import deliveryPhoto from "../../assets/img/delivery.png";
+import backgroundImage from "../../assets/img/hero-bg.png";
 import { motion } from "framer-motion";
+import StaticImages from "../StaticImages/StaticImages";
+import { StaticFoodItems, StaticFoodsList } from "../../types/StaticFoodItems";
+import apple from "../../assets/img/apple.png";
+import iceCream from "../../assets/img/icecream-01.png";
+import banana from "../../assets/img/banana.png";
+import strawberries from "../../assets/img/strawberries-01.png";
+import chicken from "../../assets/img/chicken-01.png";
 
 const Content = () => {
+  const staticData: StaticFoodsList = {
+    items: [
+      {
+        id: 1,
+        title: "Ice Cream",
+        description: "Choclate & Vanilla",
+        price: "350",
+        imagePath: iceCream,
+      },
+
+      {
+        id: 2,
+        title: "Strawberries",
+        description: "Fresh Strawberries",
+        price: "800",
+        imagePath: strawberries,
+      },
+
+      {
+        id: 3,
+        title: "Banana",
+        description: "Fresh Banana",
+        price: "400",
+        imagePath: banana,
+      },
+
+      {
+        id: 4,
+        title: "Apple",
+        description: "Fresh Apples",
+        price: "200",
+        imagePath: apple,
+      },
+
+      {
+        id: 5,
+        title: "Chicken Plate",
+        description: "BBQ Chicken",
+        price: "800",
+        imagePath: chicken,
+      },
+    ],
+  };
+
   return (
     <main className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-2 w-full py-6 px-10 bg-[#F5F3F3]">
       <div className="py-2 flex-1 flex flex-col items-start justify-center gap-3">
@@ -40,6 +92,14 @@ const Content = () => {
         </motion.button>
       </div>
 
+      <div className="py-2 flex-1 flex items-center relative">
+        <img
+          src={backgroundImage}
+          alt=""
+          className="ml-auto lg:h-[550px] h-[420px] w-full lg:w-auto"
+        />
+        <StaticImages items={staticData.items} />
+      </div>
     </main>
   );
 };
