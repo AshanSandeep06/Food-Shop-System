@@ -1,1 +1,11 @@
 /*====================== Header Section ======================*/
+
+header > div > ul > a:hover {
+  transition: all 0.5s ease;
+  transform: scale(1.1) translateZ(0px);
+}
+
+header > div > ul > a {
+  transition: all 0.5s ease;
+  transform: none;
+}

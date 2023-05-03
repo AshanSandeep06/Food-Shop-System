@@ -4,23 +4,43 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LoginIcon from "@mui/icons-material/Login";
+import Badge, { BadgeProps } from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Header = () => {
   const activeLink = "border-b-2 border-[rgb(81,81,81)]";
   const normalLink = "";
+
+  const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
+    "& .MuiBadge-badge": {
+      right: -3,
+      top: 13,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: "0 4px",
+    },
+  }));
 
   return (
     // <!--Header-->
     <header className="flex w-full h-20 bg-[hsla(0,0%,100%,.4)] !bg-blue-800 !text-[rgb(81,81,81)] backdrop-blur-md z-10 fixed top-0">
       <div className="w-1/3 h-full flex items-center gap-2.5 pl-[38px]">
         <img src={logo} alt="UserImage" className="w-10 h-10" />
-        <h1 style={{letterSpacing: "2px"}} className="h-max mb-[3px] !text-2xl !text-black">Tyler's Cafe</h1>
+        <NavLink to={"/home"}>
+          <h1
+            style={{ letterSpacing: "2px" }}
+            className="h-max mb-[3px] !text-2xl !text-black"
+          >
+            Tyler's Cafe
+          </h1>
+        </NavLink>
       </div>
 
       <div className="w-2/3 h-full flex justify-between pr-12">
         <ul className="h-full flex items-center justify-start gap-[60px]">
           <NavLink
-            to={"/Home"}
+            to={"/home"}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
           >
             Home
@@ -45,6 +65,15 @@ const Header = () => {
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
           >
             Profile
+          </NavLink>
+
+          <NavLink to={"/cart"}>
+            {/* className="bg-[rgb(232,0,19)]" */}
+            <IconButton aria-label="cart">
+              <StyledBadge badgeContent={"0"} color="error">
+                <ShoppingCartIcon className="!text-[rgb(81,81,81)]" />
+              </StyledBadge>
+            </IconButton>
           </NavLink>
         </ul>
 
