@@ -38,7 +38,10 @@ const Header = () => {
       </div>
 
       <div className="w-2/3 h-full flex justify-between pr-12">
-        <ul className="h-full flex items-center justify-start gap-[60px]">
+        <ul
+          id="optionList"
+          className="h-full flex items-center justify-start gap-[60px]"
+        >
           <NavLink
             to={"/home"}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
@@ -67,14 +70,11 @@ const Header = () => {
             Profile
           </NavLink>
 
-          <NavLink to={"/cart"}>
-            {/* className="bg-[rgb(232,0,19)]" */}
-            <IconButton aria-label="cart">
-              <StyledBadge badgeContent={"0"} color="error">
-                <ShoppingCartIcon className="!text-[rgb(81,81,81)]" />
-              </StyledBadge>
-            </IconButton>
-          </NavLink>
+          <IconButton aria-label="cart">
+            <StyledBadge badgeContent={"0"} color="error">
+              <ShoppingCartIcon className="!text-[rgb(81,81,81)]" />
+            </StyledBadge>
+          </IconButton>
         </ul>
 
         <div className="h-full flex items-center">

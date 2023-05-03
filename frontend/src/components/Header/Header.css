@@ -9,3 +9,23 @@ header > div > ul > a {
   transition: all 0.5s ease;
   transform: none;
 }
+
+/* ----------------------- */
+#optionList > a:hover {
+  color: #7461e2;
+}
+
+#optionList > a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background-color: #7461e2;
+  border-radius: 26%;
+  transition: width 0.3s;
+}
+
+#optionList > a:hover::after {
+  width: 43%;
+  transition: width 0.3s;
+}
