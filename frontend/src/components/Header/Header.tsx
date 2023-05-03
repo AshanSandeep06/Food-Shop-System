@@ -12,7 +12,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 const Header = () => {
   // const activeLink = "border-b-[5px] rounded-[26%] w-[43%] border-[#7461e2]";
   // const activeLink = "border-b-[5px] border-[43%] border-[#7461e2]";
-  const activeLink = "text-[#7461e2]";
+  const activeLink = "text-[#f97316]";
   const normalLink = "";
 
   const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({

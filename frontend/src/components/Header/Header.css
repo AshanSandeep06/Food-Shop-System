@@ -12,7 +12,7 @@ header > div > ul > a {
 
 /* ----------------------- */
 #optionList > a:hover {
-  color: #7461e2;
+  color: #f97316;
 }
 
 #optionList > a::after {
@@ -20,7 +20,7 @@ header > div > ul > a {
   display: block;
   width: 0;
   height: 5px;
-  background-color: #7461e2;
+  background-color: #f97316;
   border-radius: 26%;
   transition: width 0.3s;
 }
