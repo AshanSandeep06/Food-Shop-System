@@ -15,8 +15,8 @@ const Footer = () => {
       id="footer"
       className="columns-1 bg-[#f9f9f9] !text-[#515151] flex flex-col gap-2"
     >
-      <nav className="">
-        <menu className="flex justify-center text-center gap-16">
+      <nav className="mb-2">
+        <menu className="flex justify-center text-center gap-16 px-6 flex-wrap">
           {/* xl:columns-2 md:columns-2 */}
           <li className="flex justify-center">
             <FacebookIcon className="!text-[38px]" />
