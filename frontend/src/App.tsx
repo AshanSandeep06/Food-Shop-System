@@ -12,8 +12,9 @@ const App = () => {
         <ArrowUpwardIcon />
       </a>
 
-      {/* =========== Header =========== */}
       <Header />
+
+      
     </div>
   );
 };
