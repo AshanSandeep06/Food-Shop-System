@@ -1,0 +1,78 @@
+body > footer {
+  background: #16168b;
+  color: white;
+  position: relative;
+}
+
+body > footer > nav:first-child > menu i {
+  color: white;
+  font-size: 36px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+footer > aside {
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+footer > aside > h1:first-child {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+footer > aside > h1:last-of-type {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+footer > aside > h5 {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+footer > div:last-child {
+  text-align: center;
+  position: relative;
+}
+
+footer > div:last-child > small {
+  font-size: 13px;
+}
+
+footer > div:last-child > i {
+  font-size: 13px;
+  position: relative;
+  top: 0.7px;
+}
+
+footer > nav > menu > li i:hover {
+  transition: all 0.4s;
+  transform: translateY(-10px);
+}
+
+footer > nav {
+  margin-top: 33px !important;
+}
+
+footer > aside {
+  padding-left: 58px !important;
+  margin-bottom: 38px;
+  margin-top: 25px !important;
+}
+
+footer > div {
+  margin-bottom: 19px;
+}
+
+@media (max-width: 768px) {
+  footer > nav > menu {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  footer > aside {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    text-align: center;
+  }
+}
