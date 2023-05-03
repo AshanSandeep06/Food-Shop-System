@@ -51,6 +51,10 @@ footer > nav > menu > li:hover {
   transform: translateY(-10px);
 }
 
+footer > nav > menu > li > * {
+  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.25);
+}
+
 footer > nav {
   margin-top: 33px !important;
 }
