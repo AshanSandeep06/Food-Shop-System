@@ -4,6 +4,7 @@ import "./App.css";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Header from "./components/Header/Header";
 import Content from "./components/Content";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -13,8 +14,8 @@ const App = () => {
       </a>
 
       <Header />
-
-      
+      <Content />
+      <Footer />
     </div>
   );
 };
