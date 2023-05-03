@@ -100,6 +100,8 @@ const Content = () => {
         />
         <StaticImages items={staticData.items} />
       </div>
+
+      {/* ------------ Food Menu ------------ */}
     </main>
   );
 };
