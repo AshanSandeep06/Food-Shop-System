@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Header from "./components/Header/Header";
@@ -13,8 +13,6 @@ const App = () => {
 
       {/* =========== Header =========== */}
       <Header />
-
-      
     </div>
   );
 };
