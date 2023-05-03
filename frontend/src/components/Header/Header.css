@@ -40,7 +40,7 @@ header > div > ul > a {
   transform: none;
 }
 
-@supports (
+/* @supports (
     -webkit-backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)
   )
   or (backdrop-filter: blur(30px) saturate(160%) contrast(45%) brightness(140%)) {
@@ -53,4 +53,10 @@ header > div > ul > a {
     -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
       brightness(140%);
   }
+} */
+
+header {
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.075);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
 }

@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Header from "./components/Header/Header";
+import Content from "./components/Content";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
 
       {/* =========== Header =========== */}
       <Header />
+      <Content />
     </div>
   );
 };
