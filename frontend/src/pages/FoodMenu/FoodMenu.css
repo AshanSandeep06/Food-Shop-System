@@ -2,9 +2,12 @@
   content: "";
   position: absolute;
   display: block;
-  width: 75px;
+  width: 100px;
   height: 4px;
   background: #7461e2;
+  border-radius: 25px;
   bottom: 0;
-  left: calc(50% - 35px);
+  left: 0;
+  right: 0;
+  margin: auto;
 }
