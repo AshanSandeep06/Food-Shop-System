@@ -5,6 +5,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import PlaceIcon from '@mui/icons-material/Place';
+import EmailIcon from '@mui/icons-material/Email';
+import WifiCalling3Icon from '@mui/icons-material/WifiCalling3';
 
 const Footer = () => {
   return (
