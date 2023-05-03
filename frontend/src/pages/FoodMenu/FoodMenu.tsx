@@ -2,7 +2,7 @@ import React from "react";
 
 const FoodMenu = () => {
   return (
-    <section>
+    <section className="w-full flex items-center flex-col bg-blue-700 col-start-1 col-end-3">
       <div>
         <h1>Our Food Menu</h1>
       </div>
