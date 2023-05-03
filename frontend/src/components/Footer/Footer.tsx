@@ -5,9 +5,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import PlaceIcon from '@mui/icons-material/Place';
-import EmailIcon from '@mui/icons-material/Email';
-import WifiCalling3Icon from '@mui/icons-material/WifiCalling3';
+import PlaceIcon from "@mui/icons-material/Place";
+import EmailIcon from "@mui/icons-material/Email";
+import WifiCalling3Icon from "@mui/icons-material/WifiCalling3";
 
 const Footer = () => {
   return (
@@ -38,15 +38,15 @@ const Footer = () => {
           Tyler's Cafe Inn
         </h1>
         <h5>
-            <PlaceIcon style={{ marginRight: "5px" }}/>
+          <PlaceIcon style={{ marginRight: "5px" }} />
           Galle, Sri Lanka
         </h5>
         <h5>
-        <EmailIcon style={{ marginRight: "5px" }}/>
+          <EmailIcon style={{ marginRight: "5px" }} />
           info@example.com
         </h5>
         <h5>
-        <WifiCalling3Icon style={{ marginRight: "5px" }}/>
+          <WifiCalling3Icon style={{ marginRight: "5px" }} />
           +914579233
         </h5>
       </aside>
