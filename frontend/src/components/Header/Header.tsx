@@ -11,13 +11,10 @@ const Header = () => {
 
   return (
     // <!--Header-->
-    // !text-[rgb(81,81,81)]
-    <header className="flex w-full h-20 bg-[hsla(0,0%,100%,.4)] !bg-blue-800 !text-white backdrop-blur-md z-10 fixed top-0">
+    <header className="flex w-full h-20 bg-[hsla(0,0%,100%,.4)] !bg-blue-800 !text-[rgb(81,81,81)] backdrop-blur-md z-10 fixed top-0">
       <div className="w-1/3 h-full flex items-center gap-2.5 pl-[38px]">
         <img src={logo} alt="UserImage" className="w-10 h-10" />
-
-        {/* !text-black */}
-        <h1 style={{letterSpacing: "2px"}} className="h-max mb-[3px] !text-2xl">Tyler's Cafe</h1>
+        <h1 style={{letterSpacing: "2px"}} className="h-max mb-[3px] !text-2xl !text-black">Tyler's Cafe</h1>
       </div>
 
       <div className="w-2/3 h-full flex justify-between pr-12">
