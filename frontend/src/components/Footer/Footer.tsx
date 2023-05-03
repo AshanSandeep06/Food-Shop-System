@@ -60,7 +60,7 @@ const Footer = () => {
       <div className="">
         <i className="fa-regular fa-copyright"></i>
         <small>
-          Copyright 2023 Easy Car Rental (Pvt) Ltd. All Rights Reserved.
+          Copyright 2023 Tyler's Cafe Inn. All Rights Reserved.
         </small>
       </div>
     </footer>
