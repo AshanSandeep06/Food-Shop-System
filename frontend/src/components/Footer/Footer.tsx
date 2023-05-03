@@ -31,7 +31,7 @@ const Footer = () => {
       </nav>
 
       <aside className="">
-        <h1>Easy Car Rental (Pvt) Ltd</h1>
+        <h1 style={{letterSpacing: "2px"}}>Tyler's Cafe Inn</h1>
         <h5>
           <i
             style={{ marginRight: "5px" }}
