@@ -16,6 +16,7 @@ import strawberries from "../../assets/img/strawberries-01.png";
 import chicken from "../../assets/img/chicken-01.png";
 
 const FoodMenu = () => {
+  // Dummy Data
   const staticData: StaticFoodsList = {
     items: [
       {
@@ -123,7 +124,8 @@ const FoodMenu = () => {
       </div>
 
       <div className="flex justify-center flex-wrap px-5">
-        <StaticImages />
+        {/* For Testing */}
+        <StaticImages items={staticData.items} />
       </div>
     </section>
   );
