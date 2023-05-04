@@ -11,3 +11,9 @@
   right: 0;
   margin: auto;
 }
+
+#container > div {
+  transform: scale(0.97);
+  box-shadow: 1px 1px 33px 1px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
