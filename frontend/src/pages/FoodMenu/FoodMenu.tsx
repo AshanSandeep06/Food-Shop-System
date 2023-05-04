@@ -10,14 +10,14 @@ import IcecreamIcon from "@mui/icons-material/Icecream";
 
 const FoodMenu = () => {
   return (
-    <section className="w-full flex items-center flex-col bg-yellow-100 px-4 pb-8 pt-4">
+    <section className="w-full flex items-center flex-col px-4 pb-8 pt-4">
       <div className="mb-7">
         <h1 className="relative pb-[8px]" id="foodMenuHeading">
           Our Food Menu
         </h1>
       </div>
 
-      <div className="!text-[rgb(81,81,81)] md:justify-start xl:justify-center justify-start overflow-x-scroll scrollbar-hidden scroll-smooth flex w-full px-10 md:px-20 py-10 items-center gap-10">
+      <div id="container" className="!text-[rgb(81,81,81)] md:justify-start xl:justify-center justify-start overflow-x-scroll scrollbar-hidden scroll-smooth flex w-full px-10 md:px-20 py-10 items-center gap-10">
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
             <MenuBookIcon className="text-[#ece1e1]" />
