@@ -10,6 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import DeleteIcon from "@mui/icons-material/Delete";
+import ChickenPlate from "../../assets/img/chicken-01.png";
 import {
   Box,
   Button,
@@ -87,11 +88,18 @@ const Header = (props: HeaderProps) => {
         <div className="flex flex-col">
           <div className="flex flex-col">
             {/* cart items */}
-            <div>
-              <img src="" alt="foodImage" />
+            <div className="flex items-center justify-center">
+              <img
+                src={ChickenPlate}
+                alt="foodImage"
+                className="w-20 h-20 max-w-[65px] rounded-full object-contain"
+              />
               <div>
                 <span>Chicken Plate</span>
                 <span>850 LKR</span>
+              </div>
+
+              <div>
                 <span>
                   <button>-</button>
                 </span>
@@ -101,7 +109,7 @@ const Header = (props: HeaderProps) => {
                 </span>
                 <span>
                   <button className="flex justify-center items-center w-6 h-6 rounded-lg text-gray-50 bg-[rgb(232,0,19)]">
-                    <DeleteIcon className="!text-[16px]"/>
+                    <DeleteIcon className="!text-[16px]" />
                   </button>
                 </span>
               </div>
