@@ -58,7 +58,17 @@ const Header = (props: HeaderProps) => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <div></div>
+      <div>
+        <span>
+          <button>Back</button>
+        </span>
+
+        <span>Cart</span>
+
+        <span>
+          <button>Clear</button>
+        </span>
+      </div>
 
       <div>
         <div>
