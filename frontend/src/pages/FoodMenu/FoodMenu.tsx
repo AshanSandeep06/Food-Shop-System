@@ -11,23 +11,29 @@ const FoodMenu = () => {
       </div>
 
       <div className="bg-blue-700 md:justify-start xl:justify-center justify-start overflow-x-scroll scrollbar-hidden scroll-smooth flex w-full px-10 md:px-20 py-10 text-white items-center gap-10">
-        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg">
-          Menu
+        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+          <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
+          <span>Menu</span>
         </div>
-        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg">
-          Chicken
+        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+          <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
+          <span>Chicken</span>
         </div>
-        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg">
-          Beverages
+        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+          <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
+          <span>Beverages</span>
         </div>
-        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg">
-          Fish
+        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+          <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
+          <span>Fish</span>
         </div>
-        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg">
-          Rice
+        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+          <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
+          <span>Rice</span>
         </div>
-        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg">
-          Ice Cream
+        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+          <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
+          <span>Ice Cream</span>
         </div>
       </div>
     </section>
