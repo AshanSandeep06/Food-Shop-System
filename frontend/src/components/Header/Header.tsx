@@ -10,7 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 type HeaderProps = {
-  buttons: string[];
+  buttons: JSX.Element[];
   links: string[];
 };
 
@@ -50,13 +50,13 @@ const Header = (props: HeaderProps) => {
           id="optionList"
           className="h-full flex items-center justify-start gap-[60px] pt-1"
         >
-          {props.links.map((text, index) => (
+          {props.links.map((resource, index) => (
             <NavLink
               key={index}
-              to={"/" + text}
+              to={"/" + resource}
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
             >
-              {text[0].toUpperCase() + text.substring(1)}
+              {resource[0].toUpperCase() + resource.substring(1)}
             </NavLink>
           ))}
           {/* <NavLink
@@ -87,21 +87,7 @@ const Header = (props: HeaderProps) => {
         </ul>
 
         <div className="h-full flex items-center justify-center gap-5">
-          {props.buttons.map((text, index) => (
-            <NavLink
-              id="loginContainer"
-              to={"/" + text[0].toLowerCase() + text.substring(1)}
-              style={{ height: "max-content" }}
-            >
-              <button
-                key={index}
-                className=" flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg cursor-pointer"
-              >
-                <LoginIcon className="!text-[20px]" />
-                {text}
-              </button>
-            </NavLink>
-          ))}
+          {props.buttons.map((button, index) => button)}
         </div>
       </div>
     </header>
