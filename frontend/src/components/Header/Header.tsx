@@ -60,8 +60,8 @@ const Header = (props: HeaderProps) => {
     <Box
       sx={{ width: 375, position: "relative", backdropFilter: "static" }}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      // onClick={toggleDrawer(anchor, false)}
+      // onKeyDown={toggleDrawer(anchor, false)}
     >
       <section className="flex flex-col">
         <div className="px-5 py-4 flex justify-between items-center">
