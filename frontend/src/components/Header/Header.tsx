@@ -57,7 +57,7 @@ const Header = (props: HeaderProps) => {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: 350, position: "relative", backdropFilter: "static" }}
+      sx={{ width: 375, position: "relative", backdropFilter: "static" }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -96,7 +96,9 @@ const Header = (props: HeaderProps) => {
               />
               <div className="flex flex-col mr-2">
                 <span>Chicken Plate</span>
-                <span>850 LKR</span>
+                <span>850
+                  <span className="text-[#ed1e2f] text-[13px]">  LKR</span>
+                </span>
               </div>
 
               <div className="flex gap-3 justify-center items-center">
