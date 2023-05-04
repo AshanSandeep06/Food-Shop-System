@@ -66,7 +66,11 @@ const Header = (props: HeaderProps) => {
       <section className="flex flex-col">
         <div className="px-5 py-4 flex justify-between items-center">
           <span>
-            <button className="cursor-pointer">
+            <button
+              className="cursor-pointer"
+              // To Close the Canvas
+              onClick={toggleDrawer(anchor, false)}
+            >
               <ArrowBackIcon />
             </button>
           </span>
