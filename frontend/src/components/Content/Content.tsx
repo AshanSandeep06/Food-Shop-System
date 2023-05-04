@@ -9,7 +9,7 @@ const Content = () => {
         <Dashboard />
       </main>
 
-      <main>
+      <main className="gap-2 w-full py-6 px-10 bg-[#F5F3F3]">
         {/* ------------ Food Menu ------------ */}
         <FoodMenu />
       </main>
