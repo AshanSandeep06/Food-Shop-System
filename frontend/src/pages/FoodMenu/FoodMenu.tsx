@@ -14,7 +14,7 @@ import iceCream from "../../assets/img/icecream-01.png";
 import banana from "../../assets/img/banana.png";
 import strawberries from "../../assets/img/strawberries-01.png";
 import chicken from "../../assets/img/chicken-01.png";
-import Foods from "../../components/Foods/Foods";
+import Food from "../../components/Food";
 import $ from "jquery";
 
 const FoodMenu = () => {
@@ -184,7 +184,7 @@ const FoodMenu = () => {
 
       <div className="flex justify-center flex-wrap px-5 w-full mt-3 bg-[#F5EEE9]">
         {/* For Testing */}
-        <Foods items={data.items} />
+        <Food items={data.items} />
       </div>
     </section>
   );
