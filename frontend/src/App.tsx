@@ -13,9 +13,9 @@ const App = () => {
         <ArrowUpwardIcon />
       </a>
 
-      <Header />
-      <Content />
-      <Footer />
+      {/* <Header /> */}
+      {/* <Content /> */}
+      {/* <Footer /> */}
     </div>
   );
 };
