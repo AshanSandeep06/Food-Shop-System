@@ -14,6 +14,7 @@ import iceCream from "../../assets/img/icecream-01.png";
 import banana from "../../assets/img/banana.png";
 import strawberries from "../../assets/img/strawberries-01.png";
 import chicken from "../../assets/img/chicken-01.png";
+import Foods from "../../components/Foods/Foods";
 
 const FoodMenu = () => {
   // Dummy Data
@@ -123,8 +124,9 @@ const FoodMenu = () => {
         </div>
       </div>
 
-      <div className="flex justify-center flex-wrap px-5">
+      <div className="flex justify-center flex-wrap px-5 w-full mt-14">
         {/* For Testing */}
+        <Foods items={staticData.items} />
       </div>
     </section>
   );
