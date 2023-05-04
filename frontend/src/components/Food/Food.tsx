@@ -29,6 +29,10 @@ const Food = (props: StaticFoodsList) => {
               LKR
             </span>
           </p>
+
+          <span>
+            
+          </span>
         </div>
       ))}
     </div>
