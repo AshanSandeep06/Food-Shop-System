@@ -7,6 +7,7 @@ import SetMealIcon from "@mui/icons-material/SetMeal";
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import RiceBowlIcon from "@mui/icons-material/RiceBowl";
 import IcecreamIcon from "@mui/icons-material/Icecream";
+import StaticImages from "../../components/StaticImages/StaticImages";
 
 const FoodMenu = () => {
   return (
@@ -72,7 +73,7 @@ const FoodMenu = () => {
       </div>
 
       <div className="flex justify-center flex-wrap px-5">
-        
+        {/* <StaticImages /> */}
       </div>
     </section>
   );
