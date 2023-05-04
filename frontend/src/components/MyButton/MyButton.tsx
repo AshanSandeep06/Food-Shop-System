@@ -13,7 +13,7 @@ const MyButton = (props: MyButtonProps) => {
     <NavLink
       id="loginContainer"
       to={"/" + props.resource}
-      style={{ height: "max-content" }}
+      style={{ height: "max-content", borderRadius: "6px" }}
     >
       <button className={props.styles}>
         {props.icon}

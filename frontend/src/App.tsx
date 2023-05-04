@@ -13,16 +13,31 @@ import MyButton from "./components/MyButton";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const App = () => {
-  const style1 = "flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg";
+  const style1 =
+    "flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg";
+  const style2 =
+    "flex items-center gap-3 px-[15px] py-[6px] rounded-[6px] bg-blue-700 !text-white";
 
   const loginLink = (
-    <MyButton resource="login" icon={<LoginIcon className="!text-[20px]" />} styles={style1} />
+    <MyButton
+      resource="login"
+      icon={<LoginIcon className="!text-[20px]" />}
+      styles={style1}
+    />
   );
   const logoutLink = (
-    <MyButton resource="logout" icon={<LogoutIcon className="!text-[20px]" />} styles={style1} />
+    <MyButton
+      resource="logout"
+      icon={<LogoutIcon className="!text-[20px]" />}
+      styles={style1}
+    />
   );
   const myProfileButton = (
-    <MyButton resource="my Profile" icon={<AccountCircleIcon className="!text-[20px]" />} styles={style1} />
+    <MyButton
+      resource="my Profile"
+      icon={<AccountCircleIcon className="!text-[20px]" />}
+      styles={style2}
+    />
   );
 
   return (
