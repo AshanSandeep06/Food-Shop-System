@@ -30,11 +30,21 @@
 }
 
 #container > div:hover > span:last-child {
+  transition: all 0.8s ease;
   color: white;
 }
 
 #container > div:hover > span:first-child {
-  color: white;
+  transition: all 0.8s ease;
+  background-color: #0c1b6e;
+}
+
+#container > div > span:last-child {
+  transition: all 0.8s ease;
+}
+
+#container > div > span:first-child {
+  transition: all 0.8s ease;
 }
 
 #container > div {
