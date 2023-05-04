@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 type MyButtonProps = {
   resource: string;
-  icon: JSX.Element;
+  icon: JSX.Element | null;
   styles: string;
 };
 

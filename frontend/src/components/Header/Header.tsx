@@ -24,6 +24,7 @@ import {
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { relative } from "path";
+import MyButton from "../MyButton/MyButton";
 
 type HeaderProps = {
   buttons: JSX.Element[];
@@ -72,7 +73,13 @@ const Header = (props: HeaderProps) => {
           </span>
 
           <span>
-            <button className="cursor-pointer">Clear</button>
+            <MyButton
+              resource={"clear"}
+              icon={null}
+              styles={
+                "flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg"
+              }
+            />
           </span>
         </div>
 
