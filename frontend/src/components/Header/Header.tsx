@@ -11,6 +11,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import {
   Box,
   Button,
+  ClickAwayListener,
   Divider,
   List,
   ListItem,
@@ -21,6 +22,7 @@ import {
 } from "@mui/material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import { relative } from "path";
 
 type HeaderProps = {
   buttons: JSX.Element[];
@@ -51,12 +53,13 @@ const Header = (props: HeaderProps) => {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: 500 }}
+      sx={{ width: 500, position: "relative", backdropFilter: "static" }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}>
-        <div>Canvas</div>
-      </Box>
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <div>Canvas</div>
+    </Box>
   );
 
   // const activeLink = "border-b-[5px] rounded-[26%] w-[43%] border-[#7461e2]";
@@ -106,7 +109,6 @@ const Header = (props: HeaderProps) => {
 
           {/* =========== Off Canvas =========== */}
           {(["right"] as const).map((anchor) => (
-            // onClick={toggleDrawer(anchor, true)}
             <React.Fragment key={anchor}>
               <IconButton
                 aria-label="cart"
