@@ -99,11 +99,13 @@ const Header = (props: HeaderProps) => {
                 <span>850 LKR</span>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex gap-3 justify-center items-center">
                 <span>
                   <button>-</button>
                 </span>
-                <span>1</span>
+                <span className="text-sm text-gray-50 w-5 h-5 rounded-sm bg-[#282a2c] flex items-center justify-center cursor-default">
+                  1
+                </span>
                 <span>
                   <button>+</button>
                 </span>
