@@ -50,24 +50,3 @@
 #container > div {
   transition: all 0.8s ease;
 }
-
-/* ===================== */
-
-#container > div:hover {
-  transition: all 0.8s ease;
-  transform: scale(0.97);
-  box-shadow: 1px 1px 54px 1px rgba(0, 0, 0, 0.22);
-  cursor: pointer;
-  /* background: #f1f1fb; */
-  background: #f97316;
-}
-
-#container > div:hover > span:last-child {
-  transition: all 0.8s ease;
-  color: white;
-}
-
-#container > div:hover > span:first-child {
-  transition: all 0.8s ease;
-  background-color: #0c1b6e;
-}
