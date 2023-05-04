@@ -100,7 +100,9 @@ const Header = (props: HeaderProps) => {
                   <button>+</button>
                 </span>
                 <span>
-                  <button></button>
+                  <button className="flex justify-center items-center w-6 h-6 rounded-lg text-gray-50 bg-[rgb(232,0,19)]">
+                    <DeleteIcon className="!text-[16px]"/>
+                  </button>
                 </span>
               </div>
             </div>
