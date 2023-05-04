@@ -8,6 +8,7 @@ import Badge, { BadgeProps } from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import {
   Box,
   Button,
@@ -53,18 +54,22 @@ const Header = (props: HeaderProps) => {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: 500, position: "relative", backdropFilter: "static" }}
+      sx={{ width: 350, position: "relative", backdropFilter: "static" }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <section>
-        <div>
+      <section className="flex flex-col">
+        <div className="px-5 py-4 border-4 border-black flex justify-between">
           <span>
-            <button>Back</button>
+            <button>
+              <ArrowBackIcon />
+            </button>
           </span>
 
-          <span>Cart</span>
+          <span>
+            Cart <ShoppingCartIcon className="text-[#ed1e2f]" />
+          </span>
 
           <span>
             <button>Clear</button>
