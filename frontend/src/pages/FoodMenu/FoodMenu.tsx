@@ -14,12 +14,12 @@ const FoodMenu = () => {
       </div>
 
       <div className="bg-blue-700">
-        <div>Menu</div>
-        <div>Chicken</div>
-        <div>Beverages</div>
-        <div>Fish</div>
-        <div>Rice</div>
-        <div>Ice Cream</div>
+        <div className="border-2 border-black">Menu</div>
+        <div className="border-2 border-black">Chicken</div>
+        <div className="border-2 border-black">Beverages</div>
+        <div className="border-2 border-black">Fish</div>
+        <div className="border-2 border-black">Rice</div>
+        <div className="border-2 border-black">Ice Cream</div>
       </div>
     </section>
   );
