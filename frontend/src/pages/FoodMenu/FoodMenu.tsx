@@ -71,8 +71,8 @@ const FoodMenu = () => {
         </div>
       </div>
 
-      <div>
-
+      <div className="flex justify-center flex-wrap px-5">
+        
       </div>
     </section>
   );
