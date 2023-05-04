@@ -4,11 +4,11 @@ import { StaticFoodsList } from "../../types/StaticFoodItems";
 
 const Foods = (props: StaticFoodsList) => {
   return (
-    <div className="w-full h-full flex items-center justify-center top-6 left-0 lg:px-30 lg:pr-4 gap-5 md:gap-8 flex-wrap text-[#4a4343] xl:-translate-x-2">
+    <div className="w-full h-full flex items-center justify-center top-6 left-0 lg:px-30 lg:pt-4 gap-5 md:gap-8 flex-wrap text-[#4a4343] xl:-translate-x-2">
       {props.items.map((item, index) => (
         <div
           key={item._id}
-          className="mt-10 cursor-pointer !h-[210px] !w-[250px] lg:min-w-[200px] drop-shadow-lg p-2 bg-[rgba(256,256,256,0.4)] backdrop-blur-md rounded-xl flex flex-col items-center justify-center"
+          className="mt-10 cursor-pointer !h-[210px] !w-[275px] lg:min-w-[250px] drop-shadow-lg p-2 bg-[rgba(256,256,256,0.4)] backdrop-blur-md rounded-xl flex flex-col items-center justify-center"
         >
           <motion.img
             whileHover={{ scale: 1.1 }}
