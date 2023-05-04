@@ -70,7 +70,7 @@ const FoodMenu = () => {
   };
 
   const setClickStyles = () => {
-    $("#container > div").click(function () {
+    $("#container > div").on("click", function () {
       $("#container > div").css({
         background: "white",
       });
@@ -84,8 +84,6 @@ const FoodMenu = () => {
       });
 
       $(this).css({
-        "box-shadow": "1px 1px 54px 1px rgba(0, 0, 0, 0.22)",
-        cursor: "pointer",
         background: "#f97316",
       });
 
