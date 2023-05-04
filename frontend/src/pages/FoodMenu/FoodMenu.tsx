@@ -4,6 +4,7 @@ import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import LiquorIcon from '@mui/icons-material/Liquor';
 import SetMealIcon from '@mui/icons-material/SetMeal';
+import LunchDiningIcon from '@mui/icons-material/LunchDining';
 
 const FoodMenu = () => {
   return (
