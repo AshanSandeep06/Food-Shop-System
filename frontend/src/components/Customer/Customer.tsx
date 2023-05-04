@@ -8,6 +8,7 @@ const Customer = () => {
       <Routes>
         <Route path="/home" element={<FoodMenu />}></Route>
       </Routes>
+
     </main>
   );
 };
