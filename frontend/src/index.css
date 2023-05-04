@@ -56,10 +56,12 @@
     background: transparent;
   }
 
+  /* For Chrome, Safari etc. */
   .scrollbar-hidden::-webkit-scrollbar {
     display: none;
   }
 
+  /* For Firefox, edge etc. */
   .scrollbar-hidden {
     -ms-overflow-style: none;
     scrollbar-width: none;
