@@ -73,7 +73,7 @@ const FoodMenu = () => {
       </div>
 
       <div className="flex justify-center flex-wrap px-5">
-        {/* <StaticImages /> */}
+        <StaticImages />
       </div>
     </section>
   );
