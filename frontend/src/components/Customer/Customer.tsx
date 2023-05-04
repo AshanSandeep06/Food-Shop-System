@@ -1,8 +1,11 @@
 import React from "react";
+import FoodMenu from "../../pages/FoodMenu/FoodMenu";
 
 const Customer = () => {
   return (
-    <main className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-2 w-full py-6 px-10 bg-[#F5F3F3]"></main>
+    <main className="mt-20 gap-2 w-full py-7 px-10 bg-[#F5F3F3]">
+      <FoodMenu />
+    </main>
   );
 };
 
