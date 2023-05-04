@@ -64,7 +64,7 @@ const Header = (props: HeaderProps) => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <section className="flex flex-col">
-        <div className="px-5 py-4 border-4 border-black flex justify-between items-center">
+        <div className="px-5 py-4 flex justify-between items-center">
           <span>
             <button className="cursor-pointer">
               <ArrowBackIcon />
