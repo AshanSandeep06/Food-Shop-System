@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Content from "./components/Content";
 import Footer from "./components/Footer/Footer";
 import Customer from "./components/Customer/Customer";
+import LoginIcon from "@mui/icons-material/Login";
 
 const App = () => {
   return (
@@ -14,7 +15,10 @@ const App = () => {
         <ArrowUpwardIcon />
       </a>
 
-      <Header buttons={["Login", "Logout"]} links={["home", "food-Menu", "contact"]} />
+      <Header
+        buttons={["Login", "Logout"]}
+        links={["home", "food-Menu", "contact"]}
+      />
       {/* <Content /> */}
       {/* <Footer /> */}
       <Customer />

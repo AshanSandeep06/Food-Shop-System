@@ -10,7 +10,7 @@ import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 type HeaderProps = {
-  buttons: JSX.Element[];
+  buttons: string[];
   links: string[];
 };
 
