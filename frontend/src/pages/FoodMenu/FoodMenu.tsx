@@ -63,7 +63,7 @@ const FoodMenu = () => {
   };
 
   return (
-    <section className="w-full flex items-center flex-col px-4 pb-8 pt-4">
+    <section className="w-full flex items-center flex-col px-4 pt-4">
       <div className="mb-2">
         <h1 className="relative pb-[8px]" id="foodMenuHeading">
           Our Food Menu
