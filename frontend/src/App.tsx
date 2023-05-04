@@ -15,9 +15,13 @@ const App = () => {
         <ArrowUpwardIcon />
       </a>
 
-      <Header buttons={["Login", "Logout"]} links={["home", "food-Menu", "contact"]}/>
+      {/* ========== Home Page ========== */}
+      {/* <Header buttons={["Login"]} links={["home", "food-Menu", "contact"]}/> */}
       {/* <Content /> */}
       {/* <Footer /> */}
+
+      {/* ========== Customer Page ========== */}
+      <Header buttons={["Login"]} links={["home", "food-Menu", "contact"]} />
       <Customer />
     </div>
   );
