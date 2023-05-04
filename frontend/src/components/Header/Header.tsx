@@ -95,7 +95,7 @@ const Header = (props: HeaderProps) => {
             >
               <button
                 key={index}
-                className=" flex items-center gap-3 border border-slate-200 px-[18px] py-2 rounded-lg cursor-pointer"
+                className=" flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg cursor-pointer"
               >
                 <LoginIcon className="!text-[20px]" />
                 {text}
