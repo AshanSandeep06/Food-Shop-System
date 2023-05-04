@@ -32,7 +32,7 @@ const Food = (props: StaticFoodsList) => {
           </p>
 
           <span>
-            
+            <AddShoppingCartIcon />
           </span>
         </div>
       ))}
