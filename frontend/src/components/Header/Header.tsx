@@ -175,7 +175,8 @@ const Header = (props: HeaderProps) => {
               <SwipeableDrawer
                 anchor={anchor}
                 open={state[anchor]}
-                onClose={toggleDrawer(anchor, false)}
+                // onClose={toggleDrawer(anchor, false)}
+                onClose={toggleDrawer(anchor, true)}
                 onOpen={toggleDrawer(anchor, true)}
               >
                 {list(anchor)}
