@@ -72,17 +72,31 @@ const FoodMenu = () => {
   const setClickStyles = () => {
     $("#container > div").click(function () {
       $("#container > div").css({
+        background: "white",
+      });
+
+      $("#container > div> span:first-child").css({
+        background: "rgb(232,0,19)",
+      });
+
+      $("#container > div> span:last-child").css({
+        color: "rgb(81,81,81,0.8)",
+      });
+
+      $(this).css({
         "box-shadow": "1px 1px 54px 1px rgba(0, 0, 0, 0.22)",
         cursor: "pointer",
         background: "#f97316",
       });
 
-      $("#container > div > span:last-child").css({
+      let lastSpan = $(this).children(":eq(1)");
+      $(lastSpan).css({
         color: "white",
       });
 
-      $("#container > div > span:first-child").css({
-        "background-color": "#0c1b6e",
+      let firstSpan = $(this).children(":eq(0)");
+      $(firstSpan).css({
+        background: "#0c1b6e",
       });
     });
   };
