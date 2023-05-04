@@ -70,6 +70,10 @@ const FoodMenu = () => {
           <span>Ice Cream</span>
         </div>
       </div>
+
+      <div>
+        
+      </div>
     </section>
   );
 };
