@@ -124,7 +124,7 @@ const FoodMenu = () => {
         </div>
       </div>
 
-      <div className="flex justify-center flex-wrap px-5 w-full mt-14">
+      <div className="flex justify-center flex-wrap px-5 w-full mt-3">
         {/* For Testing */}
         <Foods items={staticData.items} />
       </div>
