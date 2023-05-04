@@ -8,8 +8,58 @@ import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import RiceBowlIcon from "@mui/icons-material/RiceBowl";
 import IcecreamIcon from "@mui/icons-material/Icecream";
 import StaticImages from "../../components/StaticImages/StaticImages";
+import { StaticFoodsList } from "../../types/StaticFoodItems";
+import apple from "../../assets/img/apple.png";
+import iceCream from "../../assets/img/icecream-01.png";
+import banana from "../../assets/img/banana.png";
+import strawberries from "../../assets/img/strawberries-01.png";
+import chicken from "../../assets/img/chicken-01.png";
 
 const FoodMenu = () => {
+  const staticData: StaticFoodsList = {
+    items: [
+      {
+        _id: 1,
+        title: "Ice Cream",
+        description: "Choclate & Vanilla",
+        price: "350",
+        imagePath: iceCream,
+      },
+
+      {
+        _id: 2,
+        title: "Strawberries",
+        description: "Fresh Strawberries",
+        price: "800",
+        imagePath: strawberries,
+      },
+
+      {
+        _id: 3,
+        title: "Banana",
+        description: "Fresh Banana",
+        price: "400",
+        imagePath: banana,
+      },
+
+      {
+        _id: 4,
+        title: "Apple",
+        description: "Fresh Apples",
+        price: "200",
+        imagePath: apple,
+      },
+
+      {
+        _id: 5,
+        title: "Chicken",
+        description: "BBQ Chicken",
+        price: "850",
+        imagePath: chicken,
+      },
+    ],
+  };
+
   return (
     <section className="w-full flex items-center flex-col px-4 pb-8 pt-4">
       <div className="mb-2">
