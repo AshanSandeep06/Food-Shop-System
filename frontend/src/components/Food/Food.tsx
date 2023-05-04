@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { StaticFoodsList } from "../../types/StaticFoodItems";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Food = (props: StaticFoodsList) => {
   return (
