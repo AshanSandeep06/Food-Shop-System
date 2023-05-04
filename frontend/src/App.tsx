@@ -14,7 +14,7 @@ const App = () => {
         <ArrowUpwardIcon />
       </a>
 
-      <Header buttons={["Login"]} links={["home", "food-Menu", "contact"]} />
+      <Header buttons={["Login", "Logout"]} links={["home", "food-Menu", "contact"]} />
       {/* <Content /> */}
       {/* <Footer /> */}
       <Customer />

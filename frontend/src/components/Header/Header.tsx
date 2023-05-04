@@ -87,12 +87,12 @@ const Header = (props: HeaderProps) => {
         </ul>
 
         <div className="h-full flex items-center">
-          <NavLink
-            id="loginContainer"
-            to={"/login"}
-            style={{ height: "max-content" }}
-          >
-            {props.buttons.map((text, index) => (
+          {props.buttons.map((text, index) => (
+            <NavLink
+              id="loginContainer"
+              to={"/" + text[0].toLowerCase() + text.substring(1)}
+              style={{ height: "max-content" }}
+            >
               <button
                 key={index}
                 className=" flex items-center gap-3 border border-slate-200 px-3 py-1 rounded-lg cursor-pointer"
@@ -100,8 +100,8 @@ const Header = (props: HeaderProps) => {
                 <LoginIcon className="!text-[20px]" />
                 {text}
               </button>
-            ))}
-          </NavLink>
+            </NavLink>
+          ))}
         </div>
       </div>
     </header>
