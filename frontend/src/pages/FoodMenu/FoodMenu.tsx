@@ -1,5 +1,6 @@
 import React from "react";
 import "../FoodMenu/FoodMenu.css";
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 
 const FoodMenu = () => {
   return (
