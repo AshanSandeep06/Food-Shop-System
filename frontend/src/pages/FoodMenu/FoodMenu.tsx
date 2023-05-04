@@ -62,7 +62,7 @@ const FoodMenu = () => {
 
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
-            
+            <IcecreamIcon />
           </span>
           <span>Ice Cream</span>
         </div>
