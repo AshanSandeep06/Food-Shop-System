@@ -9,6 +9,7 @@ import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import DeleteIcon from "@mui/icons-material/Delete";
 import {
   Box,
   Button,
@@ -61,7 +62,7 @@ const Header = (props: HeaderProps) => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <section className="flex flex-col">
-        <div className="px-5 py-4 border-4 border-black flex justify-between">
+        <div className="px-5 py-4 border-4 border-black flex justify-between items-center">
           <span>
             <button className="cursor-pointer">
               <ArrowBackIcon />
@@ -83,10 +84,27 @@ const Header = (props: HeaderProps) => {
           </span>
         </div>
 
-        <div>
-          <div>
+        <div className="flex flex-col">
+          <div className="flex flex-col">
             {/* cart items */}
-            <div></div>
+            <div>
+              <img src="" alt="foodImage" />
+              <div>
+                <span>Chicken Plate</span>
+                <span>850 LKR</span>
+                <span>
+                  <button>-</button>
+                </span>
+                <span>1</span>
+                <span>
+                  <button>+</button>
+                </span>
+                <span>
+                  <button></button>
+                </span>
+              </div>
+            </div>
+
             {/* cart items */}
             <div></div>
           </div>
