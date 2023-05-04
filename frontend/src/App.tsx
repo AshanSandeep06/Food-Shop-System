@@ -5,6 +5,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Header from "./components/Header/Header";
 import Content from "./components/Content";
 import Footer from "./components/Footer/Footer";
+import Customer from "./components/Customer/Customer";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       {/* <Header /> */}
       {/* <Content /> */}
       {/* <Footer /> */}
+      <Customer />
     </div>
   );
 };
