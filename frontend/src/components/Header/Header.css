@@ -1,6 +1,6 @@
 /*====================== Header Section ======================*/
 
-header > div > ul > a:hover {
+header > div > ul > a:hover, #optionList > button:hover {
   transition: all 0.5s ease;
   transform: scale(1.1) translateZ(0px);
 }
