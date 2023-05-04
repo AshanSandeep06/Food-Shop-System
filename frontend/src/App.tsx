@@ -9,33 +9,11 @@ import Customer from "./components/Customer/Customer";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { NavLink } from "react-router-dom";
+import Button from "./components/Button/Button";
 
 const App = () => {
-  const loginLink = (
-    <NavLink
-      id="loginContainer"
-      to={"/login"}
-      style={{ height: "max-content" }}
-    >
-      <button className=" flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg cursor-pointer">
-        <LoginIcon className="!text-[20px]" />
-        Login
-      </button>
-    </NavLink>
-  );
-
-  const logoutLink = (
-    <NavLink
-      id="loginContainer"
-      to={"/logout"}
-      style={{ height: "max-content" }}
-    >
-      <button className=" flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg cursor-pointer">
-        <LogoutIcon className="!text-[20px]" />
-        Logout
-      </button>
-    </NavLink>
-  );
+  const loginLink = <Button resource="login" icon={<LoginIcon className="!text-[20px]" />} />
+  const logoutLink = <Button resource="login" icon={<LogoutIcon className="!text-[20px]" />} />
 
   return (
     <div className="App">
