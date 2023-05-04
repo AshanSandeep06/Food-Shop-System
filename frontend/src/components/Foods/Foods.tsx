@@ -18,7 +18,7 @@ const Foods = (props: StaticFoodsList) => {
               whileTap={{ scale: 1.1 }}
               src={item.imagePath}
               alt="foodImage"
-              className="w-24 lg:w-40 -mt-10 lg:-mt-20"
+              className="w-40 lg:w-40 -mt-10 lg:-mt-20 h-40 object-contain"
             />
             <p className="text-base lg:text-lg font-semibold text-textColor">
               {item.title}
