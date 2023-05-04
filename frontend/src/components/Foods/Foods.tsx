@@ -1,5 +1,4 @@
 import React from "react";
-import { StaticFoodsList } from "../../types/StaticFoodItems";
 import { motion } from "framer-motion";
 
 const Foods = (props: StaticFoodsList) => {
@@ -11,7 +10,7 @@ const Foods = (props: StaticFoodsList) => {
         {props.items.map((item, index) => (
           <div
             key={item._id}
-            className="mt-10 cursor-pointer !h-[210px] w-[150px] lg:min-w-[200px] drop-shadow-lg p-2 bg-[rgba(256,256,256,0.4)] backdrop-blur-md rounded-xl flex flex-col items-center justify-center"
+            className="mt-10 cursor-pointer !h-[210px] w-[200px] lg:min-w-[200px] drop-shadow-lg p-2 bg-[rgba(256,256,256,0.4)] backdrop-blur-md rounded-xl flex flex-col items-center justify-center"
           >
             <motion.img
               whileHover={{ scale: 1.1 }}
