@@ -93,10 +93,13 @@ const Header = (props: HeaderProps) => {
             to={"/login"}
             style={{ height: "max-content" }}
           >
-            <button className=" flex items-center gap-3 border border-slate-200 px-3 py-1 rounded-lg cursor-pointer">
-              <LoginIcon className="!text-[20px]" />
-              Login
-            </button>
+            {props.buttons.map((text, index) => (
+              <button key={index} className=" flex items-center gap-3 border border-slate-200 px-3 py-1 rounded-lg cursor-pointer">
+                <LoginIcon className="!text-[20px]" />
+                {text}
+              </button>
+            ))}
+            ;
           </NavLink>
         </div>
       </div>
