@@ -85,21 +85,21 @@ const Header = (props: HeaderProps) => {
           </span>
         </div>
 
-        <div className="flex flex-col">
-          <div className="flex flex-col">
+        <div className="flex h-screen flex-col bg-[#F5EEE9]">
+          <div className="flex flex-col pt-3 pl-5 pr-5 ">
             {/* cart items */}
-            <div className="pl-5 flex items-center justify-start gap-5">
+            <div className="pl-3 gap-2 flex items-center justify-start drop-shadow-lg bg-[rgba(256,256,256,0.4)] backdrop-blur-md rounded-xl">
               <img
                 src={ChickenPlate}
                 alt="foodImage"
-                className="w-20 h-20 max-w-[65px] rounded-full object-contain"
+                className="mr-[5px] w-20 h-20 max-w-[65px] rounded-full object-contain"
               />
-              <div className="flex flex-col mr-5">
+              <div className="flex flex-col mr-2">
                 <span>Chicken Plate</span>
                 <span>850 LKR</span>
               </div>
 
-              <div className="flex">
+              <div className="flex gap-3">
                 <span>
                   <button>-</button>
                 </span>
