@@ -10,7 +10,7 @@ const FoodMenu = () => {
         </h1>
       </div>
 
-      <div className="bg-blue-700 overflow-x-scroll scrollbar-hidden scroll-smooth flex w-full px-40 py-10 text-white justify-center items-center gap-10">
+      <div className="bg-blue-700 md:justify-start xl:justify-center justify-start overflow-x-scroll scrollbar-hidden scroll-smooth flex w-full px-10 md:px-20 py-10 text-white items-center gap-10">
         <div className="border-2 border-black h-32 min-w-[8rem]">Menu</div>
         <div className="border-2 border-black h-32 min-w-[8rem]">Chicken</div>
         <div className="border-2 border-black h-32 min-w-[8rem]">Beverages</div>
