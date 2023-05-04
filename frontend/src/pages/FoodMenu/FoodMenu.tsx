@@ -5,8 +5,8 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LiquorIcon from "@mui/icons-material/Liquor";
 import SetMealIcon from "@mui/icons-material/SetMeal";
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
-import RiceBowlIcon from '@mui/icons-material/RiceBowl';
-import IcecreamIcon from '@mui/icons-material/Icecream';
+import RiceBowlIcon from "@mui/icons-material/RiceBowl";
+import IcecreamIcon from "@mui/icons-material/Icecream";
 
 const FoodMenu = () => {
   return (
@@ -33,7 +33,9 @@ const FoodMenu = () => {
         </div>
 
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
-          <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
+          <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
+            <LiquorIcon />
+          </span>
           <span>Beverages</span>
         </div>
 
