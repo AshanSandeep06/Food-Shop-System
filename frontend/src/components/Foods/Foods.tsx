@@ -4,7 +4,7 @@ import { StaticFoodsList } from "../../types/StaticFoodItems";
 
 const Foods = (props: StaticFoodsList) => {
   return (
-    <div className="w-full h-full flex items-center justify-center top-6 left-0 lg:px-30 lg:pt-4 gap-5 md:gap-8 flex-wrap text-[#4a4343] xl:-translate-x-2">
+    <div className="w-full h-full flex items-center justify-center top-6 left-0 lg:px-30 lg:pt-4 gap-5 md:gap-8 flex-wrap text-[#4a4343] xl:-translate-x-2 mb-12">
       {props.items.map((item, index) => (
         <div
           key={item._id}
