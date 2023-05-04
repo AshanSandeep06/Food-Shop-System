@@ -86,7 +86,7 @@ const Header = (props: HeaderProps) => {
           </IconButton>
         </ul>
 
-        <div className="h-full flex items-center">
+        <div className="h-full flex items-center justify-center gap-5">
           {props.buttons.map((text, index) => (
             <NavLink
               id="loginContainer"
