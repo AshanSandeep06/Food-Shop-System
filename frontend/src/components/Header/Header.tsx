@@ -50,14 +50,17 @@ const Header = (props: HeaderProps) => {
           id="optionList"
           className="h-full flex items-center justify-start gap-[60px] pt-1"
         >
-          <NavLink
-            to={"/home"}
-            className={({ isActive }) => (isActive ? activeLink : normalLink)}
-          >
-            Home
-          </NavLink>
-
-          <NavLink
+          {props.links.map((text, index) => (
+            <NavLink
+              key={index}
+              to={"/" + text}
+              className={({ isActive }) => (isActive ? activeLink : normalLink)}
+            >
+              {text.charAt(0).toUpperCase()}
+            </NavLink>
+          ))}
+          ;
+          {/* <NavLink
             to={"/About"}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
           >
@@ -76,8 +79,7 @@ const Header = (props: HeaderProps) => {
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
           >
             Profile
-          </NavLink>
-
+          </NavLink> */}
           <IconButton aria-label="cart" className="!pb-[13px]">
             <StyledBadge badgeContent={"0"} color="error">
               <ShoppingCartIcon className="!text-[rgb(81,81,81)]" />
