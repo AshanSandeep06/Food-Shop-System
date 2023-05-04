@@ -14,12 +14,12 @@ const FoodMenu = () => {
       </div>
 
       <div className="bg-blue-700 overflow-x-hidden flex w-full px-40 py-10 text-white justify-center items-center">
-        <div className="border-2 border-black">Menu</div>
-        <div className="border-2 border-black">Chicken</div>
-        <div className="border-2 border-black">Beverages</div>
-        <div className="border-2 border-black">Fish</div>
-        <div className="border-2 border-black">Rice</div>
-        <div className="border-2 border-black">Ice Cream</div>
+        <div className="border-2 border-black h-32 min-w-[8rem]">Menu</div>
+        <div className="border-2 border-black h-32 min-w-[8rem]">Chicken</div>
+        <div className="border-2 border-black h-32 min-w-[8rem]">Beverages</div>
+        <div className="border-2 border-black h-32 min-w-[8rem]">Fish</div>
+        <div className="border-2 border-black h-32 min-w-[8rem]">Rice</div>
+        <div className="border-2 border-black h-32 min-w-[8rem]">Ice Cream</div>
       </div>
     </section>
   );

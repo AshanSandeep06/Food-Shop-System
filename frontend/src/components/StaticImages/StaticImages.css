@@ -1,4 +1,4 @@
-@media (min-width: 320px) and (max-width: 420px) {
+@media (min-width: 298px) and (max-width: 420px) {
   #foodsImagesContainer > div:nth-child(3),
   #foodsImagesContainer > div:last-child {
     display: none;
