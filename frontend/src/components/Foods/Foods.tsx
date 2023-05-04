@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { StaticFoodsList } from "../../types/StaticFoodItems";
 
 const Foods = (props: StaticFoodsList) => {
     return (
