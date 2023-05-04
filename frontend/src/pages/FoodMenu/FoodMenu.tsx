@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../FoodMenu/FoodMenu.css";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
@@ -17,6 +17,12 @@ import chicken from "../../assets/img/chicken-01.png";
 import Foods from "../../components/Foods/Foods";
 
 const FoodMenu = () => {
+  const [data, setData] = useState<StaticFoodsList>({ items: [] });
+
+  useEffect(() => {
+    setData(staticData);
+  }, []);
+
   // Dummy Data
   const staticData: StaticFoodsList = {
     items: [
@@ -126,7 +132,7 @@ const FoodMenu = () => {
 
       <div className="flex justify-center flex-wrap px-5 w-full mt-3 bg-[#F5EEE9]">
         {/* For Testing */}
-        <Foods items={staticData.items} />
+        <Foods items={data.items} />
       </div>
     </section>
   );
