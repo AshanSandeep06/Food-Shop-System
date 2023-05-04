@@ -33,6 +33,10 @@
   color: white;
 }
 
+#container > div:hover > span:first-child {
+  color: white;
+}
+
 #container > div {
   /* position: relative;
   display: flex;
