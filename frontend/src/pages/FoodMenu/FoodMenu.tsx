@@ -3,6 +3,7 @@ import "../FoodMenu/FoodMenu.css";
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import LiquorIcon from '@mui/icons-material/Liquor';
+import SetMealIcon from '@mui/icons-material/SetMeal';
 
 const FoodMenu = () => {
   return (
