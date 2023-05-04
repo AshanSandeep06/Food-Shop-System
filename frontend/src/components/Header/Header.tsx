@@ -92,9 +92,9 @@ const Header = (props: HeaderProps) => {
               <img
                 src={ChickenPlate}
                 alt="foodImage"
-                className="mr-[5px] w-20 h-20 max-w-[65px] rounded-full object-contain"
+                className="mr-[6px] w-20 h-20 max-w-[65px] rounded-full object-contain"
               />
-              <div className="flex flex-col mr-2">
+              <div className="flex flex-col mr-[6px]">
                 <span>Chicken Plate</span>
                 <span>850
                   <span className="text-[#ed1e2f] text-[13px]">  LKR</span>
