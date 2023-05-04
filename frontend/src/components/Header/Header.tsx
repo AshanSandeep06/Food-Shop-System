@@ -88,18 +88,18 @@ const Header = (props: HeaderProps) => {
         <div className="flex flex-col">
           <div className="flex flex-col">
             {/* cart items */}
-            <div className="flex items-center justify-center">
+            <div className="pl-5 flex items-center justify-start gap-5">
               <img
                 src={ChickenPlate}
                 alt="foodImage"
                 className="w-20 h-20 max-w-[65px] rounded-full object-contain"
               />
-              <div>
+              <div className="flex flex-col mr-5">
                 <span>Chicken Plate</span>
                 <span>850 LKR</span>
               </div>
 
-              <div>
+              <div className="flex">
                 <span>
                   <button>-</button>
                 </span>
