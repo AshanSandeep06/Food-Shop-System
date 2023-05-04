@@ -16,7 +16,7 @@ const App = () => {
     <Button resource="login" icon={<LoginIcon className="!text-[20px]" />} />
   );
   const logoutLink = (
-    <Button resource="login" icon={<LogoutIcon className="!text-[20px]" />} />
+    <Button resource="logout" icon={<LogoutIcon className="!text-[20px]" />} />
   );
 
   return (
