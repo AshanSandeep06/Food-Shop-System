@@ -62,17 +62,17 @@ const Header = (props: HeaderProps) => {
       <section className="flex flex-col">
         <div className="px-5 py-4 border-4 border-black flex justify-between">
           <span>
-            <button>
+            <button className="cursor-pointer">
               <ArrowBackIcon />
             </button>
           </span>
 
           <span>
-            Cart <ShoppingCartIcon className="text-[#ed1e2f]" />
+            Cart <ShoppingCartIcon className="text-[#ed1e2f] ml-[1px]" />
           </span>
 
           <span>
-            <button>Clear</button>
+            <button className="cursor-pointer">Clear</button>
           </span>
         </div>
 
