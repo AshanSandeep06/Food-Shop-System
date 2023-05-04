@@ -59,26 +59,7 @@ const Header = (props: HeaderProps) => {
               {resource[0].toUpperCase() + resource.substring(1)}
             </NavLink>
           ))}
-          {/* <NavLink
-            to={"/About"}
-            className={({ isActive }) => (isActive ? activeLink : normalLink)}
-          >
-            About
-          </NavLink>
 
-          <NavLink
-            to={"/Contact"}
-            className={({ isActive }) => (isActive ? activeLink : normalLink)}
-          >
-            Contact
-          </NavLink>
-
-          <NavLink
-            to={"/Profile"}
-            className={({ isActive }) => (isActive ? activeLink : normalLink)}
-          >
-            Profile
-          </NavLink> */}
           <IconButton aria-label="cart" className="!pb-[13px]">
             <StyledBadge badgeContent={"0"} color="error">
               <ShoppingCartIcon className="!text-[rgb(81,81,81)]" />
