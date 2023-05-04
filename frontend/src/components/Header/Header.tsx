@@ -86,8 +86,8 @@ const Header = (props: HeaderProps) => {
           </span>
         </div>
 
-        <div className="flex h-screen flex-col bg-[#F5EEE9]">
-          <div className="flex flex-col pt-3 pl-5 pr-5 gap-3 h-3/4 overflow-y-scroll scrollbar-hidden scroll-smooth">
+        <div className="flex flex-col bg-[#F5EEE9]">
+          <div className="flex flex-col pt-5 pl-5 pr-5 gap-3 h-[536px] overflow-y-scroll scrollbar-hidden scroll-smooth">
             {/* cart items */}
             <CartItem />
             <CartItem />
@@ -102,7 +102,9 @@ const Header = (props: HeaderProps) => {
             <CartItem />
           </div>
 
-          <div></div>
+          <div>
+            <button>Continue</button>
+          </div>
         </div>
       </section>
     </Box>
