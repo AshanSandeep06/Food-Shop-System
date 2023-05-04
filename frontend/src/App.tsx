@@ -31,7 +31,7 @@ const App = () => {
       {/* <Footer /> */}
 
       {/* ========== Customer Page ========== */}
-      <Header buttons={[logoutLink]} links={["home", "food-Menu", "contact"]} />
+      <Header buttons={[logoutLink]} links={["home", "pending Orders", "orders History"]} />
       <Customer />
     </div>
   );
