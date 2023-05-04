@@ -2,6 +2,7 @@ import React from "react";
 import "../FoodMenu/FoodMenu.css";
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import LiquorIcon from '@mui/icons-material/Liquor';
 
 const FoodMenu = () => {
   return (
