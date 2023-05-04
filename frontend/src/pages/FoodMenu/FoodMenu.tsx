@@ -20,49 +20,49 @@ const FoodMenu = () => {
       <div className="!text-[rgb(81,81,81)] md:justify-start xl:justify-center justify-start overflow-x-scroll scrollbar-hidden scroll-smooth flex w-full px-10 md:px-20 py-10 items-center gap-10">
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
-            <MenuBookIcon />
+            <MenuBookIcon className="text-[#ece1e1]" />
           </span>
           <span>Menu</span>
         </div>
 
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
-            <RestaurantMenuIcon />
+            <RestaurantMenuIcon className="text-[#ece1e1]" />
           </span>
           <span>Chicken</span>
         </div>
 
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
-            <LiquorIcon />
+            <LiquorIcon className="text-[#ece1e1]" />
           </span>
           <span>Beverages</span>
         </div>
 
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
-            <SetMealIcon />
+            <SetMealIcon className="text-[#ece1e1]" />
           </span>
           <span>Fish</span>
         </div>
 
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
-            <RiceBowlIcon />
+            <RiceBowlIcon className="text-[#ece1e1]" />
           </span>
           <span>Rice</span>
         </div>
 
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
-            <LunchDiningIcon />
+            <LunchDiningIcon className="text-[#ece1e1]" />
           </span>
           <span>Burgers</span>
         </div>
 
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
-            <IcecreamIcon />
+            <IcecreamIcon className="text-[#ece1e1]" />
           </span>
           <span>Ice Cream</span>
         </div>
