@@ -10,6 +10,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { NavLink } from "react-router-dom";
 import Button from "./components/Button/Button";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const App = () => {
   const loginLink = (
@@ -17,6 +18,12 @@ const App = () => {
   );
   const logoutLink = (
     <Button resource="logout" icon={<LogoutIcon className="!text-[20px]" />} />
+  );
+  const myProfileButton = (
+    <Button
+      resource="my Profile"
+      icon={<AccountCircleIcon className="!text-[20px]" />}
+    />
   );
 
   return (
@@ -31,7 +38,10 @@ const App = () => {
       {/* <Footer /> */}
 
       {/* ========== Customer Page ========== */}
-      <Header buttons={[logoutLink]} links={["home", "pending Orders", "orders History"]} />
+      <Header
+        buttons={[logoutLink, myProfileButton]}
+        links={["home", "pending Orders", "orders History"]}
+      />
       <Customer />
     </div>
   );
