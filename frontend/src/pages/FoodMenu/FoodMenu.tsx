@@ -1,10 +1,10 @@
 import React from "react";
 import "../FoodMenu/FoodMenu.css";
-import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import LiquorIcon from '@mui/icons-material/Liquor';
-import SetMealIcon from '@mui/icons-material/SetMeal';
-import LunchDiningIcon from '@mui/icons-material/LunchDining';
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import LiquorIcon from "@mui/icons-material/Liquor";
+import SetMealIcon from "@mui/icons-material/SetMeal";
+import LunchDiningIcon from "@mui/icons-material/LunchDining";
 
 const FoodMenu = () => {
   return (
@@ -20,22 +20,32 @@ const FoodMenu = () => {
           <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
           <span>Menu</span>
         </div>
+
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
           <span>Chicken</span>
         </div>
+
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
           <span>Beverages</span>
         </div>
+
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
           <span>Fish</span>
         </div>
+
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
           <span>Rice</span>
         </div>
+
+        <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+          <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
+          <span>Burgers</span>
+        </div>
+
         <div className="border-2 border-black h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
           <span className="rounded-full border-2 border-white w-10 h-10 flex justify-center items-center"></span>
           <span>Ice Cream</span>
