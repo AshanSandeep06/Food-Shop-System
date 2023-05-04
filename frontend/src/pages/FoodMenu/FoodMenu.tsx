@@ -15,6 +15,7 @@ import banana from "../../assets/img/banana.png";
 import strawberries from "../../assets/img/strawberries-01.png";
 import chicken from "../../assets/img/chicken-01.png";
 import Foods from "../../components/Foods/Foods";
+import $ from "jquery";
 
 const FoodMenu = () => {
   const [data, setData] = useState<StaticFoodsList>({ items: [] });
@@ -68,6 +69,24 @@ const FoodMenu = () => {
     ],
   };
 
+  const setClickStyles = () => {
+    $("#container > div").click(function () {
+      $("#container > div").css({
+        "box-shadow": "1px 1px 54px 1px rgba(0, 0, 0, 0.22)",
+        cursor: "pointer",
+        background: "#f97316",
+      });
+
+      $("#container > div > span:last-child").css({
+        color: "white",
+      });
+
+      $("#container > div > span:first-child").css({
+        "background-color": "#0c1b6e",
+      });
+    });
+  };
+
   return (
     <section className="w-full flex items-center flex-col px-4 pt-4">
       <div className="mb-2">
@@ -80,49 +99,70 @@ const FoodMenu = () => {
         id="container"
         className="!text-[rgb(81,81,81)] md:justify-start xl:justify-center justify-start overflow-x-scroll scrollbar-hidden scroll-smooth flex w-full px-10 md:px-20 py-10 items-center gap-10"
       >
-        <div className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+        <div
+          className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5"
+          onClick={setClickStyles}
+        >
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
             <MenuBookIcon className="text-[#ece1e1]" />
           </span>
           <span>Menu</span>
         </div>
 
-        <div className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+        <div
+          className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5"
+          onClick={setClickStyles}
+        >
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
             <RestaurantMenuIcon className="text-[#ece1e1]" />
           </span>
           <span>Chicken</span>
         </div>
 
-        <div className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+        <div
+          className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5"
+          onClick={setClickStyles}
+        >
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
             <LiquorIcon className="text-[#ece1e1]" />
           </span>
           <span>Beverages</span>
         </div>
 
-        <div className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+        <div
+          className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5"
+          onClick={setClickStyles}
+        >
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
             <SetMealIcon className="text-[#ece1e1]" />
           </span>
           <span>Fish</span>
         </div>
 
-        <div className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+        <div
+          className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5"
+          onClick={setClickStyles}
+        >
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
             <RiceBowlIcon className="text-[#ece1e1]" />
           </span>
           <span>Rice</span>
         </div>
 
-        <div className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+        <div
+          className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5"
+          onClick={setClickStyles}
+        >
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
             <LunchDiningIcon className="text-[#ece1e1]" />
           </span>
           <span>Burgers</span>
         </div>
 
-        <div className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5">
+        <div
+          className="h-32 min-w-[8rem] rounded-lg flex flex-col items-center justify-center gap-5"
+          onClick={setClickStyles}
+        >
           <span className="bg-[rgb(232,0,19)] rounded-full border-2 border-white w-10 h-10 flex justify-center items-center">
             <IcecreamIcon className="text-[#ece1e1]" />
           </span>
