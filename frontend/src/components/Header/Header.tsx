@@ -56,10 +56,9 @@ const Header = (props: HeaderProps) => {
               to={"/" + text}
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
             >
-              {text.charAt(0).toUpperCase()}
+              {text[0].toUpperCase() + text.substring(1)}
             </NavLink>
           ))}
-          ;
           {/* <NavLink
             to={"/About"}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
@@ -94,12 +93,14 @@ const Header = (props: HeaderProps) => {
             style={{ height: "max-content" }}
           >
             {props.buttons.map((text, index) => (
-              <button key={index} className=" flex items-center gap-3 border border-slate-200 px-3 py-1 rounded-lg cursor-pointer">
+              <button
+                key={index}
+                className=" flex items-center gap-3 border border-slate-200 px-3 py-1 rounded-lg cursor-pointer"
+              >
                 <LoginIcon className="!text-[20px]" />
                 {text}
               </button>
             ))}
-            ;
           </NavLink>
         </div>
       </div>
