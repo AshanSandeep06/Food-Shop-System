@@ -9,7 +9,9 @@ import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-const Header = () => {
+type HeaderProps = {};
+
+const Header = (props: HeaderProps) => {
   // const activeLink = "border-b-[5px] rounded-[26%] w-[43%] border-[#7461e2]";
   // const activeLink = "border-b-[5px] border-[43%] border-[#7461e2]";
   const activeLink = "text-[#f97316]";
