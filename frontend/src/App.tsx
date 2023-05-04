@@ -9,21 +9,20 @@ import Customer from "./components/Customer/Customer";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { NavLink } from "react-router-dom";
-import Button from "./components/Button/Button";
+import MyButton from "./components/MyButton";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const App = () => {
+  const style1 = "flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg";
+
   const loginLink = (
-    <Button resource="login" icon={<LoginIcon className="!text-[20px]" />} />
+    <MyButton resource="login" icon={<LoginIcon className="!text-[20px]" />} styles={style1} />
   );
   const logoutLink = (
-    <Button resource="logout" icon={<LogoutIcon className="!text-[20px]" />} />
+    <MyButton resource="logout" icon={<LogoutIcon className="!text-[20px]" />} styles={style1} />
   );
   const myProfileButton = (
-    <Button
-      resource="my Profile"
-      icon={<AccountCircleIcon className="!text-[20px]" />}
-    />
+    <MyButton resource="my Profile" icon={<AccountCircleIcon className="!text-[20px]" />} styles={style1} />
   );
 
   return (
