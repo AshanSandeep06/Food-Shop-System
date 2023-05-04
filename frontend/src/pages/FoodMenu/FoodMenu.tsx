@@ -59,54 +59,6 @@ const FoodMenu = () => {
         price: "850",
         imagePath: chicken,
       },
-
-      {
-        _id: 5,
-        title: "Chicken",
-        description: "BBQ Chicken",
-        price: "850",
-        imagePath: chicken,
-      },
-
-      {
-        _id: 5,
-        title: "Chicken",
-        description: "BBQ Chicken",
-        price: "850",
-        imagePath: chicken,
-      },
-
-      {
-        _id: 5,
-        title: "Chicken",
-        description: "BBQ Chicken",
-        price: "850",
-        imagePath: chicken,
-      },
-
-      {
-        _id: 5,
-        title: "Chicken",
-        description: "BBQ Chicken",
-        price: "850",
-        imagePath: chicken,
-      },
-
-      {
-        _id: 5,
-        title: "Chicken",
-        description: "BBQ Chicken",
-        price: "850",
-        imagePath: chicken,
-      },
-
-      {
-        _id: 5,
-        title: "Chicken",
-        description: "BBQ Chicken",
-        price: "850",
-        imagePath: chicken,
-      },
     ],
   };
 
