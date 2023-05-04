@@ -13,7 +13,7 @@ const FoodMenu = () => {
         </h1>
       </div>
 
-      <div className="bg-blue-700 overflow-x-hidden flex w-full px-40 py-10 text-white">
+      <div className="bg-blue-700 overflow-x-hidden flex w-full px-40 py-10 text-white justify-center items-center">
         <div className="border-2 border-black">Menu</div>
         <div className="border-2 border-black">Chicken</div>
         <div className="border-2 border-black">Beverages</div>
