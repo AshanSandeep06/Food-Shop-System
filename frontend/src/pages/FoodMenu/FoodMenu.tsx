@@ -125,7 +125,6 @@ const FoodMenu = () => {
 
       <div className="flex justify-center flex-wrap px-5">
         {/* For Testing */}
-        {/* <StaticImages items={staticData.items} /> */}
       </div>
     </section>
   );
