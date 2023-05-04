@@ -12,8 +12,12 @@ import { NavLink } from "react-router-dom";
 import Button from "./components/Button/Button";
 
 const App = () => {
-  const loginLink = <Button resource="login" icon={<LoginIcon className="!text-[20px]" />} />
-  const logoutLink = <Button resource="login" icon={<LogoutIcon className="!text-[20px]" />} />
+  const loginLink = (
+    <Button resource="login" icon={<LoginIcon className="!text-[20px]" />} />
+  );
+  const logoutLink = (
+    <Button resource="login" icon={<LogoutIcon className="!text-[20px]" />} />
+  );
 
   return (
     <div className="App">
