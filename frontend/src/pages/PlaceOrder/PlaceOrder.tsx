@@ -4,7 +4,7 @@ const PlaceOrder = () => {
   return (
     <section>
       {/* ----- Place Order Form ----- */}
-      <section>
+      <section id="tblContainer">
         <section
           className="flex flex-col h-50 bg-white shadow-lg items-center
         pt-3 px-3 mt-4"
