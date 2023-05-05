@@ -15,43 +15,95 @@ const PlaceOrder = () => {
           >
             Manage Vehicle
           </h3>
-          <div className="w-full grid h-60 grid-cols-1 rounded-2 table-responsive">
+          <div className="w-full h-60 rounded-2 table-responsive">
             <table
               id="tblCartItems"
-              className="table-auto mb-5 border-collapse border border-slate-400"
+              className="table-auto mb-5 border-collapse grid grid-cols-1"
             >
               <thead
-                className="text-white rounded-[32px]"
-                style={{ background: "#17377f" }}
+                className="text-white grid grid-cols-1"
+                style={{
+                  background: "#17377f",
+                  borderTopLeftRadius: "13px",
+                  borderTopRightRadius: "13px",
+                }}
               >
-                <tr>
-                  <th className="border border-slate-300 leading-[38px]" style={{ lineHeight: "38px!important" }}>Car ID</th>
-                  <th className="border border-slate-300" style={{ lineHeight: "38px!important" }}>Reg No</th>
-                  <th className="border border-slate-300" style={{ lineHeight: "38px!important" }}>Brand</th>
-                  <th className="border border-slate-300" style={{ lineHeight: "38px!important" }}>Type</th>
-                  <th className="border border-slate-300" style={{ lineHeight: "38px!important" }}>Daily Rate</th>
+                <tr className="grid grid-cols-5">
+                  <th
+                    className="leading-[38px]"
+                    style={{ lineHeight: "38px!important" }}
+                  >
+                    Car ID
+                  </th>
+                  <th
+                    className="leading-[38px] border border-slate-300"
+                    style={{ lineHeight: "38px!important" }}
+                  >
+                    Reg No
+                  </th>
+                  <th
+                    className="leading-[38px] border border-slate-300"
+                    style={{ lineHeight: "38px!important" }}
+                  >
+                    Brand
+                  </th>
+                  <th
+                    className="leading-[38px] border border-slate-300"
+                    style={{ lineHeight: "38px!important" }}
+                  >
+                    Type
+                  </th>
+                  <th
+                    className="leading-[38px]"
+                    style={{ lineHeight: "38px!important" }}
+                  >
+                    Daily Rate
+                  </th>
                 </tr>
               </thead>
+
               <tbody className="cursor-pointer">
-                
-                <tr>
-                  <td className="border border-slate-300 p-2" style={{ lineHeight: "38px!important" }}>
+                <tr
+                  className="grid grid-cols-5 !h-[60px]"
+                  style={{ minHeight: "60px" }}
+                >
+                  <td className="border border-slate-300 p-2 flex items-center justify-center">
                     V001
                   </td>
-                  <td className="border border-slate-300 p-2" style={{ lineHeight: "38px!important" }}>
+                  <td className="border border-slate-300 p-2  flex items-center justify-center">
                     AAB-3580
                   </td>
-                  <td className="border border-slate-300 p-2" style={{ lineHeight: "38px!important" }}>
+                  <td className="border border-slate-300 p-2  flex items-center justify-center">
                     Toyota
                   </td>
-                  <td className="border border-slate-300 p-2"style={{ lineHeight: "38px!important" }}>
+                  <td className="border border-slate-300 p-2  flex items-center justify-center">
                     General
                   </td>
-                  <td className="border border-slate-300 p-2"style={{ lineHeight: "38px!important" }}>
+                  <td className="border border-slate-300 p-2  flex items-center justify-center">
                     2500
                   </td>
                 </tr>
 
+                <tr
+                  className="grid grid-cols-5 !h-[60px]"
+                  style={{ minHeight: "60px" }}
+                >
+                  <td className="border border-slate-300 p-2 flex items-center justify-center">
+                    V001
+                  </td>
+                  <td className="border border-slate-300 p-2 flex items-center justify-center">
+                    AAB-3580
+                  </td>
+                  <td className="border border-slate-300 p-2 flex items-center justify-center">
+                    Toyota
+                  </td>
+                  <td className="border border-slate-300 p-2 flex items-center justify-center">
+                    General
+                  </td>
+                  <td className="border border-slate-300 p-2 flex items-center justify-center">
+                    2500
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
