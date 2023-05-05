@@ -10,8 +10,8 @@ const PlaceOrder = () => {
         pt-3 px-3 mt-4"
         >
           <h3
-            className="text-center bg-[#0D6EFC] p-2 text-[rgb(248,249,250)] mb-2 rounded-[12px] w-full !text-[24px]"
-            style={{ fontWeight: "500" }}
+            className="text-center bg-[#0D6EFC] p-2 text-[rgb(248,249,250)] mb-2 rounded-[8px] w-full !text-[24px]"
+            style={{ fontWeight: "500", lineHeight: "28.8px" }}
           >
             Manage Vehicle
           </h3>
