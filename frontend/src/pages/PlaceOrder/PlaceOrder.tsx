@@ -15,31 +15,43 @@ const PlaceOrder = () => {
           >
             Manage Vehicle
           </h3>
-          <div className="grid h-60 grid-cols-1 rounded-2 table-responsive">
+          <div className="w-full grid h-60 grid-cols-1 rounded-2 table-responsive">
             <table
               id="tblCartItems"
-              className="table-auto cursor-pointer mb-5 border-collapse border border-slate-400"
+              className="table-auto mb-5 border-collapse border border-slate-400"
             >
               <thead
                 className="text-white rounded-[32px]"
                 style={{ background: "#17377f" }}
               >
                 <tr>
-                  <th className="border border-slate-300">Car ID</th>
-                  <th className="border border-slate-300">Reg No</th>
-                  <th className="border border-slate-300">Brand</th>
-                  <th className="border border-slate-300">Type</th>
-                  <th className="border border-slate-300">Daily Rate</th>
+                  <th className="border border-slate-300 leading-[38px]" style={{ lineHeight: "38px!important" }}>Car ID</th>
+                  <th className="border border-slate-300" style={{ lineHeight: "38px!important" }}>Reg No</th>
+                  <th className="border border-slate-300" style={{ lineHeight: "38px!important" }}>Brand</th>
+                  <th className="border border-slate-300" style={{ lineHeight: "38px!important" }}>Type</th>
+                  <th className="border border-slate-300" style={{ lineHeight: "38px!important" }}>Daily Rate</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="cursor-pointer">
+                
                 <tr>
-                  <td className="border border-slate-300">V001</td>
-                  <td className="border border-slate-300">AAB-3580</td>
-                  <td className="border border-slate-300">Toyota</td>
-                  <td className="border border-slate-300">General</td>
-                  <td className="border border-slate-300">2500</td>
+                  <td className="border border-slate-300 p-2" style={{ lineHeight: "38px!important" }}>
+                    V001
+                  </td>
+                  <td className="border border-slate-300 p-2" style={{ lineHeight: "38px!important" }}>
+                    AAB-3580
+                  </td>
+                  <td className="border border-slate-300 p-2" style={{ lineHeight: "38px!important" }}>
+                    Toyota
+                  </td>
+                  <td className="border border-slate-300 p-2"style={{ lineHeight: "38px!important" }}>
+                    General
+                  </td>
+                  <td className="border border-slate-300 p-2"style={{ lineHeight: "38px!important" }}>
+                    2500
+                  </td>
                 </tr>
+
               </tbody>
             </table>
           </div>
