@@ -26,7 +26,7 @@ const PlaceOrder = () => {
       <section className="py-10 px-20 border-2 border-black">
         <form className="h-full grid grid-cols-3 gap-6 border-2 border-yellow-400">
           <TextField
-            label="Category"
+            label="Your Name"
             type="text"
             variant="outlined"
             name="name"
@@ -35,20 +35,20 @@ const PlaceOrder = () => {
           />
 
           <TextField
-            label="Category"
+            label="Contact Number"
             type="text"
             variant="outlined"
-            name="name"
-            placeholder="Your Name"
+            name="contactNumber"
+            placeholder="Contact Number"
             required
           />
 
           <TextField
-            label="Category"
+            label="Address"
             type="text"
             variant="outlined"
-            name="name"
-            placeholder="Your Name"
+            name="address"
+            placeholder="Address"
             required
           />
 
