@@ -33,7 +33,7 @@ const PlaceOrder = () => {
           elevation={3}
           className="w-max border-2 border-black flex flex-col gap-4 p-4"
         >
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-6">
             <span className="text-base md:text-lg">Sub Total</span>
             <span>-</span>
             <span className="text-base md:text-lg">
