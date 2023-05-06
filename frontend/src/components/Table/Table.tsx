@@ -5,18 +5,18 @@ const Table = () => {
     <section id="tblContainer">
       <section
         className="flex flex-col h-50 bg-white shadow-lg items-center
-        pt-3 px-3 mt-4"
+        pt-3 px-3"
       >
         <h3
           className="text-center bg-[#0D6EFC] p-2 text-[rgb(248,249,250)] mb-2 rounded-[8px] w-full text-[24px]"
           style={{ fontWeight: "500", lineHeight: "28.8px" }}
         >
-          Manage Vehicle
+          Your Items Cart
         </h3>
         <div className="w-full pb-10 rounded-2 overflow-x-auto scroll-smooth">
           <table
             id="tblCartItems"
-            className="table-fixed border-collapse grid grid-cols-1"
+            className="table-fixed border-collapse grid grid-cols-1 h-[185px]"
           >
             <thead
               className="text-white grid grid-cols-1"
@@ -78,6 +78,216 @@ const Table = () => {
                   General
                 </td>
                 <td className="border border-slate-300 p-2  flex items-center justify-center">
+                  2500
+                </td>
+              </tr>
+
+              <tr
+                className="grid grid-cols-5 !h-[60px]"
+                style={{ minHeight: "60px" }}
+              >
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  V001
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  AAB-3580
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  Toyota
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  General
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  2500
+                </td>
+              </tr>
+
+              <tr
+                className="grid grid-cols-5 !h-[60px]"
+                style={{ minHeight: "60px" }}
+              >
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  V001
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  AAB-3580
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  Toyota
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  General
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  2500
+                </td>
+              </tr>
+
+              <tr
+                className="grid grid-cols-5 !h-[60px]"
+                style={{ minHeight: "60px" }}
+              >
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  V001
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  AAB-3580
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  Toyota
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  General
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  2500
+                </td>
+              </tr>
+
+              <tr
+                className="grid grid-cols-5 !h-[60px]"
+                style={{ minHeight: "60px" }}
+              >
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  V001
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  AAB-3580
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  Toyota
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  General
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  2500
+                </td>
+              </tr>
+
+              <tr
+                className="grid grid-cols-5 !h-[60px]"
+                style={{ minHeight: "60px" }}
+              >
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  V001
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  AAB-3580
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  Toyota
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  General
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  2500
+                </td>
+              </tr>
+
+              <tr
+                className="grid grid-cols-5 !h-[60px]"
+                style={{ minHeight: "60px" }}
+              >
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  V001
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  AAB-3580
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  Toyota
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  General
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  2500
+                </td>
+              </tr>
+
+              <tr
+                className="grid grid-cols-5 !h-[60px]"
+                style={{ minHeight: "60px" }}
+              >
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  V001
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  AAB-3580
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  Toyota
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  General
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  2500
+                </td>
+              </tr>
+
+              <tr
+                className="grid grid-cols-5 !h-[60px]"
+                style={{ minHeight: "60px" }}
+              >
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  V001
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  AAB-3580
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  Toyota
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  General
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  2500
+                </td>
+              </tr>
+
+              <tr
+                className="grid grid-cols-5 !h-[60px]"
+                style={{ minHeight: "60px" }}
+              >
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  V001
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  AAB-3580
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  Toyota
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  General
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  2500
+                </td>
+              </tr>
+
+              <tr
+                className="grid grid-cols-5 !h-[60px]"
+                style={{ minHeight: "60px" }}
+              >
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  V001
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  AAB-3580
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  Toyota
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
+                  General
+                </td>
+                <td className="border border-slate-300 p-2 flex items-center justify-center">
                   2500
                 </td>
               </tr>
