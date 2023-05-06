@@ -28,31 +28,31 @@ const Table = () => {
             >
               <tr className="grid grid-cols-5">
                 <th
-                  className="leading-[38px]"
+                  className="leading-[38px] flex justify-center items-center"
                   style={{ lineHeight: "38px!important" }}
                 >
                   Car ID
                 </th>
                 <th
-                  className="leading-[38px] border border-slate-300"
+                  className="leading-[38px] border border-slate-300 flex justify-center items-center"
                   style={{ lineHeight: "38px!important" }}
                 >
                   Reg No
                 </th>
                 <th
-                  className="leading-[38px] border border-slate-300"
+                  className="leading-[38px] border border-slate-300 flex justify-center items-center"
                   style={{ lineHeight: "38px!important" }}
                 >
                   Brand
                 </th>
                 <th
-                  className="leading-[38px] border border-slate-300"
+                  className="leading-[38px] border border-slate-300 flex justify-center items-center"
                   style={{ lineHeight: "38px!important" }}
                 >
                   Type
                 </th>
                 <th
-                  className="leading-[38px]"
+                  className="leading-[38px] flex justify-center items-center"
                   style={{ lineHeight: "38px!important" }}
                 >
                   Daily Rate
