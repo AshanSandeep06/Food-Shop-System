@@ -27,7 +27,7 @@ const PlaceOrder = () => {
       {/* ===================================================== */}
 
       {/* --------- Payment --------- */}
-      <section>
+      <section className="border-2 border-black">
         
       </section>
 
