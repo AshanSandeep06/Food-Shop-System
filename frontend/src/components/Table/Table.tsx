@@ -7,6 +7,8 @@ type TableProps = {
 };
 
 const Table = (props: TableProps) => {
+  const tblHaderStyles = `grid grid-cols-${props.tblHeaders.length}`;
+
   return (
     <section id="tblContainer">
       <section
@@ -33,7 +35,7 @@ const Table = (props: TableProps) => {
                 borderTopRightRadius: "8px",
               }}
             >
-              <tr className="grid grid-cols-4">
+              <tr className="grid grid-cols-6">
                 {props.tblHeaders.map((header, index) => (
                   <th
                     key={index}
