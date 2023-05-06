@@ -35,7 +35,7 @@ const Table = (props: TableProps) => {
                 borderTopRightRadius: "8px",
               }}
             >
-              <tr className="grid grid-cols-6">
+              <tr className={tblHaderStyles}>
                 {props.tblHeaders.map((header, index) => (
                   <th
                     key={index}
