@@ -8,7 +8,7 @@ const PlaceOrder = () => {
       {/* ----- Cart Items Table ----- */}
       <Table
         tblName="Your Items Cart"
-        tblHeaders={["Item Code", "Description", "Unit Price", "Quantity"]}
+        tblHeaders={["Item Code", "Description", "Item Image", "Unit Price", "Quantity"]}
         tblData={[[]]}
       />
 
