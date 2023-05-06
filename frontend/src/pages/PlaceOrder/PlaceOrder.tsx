@@ -24,8 +24,8 @@ const PlaceOrder = () => {
       />
 
       {/* --------- Form --------- */}
-      <section className="py-10 px-6 md:px-16 border-2 border-black">
-        <form className="grid grid-cols-1 md:grid-cols-3 gap-6 border-2 border-yellow-400">
+      <section className="py-10 px-6 lg:px-16 border-2 border-black">
+        <form className="grid grid-cols-1 lg:grid-cols-3 gap-6 border-2 border-yellow-400">
           <TextField
             label="Your Name"
             type="text"
@@ -53,7 +53,7 @@ const PlaceOrder = () => {
             required
           />
 
-          <div className="md:col-end-4 md:col-span-1 flex md:justify-end items-center justify-center flex-wrap gap-5">
+          <div className="lg:col-end-4 lg:col-span-2 flex md:justify-end items-center justify-center flex-wrap gap-5">
             <Button
               className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
