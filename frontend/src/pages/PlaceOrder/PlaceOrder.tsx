@@ -44,7 +44,7 @@ const PlaceOrder = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-6">
             <span className="text-base md:text-lg">Delivery Fee</span>
             <span>-</span>
             <span className="text-base md:text-lg">
