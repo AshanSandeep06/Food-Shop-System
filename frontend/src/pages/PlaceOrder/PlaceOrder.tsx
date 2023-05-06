@@ -27,8 +27,11 @@ const PlaceOrder = () => {
       {/* ===================================================== */}
 
       {/* --------- Payment --------- */}
-      <section className="border-2 border-black">
-        
+      <section className="my-8 border-2 border-black flex flex-col gap-4">
+        <span>Sub Total: 2500.00 <span className="text-sm text-red-600 relative bottom-[0.75px]">LKR</span></span>
+        <span>Delivery Fee: 150.00 <span className="text-sm text-red-600 relative bottom-[0.75px]">LKR</span></span>
+
+        <span>Total: 2650.00 <span className="text-sm text-red-600 relative bottom-[0.75px]">LKR</span></span>
       </section>
 
       {/* ===================================================== */}
