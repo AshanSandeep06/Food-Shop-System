@@ -1,7 +1,6 @@
 import React from "react";
 
 type TableProps = {
-  id: string;
   tblName: string;
   tblHeaders: string[];
   tblData: [string[]];
