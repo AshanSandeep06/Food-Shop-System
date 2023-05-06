@@ -4,8 +4,8 @@ import SendIcon from "@mui/icons-material/Send";
 
 const Form = () => {
   return (
-    <section className="py-10 px-6 lg:px-16 border-2 border-black">
-        <form className="grid grid-cols-1 lg:grid-cols-3 gap-6 border-2 border-yellow-400">
+    <section className="py-10 px-6 lg:px-16">
+        <form className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <TextField
             label="Your Name"
             type="text"
