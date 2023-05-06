@@ -43,8 +43,6 @@ const PlaceOrder = () => {
         </div>
         
         <Divider />
-
-        <span>TOTAL: 2650.00 <span className="text-sm text-red-600 relative bottom-[0.75px]">LKR</span></span>
       </Paper>
      </section>
 
