@@ -60,7 +60,7 @@ const PlaceOrder = () => {
               color="error"
               endIcon={<SendIcon />}
             >
-              Place Order
+              Cancel Order
             </Button>
 
             <Button
