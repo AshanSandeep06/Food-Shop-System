@@ -36,7 +36,11 @@ const PlaceOrder = () => {
         <span>2500.00 <span className="text-sm text-red-600 relative bottom-[0.75px]">LKR</span></span>
         </div>
 
-        <span>Delivery Fee: 150.00 <span className="text-sm text-red-600 relative bottom-[0.75px]">LKR</span></span>
+        <div className="flex justify-center items-center gap-3">
+        <span className="text-base md:text-lg ">Sub Total</span>
+        <span>-</span>
+        <span>2500.00 <span className="text-sm text-red-600 relative bottom-[0.75px]">LKR</span></span>
+        </div>
         
         <Divider />
 
