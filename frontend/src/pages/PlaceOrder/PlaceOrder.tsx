@@ -25,6 +25,7 @@ const PlaceOrder = () => {
       />
 
       {/* --------- Form --------- */}
+      <Form />
     </section>
   );
 };
