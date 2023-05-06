@@ -23,8 +23,8 @@ const PlaceOrder = () => {
       />
 
       {/* --------- Form --------- */}
-      <section className="py-3 px-20 border-2 border-black">
-        <form className="h-full grid grid-cols-3 border-2 border-yellow-400">
+      <section className="py-10 px-20 border-2 border-black">
+        <form className="h-full grid grid-cols-3 gap-6 border-2 border-yellow-400">
           <TextField
             label="Category"
             type="text"
