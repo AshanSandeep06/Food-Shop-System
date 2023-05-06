@@ -1,7 +1,8 @@
 import React from "react";
 import "../PlaceOrder/PlaceOrder.css";
 import Table from "../../components/Table/Table";
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 const PlaceOrder = () => {
   return (
@@ -51,6 +52,12 @@ const PlaceOrder = () => {
             placeholder="Address"
             required
           />
+
+          <div className="col-start-3 col-end-4">
+            <Button className="" variant="contained" endIcon={<SendIcon />}>
+              Send
+            </Button>
+          </div>
         </form>
       </section>
     </section>
