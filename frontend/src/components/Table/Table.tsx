@@ -1,6 +1,11 @@
 import React from "react";
 
-type TableProps = {};
+type TableProps = {
+  id: string;
+  tblName: string;
+  tblHeaders: string[];
+  tblData: [{}];
+};
 
 const Table = (props: TableProps) => {
   return (
