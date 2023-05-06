@@ -4,7 +4,7 @@ type TableProps = {
   id: string;
   tblName: string;
   tblHeaders: string[];
-  tblData: [{}];
+  tblData: [string[]];
 };
 
 const Table = (props: TableProps) => {
@@ -35,81 +35,35 @@ const Table = (props: TableProps) => {
               }}
             >
               <tr className="grid grid-cols-5">
-                <th
-                  className="leading-[38px] flex justify-center items-center"
-                  style={{ lineHeight: "38px!important" }}
-                >
-                  Car ID
-                </th>
-                <th
-                  className="leading-[38px] border border-slate-300 flex justify-center items-center"
-                  style={{ lineHeight: "38px!important" }}
-                >
-                  Reg No
-                </th>
-                <th
-                  className="leading-[38px] border border-slate-300 flex justify-center items-center"
-                  style={{ lineHeight: "38px!important" }}
-                >
-                  Brand
-                </th>
-                <th
-                  className="leading-[38px] border border-slate-300 flex justify-center items-center"
-                  style={{ lineHeight: "38px!important" }}
-                >
-                  Type
-                </th>
-                <th
-                  className="leading-[38px] flex justify-center items-center"
-                  style={{ lineHeight: "38px!important" }}
-                >
-                  Daily Rate
-                </th>
+                {props.tblHeaders.map((header, index) => (
+                  <th
+                    key={index}
+                    className="leading-[38px] border border-slate-300 flex justify-center items-center"
+                    style={{ lineHeight: "38px!important" }}
+                  >
+                    {header}
+                  </th>
+                ))}
               </tr>
             </thead>
 
             <tbody className="cursor-pointer">
-              <tr
-                className="grid grid-cols-5 !h-[60px]"
-                style={{ minHeight: "60px" }}
-              >
-                <td className="border border-slate-300 p-2 flex items-center justify-center">
-                  V001
-                </td>
-                <td className="border border-slate-300 p-2  flex items-center justify-center">
-                  AAB-3580
-                </td>
-                <td className="border border-slate-300 p-2  flex items-center justify-center">
-                  Toyota
-                </td>
-                <td className="border border-slate-300 p-2  flex items-center justify-center">
-                  General
-                </td>
-                <td className="border border-slate-300 p-2  flex items-center justify-center">
-                  2500
-                </td>
-              </tr>
-
-              <tr
-                className="grid grid-cols-5 !h-[60px]"
-                style={{ minHeight: "60px" }}
-              >
-                <td className="border border-slate-300 p-2 flex items-center justify-center">
-                  V001
-                </td>
-                <td className="border border-slate-300 p-2 flex items-center justify-center">
-                  AAB-3580
-                </td>
-                <td className="border border-slate-300 p-2 flex items-center justify-center">
-                  Toyota
-                </td>
-                <td className="border border-slate-300 p-2 flex items-center justify-center">
-                  General
-                </td>
-                <td className="border border-slate-300 p-2 flex items-center justify-center">
-                  2500
-                </td>
-              </tr>
+              {props.tblData.map((dataRow, index) => (
+                <tr
+                  key={index}
+                  className="grid grid-cols-5 !h-[60px]"
+                  style={{ minHeight: "60px" }}
+                >
+                  {dataRow.map((data, index) => (
+                    <td
+                      key={index}
+                      className="border border-slate-300 p-2 flex items-center justify-center"
+                    >
+                      {data}
+                    </td>
+                  ))}
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
