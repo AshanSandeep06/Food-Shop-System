@@ -19,10 +19,7 @@ const PlaceOrder = () => {
           "Unit Price",
           "Quantity",
         ]}
-        tblData={[
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I002", "Rice"],
-        ]}
+        tblData={[["I001", "Soap", "Uploaded", "350.00", "10"]]}
       />
 
       {/* ===================================================== */}
@@ -31,7 +28,7 @@ const PlaceOrder = () => {
       <section className="my-8 flex justify-center">
         <Paper
           elevation={3}
-          className="w-1/2 border border-slate-300 flex flex-col gap-4 p-6"
+          className="w-1/3 border border-slate-300 flex flex-col gap-4 p-6"
         >
           <div className="flex items-center gap-6 !text-[rgb(81,81,81)]">
             <span className="text-base md:text-lg">Sub Total</span>
