@@ -54,7 +54,7 @@ const PlaceOrder = () => {
           />
 
           <div className="col-start-3 col-end-4">
-            <Button className="" variant="contained" endIcon={<SendIcon />}>
+            <Button className="!capitalize !font-poppins !font-normal !text-[15px]" variant="contained" color="success" endIcon={<SendIcon />}>
               Place Order
             </Button>
           </div>
