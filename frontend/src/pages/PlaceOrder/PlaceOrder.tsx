@@ -6,10 +6,10 @@ const PlaceOrder = () => {
   return (
     <section>
       {/* ----- Cart Items Table ----- */}
-      <Table 
-      tblName="Your Items Cart" 
-      tblHeaders={[]}
-      tblData={[[]]}
+      <Table
+        tblName="Your Items Cart"
+        tblHeaders={["Item Code", "Description", "Unit Price", "Quantity"]}
+        tblData={[[]]}
       />
 
       {/* --------- Form --------- */}

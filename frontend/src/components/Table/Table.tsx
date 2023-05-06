@@ -33,11 +33,11 @@ const Table = (props: TableProps) => {
                 borderTopRightRadius: "8px",
               }}
             >
-              <tr className="grid grid-cols-5">
+              <tr className="grid grid-cols-4">
                 {props.tblHeaders.map((header, index) => (
                   <th
                     key={index}
-                    className="leading-[38px] border border-slate-300 flex justify-center items-center"
+                    className="!leading-[0] border border-slate-300 flex justify-center items-center"
                     style={{ lineHeight: "38px!important" }}
                   >
                     {header}
