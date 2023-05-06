@@ -1,6 +1,7 @@
 import { Button, TextField } from '@mui/material';
 import React from 'react'
 import SendIcon from "@mui/icons-material/Send";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Form = () => {
   return (
@@ -38,7 +39,7 @@ const Form = () => {
               className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
               color="error"
-              endIcon={<SendIcon />}
+              endIcon={<DeleteIcon />}
             >
               Cancel Order
             </Button>
