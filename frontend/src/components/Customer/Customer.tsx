@@ -18,7 +18,7 @@ import PlaceOrder from "../../pages/PlaceOrder/PlaceOrder";
 
 const Customer = () => {
   return (
-    <main className="mt-20 gap-2 w-full py-7 px-10 bg-[#F5F3F3]">
+    <main className="mt-20 gap-2 w-full pt-6 pb-9 px-10 bg-[#FAFAFF]">
       <Routes>
         <Route path="/home" element={<FoodMenu />}></Route>
         <Route path="/placeOrder" element={<PlaceOrder />}></Route>
