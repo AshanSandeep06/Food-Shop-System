@@ -33,7 +33,7 @@ const PlaceOrder = () => {
           elevation={3}
           className="w-max border-2 border-black flex flex-col gap-4 p-4"
         >
-          <div className="flex justify-center items-center gap-3">
+          <div className="flex items-center gap-3">
             <span className="text-base md:text-lg ">Sub Total</span>
             <span>-</span>
             <span>
@@ -44,11 +44,11 @@ const PlaceOrder = () => {
             </span>
           </div>
 
-          <div className="flex justify-center items-center gap-3">
+          <div className="flex items-center gap-3">
             <span className="text-base md:text-lg ">Sub Total</span>
             <span>-</span>
             <span>
-              2500.00{" "}
+              150.00{" "}
               <span className="text-sm text-red-600 relative bottom-[0.75px]">
                 LKR
               </span>
@@ -57,11 +57,11 @@ const PlaceOrder = () => {
 
           <Divider />
 
-          <div className="flex justify-center items-center gap-3">
+          <div className="flex items-center gap-3">
             <span className="text-base md:text-lg ">Sub Total</span>
             <span>-</span>
             <span>
-              2500.00{" "}
+              2650.00{" "}
               <span className="text-sm text-red-600 relative bottom-[0.75px]">
                 LKR
               </span>
