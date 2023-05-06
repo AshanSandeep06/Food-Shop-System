@@ -57,7 +57,7 @@ const PlaceOrder = () => {
 
           <Divider />
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-6">
             <span className="text-base md:text-lg">TOTAL</span>
             <span>-</span>
             <span className="text-base md:text-lg">
