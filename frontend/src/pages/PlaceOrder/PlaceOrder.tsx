@@ -36,7 +36,7 @@ const PlaceOrder = () => {
           <div className="flex items-center gap-3">
             <span className="text-base md:text-lg">Sub Total</span>
             <span>-</span>
-            <span>
+            <span className="text-base md:text-lg">
               2500.00{" "}
               <span className="text-sm text-red-600 relative bottom-[0.75px]">
                 LKR
