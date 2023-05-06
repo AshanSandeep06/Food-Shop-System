@@ -55,7 +55,7 @@ const PlaceOrder = () => {
 
           <div className="col-start-3 col-end-4">
             <Button className="" variant="contained" endIcon={<SendIcon />}>
-              Send
+              Place Order
             </Button>
           </div>
         </form>
