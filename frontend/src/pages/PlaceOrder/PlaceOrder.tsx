@@ -51,24 +51,6 @@ const PlaceOrder = () => {
             placeholder="Address"
             required
           />
-
-          <TextField
-            label="Category"
-            type="text"
-            variant="outlined"
-            name="name"
-            placeholder="Your Name"
-            required
-          />
-
-          <TextField
-            label="Category"
-            type="text"
-            variant="outlined"
-            name="name"
-            placeholder="Your Name"
-            required
-          />
         </form>
       </section>
     </section>
