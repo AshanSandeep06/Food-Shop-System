@@ -22,7 +22,7 @@ const Table = (props: TableProps) => {
           {/* Your Items Cart */}
           {props.tblName}
         </h3>
-        <div className="w-full pb-10 rounded-2 overflow-x-auto scroll-smooth">
+        <div className="w-full pb-6 rounded-2 overflow-x-auto scroll-smooth">
           <table
             id="tblCartItems"
             className="table-fixed border-collapse grid grid-cols-1 h-[185px]"
@@ -39,7 +39,7 @@ const Table = (props: TableProps) => {
                 {props.tblHeaders.map((header, index) => (
                   <th
                     key={index}
-                    className="border border-slate-300 flex justify-center items-center"
+                    className="!leading-[48px] border border-slate-300 flex justify-center items-center"
                     style={{ lineHeight: "38px!important" }}
                   >
                     {header}
