@@ -13,7 +13,7 @@ const Table = () => {
         >
           Manage Vehicle
         </h3>
-        <div className="w-full h-60 rounded-2 table-responsive overflow-x-auto scroll-smooth">
+        <div className="w-full h-60 rounded-2 overflow-x-auto scroll-smooth">
           <table
             id="tblCartItems"
             className="table-fixed border-collapse grid grid-cols-1"
