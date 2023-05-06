@@ -39,8 +39,8 @@ const Table = (props: TableProps) => {
                 {props.tblHeaders.map((header, index) => (
                   <th
                     key={index}
-                    className="!leading-[48px] border border-slate-300 flex justify-center items-center"
-                    style={{ lineHeight: "38px!important" }}
+                    className="!leading-[43px] border border-slate-300 flex justify-center items-center"
+                    // style={{ lineHeight: "38px!important" }}
                   >
                     {header}
                   </th>
