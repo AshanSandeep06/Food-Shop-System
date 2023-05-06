@@ -3,7 +3,7 @@ import React from "react";
 type TableProps = {
   tblName: string;
   tblHeaders: string[];
-  tblData: [string[]];
+  tblData: Array<string[]>;
 };
 
 const Table = (props: TableProps) => {
@@ -39,7 +39,7 @@ const Table = (props: TableProps) => {
                 {props.tblHeaders.map((header, index) => (
                   <th
                     key={index}
-                    className="!leading-[0] border border-slate-300 flex justify-center items-center"
+                    className="border border-slate-300 flex justify-center items-center"
                     style={{ lineHeight: "38px!important" }}
                   >
                     {header}
