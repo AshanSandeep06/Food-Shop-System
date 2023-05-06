@@ -22,7 +22,9 @@ const PlaceOrder = () => {
       />
 
       {/* --------- Form --------- */}
-      <section></section>
+      <section className="bg-orange-300">
+        <h1>Form</h1>
+      </section>
     </section>
   );
 };
