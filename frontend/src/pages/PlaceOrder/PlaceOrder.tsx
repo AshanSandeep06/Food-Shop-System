@@ -55,7 +55,7 @@ const PlaceOrder = () => {
 
           <div className="md:col-end-4 md:col-span-1 flex md:justify-end items-center justify-center flex-wrap gap-5">
             <Button
-              className="!capitalize !font-poppins !font-normal !text-[15px]"
+              className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
               color="error"
               endIcon={<SendIcon />}
