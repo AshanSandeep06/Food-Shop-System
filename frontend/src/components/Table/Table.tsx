@@ -7,7 +7,7 @@ type TableProps = {
 };
 
 const Table = (props: TableProps) => {
-  const tblHaderStyles = `grid grid-cols-${props.tblHeaders.length}`;
+  const tblHaderStyles = `grid grid-cols-${props.tblHeaders.length} h-full`;
 
   return (
     <section id="tblContainer">
@@ -28,7 +28,7 @@ const Table = (props: TableProps) => {
             className="table-fixed border-collapse grid grid-cols-1 h-[185px]"
           >
             <thead
-              className="text-white grid grid-cols-1"
+              className="text-white grid grid-cols-1 h-[43px]"
               style={{
                 background: "#17377f",
                 borderTopLeftRadius: "8px",
@@ -39,8 +39,7 @@ const Table = (props: TableProps) => {
                 {props.tblHeaders.map((header, index) => (
                   <th
                     key={index}
-                    className="!leading-[43px] border border-slate-300 flex justify-center items-center"
-                    // style={{ lineHeight: "38px!important" }}
+                    className="h-full border border-slate-300 flex justify-center items-center"
                   >
                     {header}
                   </th>
