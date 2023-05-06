@@ -31,7 +31,42 @@ const PlaceOrder = () => {
             variant="outlined"
             name="name"
             placeholder="Your Name"
-            fullWidth={true}
+            required
+          />
+
+          <TextField
+            label="Category"
+            type="text"
+            variant="outlined"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+
+          <TextField
+            label="Category"
+            type="text"
+            variant="outlined"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+
+          <TextField
+            label="Category"
+            type="text"
+            variant="outlined"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+
+          <TextField
+            label="Category"
+            type="text"
+            variant="outlined"
+            name="name"
+            placeholder="Your Name"
             required
           />
         </form>
