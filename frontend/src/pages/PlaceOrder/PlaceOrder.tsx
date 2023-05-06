@@ -28,10 +28,10 @@ const PlaceOrder = () => {
       {/* ===================================================== */}
 
       {/* --------- Payment --------- */}
-      <section className="my-8">
+      <section className="my-8 flex justify-center">
         <Paper
           elevation={3}
-          className="w-max border-2 border-black flex flex-col gap-4 p-4"
+          className="w-1/2 border border-slate-300 flex flex-col gap-4 p-6"
         >
           <div className="flex items-center gap-6">
             <span className="text-base md:text-lg">Sub Total</span>
