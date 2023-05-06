@@ -53,7 +53,7 @@ const PlaceOrder = () => {
             required
           />
 
-          <div className="col-start-3 col-end-4">
+          <div className="col-start-3 col-end-4 flex justify-end items-center">
             <Button className="!capitalize !font-poppins !font-normal !text-[15px]" variant="contained" color="success" endIcon={<SendIcon />}>
               Place Order
             </Button>
