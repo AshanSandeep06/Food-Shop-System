@@ -18,7 +18,8 @@ const Table = (props: TableProps) => {
           className="text-center bg-[#0D6EFC] p-2 text-[rgb(248,249,250)] mb-2 rounded-[8px] w-full text-[24px]"
           style={{ fontWeight: "500", lineHeight: "28.8px" }}
         >
-          Your Items Cart
+          {/* Your Items Cart */}
+          {props.tblName}
         </h3>
         <div className="w-full pb-10 rounded-2 overflow-x-auto scroll-smooth">
           <table
@@ -29,8 +30,8 @@ const Table = (props: TableProps) => {
               className="text-white grid grid-cols-1"
               style={{
                 background: "#17377f",
-                borderTopLeftRadius: "13px",
-                borderTopRightRadius: "13px",
+                borderTopLeftRadius: "8px",
+                borderTopRightRadius: "8px",
               }}
             >
               <tr className="grid grid-cols-5">
