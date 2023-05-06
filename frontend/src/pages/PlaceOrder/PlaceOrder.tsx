@@ -45,7 +45,7 @@ const PlaceOrder = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="text-base md:text-lg ">Sub Total</span>
+            <span className="text-base md:text-lg ">Delivery Fee</span>
             <span>-</span>
             <span>
               150.00{" "}
@@ -58,7 +58,7 @@ const PlaceOrder = () => {
           <Divider />
 
           <div className="flex items-center gap-3">
-            <span className="text-base md:text-lg ">Sub Total</span>
+            <span className="text-base md:text-lg ">TOTAL</span>
             <span>-</span>
             <span>
               2650.00{" "}
