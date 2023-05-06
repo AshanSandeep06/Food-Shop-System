@@ -1,6 +1,8 @@
 import React from "react";
 
-const Table = () => {
+type TableProps = {};
+
+const Table = (props: TableProps) => {
   return (
     <section id="tblContainer">
       <section
