@@ -87,10 +87,10 @@ const PlaceOrder = () => {
           },
 
           {
-            label: "Your Name",
+            label: "Contact Number",
             textFieldType: "text",
-            name: "name",
-            placeHolderText: "Your Name",
+            name: "contactNumber",
+            placeHolderText: "Contact Number",
           },
 
           {
