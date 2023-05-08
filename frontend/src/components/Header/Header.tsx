@@ -30,7 +30,7 @@ import MyButton from "../MyButton/MyButton";
 import CartItem from "../CartItem/CartItem";
 
 type HeaderProps = {
-  buttons: JSX.Element[];
+  buttons: React.ReactNode[];
   links: string[];
 };
 
