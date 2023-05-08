@@ -10,7 +10,7 @@ type TableProps = {
 const Table = (props: TableProps) => {
   const tblHeaderStyles = `grid grid-cols-${props.tblHeaders.length} h-full`;
   const tblDataRow = `grid grid-cols-${props.tblHeaders.length} cursor-pointer`;
-  const tblHeight = `h-${props.tblHeight}`;
+  const tblHeight = `!h-[${props.tblHeight}]`;
 
   return (
     <section id="tblContainer">
