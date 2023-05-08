@@ -22,10 +22,10 @@ const Table = (props: TableProps) => {
           {/* Your Items Cart */}
           {props.tblName}
         </h3>
-        <div className="w-full pb-6 rounded-2">
+        <div className="w-full pb-6 rounded-2 overflow-x-auto scroll-smooth">
           <table
             id="tblCartItems"
-            className="table-fixed border-collapse grid grid-cols-1 overflow-x-auto scroll-smooth"
+            className="table-fixed border-collapse grid grid-cols-1"
           >
             <thead
               className="text-white grid grid-cols-1 h-[43px]"
