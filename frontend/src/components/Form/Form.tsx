@@ -8,7 +8,7 @@ type FormProps = {
   textFieldsArray: TextFieldDetails[];
   buttonsArray: {
     color: string;
-    icon: JSX.Element;
+    icon: React.ReactNode;
   }[];
 };
 
@@ -63,8 +63,8 @@ const Form = (props: FormProps) => {
               key={index}
               className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
-              color="error"
-              endIcon={<DeleteIcon />}
+              color={button.color}
+              endIcon={button.icon}
             >
               Cancel Order
             </Button>
