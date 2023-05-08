@@ -58,8 +58,9 @@ const Form = (props: FormProps) => {
         /> */}
 
         <div className="lg:col-end-4 lg:col-span-2 flex md:justify-end items-center justify-center flex-wrap gap-5">
-          {props.buttonsArray.map(() => (
+          {props.buttonsArray.map((button, index) => (
             <Button
+            key={index}
               className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
               color="error"
