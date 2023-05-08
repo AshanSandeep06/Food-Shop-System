@@ -9,6 +9,7 @@ type FormProps = {
   buttonsArray: {
     color: any;
     icon: React.ReactNode;
+    text: string;
   }[];
 };
 
@@ -66,7 +67,7 @@ const Form = (props: FormProps) => {
               color={button.color}
               endIcon={button.icon}
             >
-              Cancel Order
+              {button.text}
             </Button>
           ))}
 

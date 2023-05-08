@@ -160,11 +160,13 @@ const PlaceOrder = () => {
           {
             color: "error",
             icon: <DeleteIcon />,
+            text: "Cancel Order",
           },
 
           {
             color: "success",
             icon: <SendIcon />,
+            text: "Place Order",
           },
         ]}
       />
