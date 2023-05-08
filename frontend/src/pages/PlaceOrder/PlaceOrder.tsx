@@ -2,10 +2,10 @@ import React, { useRef, useState } from "react";
 import "../PlaceOrder/PlaceOrder.css";
 import Table from "../../components/Table/Table";
 import { Button, Paper, TextField } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
 import Form from "../../components/Form/Form";
 import Divider from "@mui/material/Divider";
 import DeleteIcon from "@mui/icons-material/Delete";
+import SendIcon from "@mui/icons-material/Send";
 
 const PlaceOrder = () => {
   return (
@@ -85,11 +85,86 @@ const PlaceOrder = () => {
             name: "name",
             placeHolderText: "Your Name",
           },
+
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
+
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
+
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
+
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
+
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
+
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
+
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
+
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
+
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
+
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
         ]}
         buttonsArray={[
           {
             color: "error",
             icon: <DeleteIcon />,
+          },
+
+          {
+            color: "success",
+            icon: <SendIcon />,
           },
         ]}
       />
