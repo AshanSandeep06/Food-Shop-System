@@ -94,10 +94,10 @@ const PlaceOrder = () => {
           },
 
           {
-            label: "Your Name",
+            label: "Address",
             textFieldType: "text",
-            name: "name",
-            placeHolderText: "Your Name",
+            name: "address",
+            placeHolderText: "Address",
           },
         ]}
         buttonsArray={[
