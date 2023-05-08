@@ -7,10 +7,6 @@ import Form from "../../components/Form/Form";
 import Divider from "@mui/material/Divider";
 
 const PlaceOrder = () => {
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
-
-  const [size, setSize] = useState<number>(0);
-
   return (
     <section>
       {/* ----- Cart Items Table ----- */}
@@ -36,7 +32,7 @@ const PlaceOrder = () => {
         >
           <div className="grid sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
             <span className="text-[18px] md:text-lg">Sub Total</span>
-            {windowSize.current[0] >= 640 ? <span>-</span> : null}
+            {size >= 640 ? <span>-</span> : null}
             <span className="text-[18px] md:text-lg">
               2500.00{" "}
               <span className="text-sm text-red-600 relative bottom-[0.75px]">
