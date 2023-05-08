@@ -1,6 +1,6 @@
 export type TextFieldDetails = {
     label: string;
-    type: string;
+    textFieldType: string;
     name: string;
     placeHolderText: string;
   };

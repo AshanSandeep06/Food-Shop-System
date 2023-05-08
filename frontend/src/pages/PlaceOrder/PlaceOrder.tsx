@@ -5,6 +5,7 @@ import { Button, Paper, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import Form from "../../components/Form/Form";
 import Divider from "@mui/material/Divider";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const PlaceOrder = () => {
   return (
@@ -76,7 +77,22 @@ const PlaceOrder = () => {
       {/* ===================================================== */}
 
       {/* --------- Form --------- */}
-      <Form textFieldsArray={[{}, {}, {} {}]} buttonsArray={[{}, {}]}/>
+      <Form
+        textFieldsArray={[
+          {
+            label: "Your Name",
+            textFieldType: "text",
+            name: "name",
+            placeHolderText: "Your Name",
+          },
+        ]}
+        buttonsArray={[
+          {
+            color: "error",
+            icon: <DeleteIcon />,
+          },
+        ]}
+      />
     </section>
   );
 };
