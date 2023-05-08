@@ -8,6 +8,7 @@ type FormProps = {
   textFieldsArray: TextFieldDetails[];
   buttonsArray: {
     color: string;
+    icon: JSX.Element;
   }[];
 };
 
