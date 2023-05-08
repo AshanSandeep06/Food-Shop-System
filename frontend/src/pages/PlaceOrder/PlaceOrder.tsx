@@ -32,7 +32,7 @@ const PlaceOrder = () => {
         >
           <div className="grid sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
             <span className="text-[18px] md:text-lg">Sub Total</span>
-            {size >= 640 ? <span>-</span> : null}
+            <span>-</span>
             <span className="text-[18px] md:text-lg">
               2500.00{" "}
               <span className="text-sm text-red-600 relative bottom-[0.75px]">
