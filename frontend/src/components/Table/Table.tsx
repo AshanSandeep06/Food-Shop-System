@@ -2,13 +2,15 @@ import React from "react";
 
 type TableProps = {
   tblName: string;
+  tblHeight: string;
   tblHeaders: string[];
   tblData: Array<string[]>;
 };
 
 const Table = (props: TableProps) => {
   const tblHeaderStyles = `grid grid-cols-${props.tblHeaders.length} h-full`;
-  const tblDataRow = `grid grid-cols-${props.tblHeaders.length} !h-[60px] cursor-pointer`;
+  const tblDataRow = `grid grid-cols-${props.tblHeaders.length} cursor-pointer`;
+  const tblHeight = `h-${props.tblHeight}`;
 
   return (
     <section id="tblContainer">
@@ -45,7 +47,7 @@ const Table = (props: TableProps) => {
               </tr>
             </thead>
 
-            <tbody className="h-[181px]">
+            <tbody className={tblHeight}>
               {props.tblData.map((dataRow, index) => (
                 <tr
                   key={index}
