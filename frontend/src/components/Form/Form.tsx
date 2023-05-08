@@ -4,14 +4,14 @@ import SendIcon from "@mui/icons-material/Send";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { TextFieldDetails } from "../../types/TextFieldDetails";
 
-type FormPropsTypes = {
+type FormProps = {
   textFieldsArray: TextFieldDetails[];
   buttonsArray: {
     color: string;
   }[];
 };
 
-const Form = (props: FormPropsTypes) => {
+const Form = (props: FormProps) => {
   return (
     <section className="pb-10 px-6 lg:px-16">
       <form className="grid grid-cols-1 lg:grid-cols-3 gap-6 !font-poppins">
