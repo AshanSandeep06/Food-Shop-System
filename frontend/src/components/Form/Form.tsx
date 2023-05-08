@@ -58,14 +58,16 @@ const Form = (props: FormProps) => {
         /> */}
 
         <div className="lg:col-end-4 lg:col-span-2 flex md:justify-end items-center justify-center flex-wrap gap-5">
-          <Button
-            className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
-            variant="contained"
-            color="error"
-            endIcon={<DeleteIcon />}
-          >
-            Cancel Order
-          </Button>
+          {props.buttonsArray.map(() => (
+            <Button
+              className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
+              variant="contained"
+              color="error"
+              endIcon={<DeleteIcon />}
+            >
+              Cancel Order
+            </Button>
+          ))}
 
           {/* --------------------------------------------- */}
 
