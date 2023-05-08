@@ -67,6 +67,17 @@ const Form = (props: FormProps) => {
             Cancel Order
           </Button>
 
+          {/* --------------------------------------------- */}
+
+          {/* <Button
+            className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
+            variant="contained"
+            color="error"
+            endIcon={<DeleteIcon />}
+          >
+            Cancel Order
+          </Button>
+
           <Button
             className="!capitalize !font-poppins !font-normal !text-[15px]"
             variant="contained"
@@ -74,7 +85,7 @@ const Form = (props: FormProps) => {
             endIcon={<SendIcon />}
           >
             Place Order
-          </Button>
+          </Button> */}
         </div>
       </form>
     </section>
