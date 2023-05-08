@@ -24,7 +24,6 @@ const Table = (props: TableProps) => {
         </h3>
         <div className="w-full pb-6 rounded-2 overflow-x-auto scroll-smooth">
           <table
-            id="tblCartItems"
             className="table-fixed border-collapse grid grid-cols-1 overflow-x-auto scroll-smooth"
           >
             <thead

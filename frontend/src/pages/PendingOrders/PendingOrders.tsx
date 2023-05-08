@@ -1,5 +1,6 @@
 import React from "react";
 import Table from "../../components/Table";
+import "../PendingOrders/PendingOrders.css";
 
 const PendingOrders = () => {
   return (
@@ -13,7 +14,33 @@ const PendingOrders = () => {
           "Unit Price",
           "Quantity",
         ]}
-        tblData={[["I001", "Soap", "Uploaded", "350.00", "10"]]}
+        tblData={[
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["I001", "Soap", "Uploaded", "350.00", "10"],
+        ]}
       />
     </section>
   );
