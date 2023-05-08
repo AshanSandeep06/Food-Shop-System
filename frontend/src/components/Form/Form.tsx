@@ -3,7 +3,11 @@ import React from "react";
 import SendIcon from "@mui/icons-material/Send";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-type FormProps = {};
+type TextFieldDetails = {};
+
+type FormProps = {
+  textFieldsArray: Array<{}>;
+};
 
 const Form = () => {
   return (
