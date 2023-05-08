@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "../PlaceOrder/PlaceOrder.css";
 import Table from "../../components/Table/Table";
 import { Button, Paper, TextField } from "@mui/material";
@@ -6,12 +6,10 @@ import SendIcon from "@mui/icons-material/Send";
 import Form from "../../components/Form/Form";
 import Divider from "@mui/material/Divider";
 
-type PlaceOrderState = {
-  windowSize: number;
-};
-
 const PlaceOrder = () => {
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
+
+  const [size, setSize] = useState<number>(0);
 
   return (
     <section>
