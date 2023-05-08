@@ -19,7 +19,7 @@ const PlaceOrder = () => {
           "Unit Price",
           "Quantity",
         ]}
-        tblData={[["I001", "Soap", "Uploaded", "350.00", "10"], ["I001", "Soap", "Uploaded", "350.00", "10"], ["I001", "Soap", "Uploaded", "350.00", "10"], ["I001", "Soap", "Uploaded", "350.00", "10"],["I001", "Soap", "Uploaded", "350.00", "10"],["I001", "Soap", "Uploaded", "350.00", "10"],["I001", "Soap", "Uploaded", "350.00", "10"],["I001", "Soap", "Uploaded", "350.00", "10"],["I001", "Soap", "Uploaded", "350.00", "10"],["I001", "Soap", "Uploaded", "350.00", "10"]]}
+        tblData={[["I001", "Soap", "Uploaded", "350.00", "10"]]}
       />
 
       {/* ===================================================== */}
