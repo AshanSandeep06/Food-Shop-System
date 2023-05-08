@@ -30,7 +30,7 @@ const PlaceOrder = () => {
           className="md:w-1/3 sm:w-3/4 w-full border border-slate-300 grid grid-cols-1 sm:flex sm:flex-col sm:gap-4 p-6 !bg-[#FAFAFF]"
           elevation={5}
         >
-          <div className="grid justify-center sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
+          <div className="grid mb-[5px] justify-center sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
             <span className="text-[20px] font-bold sm:font-normal md:text-lg">Sub Total</span>
             <span className="hidden sm:block">-</span>
             <span className="text-[18px] md:text-lg">
@@ -41,7 +41,7 @@ const PlaceOrder = () => {
             </span>
           </div>
 
-          <div className="grid justify-center sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
+          <div className="grid mb-[5px] justify-center sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
             <span className="text-[20px] font-bold sm:font-normal md:text-lg">Delivery Fee</span>
             <span className="hidden sm:block">-</span>
             <span className="text-[18px] md:text-lg">
@@ -54,7 +54,7 @@ const PlaceOrder = () => {
 
           <Divider />
 
-          <div className="grid justify-center sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
+          <div className="grid mb-[5px] justify-center sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
             <span className="text-[20px] font-bold sm:font-normal md:text-lg">TOTAL</span>
             <span className="hidden sm:block">-</span>
             <span className="text-[18px] md:text-lg">
