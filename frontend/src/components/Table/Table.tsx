@@ -8,7 +8,7 @@ type TableProps = {
 
 const Table = (props: TableProps) => {
   const tblHeaderStyles = `grid grid-cols-${props.tblHeaders.length} h-full`;
-  const tblHaderStyles = `grid grid-cols-${props.tblHeaders.length} h-full`;
+  const tblDataRow = `grid grid-cols-${props.tblHeaders.length} !h-[60px] cursor-pointer`;
 
   return (
     <section id="tblContainer">
