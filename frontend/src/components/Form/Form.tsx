@@ -3,6 +3,8 @@ import React from "react";
 import SendIcon from "@mui/icons-material/Send";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+type FormProps = {};
+
 const Form = () => {
   return (
     <section className="pb-10 px-6 lg:px-16">
