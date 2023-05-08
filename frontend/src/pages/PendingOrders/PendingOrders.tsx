@@ -28,22 +28,6 @@ const PendingOrders = () => {
           ["I001", "Soap", "Uploaded", "350.00", "10"],
           ["I001", "Soap", "Uploaded", "350.00", "10"],
           ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
         ]}
       />
     </section>
