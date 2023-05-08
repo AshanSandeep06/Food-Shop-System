@@ -15,6 +15,7 @@ import {
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import PlaceOrder from "../../pages/PlaceOrder/PlaceOrder";
+import PendingOrders from "../../pages/PendingOrders";
 
 const Customer = () => {
   return (
