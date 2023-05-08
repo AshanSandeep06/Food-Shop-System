@@ -19,11 +19,11 @@ const Form = (props: FormProps) => {
         {props.textFieldsArray.map((textField, index) => (
           <TextField
             key={index}
-            label="Address"
-            type="text"
+            label={textField.label}
+            type={textField.textFieldType}
             variant="outlined"
-            name="address"
-            placeholder="Address"
+            name={textField.name}
+            placeholder={textField.placeHolderText}
             required
           />
         ))}
