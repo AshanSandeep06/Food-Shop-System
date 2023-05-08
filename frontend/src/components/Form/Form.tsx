@@ -7,7 +7,7 @@ import { TextFieldDetails } from "../../types/TextFieldDetails";
 type FormProps = {
   textFieldsArray: TextFieldDetails[];
   buttonsArray: {
-    color: string;
+    color: any;
     icon: React.ReactNode;
   }[];
 };
