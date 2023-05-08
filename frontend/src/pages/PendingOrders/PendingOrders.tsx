@@ -5,7 +5,7 @@ const PendingOrders = () => {
   return (
     <section>
       <Table
-        tblName="Your Items Cart"
+        tblName="Your Pending Orders"
         tblHeaders={[
           "Item Code",
           "Description",
