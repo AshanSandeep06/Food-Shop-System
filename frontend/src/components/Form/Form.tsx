@@ -15,7 +15,7 @@ type FormProps = {
 
 const Form = (props: FormProps) => {
   return (
-    <section className="pb-10 px-6 lg:px-16">
+    <section className="pb-6 px-6 lg:px-16">
       <form className="grid grid-cols-1 lg:grid-cols-3 gap-6 !font-poppins">
         {props.textFieldsArray.map((textField, index) => (
           <TextField
