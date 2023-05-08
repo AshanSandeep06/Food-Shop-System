@@ -130,7 +130,6 @@ const PendingOrders = () => {
             "46/D, Makuluwa, Galle",
             "Pending",
           ],
-          
         ]}
       />
     </section>
