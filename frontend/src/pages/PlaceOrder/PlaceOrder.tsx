@@ -31,7 +31,7 @@ const PlaceOrder = () => {
           elevation={5}
         >
           <div className="grid justify-center sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
-            <span className="text-[18px] md:text-lg">Sub Total</span>
+            <span className="text-[20px] font-bold sm:font-normal md:text-lg">Sub Total</span>
             <span className="hidden sm:block">-</span>
             <span className="text-[18px] md:text-lg">
               2500.00{" "}
@@ -42,7 +42,7 @@ const PlaceOrder = () => {
           </div>
 
           <div className="grid justify-center sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
-            <span className="text-[18px] md:text-lg">Delivery Fee</span>
+            <span className="text-[20px] font-bold sm:font-normal md:text-lg">Delivery Fee</span>
             <span className="hidden sm:block">-</span>
             <span className="text-[18px] md:text-lg">
               150.00{" "}
@@ -55,7 +55,7 @@ const PlaceOrder = () => {
           <Divider />
 
           <div className="grid justify-center sm:flex sm:items-center sm:gap-6 !text-[rgb(81,81,81)]">
-            <span className="text-[18px] md:text-lg">TOTAL</span>
+            <span className="text-[20px] font-bold sm:font-normal md:text-lg">TOTAL</span>
             <span className="hidden sm:block">-</span>
             <span className="text-[18px] md:text-lg">
               2650.00{" "}
