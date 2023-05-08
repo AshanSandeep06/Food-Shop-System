@@ -160,7 +160,12 @@ const Header = (props: HeaderProps) => {
               to={"/" + resource}
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
             >
-              {resource[0].toUpperCase() + resource.substring(1)}
+              {resource.split("_")[1]
+                ? resource[0].toUpperCase() +
+                  resource.split("_")[0].substring(1) +
+                  " " +
+                  resource.split("_")[1].substring(0)
+                : resource[0].toUpperCase() + resource.substring(1)}
             </NavLink>
           ))}
 
