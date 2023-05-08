@@ -54,7 +54,7 @@ const App = () => {
       {/* ========== Customer Page ========== */}
       <Header
         buttons={[logoutLink, myProfileButton]}
-        links={["home", "pending Orders", "orders History"]}
+        links={["home", "pendingOrders", "ordersHistory"]}
       />
       <Customer />
     </div>
