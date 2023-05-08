@@ -76,7 +76,7 @@ const PlaceOrder = () => {
       {/* ===================================================== */}
 
       {/* --------- Form --------- */}
-      <Form textFieldsArray={[]} buttonsArray={[]}/>
+      <Form textFieldsArray={[{}, {}, {} {}]} buttonsArray={[{}, {}]}/>
     </section>
   );
 };
