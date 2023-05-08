@@ -19,15 +19,9 @@ const PendingOrders = () => {
           "Order Status",
         ]}
         tblData={[
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
-          ["I001", "Soap", "Uploaded", "350.00", "10"],
+          ["OID-001", "C00-001", "Sunil Bandara", "0774592741", "1500.00", "250.00", "1750.00", "46/D, Makuluwa, Galle", "Pending"],
+          ["OID-001", "C00-001", "Sunil Bandara", "0774592741", "1500.00", "250.00", "1750.00", "46/D, Makuluwa, Galle", "Pending"],
+          ["OID-001", "C00-001", "Sunil Bandara", "0774592741", "1500.00", "250.00", "1750.00", "46/D, Makuluwa, Galle", "Pending"],
         ]}
       />
     </section>
