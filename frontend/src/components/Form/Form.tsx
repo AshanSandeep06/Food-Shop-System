@@ -3,13 +3,6 @@ import React from "react";
 import SendIcon from "@mui/icons-material/Send";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-type TextFieldDetails = {
-  label: string;
-  type: string;
-  name: string;
-  placeHolderText: string;
-};
-
 type FormProps = {
   textFieldsArray: Array<{}>;
 };
