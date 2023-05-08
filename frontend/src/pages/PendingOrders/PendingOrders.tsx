@@ -8,11 +8,15 @@ const PendingOrders = () => {
       <Table
         tblName="Your Pending Orders"
         tblHeaders={[
-          "Item Code",
-          "Description",
-          "Item Image",
-          "Unit Price",
-          "Quantity",
+          "Order ID",
+          "Customer ID",
+          "Name",
+          "Contact Number",
+          "Sub Total",
+          "Delivery Fee",
+          "Total Charge",
+          "Order Location",
+          "Order Status",
         ]}
         tblData={[
           ["I001", "Soap", "Uploaded", "350.00", "10"],
