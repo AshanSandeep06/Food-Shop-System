@@ -49,7 +49,7 @@ const Table = (props: TableProps) => {
               {props.tblData.map((dataRow, index) => (
                 <tr
                   key={index}
-                  className="grid grid-cols-5 !h-[60px] cursor-pointer"
+                  className={tblDataRow}
                   style={{ minHeight: "60px" }}
                 >
                   {dataRow.map((data, index) => (
