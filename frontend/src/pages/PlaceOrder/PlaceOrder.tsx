@@ -99,62 +99,6 @@ const PlaceOrder = () => {
             name: "name",
             placeHolderText: "Your Name",
           },
-
-          {
-            label: "Your Name",
-            textFieldType: "text",
-            name: "name",
-            placeHolderText: "Your Name",
-          },
-
-          {
-            label: "Your Name",
-            textFieldType: "text",
-            name: "name",
-            placeHolderText: "Your Name",
-          },
-
-          {
-            label: "Your Name",
-            textFieldType: "text",
-            name: "name",
-            placeHolderText: "Your Name",
-          },
-
-          {
-            label: "Your Name",
-            textFieldType: "text",
-            name: "name",
-            placeHolderText: "Your Name",
-          },
-
-          {
-            label: "Your Name",
-            textFieldType: "text",
-            name: "name",
-            placeHolderText: "Your Name",
-          },
-
-          {
-            label: "Your Name",
-            textFieldType: "text",
-            name: "name",
-            placeHolderText: "Your Name",
-          },
-
-          {
-            label: "Your Name",
-            textFieldType: "text",
-            name: "name",
-            placeHolderText: "Your Name",
-          },
-
-          {
-            label: "Your Name",
-            textFieldType: "text",
-            name: "name",
-            placeHolderText: "Your Name",
-          },
         ]}
         buttonsArray={[
           {
