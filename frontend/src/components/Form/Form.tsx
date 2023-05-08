@@ -17,6 +17,17 @@ const Form = (props: FormProps) => {
     <section className="pb-10 px-6 lg:px-16">
       <form className="grid grid-cols-1 lg:grid-cols-3 gap-6 !font-poppins">
         <TextField
+          label="Address"
+          type="text"
+          variant="outlined"
+          name="address"
+          placeholder="Address"
+          required
+        />
+
+        {/* --------------------------------------------- */}
+
+        {/* <TextField
           label="Your Name"
           type="text"
           variant="outlined"
@@ -41,7 +52,7 @@ const Form = (props: FormProps) => {
           name="address"
           placeholder="Address"
           required
-        />
+        /> */}
 
         <div className="lg:col-end-4 lg:col-span-2 flex md:justify-end items-center justify-center flex-wrap gap-5">
           <Button
