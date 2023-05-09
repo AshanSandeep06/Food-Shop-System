@@ -2,7 +2,7 @@ import React from "react";
 import deliveryPhoto from "../../assets/img/delivery.png";
 import backgroundImage from "../../assets/img/hero-bg.png";
 import { motion } from "framer-motion";
-import StaticImages from "../../components/StaticImages";
+import StaticImages from "../StaticImages";
 import { StaticFoodItems, StaticFoodsList } from "../../types/StaticFoodItems";
 import apple from "../../assets/img/apple.png";
 import iceCream from "../../assets/img/icecream-01.png";
