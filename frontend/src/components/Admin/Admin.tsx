@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import FoodMenu from "../../pages/FoodMenu";
 import ManageCustomer from "../../pages/ManageCustomer";
+import ManageItem from "../../pages/ManageItem";
 
 const Admin = () => {
   return (
