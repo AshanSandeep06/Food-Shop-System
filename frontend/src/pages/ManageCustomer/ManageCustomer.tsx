@@ -74,7 +74,9 @@ const ManageCustomer = () => {
           </FormControl>
         </div>
 
-        <div></div>
+        <div>
+            
+        </div>
       </section>
     </section>
   );
