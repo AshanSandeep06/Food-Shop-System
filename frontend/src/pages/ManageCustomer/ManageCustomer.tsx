@@ -149,7 +149,12 @@ const ManageCustomer = () => {
       </section>
 
       <section>
-        <Table tblName="Manage Customer" tblHeight="auto" tblHeaders={[]} tblData={[]} />
+        <Table
+          tblName="Manage Customer"
+          tblHeight="auto"
+          tblHeaders={[]}
+          tblData={[]}
+        />
       </section>
     </section>
   );
