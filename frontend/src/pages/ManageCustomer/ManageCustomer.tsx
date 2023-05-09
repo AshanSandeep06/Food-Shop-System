@@ -12,9 +12,6 @@ import React from "react";
 
 const ManageCustomer = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
-    "label + &": {
-      marginTop: theme.spacing(3),
-    },
     "& .MuiInputBase-input": {
       borderRadius: 4,
       position: "relative",
