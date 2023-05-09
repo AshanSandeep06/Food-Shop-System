@@ -85,6 +85,8 @@ const ManageCustomer = () => {
           </Button>
         </div>
       </section>
+
+      <section></section>
     </section>
   );
 };
