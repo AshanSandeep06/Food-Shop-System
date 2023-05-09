@@ -18,6 +18,7 @@ const PendingOrders = () => {
           "Total Charge",
           "Order Location",
           "Order Status",
+          "Option",
         ]}
         tblData={[
           [
