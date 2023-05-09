@@ -52,13 +52,11 @@ const App = () => {
       {/* <Footer /> */}
 
       {/* ========== Customer Page ========== */}
-      <Header
-        buttons={[logoutLink, myProfileButton]}
-        links={["home", "pending_orders", "orders_history"]}
-      />
-      <Customer />
+      {/* <Header buttons={[logoutLink, myProfileButton]} links={["home", "pending_orders", "orders_history"]}/> */}
+      {/* <Customer /> */}
 
       {/* ========== Admin Page ========== */}
+      <Header buttons={[logoutLink]} links={["home", "food_Menu", "contact"]} />
     </div>
   );
 };
