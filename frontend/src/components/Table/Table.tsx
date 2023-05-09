@@ -10,7 +10,10 @@ type TableProps = {
 const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
   let tblHeaderStyles = `grid grid-cols-${tblHeaders.length} h-full`;
   let tblDataRow = `grid grid-cols-${tblHeaders.length} cursor-pointer`;
-  let tableHeight = `!h-[${tblHeight}]`;
+  // let tableHeight = `!h-[${tblHeight}]`;
+  const tableHeight = {
+    height: `${tblHeight}`,
+  };
 
   return (
     <section id="tblContainer">
@@ -47,7 +50,7 @@ const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
               </tr>
             </thead>
 
-            <tbody className={tableHeight}>
+            <tbody style={tableHeight}>
               {tblData.map((dataRow, index) => (
                 <tr
                   key={index}
