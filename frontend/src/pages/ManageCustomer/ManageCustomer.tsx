@@ -16,7 +16,6 @@ const ManageCustomer = () => {
         <div></div>
         <div></div>
       </section>
-
     </section>
   );
 };
