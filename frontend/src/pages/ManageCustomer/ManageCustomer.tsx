@@ -88,7 +88,7 @@ const ManageCustomer = () => {
       </section>
 
       <section>
-        <Form textFieldsArray={[]} buttonsArray={[]} />
+        <Form textFieldsArray={[{label: "", textFieldType: "text", name: "", placeHolderText: ""}]} buttonsArray={[]} />
       </section>
     </section>
   );
