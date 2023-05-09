@@ -84,7 +84,7 @@ const ManageCustomer = () => {
           <Button
             className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
             variant="contained"
-            color="primary"
+            color="info"
             endIcon={<SearchIcon />}
           >
             Search Customer
@@ -142,7 +142,7 @@ const ManageCustomer = () => {
             { color: "success", icon: <AddCircleIcon />, text: "Save" },
             { color: "primary", icon: <AutorenewIcon />, text: "Update" },
             { color: "error", icon: <DeleteIcon />, text: "Delete" },
-            { color: "secondary-light", icon: <BackspaceIcon />, text: "Clear" },
+            { color: "warning", icon: <BackspaceIcon />, text: "Clear" },
           ]}
         />
       </section>
