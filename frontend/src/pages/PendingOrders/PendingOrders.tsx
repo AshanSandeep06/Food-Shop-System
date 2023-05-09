@@ -7,6 +7,7 @@ const PendingOrders = () => {
     <section>
       <Table
         tblName="Your Pending Orders"
+        tblHeight="auto"
         tblHeaders={[
           "Order ID",
           "Customer ID",
@@ -18,7 +19,6 @@ const PendingOrders = () => {
           "Order Location",
           "Order Status",
         ]}
-        tblHeight="auto"
         tblData={[
           [
             "OID-001",

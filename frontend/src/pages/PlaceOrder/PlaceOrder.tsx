@@ -13,6 +13,7 @@ const PlaceOrder = () => {
       {/* ----- Cart Items Table ----- */}
       <Table
         tblName="Your Items Cart"
+        tblHeight="181px"
         tblHeaders={[
           "Item Code",
           "Description",
@@ -20,7 +21,6 @@ const PlaceOrder = () => {
           "Unit Price",
           "Quantity",
         ]}
-        tblHeight="181px"
         tblData={[
           ["I001", "Soap", "Uploaded", "350.00", "10"],
           ["I001", "Soap", "Uploaded", "350.00", "10"],
