@@ -54,7 +54,7 @@ const ManageCustomer = () => {
       {/* 2 */}
       <section>
         <div>
-          <FormControl fullWidth>
+          <FormControl>
             <InputLabel id="demo-simple-select-label">Age</InputLabel>
             <Select
               labelId="demo-simple-select-label"
