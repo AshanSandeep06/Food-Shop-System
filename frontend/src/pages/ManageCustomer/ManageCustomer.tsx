@@ -46,7 +46,7 @@ const ManageCustomer = () => {
     <section>
       <section>
         <div className="flex items-center">
-          <h1>Manage Customer</h1>
+          <h1 className="font-medium text-[22px]">Manage Customer</h1>
           <ManageAccountsIcon className="ml-[5px]" />
         </div>
       </section>
