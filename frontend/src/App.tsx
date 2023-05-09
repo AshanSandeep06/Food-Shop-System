@@ -60,7 +60,7 @@ const App = () => {
       {/* <Customer /> */}
 
       {/* ========== Admin Page ========== */}
-      <Header buttons={[logoutLink]} links={["home", "manage_customer", "contact"]} />
+      <Header buttons={[logoutLink]} links={["home", "manage_customer", "manage_item"]} />
       <Admin />
     </div>
   );
