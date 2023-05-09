@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React from "react";
 
 type TableProps = {
@@ -62,7 +63,17 @@ const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
                       key={index}
                       className="border border-slate-300 p-2 flex items-center justify-center"
                     >
-                      {data.trim() == "Cancel" ? data : data}
+                      {data.trim() == "Cancel" ? (
+                        <Button
+                          className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
+                          variant="contained"
+                          color="error"
+                        >
+                          {data}
+                        </Button>
+                      ) : (
+                        data
+                      )}
                     </td>
                   ))}
                 </tr>
