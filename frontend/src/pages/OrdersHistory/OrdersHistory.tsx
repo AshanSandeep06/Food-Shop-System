@@ -1,5 +1,6 @@
 import React from "react";
 import Table from "../../components/Table";
+import { Chip } from "@mui/material";
 
 const OrdersHistory = () => {
   return (
@@ -28,7 +29,7 @@ const OrdersHistory = () => {
             "250.00",
             "1750.00",
             "46/D, Makuluwa, Galle",
-            "Finished",
+            <Chip label="Finished" color="success" style={{fontFamily: "Poppins"}} />
           ],
         ]}
       />

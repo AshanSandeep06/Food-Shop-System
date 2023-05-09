@@ -5,7 +5,7 @@ type TableProps = {
   tblName: string;
   tblHeight: string;
   tblHeaders: string[];
-  tblData: Array<string[]>;
+  tblData: Array<string[] | any[]>;
 };
 
 const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
@@ -63,7 +63,7 @@ const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
                       key={index}
                       className="border border-slate-300 p-2 flex items-center justify-center"
                     >
-                      {data.trim() == "Cancel" ? (
+                      {data == "Cancel" ? (
                         <Button
                           className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
                           variant="contained"
