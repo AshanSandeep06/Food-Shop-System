@@ -53,7 +53,7 @@ const ManageCustomer = () => {
 
       <section className="my-6 gap-10 border-2 px-6 lg:px-28 border-red-600 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center flex-wrap">
         <div className="border border-blue-800 flex justify-center sm:justify-end items-center">
-          <FormControl className="sm:w-2/3 w-full md:w-full lg:w-3/4">
+          <FormControl className="sm:w-full w-full md:w-full lg:w-3/4">
             <InputLabel id="demo-simple-select-label">Age</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -74,7 +74,7 @@ const ManageCustomer = () => {
           </FormControl>
         </div>
 
-        <div className="border border-blue-700 md:flex md:justify-start md:col-start-3 md:col-end-4 items-center grid col-start-1 col-end-2 justify-center">
+        <div className="border border-blue-700 md:flex sm:justify-start sm:col-start-3 sm:col-end-4 items-center grid col-start-1 col-end-2 justify-center">
           <Button
             className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
             variant="contained"
