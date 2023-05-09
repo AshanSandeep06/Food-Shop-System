@@ -146,6 +146,8 @@ const ManageCustomer = () => {
           ]}
         />
       </section>
+
+      <section></section>
     </section>
   );
 };
