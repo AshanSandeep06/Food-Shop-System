@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ManageItem = () => {
-  return (
-    <div>ManageItem</div>
-  )
-}
+  return <div>ManageItem</div>;
+};
 
 export default ManageItem;
