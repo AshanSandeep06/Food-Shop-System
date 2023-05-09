@@ -104,9 +104,9 @@ const ManageCustomer = () => {
           ]}
           buttonsArray={[
             { color: "success", icon: <AddCircleIcon />, text: "Save" },
-            { color: "success", icon: <AddCircleIcon />, text: "Save" },
-            { color: "success", icon: <AddCircleIcon />, text: "Save" },
-            { color: "success", icon: <AddCircleIcon />, text: "Save" },
+            { color: "primary", icon: <AddCircleIcon />, text: "Save" },
+            { color: "error", icon: <AddCircleIcon />, text: "Save" },
+            { color: "secondary", icon: <AddCircleIcon />, text: "Save" },
           ]}
         />
       </section>
