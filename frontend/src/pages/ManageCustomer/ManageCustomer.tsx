@@ -17,6 +17,7 @@ import AutorenewIcon from "@mui/icons-material/Autorenew";
 import DeleteIcon from "@mui/icons-material/Delete";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import Table from "../../components/Table";
+import "./ManageCustomer.css"
 
 const ManageCustomer = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
