@@ -14,6 +14,7 @@ import Form from "../../components/Form";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import DeleteIcon from '@mui/icons-material/Delete';
+import BackspaceIcon from '@mui/icons-material/Backspace';
 
 const ManageCustomer = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
