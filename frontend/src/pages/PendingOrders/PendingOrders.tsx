@@ -31,6 +31,7 @@ const PendingOrders = () => {
             "1750.00",
             "46/D, Makuluwa, Galle",
             "Pending",
+            "Cancel",
           ],
           [
             "OID-001",
@@ -42,6 +43,7 @@ const PendingOrders = () => {
             "1750.00",
             "46/D, Makuluwa, Galle",
             "Pending",
+            "Cancel",
           ],
           [
             "OID-001",
@@ -53,6 +55,7 @@ const PendingOrders = () => {
             "1750.00",
             "46/D, Makuluwa, Galle",
             "Pending",
+            "Cancel",
           ],
           [
             "OID-001",
@@ -64,6 +67,7 @@ const PendingOrders = () => {
             "1750.00",
             "46/D, Makuluwa, Galle",
             "Pending",
+            "Cancel",
           ],
           [
             "OID-001",
@@ -75,6 +79,7 @@ const PendingOrders = () => {
             "1750.00",
             "46/D, Makuluwa, Galle",
             "Pending",
+            "Cancel",
           ],
           [
             "OID-001",
@@ -86,6 +91,7 @@ const PendingOrders = () => {
             "1750.00",
             "46/D, Makuluwa, Galle",
             "Pending",
+            "Cancel",
           ],
           [
             "OID-001",
@@ -97,6 +103,7 @@ const PendingOrders = () => {
             "1750.00",
             "46/D, Makuluwa, Galle",
             "Pending",
+            "Cancel",
           ],
           [
             "OID-001",
@@ -108,6 +115,7 @@ const PendingOrders = () => {
             "1750.00",
             "46/D, Makuluwa, Galle",
             "Pending",
+            "Cancel",
           ],
           [
             "OID-001",
@@ -119,6 +127,7 @@ const PendingOrders = () => {
             "1750.00",
             "46/D, Makuluwa, Galle",
             "Pending",
+            "Cancel",
           ],
           [
             "OID-001",
@@ -130,6 +139,7 @@ const PendingOrders = () => {
             "1750.00",
             "46/D, Makuluwa, Galle",
             "Pending",
+            "Cancel",
           ],
         ]}
       />
