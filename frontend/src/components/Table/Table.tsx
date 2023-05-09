@@ -62,6 +62,9 @@ const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
                       key={index}
                       className="border border-slate-300 p-2 flex items-center justify-center"
                     >
+
+                      
+
                       {data}
                     </td>
                   ))}
