@@ -7,6 +7,7 @@ import {
   Select,
   styled,
 } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 import React from "react";
 
 const ManageCustomer = () => {
@@ -81,7 +82,7 @@ const ManageCustomer = () => {
             className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
             variant="contained"
             color="primary"
-            endIcon={null}
+            endIcon={<SearchIcon />}
           >
             Search Customer
           </Button>
