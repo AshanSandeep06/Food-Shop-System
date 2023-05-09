@@ -10,6 +10,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import React from "react";
+import Form from "../../components/Form";
 
 const ManageCustomer = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
@@ -86,7 +87,9 @@ const ManageCustomer = () => {
         </div>
       </section>
 
-      <section></section>
+      <section>
+        <Form textFieldsArray={[]} buttonsArray={[]} />
+      </section>
     </section>
   );
 };
