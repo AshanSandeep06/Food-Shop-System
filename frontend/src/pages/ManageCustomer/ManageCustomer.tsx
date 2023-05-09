@@ -54,8 +54,8 @@ const ManageCustomer = () => {
       </section>
 
       {/* 2 */}
-      <section>
-        <div>
+      <section className="border-2 border-red-600 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div className="border border-blue-700 flex justify-center items-center">
           <FormControl>
             <InputLabel id="demo-simple-select-label">Age</InputLabel>
             <Select
@@ -70,14 +70,14 @@ const ManageCustomer = () => {
           </FormControl>
         </div>
 
-        <div>
+        <div className="border border-blue-700 flex justify-center items-center">
           <FormControl sx={{ m: 1 }} variant="standard">
             <InputLabel htmlFor="demo-customized-textbox">Age</InputLabel>
             <BootstrapInput id="demo-customized-textbox" />
           </FormControl>
         </div>
 
-        <div>
+        <div className="border border-blue-700 flex justify-center items-center">
           <Button
             className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
             variant="contained"
