@@ -1,4 +1,5 @@
 import {
+  Button,
   FormControl,
   InputBase,
   InputLabel,
@@ -59,7 +60,8 @@ const ManageCustomer = () => {
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              label="Age">
+              label="Age"
+            >
               <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={20}>Twenty</MenuItem>
               <MenuItem value={30}>Thirty</MenuItem>
@@ -75,7 +77,14 @@ const ManageCustomer = () => {
         </div>
 
         <div>
-            
+          <Button
+            className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
+            variant="contained"
+            color="primary"
+            endIcon={null}
+          >
+            Search Customer
+          </Button>
         </div>
       </section>
     </section>
