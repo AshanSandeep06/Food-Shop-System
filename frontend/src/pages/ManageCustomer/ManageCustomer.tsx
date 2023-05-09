@@ -104,7 +104,7 @@ const ManageCustomer = () => {
           ]}
           buttonsArray={[
             { color: "success", icon: <AddCircleIcon />, text: "Save" },
-            { color: "primary", icon: <AddCircleIcon />, text: "Update" },
+            { color: "primary", icon: <AutorenewIcon />, text: "Update" },
             { color: "error", icon: <AddCircleIcon />, text: "Delete" },
             { color: "secondary", icon: <AddCircleIcon />, text: "Clear" },
           ]}
