@@ -54,9 +54,7 @@ const ManageCustomer = () => {
       <section className="border-2 border-red-600 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
         <div className="border border-blue-700 flex justify-end items-center">
           <FormControl className="w-1/2">
-            <InputLabel id="demo-simple-select-label" className="relative">
-              Age
-            </InputLabel>
+            <InputLabel id="demo-simple-select-label">Age</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
