@@ -95,6 +95,12 @@ const ManageCustomer = () => {
         <Form
           textFieldsArray={[
             { label: "Customer ID", textFieldType: "text", name: "customerId", placeHolderText: "Customer ID" },
+            { label: "Username", textFieldType: "text", name: "username", placeHolderText: "Username" },
+            { label: "Password", textFieldType: "text", name: "password", placeHolderText: "Password" },
+            { label: "Name", textFieldType: "text", name: "name", placeHolderText: "Name" },
+            { label: "Address", textFieldType: "text", name: "address", placeHolderText: "Address" },
+            { label: "Contact Number", textFieldType: "text", name: "contactNumber", placeHolderText: "Contact Number" },
+            { label: "Email", textFieldType: "text", name: "email", placeHolderText: "Email" },
           ]}
           buttonsArray={[
             { color: "success", icon: <AddCircleIcon />, text: "Save" }
