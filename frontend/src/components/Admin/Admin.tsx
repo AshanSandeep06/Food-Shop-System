@@ -9,6 +9,7 @@ const Admin = () => {
       <Routes>
         <Route path="/home" element={<FoodMenu />}></Route>
         <Route path="/manage_customer" element={<ManageCustomer />}></Route>
+        <Route path="/manage_item" element={<ManageItem />}></Route>
       </Routes>
     </main>
   );
