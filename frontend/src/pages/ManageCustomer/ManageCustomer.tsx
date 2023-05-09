@@ -13,6 +13,7 @@ import React from "react";
 import Form from "../../components/Form";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const ManageCustomer = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
