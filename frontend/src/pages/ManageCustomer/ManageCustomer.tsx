@@ -2,13 +2,13 @@ import React from "react";
 
 const ManageCustomer = () => {
   return (
-  <section>
     <section>
+      <section>
         <div>
-            <h1>Manage Customer</h1>
+          <h1>Manage Customer</h1>
         </div>
+      </section>
     </section>
-  </section>
   );
 };
 
