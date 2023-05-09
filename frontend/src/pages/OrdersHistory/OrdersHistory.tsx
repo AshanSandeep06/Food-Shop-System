@@ -28,7 +28,7 @@ const OrdersHistory = () => {
             "250.00",
             "1750.00",
             "46/D, Makuluwa, Galle",
-            "Pending",
+            "Finished",
           ],
         ]}
       />
