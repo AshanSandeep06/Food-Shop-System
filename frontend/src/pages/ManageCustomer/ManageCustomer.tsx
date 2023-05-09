@@ -43,14 +43,12 @@ const ManageCustomer = () => {
 
   return (
     <section>
-      {/* 1 */}
       <section>
         <div>
           <h1>Manage Customer</h1>
         </div>
       </section>
 
-      {/* 2 */}
       <section className="border-2 border-red-600 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
         <div className="border border-blue-800 flex justify-end items-center">
           <FormControl className="w-1/2">
