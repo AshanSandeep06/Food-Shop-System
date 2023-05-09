@@ -7,6 +7,7 @@ const Admin = () => {
     <main className="mt-20 gap-2 w-full pt-6 pb-9 px-10 bg-[#FAFAFF]">
       <Routes>
         <Route path="/home" element={<FoodMenu />}></Route>
+        <Route path="/manage_customer" element={<FoodMenu />}></Route>
       </Routes>
     </main>
   );
