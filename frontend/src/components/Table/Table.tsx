@@ -7,10 +7,10 @@ type TableProps = {
   tblData: Array<string[]>;
 };
 
-const Table = (props: TableProps) => {
-  const tblHeaderStyles = `grid grid-cols-${props.tblHeaders.length} h-full`;
-  const tblDataRow = `grid grid-cols-${props.tblHeaders.length} cursor-pointer`;
-  const tblHeight = `!h-[${props.tblHeight}]`;
+const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
+  const tblHeaderStyles = `grid grid-cols-${tblHeaders.length} h-full`;
+  const tblDataRow = `grid grid-cols-${tblHeaders.length} cursor-pointer`;
+  const tableHeight = `!h-[${tblHeight}]`;
 
   return (
     <section id="tblContainer">
@@ -23,7 +23,7 @@ const Table = (props: TableProps) => {
           style={{ fontWeight: "500", lineHeight: "28.8px" }}
         >
           {/* Your Items Cart */}
-          {props.tblName}
+          {tblName}
         </h3>
         <div className="w-full pb-6 rounded-2 overflow-x-auto scroll-smooth">
           <table className="table-fixed border-collapse grid grid-cols-1 overflow-x-auto scroll-smooth">
@@ -36,7 +36,7 @@ const Table = (props: TableProps) => {
               }}
             >
               <tr className={tblHeaderStyles}>
-                {props.tblHeaders.map((header, index) => (
+                {tblHeaders.map((header, index) => (
                   <th
                     key={index}
                     className="h-full border border-slate-300 flex justify-center items-center"
@@ -47,8 +47,8 @@ const Table = (props: TableProps) => {
               </tr>
             </thead>
 
-            <tbody className={tblHeight}>
-              {props.tblData.map((dataRow, index) => (
+            <tbody className={tableHeight}>
+              {tblData.map((dataRow, index) => (
                 <tr
                   key={index}
                   className={tblDataRow}
