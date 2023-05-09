@@ -92,7 +92,7 @@ const ManageCustomer = () => {
         </div>
       </section>
 
-      <section>
+      <section className="my-5">
         <Form
           textFieldsArray={[
             {
