@@ -51,8 +51,8 @@ const ManageCustomer = () => {
         </div>
       </section>
 
-      <section className="my-6 gap-10 border-2 px-6 lg:px-28 border-red-600 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center flex-wrap">
-        <div className="border border-blue-800 flex justify-center sm:justify-end items-center">
+      <section className="my-6 gap-10 px-6 lg:px-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center flex-wrap">
+        <div className="flex justify-center sm:justify-end items-center">
           <FormControl className="sm:w-full w-full md:w-full lg:w-3/4">
             <InputLabel id="demo-simple-select-label">Age</InputLabel>
             <Select
@@ -67,14 +67,14 @@ const ManageCustomer = () => {
           </FormControl>
         </div>
 
-        <div className="border border-blue-700 flex justify-center items-center">
+        <div className="flex justify-center items-center">
           <FormControl sx={{ m: 1 }} variant="standard" className="w-full">
             <InputLabel htmlFor="demo-customized-textbox">Age</InputLabel>
             <BootstrapInput id="demo-customized-textbox" />
           </FormControl>
         </div>
 
-        <div className="border border-blue-700 md:flex sm:justify-start sm:col-start-3 sm:col-end-4 items-center grid col-start-1 col-end-2 justify-center">
+        <div className="md:flex sm:justify-start sm:col-start-3 sm:col-end-4 items-center grid col-start-1 col-end-2 justify-center">
           <Button
             className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
             variant="contained"
