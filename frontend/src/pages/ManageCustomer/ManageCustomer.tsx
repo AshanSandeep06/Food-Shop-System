@@ -93,7 +93,7 @@ const ManageCustomer = () => {
             { label: "", textFieldType: "text", name: "", placeHolderText: "" },
           ]}
           buttonsArray={[
-            {}
+            {color: "sucess", icon: "", text: "Save"}
           ]}
         />
       </section>
