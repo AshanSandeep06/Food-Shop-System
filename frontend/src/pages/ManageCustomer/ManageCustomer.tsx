@@ -1,4 +1,11 @@
-import { FormControl, InputBase, InputLabel, styled } from "@mui/material";
+import {
+  FormControl,
+  InputBase,
+  InputLabel,
+  MenuItem,
+  Select,
+  styled,
+} from "@mui/material";
 import React from "react";
 
 const ManageCustomer = () => {
@@ -47,13 +54,26 @@ const ManageCustomer = () => {
       {/* 2 */}
       <section>
         <div>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Age"
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
+
+        <div>
           <FormControl sx={{ m: 1 }} variant="standard">
             <InputLabel htmlFor="demo-customized-textbox">Age</InputLabel>
             <BootstrapInput id="demo-customized-textbox" />
           </FormControl>
         </div>
-
-        <div></div>
 
         <div></div>
       </section>
