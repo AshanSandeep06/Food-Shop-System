@@ -59,7 +59,7 @@ const Form = (props: FormProps) => {
           {props.buttonsArray.map((button, index) => (
             <Button
               key={index}
-              className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
+              className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
               variant="contained"
               color={button.color}
               endIcon={button.icon}
