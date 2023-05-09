@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ManageCustomer = () => {
-  return (
-    <div>ManageCustomer</div>
-  )
-}
+  return <section></section>;
+};
 
 export default ManageCustomer;
