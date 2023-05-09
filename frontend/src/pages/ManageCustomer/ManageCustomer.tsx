@@ -97,7 +97,7 @@ const ManageCustomer = () => {
             { label: "", textFieldType: "text", name: "", placeHolderText: "" },
           ]}
           buttonsArray={[
-            { color: "sucess", icon: "", text: "Save" }
+            { color: "success", icon: <AddCircleIcon />, text: "Save" }
           ]}
         />
       </section>
