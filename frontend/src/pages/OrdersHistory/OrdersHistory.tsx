@@ -29,7 +29,11 @@ const OrdersHistory = () => {
             "250.00",
             "1750.00",
             "46/D, Makuluwa, Galle",
-            <Chip label="Finished" color="success" style={{fontFamily: "Poppins"}} />
+            <Chip
+              label="Finished"
+              color="success"
+              style={{ fontFamily: "Poppins" }}
+            />,
           ],
         ]}
       />
