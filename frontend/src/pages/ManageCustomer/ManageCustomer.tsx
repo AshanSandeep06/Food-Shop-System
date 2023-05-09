@@ -8,6 +8,7 @@ import {
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import React from "react";
 
 const ManageCustomer = () => {
@@ -44,12 +45,13 @@ const ManageCustomer = () => {
   return (
     <section>
       <section>
-        <div>
+        <div className="flex">
           <h1>Manage Customer</h1>
+          <ManageAccountsIcon />
         </div>
       </section>
 
-      <section className="border-2 border-red-600 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center">
+      <section className="my-6 border-2 border-red-600 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center">
         <div className="border border-blue-800 flex justify-end items-center">
           <FormControl className="w-1/2">
             <InputLabel id="demo-simple-select-label">Age</InputLabel>
