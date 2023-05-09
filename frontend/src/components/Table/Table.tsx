@@ -9,8 +9,19 @@ type TableProps = {
 };
 
 const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
-  let tblHeaderStyles = `grid grid-cols-${tblHeaders.length} h-full`;
-  let tblDataRow = `grid grid-cols-${tblHeaders.length} cursor-pointer`;
+  // let tblHeaderStyles = `grid grid-cols-${tblHeaders.length} h-full`;
+  let tblHeaderStyles = {
+    display: "grid",
+    gridTemplateColumns: `repeat(${tblHeaders.length}, minmax(0, 1fr))`,
+  };
+
+  // let tblDataRow = `grid grid-cols-${tblHeaders.length} cursor-pointer`;
+  let tblDataRow = {
+    display: "grid",
+    gridTemplateColumns: `repeat(${tblHeaders.length}, minmax(0, 1fr))`,
+    minHeight: "60px",
+  };
+
   // let tableHeight = `!h-[${tblHeight}]`;
   const tableHeight = {
     height: `${tblHeight}`,
@@ -39,7 +50,7 @@ const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
                 borderTopRightRadius: "8px",
               }}
             >
-              <tr className={tblHeaderStyles}>
+              <tr style={tblHeaderStyles}>
                 {tblHeaders.map((header, index) => (
                   <th
                     key={index}
@@ -53,11 +64,7 @@ const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
 
             <tbody style={tableHeight}>
               {tblData.map((dataRow, index) => (
-                <tr
-                  key={index}
-                  className={tblDataRow}
-                  style={{ minHeight: "60px" }}
-                >
+                <tr key={index} style={tblDataRow}>
                   {dataRow.map((data, index) => (
                     <td
                       key={index}
