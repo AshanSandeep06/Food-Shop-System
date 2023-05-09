@@ -57,6 +57,8 @@ const App = () => {
         links={["home", "pending_orders", "orders_history"]}
       />
       <Customer />
+
+      {/* ========== Admin Page ========== */}
     </div>
   );
 };
