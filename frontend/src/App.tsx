@@ -21,6 +21,7 @@ const App = () => {
 
   const loginLink = (
     <MyButton
+      key={1}
       resource="login"
       icon={<LoginIcon className="!text-[20px]" />}
       styles={style1}
@@ -28,6 +29,7 @@ const App = () => {
   );
   const logoutLink = (
     <MyButton
+      key={2}
       resource="logout"
       icon={<LogoutIcon className="!text-[20px]" />}
       styles={style1}
@@ -35,6 +37,7 @@ const App = () => {
   );
   const myProfileButton = (
     <MyButton
+      key={3}
       resource="my Profile"
       icon={<AccountCircleIcon className="!text-[20px]" />}
       styles={style2}
