@@ -8,9 +8,9 @@ type TableProps = {
 };
 
 const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
-  const tblHeaderStyles = `grid grid-cols-${tblHeaders.length} h-full`;
-  const tblDataRow = `grid grid-cols-${tblHeaders.length} cursor-pointer`;
-  const tableHeight = `!h-[${tblHeight}]`;
+  let tblHeaderStyles = `grid grid-cols-${tblHeaders.length} h-full`;
+  let tblDataRow = `grid grid-cols-${tblHeaders.length} cursor-pointer`;
+  let tableHeight = `!h-[${tblHeight}]`;
 
   return (
     <section id="tblContainer">
