@@ -24,7 +24,7 @@ const Customer = () => {
         <Route path="/home" element={<FoodMenu />}></Route>
         <Route path="/placeOrder" element={<PlaceOrder />}></Route>
         <Route path="/pending_orders" element={<PendingOrders />}></Route>
-        <Route path="/orders_history" element={<PendingOrders />}></Route>
+        <Route path="/orders_history" element={<OrdersHistory />}></Route>
       </Routes>
     </main>
   );
