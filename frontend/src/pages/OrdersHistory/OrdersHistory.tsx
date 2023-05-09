@@ -5,7 +5,7 @@ const OrdersHistory = () => {
   return (
     <section>
       <Table
-        tblName="My Pending Orders"
+        tblName="My Orders History"
         tblHeight="auto"
         tblHeaders={[
           "Order ID",
