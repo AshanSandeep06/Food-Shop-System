@@ -68,7 +68,7 @@ const ManageCustomer = () => {
         </div>
 
         <div className="border border-blue-700 flex justify-center items-center">
-          <FormControl sx={{ m: 1 }} variant="standard">
+          <FormControl sx={{ m: 1 }} variant="standard" className="w-full">
             <InputLabel htmlFor="demo-customized-textbox">Age</InputLabel>
             <BootstrapInput id="demo-customized-textbox" />
           </FormControl>
