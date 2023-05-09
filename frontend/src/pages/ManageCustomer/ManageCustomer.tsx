@@ -13,7 +13,9 @@ const ManageCustomer = () => {
       {/* 2 */}
       <section>
         <div></div>
+
         <div></div>
+        
         <div></div>
       </section>
     </section>
