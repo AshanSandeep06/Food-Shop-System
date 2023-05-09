@@ -84,7 +84,7 @@ const ManageCustomer = () => {
             className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
             variant="contained"
             color="primary"
-            endIcon={<SearchIcon className="relative top-[1px]" />}
+            endIcon={<SearchIcon />}
           >
             Search Customer
           </Button>
