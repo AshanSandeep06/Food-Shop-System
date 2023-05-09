@@ -161,7 +161,15 @@ const ManageCustomer = () => {
             "Contact",
             "Email",
           ]}
-          tblData={[]}
+          tblData={[
+            "C00-001",
+            "user",
+            "user123",
+            "Kamal Perera",
+            "46/D, Makuluwa, Galle",
+            "0753841883",
+            "kamal123@gmail.com",
+          ]}
         />
       </section>
     </section>
