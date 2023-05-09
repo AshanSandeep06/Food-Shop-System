@@ -11,6 +11,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import React from "react";
 import Form from "../../components/Form";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import AutorenewIcon from '@mui/icons-material/Autorenew';
 
 const ManageCustomer = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
@@ -93,7 +95,7 @@ const ManageCustomer = () => {
             { label: "", textFieldType: "text", name: "", placeHolderText: "" },
           ]}
           buttonsArray={[
-            {color: "sucess", icon: "", text: "Save"}
+            { color: "sucess", icon: "", text: "Save" }
           ]}
         />
       </section>
