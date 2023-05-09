@@ -11,8 +11,12 @@ const ManageCustomer = () => {
       </section>
 
       {/* 2 */}
-      <section></section>
-      
+      <section>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+
     </section>
   );
 };
