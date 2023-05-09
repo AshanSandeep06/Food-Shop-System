@@ -5,16 +5,17 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  createTheme,
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import React from "react";
 import Form from "../../components/Form";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import AutorenewIcon from '@mui/icons-material/Autorenew';
-import DeleteIcon from '@mui/icons-material/Delete';
-import BackspaceIcon from '@mui/icons-material/Backspace';
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import AutorenewIcon from "@mui/icons-material/Autorenew";
+import DeleteIcon from "@mui/icons-material/Delete";
+import BackspaceIcon from "@mui/icons-material/Backspace";
 
 const ManageCustomer = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
@@ -94,19 +95,54 @@ const ManageCustomer = () => {
       <section>
         <Form
           textFieldsArray={[
-            { label: "Customer ID", textFieldType: "text", name: "customerId", placeHolderText: "Customer ID" },
-            { label: "Username", textFieldType: "text", name: "username", placeHolderText: "Username" },
-            { label: "Password", textFieldType: "text", name: "password", placeHolderText: "Password" },
-            { label: "Name", textFieldType: "text", name: "name", placeHolderText: "Name" },
-            { label: "Address", textFieldType: "text", name: "address", placeHolderText: "Address" },
-            { label: "Contact Number", textFieldType: "text", name: "contactNumber", placeHolderText: "Contact Number" },
-            { label: "Email", textFieldType: "text", name: "email", placeHolderText: "Email" },
+            {
+              label: "Customer ID",
+              textFieldType: "text",
+              name: "customerId",
+              placeHolderText: "Customer ID",
+            },
+            {
+              label: "Username",
+              textFieldType: "text",
+              name: "username",
+              placeHolderText: "Username",
+            },
+            {
+              label: "Password",
+              textFieldType: "text",
+              name: "password",
+              placeHolderText: "Password",
+            },
+            {
+              label: "Name",
+              textFieldType: "text",
+              name: "name",
+              placeHolderText: "Name",
+            },
+            {
+              label: "Address",
+              textFieldType: "text",
+              name: "address",
+              placeHolderText: "Address",
+            },
+            {
+              label: "Contact Number",
+              textFieldType: "text",
+              name: "contactNumber",
+              placeHolderText: "Contact Number",
+            },
+            {
+              label: "Email",
+              textFieldType: "text",
+              name: "email",
+              placeHolderText: "Email",
+            },
           ]}
           buttonsArray={[
             { color: "success", icon: <AddCircleIcon />, text: "Save" },
             { color: "primary", icon: <AutorenewIcon />, text: "Update" },
             { color: "error", icon: <DeleteIcon />, text: "Delete" },
-            { color: "secondary", icon: <BackspaceIcon />, text: "Clear" },
+            { color: "secondary-light", icon: <BackspaceIcon />, text: "Clear" },
           ]}
         />
       </section>
