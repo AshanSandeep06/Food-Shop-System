@@ -152,7 +152,15 @@ const ManageCustomer = () => {
         <Table
           tblName="Manage Customer"
           tblHeight="auto"
-          tblHeaders={[]}
+          tblHeaders={[
+            "Customer ID",
+            "Username",
+            "Password",
+            "Name",
+            "Address",
+            "Contact",
+            "Email",
+          ]}
           tblData={[]}
         />
       </section>
