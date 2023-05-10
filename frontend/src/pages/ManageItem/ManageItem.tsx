@@ -10,7 +10,7 @@ import {
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Form from "../../components/Form";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
@@ -60,14 +60,19 @@ const ManageItem = () => {
 
   const handleSetItemImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     let file = e.target.files;
+    let reader = new FileReader();
+
     if (FileReader && file && file.length) {
-      let reader = new FileReader();
       reader.onload = function () {
         if (itemImageRef.current) {
           itemImageRef.current.setAttribute("src", String(reader.result));
         }
       };
       reader.readAsDataURL(file[0]);
+    } else {
+      if (itemImageRef.current) {
+        itemImageRef.current.setAttribute("src", "");
+      }
     }
   };
 
