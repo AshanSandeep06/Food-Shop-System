@@ -140,6 +140,13 @@ const ManageItem = () => {
               defaultValue: "0",
             },
           ]}
+          buttonsArray={[]}
+        />
+      </section>
+
+      <section>
+        <Form
+          textFieldsArray={[]}
           buttonsArray={[
             { color: "success", icon: <AddCircleIcon />, text: "Save" },
             { color: "primary", icon: <AutorenewIcon />, text: "Update" },
@@ -170,7 +177,7 @@ const ManageItem = () => {
                 whileTap={{ scale: 1.1 }}
                 src={iceCreamImg}
                 alt="foodImage"
-                className="w-40 lg:w-40 h-40 object-contain"
+                className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
               />,
               "Chocalate and Vanilla",
               350.0,
@@ -185,7 +192,7 @@ const ManageItem = () => {
                 whileTap={{ scale: 1.1 }}
                 src={iceCreamImg}
                 alt="foodImage"
-                className="w-40 lg:w-40 h-40 object-contain"
+                className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
               />,
               "Chocalate and Vanilla",
               350.0,
