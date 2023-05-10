@@ -18,7 +18,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import Table from "../../components/Table";
 import "./ManageItem.css";
-import FastfoodIcon from '@mui/icons-material/Fastfood';
+import FastfoodIcon from "@mui/icons-material/Fastfood";
 
 const ManageItem = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
@@ -71,7 +71,7 @@ const ManageItem = () => {
               label="Age"
               className="!font-poppins"
             >
-              {/* <MenuItem value={customerId}>Customer ID</MenuItem> */}
+              {/* <MenuItem value={itemCode}>Customer ID</MenuItem> */}
               <MenuItem className="!font-poppins" value={1}>
                 Customer ID
               </MenuItem>
