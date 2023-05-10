@@ -158,7 +158,7 @@ const ManageItem = () => {
             variant="outlined"
             name="itemImageChooser"
             required
-            className="!mt-5"
+            className="!mt-7"
           />
         </div>
 
