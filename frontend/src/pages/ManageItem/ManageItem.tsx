@@ -105,7 +105,7 @@ const ManageItem = () => {
         </div>
       </section>
 
-      <section className="mb-5">
+      <section className="mb-5 border-2 border-red-700">
         <Form
           textFieldsArray={[
             {
@@ -144,7 +144,7 @@ const ManageItem = () => {
         />
       </section>
 
-      <section>
+      <section className="border-3 border-orange-700">
         <Form
           textFieldsArray={[]}
           buttonsArray={[
