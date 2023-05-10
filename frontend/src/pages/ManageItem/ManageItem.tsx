@@ -120,10 +120,10 @@ const ManageItem = () => {
               placeHolderText: "Item Name",
             },
             {
-              label: "Password",
+              label: "Unit Price",
               textFieldType: "text",
-              name: "password",
-              placeHolderText: "Password",
+              name: "unitPrice",
+              placeHolderText: "Unit Price",
             },
             {
               label: "Name",
