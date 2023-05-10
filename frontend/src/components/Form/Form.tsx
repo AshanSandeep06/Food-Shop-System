@@ -4,7 +4,7 @@ import SendIcon from "@mui/icons-material/Send";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { TextFieldDetails } from "../../types/TextFieldDetails";
 import { ButtonDetails } from "../../types/ButtonDetails";
-import "./Form.css"
+import "./Form.css";
 
 type FormProps = {
   textFieldsArray: TextFieldDetails[];
@@ -13,7 +13,7 @@ type FormProps = {
 
 const Form = (props: FormProps) => {
   return (
-    <section className="pb-6 px-6 lg:px-16">
+    <section className="pb-6 px-6 lg:px-12">
       <form className="grid grid-cols-1 lg:grid-cols-3 gap-6 !font-poppins">
         {props.textFieldsArray.map((textField, index) => (
           <TextField
