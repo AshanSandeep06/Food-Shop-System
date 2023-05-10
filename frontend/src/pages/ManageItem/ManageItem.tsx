@@ -57,7 +57,7 @@ const ManageItem = () => {
       <section>
         <div className="flex items-center">
           <h1 className="font-medium text-[22px]">Manage Item</h1>
-          <FastfoodIcon className="ml-[5px]" />
+          <FastfoodIcon className="ml-[6px] relative bottom-[2.5px]" />
         </div>
       </section>
 
