@@ -151,7 +151,7 @@ const ManageItem = () => {
           <img
             id="itemImage"
             src={iceCreamImg}
-            className="object-contain h-[319px]"
+            className="object-contain h-[319px] border !border-slate-300"
           />
           <TextField
             type="file"
