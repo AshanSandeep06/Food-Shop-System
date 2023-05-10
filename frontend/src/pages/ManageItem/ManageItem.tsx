@@ -145,7 +145,7 @@ const ManageItem = () => {
         />
       </section>
 
-      <section className="flex justify-center border-[6px] border-blue-700">
+      <section className="mb-5 flex justify-center border-[6px] border-blue-700">
         <div className="bg-yellow-400 flex flex-col">
           <label className="mb-3">Upload Item Image</label>
           <img id="itemImage" />
