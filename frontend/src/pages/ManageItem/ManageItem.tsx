@@ -150,11 +150,9 @@ const ManageItem = () => {
           <label>Upload Item Image</label>
           <img id="itemImage" className="max-w-[100%] h-auto" />
           <TextField
-            label="Upload Item Image"
             type="file"
             variant="outlined"
             name="itemImageChooser"
-            placeholder="Upload Item Image"
             required
           />
         </div>
