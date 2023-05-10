@@ -18,6 +18,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import Table from "../../components/Table";
 import "./ManageItem.css";
+import FastfoodIcon from '@mui/icons-material/Fastfood';
 
 const ManageItem = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
