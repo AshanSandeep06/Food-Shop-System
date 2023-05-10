@@ -10,7 +10,7 @@ import {
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import React, { useRef } from "react";
+import React from "react";
 import Form from "../../components/Form";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
@@ -23,8 +23,6 @@ import iceCreamImg from "../../assets/img/icecream-01.png";
 import { motion } from "framer-motion";
 
 const ManageItem = () => {
-  const selectImage = useRef(null);
-
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "& .MuiInputBase-input": {
       borderRadius: 4,
