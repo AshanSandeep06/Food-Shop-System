@@ -63,8 +63,11 @@ const ManageItem = () => {
     if (FileReader && file && file.length) {
       let reader = new FileReader();
       reader.onload = function () {
-        let result: any = reader.result;
-        $("#itemImage").attr("src", result);
+        let result = reader.result;
+        // $("#itemImage").attr("src", result);
+        if (itemImageRef.current) {
+          itemImageRef.current.setAttribute("src", result);
+        }
       };
       reader.readAsDataURL(file[0]);
     }
