@@ -4,6 +4,7 @@ import SendIcon from "@mui/icons-material/Send";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { TextFieldDetails } from "../../types/TextFieldDetails";
 import { ButtonDetails } from "../../types/ButtonDetails";
+import "./Form.css"
 
 type FormProps = {
   textFieldsArray: TextFieldDetails[];
@@ -23,7 +24,6 @@ const Form = (props: FormProps) => {
             name={textField.name}
             placeholder={textField.placeHolderText}
             required
-            style={{ fontFamily: "Poppins" }}
           />
         ))}
 
