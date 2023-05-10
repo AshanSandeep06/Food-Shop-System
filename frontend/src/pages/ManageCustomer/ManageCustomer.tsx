@@ -71,7 +71,7 @@ const ManageCustomer = () => {
               label="Age"
             >
               <MenuItem value={customerId}>Customer ID</MenuItem>
-              <MenuItem value={20}>Contact Number</MenuItem>
+              <MenuItem value={contactNumber}>Contact Number</MenuItem>
             </Select>
           </FormControl>
         </div>
