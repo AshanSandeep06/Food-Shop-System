@@ -156,6 +156,7 @@ const ManageItem = () => {
             className="object-contain h-[319px] border !border-slate-300"
           />
           <TextField
+            id="uploadItemImageChooser"
             type="file"
             variant="outlined"
             name="itemImageChooser"
