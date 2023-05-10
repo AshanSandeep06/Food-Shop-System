@@ -114,10 +114,10 @@ const ManageItem = () => {
               placeHolderText: "Item Code",
             },
             {
-              label: "Username",
+              label: "Item Name",
               textFieldType: "text",
-              name: "username",
-              placeHolderText: "Username",
+              name: "itemName",
+              placeHolderText: "Item Name",
             },
             {
               label: "Password",
