@@ -130,6 +130,7 @@ const ManageItem = () => {
               textFieldType: "number",
               name: "qtyOnHand",
               placeHolderText: "QtyOnHand",
+              defaultValue: "0",
             },
             {
               label: "Address",
