@@ -3,4 +3,5 @@ export type TextFieldDetails = {
     textFieldType: string;
     name: string;
     placeHolderText: string;
+    defaultValue?: string
   };

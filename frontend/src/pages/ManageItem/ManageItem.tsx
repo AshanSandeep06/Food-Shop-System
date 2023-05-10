@@ -127,7 +127,7 @@ const ManageItem = () => {
             },
             {
               label: "QtyOnHand",
-              textFieldType: "text",
+              textFieldType: "number",
               name: "qtyOnHand",
               placeHolderText: "QtyOnHand",
             },
