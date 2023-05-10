@@ -54,7 +54,9 @@ const ManageItem = () => {
     },
   }));
 
-  const handleSetItemImage = () => {};
+  const handleSetItemImage = () => {
+    
+  };
 
   return (
     <section>
