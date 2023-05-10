@@ -21,6 +21,8 @@ import "./ManageItem.css";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import iceCreamImg from "../../assets/img/icecream-01.png";
 import { motion } from "framer-motion";
+import { read } from "fs";
+import $ from "jquery";
 
 const ManageItem = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
@@ -59,7 +61,8 @@ const ManageItem = () => {
     if (FileReader && file && file.length) {
       let reader = new FileReader();
       reader.onload = function () {
-        $("#itemImage").attr("src", reader.result);
+        let result: any = reader.result;
+        $("#itemImage").attr("src", result);
       };
       reader.readAsDataURL(file[0]);
     }
@@ -170,7 +173,7 @@ const ManageItem = () => {
             variant="outlined"
             name="itemImageChooser"
             required
-            className="!mt-7"
+            className="!mt-7 cursor-pointer"
             onChange={handleSetItemImage}
           />
         </div>
