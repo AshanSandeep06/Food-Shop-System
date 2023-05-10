@@ -106,7 +106,7 @@ const ManageItem = () => {
         </div>
       </section>
 
-      <section className="mb-5 border-2 border-red-700">
+      <section className="mb-5">
         <Form
           textFieldsArray={[
             {
@@ -145,7 +145,7 @@ const ManageItem = () => {
         />
       </section>
 
-      <section className="mb-3 sm:grid sm:grid-cols-1 lg:flex lg:items-end lg:justify-center border-[6px] border-blue-700">
+      <section className="mb-3 sm:grid sm:grid-cols-1 lg:flex lg:items-end lg:justify-center">
         <div className="bg-yellow-400 flex flex-col">
           <label className="mb-3">Upload Item Image</label>
           <img
@@ -173,7 +173,7 @@ const ManageItem = () => {
         />
       </section>
 
-      <section className="border-[3px] border-orange-700">
+      <section>
         <Form
           textFieldsArray={[]}
           buttonsArray={[
