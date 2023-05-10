@@ -3,3 +3,7 @@
     width: 570px;
   }
 }
+
+span {
+  margin-left: 4px !important;
+}
