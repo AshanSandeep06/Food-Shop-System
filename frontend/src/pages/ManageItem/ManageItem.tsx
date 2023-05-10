@@ -54,8 +54,15 @@ const ManageItem = () => {
     },
   }));
 
-  const handleSetItemImage = () => {
-    
+  const handleSetItemImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+      let reader = new FileReader();
+      reader.onload = function () {
+        $("#itemImage").attr("src", reader.result);
+      };
+      reader.readAsDataURL(file[0]);
+    }
   };
 
   return (
