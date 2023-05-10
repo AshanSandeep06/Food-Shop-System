@@ -132,24 +132,6 @@ const ManageItem = () => {
               placeHolderText: "QtyOnHand",
               defaultValue: "0",
             },
-            {
-              label: "Address",
-              textFieldType: "text",
-              name: "address",
-              placeHolderText: "Address",
-            },
-            {
-              label: "Contact Number",
-              textFieldType: "text",
-              name: "contactNumber",
-              placeHolderText: "Contact Number",
-            },
-            {
-              label: "Email",
-              textFieldType: "text",
-              name: "email",
-              placeHolderText: "Email",
-            },
           ]}
           buttonsArray={[
             { color: "success", icon: <AddCircleIcon />, text: "Save" },
