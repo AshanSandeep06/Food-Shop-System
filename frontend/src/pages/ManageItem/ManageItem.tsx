@@ -144,7 +144,17 @@ const ManageItem = () => {
         />
       </section>
 
-      <section></section>
+      <section>
+        <div className="border-[6px] border-blue-700">
+          <label className="form-label d-block">Upload Your NIC Image</label>
+          <img id="customerNicImage" className="img-fluid" />
+          <input
+            className="form-control mt-3 w-75"
+            type="file"
+            id="uploadNicImage"
+          />
+        </div>
+      </section>
 
       <section className="border-[3px] border-orange-700">
         <Form
