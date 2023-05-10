@@ -63,8 +63,7 @@ const ManageItem = () => {
     if (FileReader && file && file.length) {
       let reader = new FileReader();
       reader.onload = function () {
-        let result = reader.result;
-        // $("#itemImage").attr("src", result);
+        let result: any = reader.result;
         if (itemImageRef.current) {
           itemImageRef.current.setAttribute("src", result);
         }
@@ -170,7 +169,7 @@ const ManageItem = () => {
           <img
             id="itemImage"
             src={iceCreamImg}
-            className="object-contain h-[319px] border !border-slate-300"
+            className="object-contain h-[319px]"
             ref={itemImageRef}
           />
           <TextField
