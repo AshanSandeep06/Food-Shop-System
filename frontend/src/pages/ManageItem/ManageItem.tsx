@@ -99,7 +99,7 @@ const ManageItem = () => {
             color="info"
             endIcon={<SearchIcon />}
           >
-            Search Customer
+            Search Item
           </Button>
         </div>
       </section>
