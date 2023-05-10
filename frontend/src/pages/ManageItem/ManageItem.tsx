@@ -120,6 +120,12 @@ const ManageItem = () => {
               placeHolderText: "Item Name",
             },
             {
+              label: "Description",
+              textFieldType: "text",
+              name: "description",
+              placeHolderText: "Description",
+            },
+            {
               label: "Unit Price",
               textFieldType: "text",
               name: "unitPrice",
