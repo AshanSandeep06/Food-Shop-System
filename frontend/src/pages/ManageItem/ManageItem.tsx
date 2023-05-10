@@ -146,14 +146,15 @@ const ManageItem = () => {
       </section>
 
       <section className="flex justify-center border-[6px] border-blue-700">
-        <div className="">
-          <label>Upload Item Image</label>
+        <div className="bg-yellow-400 flex flex-col">
+          <label className="mb-3">Upload Item Image</label>
           <img id="itemImage" />
           <TextField
             type="file"
             variant="outlined"
             name="itemImageChooser"
             required
+            className="mt-5"
           />
         </div>
       </section>
