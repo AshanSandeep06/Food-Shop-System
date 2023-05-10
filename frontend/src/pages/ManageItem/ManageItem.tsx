@@ -5,6 +5,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  TextField,
   createTheme,
   styled,
 } from "@mui/material";
@@ -148,10 +149,13 @@ const ManageItem = () => {
         <div className="border-[6px] border-blue-700">
           <label>Upload Item Image</label>
           <img id="itemImage" className="max-w-[100%] h-auto" />
-          <input
-            className="form-control mt-3 w-75"
+          <TextField
+            label="Upload Item Image"
             type="file"
-            id="uploadNicImage"
+            variant="outlined"
+            name="itemImageChooser"
+            placeholder="Upload Item Image"
+            required
           />
         </div>
       </section>
