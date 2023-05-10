@@ -19,7 +19,7 @@ import BackspaceIcon from "@mui/icons-material/Backspace";
 import Table from "../../components/Table";
 import "./ManageItem.css";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
-import iceCreamImg from "../../assets/img/icecream-01.png"
+import iceCreamImg from "../../assets/img/icecream-01.png";
 
 const ManageItem = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
@@ -162,9 +162,23 @@ const ManageItem = () => {
             "QtyOnHand",
           ]}
           tblData={[
-            ["I00-001", "Ice-Cream", "", "Chocalate and Vanilla", 350.00, 50],
+            [
+              "I00-001",
+              "Ice-Cream",
+              <img src={iceCreamImg} />,
+              "Chocalate and Vanilla",
+              350.0,
+              50,
+            ],
 
-            ["I00-001", "Ice-Cream", "", "Chocalate and Vanilla", 350.00, 50],
+            [
+              "I00-001",
+              "Ice-Cream",
+              <img src={iceCreamImg} />,
+              "Chocalate and Vanilla",
+              350.0,
+              50,
+            ],
           ]}
         />
       </section>
