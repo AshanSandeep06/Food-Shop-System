@@ -108,10 +108,10 @@ const ManageItem = () => {
         <Form
           textFieldsArray={[
             {
-              label: "Customer ID",
+              label: "Item Code",
               textFieldType: "text",
-              name: "customerId",
-              placeHolderText: "Customer ID",
+              name: "itemCode",
+              placeHolderText: "Item Code",
             },
             {
               label: "Username",
