@@ -147,7 +147,7 @@ const ManageItem = () => {
 
       <section className="mb-6 sm:grid sm:grid-cols-1 lg:flex lg:items-end lg:justify-center">
         <div className="flex flex-col">
-          <label className="mb-3">Upload Item Image</label>
+          <label className="mb-3 text-[17px]">Upload Item Image</label>
           <img
             id="itemImage"
             src={iceCreamImg}
