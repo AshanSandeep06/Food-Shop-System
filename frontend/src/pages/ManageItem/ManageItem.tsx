@@ -145,10 +145,14 @@ const ManageItem = () => {
         />
       </section>
 
-      <section className="mb-5 flex border-[6px] border-blue-700">
+      <section className="mb lg:flex lg:items-end lg:justify-center border-[6px] border-blue-700">
         <div className="bg-yellow-400 flex flex-col">
           <label className="mb-3">Upload Item Image</label>
-          <img id="itemImage" src={iceCreamImg} className="object-contain h-[319px]" />
+          <img
+            id="itemImage"
+            src={iceCreamImg}
+            className="object-contain h-[319px]"
+          />
           <TextField
             type="file"
             variant="outlined"
@@ -157,6 +161,16 @@ const ManageItem = () => {
             className="!mt-5"
           />
         </div>
+
+        <Form
+          textFieldsArray={[]}
+          buttonsArray={[
+            { color: "success", icon: <AddCircleIcon />, text: "Save" },
+            { color: "primary", icon: <AutorenewIcon />, text: "Update" },
+            { color: "error", icon: <DeleteIcon />, text: "Delete" },
+            { color: "warning", icon: <BackspaceIcon />, text: "Clear" },
+          ]}
+        />
       </section>
 
       <section className="border-[3px] border-orange-700">
