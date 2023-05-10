@@ -165,7 +165,11 @@ const ManageItem = () => {
             [
               "I00-001",
               "Ice-Cream",
-              <img src={iceCreamImg} />,
+              <img
+                src={iceCreamImg}
+                className="w-40 lg:w-40 -mt-10 lg:-mt-20 h-40 object-contain"
+                style={{ transform: "scale(1.1) translateZ(0px)" }}
+              />,
               "Chocalate and Vanilla",
               350.0,
               50,
@@ -174,7 +178,11 @@ const ManageItem = () => {
             [
               "I00-001",
               "Ice-Cream",
-              <img src={iceCreamImg} />,
+              <img
+                src={iceCreamImg}
+                className="w-40 lg:w-40 -mt-10 lg:-mt-20 h-40 object-contain"
+                style={{ transform: "scale(1.1) translateZ(0px)" }}
+              />,
               "Chocalate and Vanilla",
               350.0,
               50,
