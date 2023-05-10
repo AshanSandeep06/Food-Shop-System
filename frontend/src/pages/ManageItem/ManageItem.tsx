@@ -54,6 +54,8 @@ const ManageItem = () => {
     },
   }));
 
+  const handleSetItemImage = () => {};
+
   return (
     <section>
       <section>
@@ -159,6 +161,7 @@ const ManageItem = () => {
             name="itemImageChooser"
             required
             className="!mt-7"
+            onChange={handleSetItemImage}
           />
         </div>
 
