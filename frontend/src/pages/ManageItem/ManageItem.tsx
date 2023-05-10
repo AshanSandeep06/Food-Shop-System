@@ -161,9 +161,9 @@ const ManageItem = () => {
             "QtyOnHand",
           ]}
           tblData={[
-            ["I00-001", "Ice-Cream", "Chocalate and Vanilla", 350.0, 50],
+            ["I00-001", "Ice-Cream", "Chocalate and Vanilla", 350.00, 50],
 
-            ["I00-001", "Ice-Cream", "Chocalate and Vanilla", 350.0, 50],
+            ["I00-001", "Ice-Cream", "Chocalate and Vanilla", 350.00, 50],
           ]}
         />
       </section>
