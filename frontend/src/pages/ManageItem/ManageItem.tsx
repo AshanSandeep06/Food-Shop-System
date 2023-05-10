@@ -174,18 +174,6 @@ const ManageItem = () => {
       </section>
 
       <section>
-        <Form
-          textFieldsArray={[]}
-          buttonsArray={[
-            { color: "success", icon: <AddCircleIcon />, text: "Save" },
-            { color: "primary", icon: <AutorenewIcon />, text: "Update" },
-            { color: "error", icon: <DeleteIcon />, text: "Delete" },
-            { color: "warning", icon: <BackspaceIcon />, text: "Clear" },
-          ]}
-        />
-      </section>
-
-      <section>
         <Table
           tblName="Manage Item"
           tblHeight="auto"
