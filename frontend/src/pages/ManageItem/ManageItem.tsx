@@ -64,19 +64,19 @@ const ManageItem = () => {
       <section className="mt-4 mb-7 gap-10 px-6 lg:px-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center flex-wrap">
         <div className="flex justify-center sm:justify-end items-center">
           <FormControl className="sm:w-full w-full md:w-full lg:w-3/4">
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <InputLabel id="demo-simple-select-label">Item</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              label="Age"
+              label="Item"
               className="!font-poppins"
             >
               {/* <MenuItem value={itemCode}>Customer ID</MenuItem> */}
               <MenuItem className="!font-poppins" value={1}>
-                Customer ID
+                Item Code
               </MenuItem>
               <MenuItem className="!font-poppins" value={2}>
-                Contact Number
+                Item Name
               </MenuItem>
             </Select>
           </FormControl>
