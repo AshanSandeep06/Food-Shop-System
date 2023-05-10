@@ -160,15 +160,7 @@ const ManageItem = () => {
             "QtyOnHand",
           ]}
           tblData={[
-            [
-              "C00-001",
-              "user",
-              "user123",
-              "Kamal Perera",
-              "46/D, Makuluwa, Galle",
-              "0753841883",
-              "kamal123@gmail.com",
-            ],
+            ["I00-001", "Ice-Cream", "Chocalate and Vanilla", 350.0, 50],
 
             [
               "C00-001",
