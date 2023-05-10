@@ -71,8 +71,12 @@ const ManageItem = () => {
               className="!font-poppins"
             >
               {/* <MenuItem value={customerId}>Customer ID</MenuItem> */}
-              <MenuItem className="!font-poppins" value={1}>Customer ID</MenuItem>
-              <MenuItem className="!font-poppins" value={2}>Contact Number</MenuItem>
+              <MenuItem className="!font-poppins" value={1}>
+                Customer ID
+              </MenuItem>
+              <MenuItem className="!font-poppins" value={2}>
+                Contact Number
+              </MenuItem>
             </Select>
           </FormControl>
         </div>
