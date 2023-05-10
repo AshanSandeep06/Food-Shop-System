@@ -10,7 +10,7 @@ import {
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import React from "react";
+import React, { useRef } from "react";
 import Form from "../../components/Form";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
@@ -25,6 +25,8 @@ import { read } from "fs";
 import $ from "jquery";
 
 const ManageItem = () => {
+  const itemImageRef = useRef<HTMLImageElement>(null);
+
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "& .MuiInputBase-input": {
       borderRadius: 4,
@@ -173,7 +175,7 @@ const ManageItem = () => {
             variant="outlined"
             name="itemImageChooser"
             required
-            className="!mt-7 cursor-pointer"
+            className="!mt-7 !cursor-pointer"
             onChange={handleSetItemImage}
           />
         </div>
