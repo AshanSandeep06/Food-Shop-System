@@ -155,6 +155,7 @@ const ManageItem = () => {
           tblHeaders={[
             "Item Code",
             "Name",
+            "View",
             "Description",
             "Unit Price",
             "QtyOnHand",
