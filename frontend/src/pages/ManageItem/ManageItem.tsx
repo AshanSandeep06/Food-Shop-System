@@ -150,28 +150,16 @@ const ManageItem = () => {
 
       <section>
         <Table
-          tblName="Manage Customer"
+          tblName="Manage Item"
           tblHeight="auto"
           tblHeaders={[
-            "Customer ID",
-            "Username",
-            "Password",
+            "Item Code",
             "Name",
-            "Address",
-            "Contact",
-            "Email",
+            "Description",
+            "Unit Price",
+            "QtyOnHand",
           ]}
           tblData={[
-            [
-              "C00-001",
-              "user",
-              "user123",
-              "Kamal Perera",
-              "46/D, Makuluwa, Galle",
-              "0753841883",
-              "kamal123@gmail.com",
-            ],
-
             [
               "C00-001",
               "user",
