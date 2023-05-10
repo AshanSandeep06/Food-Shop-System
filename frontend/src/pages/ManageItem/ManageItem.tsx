@@ -168,6 +168,7 @@ const ManageItem = () => {
             id="itemImage"
             src={iceCreamImg}
             className="object-contain h-[319px] border !border-slate-300"
+            ref={itemImageRef}
           />
           <TextField
             id="uploadItemImageChooser"
