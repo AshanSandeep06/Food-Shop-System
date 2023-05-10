@@ -144,7 +144,9 @@ const ManageItem = () => {
         />
       </section>
 
-      <section className="border-3 border-orange-700">
+      <section></section>
+
+      <section className="border-[3px] border-orange-700">
         <Form
           textFieldsArray={[]}
           buttonsArray={[
