@@ -17,7 +17,7 @@ import AutorenewIcon from "@mui/icons-material/Autorenew";
 import DeleteIcon from "@mui/icons-material/Delete";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import Table from "../../components/Table";
-import "./ManageCustomer.css"
+import "./ManageCustomer.css";
 
 const ManageCustomer = () => {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
@@ -31,16 +31,18 @@ const ManageCustomer = () => {
       transition: theme.transitions.create(["border-color", "box-shadow"]),
       // Use the system font instead of the default Roboto font.
       fontFamily: [
+        "Poppins",
+        "sans-serif",
         "-apple-system",
         "BlinkMacSystemFont",
-        '"Segoe UI"',
+        "Segoe UI",
         "Roboto",
-        '"Helvetica Neue"',
-        "Arial",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Open Sans",
+        "Helvetica Neue",
         "sans-serif",
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
       ].join(","),
       "&:focus": {
         borderRadius: 4,
@@ -78,7 +80,10 @@ const ManageCustomer = () => {
         <div className="flex justify-center items-center">
           <FormControl sx={{ m: 1 }} variant="standard" className="w-full">
             <InputLabel htmlFor="demo-customized-textbox">Age</InputLabel>
-            <BootstrapInput id="demo-customized-textbox" />
+            <BootstrapInput
+              id="demo-customized-textbox"
+              style={{ fontFamily: "Poppins" }}
+            />
           </FormControl>
         </div>
 
