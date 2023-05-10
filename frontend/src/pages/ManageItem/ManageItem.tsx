@@ -126,10 +126,10 @@ const ManageItem = () => {
               placeHolderText: "Unit Price",
             },
             {
-              label: "Name",
+              label: "QtyOnHand",
               textFieldType: "text",
-              name: "name",
-              placeHolderText: "Name",
+              name: "qtyOnHand",
+              placeHolderText: "QtyOnHand",
             },
             {
               label: "Address",
