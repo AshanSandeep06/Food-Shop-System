@@ -23,6 +23,7 @@ const Form = (props: FormProps) => {
             name={textField.name}
             placeholder={textField.placeHolderText}
             required
+            style={{ fontFamily: "Poppins" }}
           />
         ))}
 
