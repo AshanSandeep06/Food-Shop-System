@@ -10,6 +10,7 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
+import "./PlaceOrderForm.css";
 
 const PlaceOrderForm = () => {
   const [currentDate, setCurrentDate] = useState<string>(
@@ -42,7 +43,7 @@ const PlaceOrderForm = () => {
           <h1 className="font-medium">Invoice Details</h1>
         </div>
 
-        <div className="grid grid-cols-2 gap-5">
+        <div id="invoiceDetails" className="grid grid-cols-2 gap-5">
           <TextField
             label="Order ID"
             type="text"
