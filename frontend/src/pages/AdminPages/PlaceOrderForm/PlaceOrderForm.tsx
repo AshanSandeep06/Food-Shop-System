@@ -29,6 +29,7 @@ const PlaceOrderForm = () => {
                 placeHolderText: "Order ID",
                 defaultValue: "",
                 focused: true,
+                readOnly: true,
               },
 
               {
