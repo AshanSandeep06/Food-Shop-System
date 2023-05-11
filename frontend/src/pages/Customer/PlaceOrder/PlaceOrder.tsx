@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import "../PlaceOrder/PlaceOrder.css";
-import Table from "../../components/Table/Table";
+import "./PlaceOrder.css";
+import Table from "../../../components/Table/Table";
 import { Button, Paper, TextField } from "@mui/material";
-import Form from "../../components/Form/Form";
+import Form from "../../../components/Form/Form";
 import Divider from "@mui/material/Divider";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";

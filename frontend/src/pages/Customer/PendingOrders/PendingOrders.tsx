@@ -1,6 +1,6 @@
 import React from "react";
-import Table from "../../components/Table";
-import "../PendingOrders/PendingOrders.css";
+import Table from "../../../components/Table";
+import "./PendingOrders.css";
 import { Chip } from "@mui/material";
 
 const PendingOrders = () => {
@@ -31,7 +31,11 @@ const PendingOrders = () => {
             "250.00",
             "1750.00",
             "46/D, Makuluwa, Galle",
-            <Chip label="Pending" color="primary" style={{fontFamily: "Poppins"}} />,
+            <Chip
+              label="Pending"
+              color="primary"
+              style={{ fontFamily: "Poppins" }}
+            />,
             "Cancel",
           ],
           [
@@ -43,7 +47,11 @@ const PendingOrders = () => {
             "250.00",
             "1750.00",
             "46/D, Makuluwa, Galle",
-            <Chip label="Pending" color="primary" style={{fontFamily: "Poppins"}} />,
+            <Chip
+              label="Pending"
+              color="primary"
+              style={{ fontFamily: "Poppins" }}
+            />,
             "Cancel",
           ],
           [
@@ -55,7 +63,11 @@ const PendingOrders = () => {
             "250.00",
             "1750.00",
             "46/D, Makuluwa, Galle",
-            <Chip label="Pending" color="primary" style={{fontFamily: "Poppins"}} />,
+            <Chip
+              label="Pending"
+              color="primary"
+              style={{ fontFamily: "Poppins" }}
+            />,
             "Cancel",
           ],
         ]}
