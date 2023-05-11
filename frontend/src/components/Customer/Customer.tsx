@@ -23,7 +23,7 @@ const Customer = () => {
     <main className="mt-20 gap-2 w-full pt-6 pb-9 px-10 bg-[#FAFAFF]">
       <Routes>
         <Route path="/home" element={<FoodMenu />}></Route>
-        <Route path="/place_order" element={<PlaceOrder />}></Route>
+        <Route path="/purchase_order" element={<PlaceOrder />}></Route>
         <Route path="/pending_orders" element={<PendingOrders />}></Route>
         <Route path="/orders_history" element={<OrdersHistory />}></Route>
       </Routes>
