@@ -308,7 +308,7 @@ const PlaceOrderForm = () => {
 
       <section className="border-2 border-red-600 p-5 bg-white shadow-lg">
         <div className="text-center text-white bg-[#0D6EFC] p-2 mb-6 font-light rounded-[8px] text-[24px]">
-          <h1 className="font-medium">Select Items</h1>
+          <h1 className="font-medium">Billing Details</h1>
         </div>
 
         <div id="invoiceDetails" className="grid grid-cols-2 gap-5">
