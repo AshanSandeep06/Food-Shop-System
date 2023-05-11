@@ -37,12 +37,12 @@ const PlaceOrderForm = () => {
 
   return (
     <section className="grid grid-cols-3">
-      <section className="border-2 border-red-600 p-3 mt-4 bg-white shadow-lg">
-        <div className="text-center text-white bg-[#0D6EFC] p-2 font-light rounded-[8px] text-[24px]">
+      <section className="border-2 border-red-600 p-5 bg-white shadow-lg">
+        <div className="text-center text-white bg-[#0D6EFC] p-2 mb-6 font-light rounded-[8px] text-[24px]">
           <h1 className="font-medium">Invoice Details</h1>
         </div>
 
-        <div>
+        <div className="grid grid-cols-2">
           <TextField
             label="Order ID"
             type="text"
@@ -88,7 +88,7 @@ const PlaceOrderForm = () => {
             }}
           />
 
-          <FormControl className="w-1/4">
+          <FormControl>
             <InputLabel id="demo-simple-select-label">Customer ID</InputLabel>
             <Select
               labelId="demo-simple-select-label"
