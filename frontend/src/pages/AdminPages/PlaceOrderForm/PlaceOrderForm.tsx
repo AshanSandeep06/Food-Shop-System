@@ -58,7 +58,7 @@ const PlaceOrderForm = () => {
           <h1 className="font-medium">Invoice Details</h1>
         </div>
 
-        <div id="invoiceDetails" className="grid grid-cols-2 gap-5">
+        <div id="invoiceDetails" className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <TextField
             label="Order ID"
             type="text"
@@ -176,7 +176,7 @@ const PlaceOrderForm = () => {
             }}
           />
 
-          <div className="col-start-2 col-end-3 items-center justify-end flex">
+          <div className="sm:col-start-2 sm:col-end-3 items-center justify-end flex">
             <Button
               className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
@@ -193,7 +193,7 @@ const PlaceOrderForm = () => {
           <h1 className="font-medium">Select Items</h1>
         </div>
 
-        <div id="itemDetails" className="grid grid-cols-2 gap-5">
+        <div id="itemDetails" className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <FormControl>
             <InputLabel id="demo-simple-select-label">Item Code</InputLabel>
             <Select
