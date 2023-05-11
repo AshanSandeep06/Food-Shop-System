@@ -35,7 +35,8 @@ const OrderRequests = () => {
               color="primary"
               style={{ fontFamily: "Poppins" }}
             />,
-            "Cancel",
+            "Accept",
+            "Deny",
           ],
           [
             "OID-001",
@@ -51,7 +52,8 @@ const OrderRequests = () => {
               color="primary"
               style={{ fontFamily: "Poppins" }}
             />,
-            "Cancel",
+            "Accept",
+            "Deny",
           ],
           [
             "OID-001",
@@ -67,7 +69,8 @@ const OrderRequests = () => {
               color="primary"
               style={{ fontFamily: "Poppins" }}
             />,
-            "Cancel",
+            "Accept",
+            "Deny",
           ],
         ]}
       />
