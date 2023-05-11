@@ -132,6 +132,32 @@ const PlaceOrderForm = () => {
               readOnly: true,
             }}
           />
+
+          <TextField
+            label="Customer Address"
+            type="text"
+            variant="outlined"
+            name="customerAddress"
+            placeholder="Customer Address"
+            required
+            defaultValue="46/D, Makuluwa, Galle"
+            InputProps={{
+              readOnly: true,
+            }}
+          />
+
+          <TextField
+            label="Customer Address"
+            type="text"
+            variant="outlined"
+            name="customerAddress"
+            placeholder="Customer Address"
+            required
+            defaultValue="46/D, Makuluwa, Galle"
+            InputProps={{
+              readOnly: true,
+            }}
+          />
         </div>
       </section>
 
