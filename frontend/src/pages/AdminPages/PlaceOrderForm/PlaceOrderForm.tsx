@@ -4,19 +4,20 @@ import BackspaceIcon from "@mui/icons-material/Backspace";
 import { TextField } from "@mui/material";
 
 const PlaceOrderForm = () => {
-  const [currentDate, setcurrentDate] = useState<string>(
+  const [currentDate, setCurrentDate] = useState<string>(
     new Date().toISOString().split("T")[0]
   );
 
   let date: Date = new Date();
 
-  const [currentTime, setcurrentTime] = useState<string>(
+  const [currentTime, setCurrentTime] = useState<string>(
     date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
   );
 
   useEffect(() => {
     setInterval(() => {
-      setcurrentDate(new Date().toISOString().split("T")[0]);
+      setCurrentDate(new Date().toISOString().split("T")[0]);
+      setCurrentTime("");
     }, 1000);
   }, []);
 
