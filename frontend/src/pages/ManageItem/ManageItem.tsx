@@ -25,7 +25,7 @@ import { read } from "fs";
 import $ from "jquery";
 
 const ManageItem = () => {
-  const itemImageRef = useRef<HTMLImageElement>(null);
+  // const itemImageRef = useRef<HTMLImageElement>(null);
   const [itemImage, setItemImage] = useState<File | null>(null);
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
