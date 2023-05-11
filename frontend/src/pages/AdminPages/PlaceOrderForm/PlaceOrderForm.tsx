@@ -134,26 +134,26 @@ const PlaceOrderForm = () => {
           />
 
           <TextField
-            label="Customer Address"
+            label="Contact Number"
             type="text"
             variant="outlined"
-            name="customerAddress"
-            placeholder="Customer Address"
+            name="customerContact"
+            placeholder="Contact Number"
             required
-            defaultValue="46/D, Makuluwa, Galle"
+            defaultValue="0758906762"
             InputProps={{
               readOnly: true,
             }}
           />
 
           <TextField
-            label="Customer Address"
+            label="Email"
             type="text"
             variant="outlined"
-            name="customerAddress"
-            placeholder="Customer Address"
+            name="customerEmail"
+            placeholder="Email"
             required
-            defaultValue="46/D, Makuluwa, Galle"
+            defaultValue="kamal123@gmail.com"
             InputProps={{
               readOnly: true,
             }}
