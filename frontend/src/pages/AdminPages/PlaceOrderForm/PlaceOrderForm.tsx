@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import "./PlaceOrderForm.css";
 import chickenPlate from "../../../assets/img/chicken-01.png";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const PlaceOrderForm = () => {
   const [currentDate, setCurrentDate] = useState<string>(
@@ -175,7 +176,7 @@ const PlaceOrderForm = () => {
 
           <div className="col-start-2 col-end-3 items-center justify-end flex">
             <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
+              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
               color="warning"
             >
@@ -278,7 +279,7 @@ const PlaceOrderForm = () => {
 
           <div className="flex justify-between items-center col-start-1 col-end-3">
             <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px] !mr-[88px]"
+              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px] !mr-[88px]"
               variant="contained"
               color="warning"
             >
@@ -286,7 +287,7 @@ const PlaceOrderForm = () => {
             </Button>
 
             <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
+              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
               color="primary"
             >
@@ -294,10 +295,10 @@ const PlaceOrderForm = () => {
             </Button>
 
             <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
+              className="!px-[12px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
               color="success"
-              endIcon={}
+              endIcon={<AddShoppingCartIcon />}
             >
               Add To Cart
             </Button>
