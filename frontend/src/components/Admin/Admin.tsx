@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import FoodMenu from "../../pages/Common/FoodMenu";
-import ManageCustomer from "../../pages/ManageCustomer";
-import ManageItem from "../../pages/ManageItem";
+import ManageCustomer from "../../pages/Admin/ManageCustomer";
+import ManageItem from "../../pages/Admin/ManageItem";
 import PlaceOrderForm from "../../pages/Admin/PlaceOrderForm";
 
 const Admin = () => {

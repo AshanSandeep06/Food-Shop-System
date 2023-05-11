@@ -11,12 +11,12 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import React from "react";
-import Form from "../../components/Form";
+import Form from "../../../components/Form";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import DeleteIcon from "@mui/icons-material/Delete";
 import BackspaceIcon from "@mui/icons-material/Backspace";
-import Table from "../../components/Table";
+import Table from "../../../components/Table";
 import "./ManageCustomer.css";
 
 const ManageCustomer = () => {
@@ -71,8 +71,12 @@ const ManageCustomer = () => {
               className="!font-poppins"
             >
               {/* <MenuItem value={customerId}>Customer ID</MenuItem> */}
-              <MenuItem className="!font-poppins" value={1}>Customer ID</MenuItem>
-              <MenuItem className="!font-poppins" value={2}>Contact Number</MenuItem>
+              <MenuItem className="!font-poppins" value={1}>
+                Customer ID
+              </MenuItem>
+              <MenuItem className="!font-poppins" value={2}>
+                Contact Number
+              </MenuItem>
             </Select>
           </FormControl>
         </div>

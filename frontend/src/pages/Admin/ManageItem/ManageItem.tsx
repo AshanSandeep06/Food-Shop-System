@@ -11,12 +11,12 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import React, { useRef, useState } from "react";
-import Form from "../../components/Form";
+import Form from "../../../components/Form";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import DeleteIcon from "@mui/icons-material/Delete";
 import BackspaceIcon from "@mui/icons-material/Backspace";
-import Table from "../../components/Table";
+import Table from "../../../components/Table";
 import "./ManageItem.css";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import iceCreamImg from "../../assets/img/icecream-01.png";
