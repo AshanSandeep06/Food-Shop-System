@@ -33,10 +33,10 @@ const PlaceOrderForm = () => {
               },
 
               {
-                label: "Order ID",
+                label: "Customer ID",
                 textFieldType: "text",
-                name: "orderId",
-                placeHolderText: "Order ID",
+                name: "customerId",
+                placeHolderText: "Customer ID",
                 defaultValue: "",
               },
             ]}
