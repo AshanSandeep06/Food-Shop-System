@@ -23,6 +23,7 @@ const PlaceOrderForm = () => {
   const [currentTime, setCurrentTime] = useState<string>(nowTime);
 
   const [selectedCustomerID, setSelectedCustomerID] = useState<string>("");
+  const [selectedItemCode, setSelectedItemCode] = useState<string>("");
 
   useEffect(() => {
     setInterval(() => {
@@ -35,6 +36,10 @@ const PlaceOrderForm = () => {
     setSelectedCustomerID(event.target.value as string);
     // alert(event.target.value as string);
   };
+
+  function handleChangeItemCode(event: SelectChangeEvent) {
+    setSelectedItemCode(event.target.value as string);
+  }
 
   return (
     <section className="grid grid-cols-3">
@@ -179,132 +184,69 @@ const PlaceOrderForm = () => {
         </div>
 
         <div id="invoiceDetails" className="grid grid-cols-2 gap-5">
-          <TextField
-            label="Order ID"
-            type="text"
-            variant="outlined"
-            name="orderId"
-            placeholder="Order ID"
-            required
-            defaultValue="OID-001"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-
-          <TextField
-            label="Order Date"
-            type="date"
-            variant="outlined"
-            name="orderDate"
-            placeholder="Order Date"
-            required
-            value={currentDate}
-            InputProps={{
-              readOnly: true,
-            }}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-
-          <TextField
-            label="Order Time"
-            type="time"
-            variant="outlined"
-            name="orderTime"
-            placeholder="Order Time"
-            required
-            value={currentTime}
-            InputProps={{
-              readOnly: true,
-            }}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-
           <FormControl>
-            <InputLabel id="demo-simple-select-label">Customer ID</InputLabel>
+            <InputLabel id="demo-simple-select-label">Item Code</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Customer ID"
               className="!font-poppins"
-              value={selectedCustomerID}
-              onChange={handleChangeCustomerID}
+              value={selectedItemCode}
+              onChange={handleChangeItemCode}
             >
-              {/* <MenuItem value={customerId}>Customer ID</MenuItem> */}
               <MenuItem className="!font-poppins" value={1}>
-                C00-001
+                I00-001
               </MenuItem>
               <MenuItem className="!font-poppins" value={2}>
-                C00-002
+                I00-002
               </MenuItem>
             </Select>
           </FormControl>
 
           <TextField
-            label="Customer Name"
+            label="Item Name"
             type="text"
             variant="outlined"
-            name="customerName"
-            placeholder="Customer Name"
+            name="itemName"
+            placeholder="Item Name"
             required
-            defaultValue="Kamal Perera"
             InputProps={{
               readOnly: true,
+            }}
+            InputLabelProps={{
+              shrink: true,
             }}
           />
 
           <TextField
-            label="Customer Address"
+            label="Unit Price"
             type="text"
             variant="outlined"
-            name="customerAddress"
-            placeholder="Customer Address"
+            name="unitPrice"
+            placeholder="Unit Price"
             required
-            defaultValue="46/D, Makuluwa, Galle"
             InputProps={{
               readOnly: true,
+            }}
+            InputLabelProps={{
+              shrink: true,
             }}
           />
 
           <TextField
-            label="Contact Number"
+            label="Qty On Hand"
             type="text"
             variant="outlined"
-            name="customerContact"
-            placeholder="Contact Number"
+            name="qtyOnHand"
+            placeholder="Qty On Hand"
             required
-            defaultValue="0758906762"
             InputProps={{
               readOnly: true,
             }}
-          />
-
-          <TextField
-            label="Email"
-            type="text"
-            variant="outlined"
-            name="customerEmail"
-            placeholder="Email"
-            required
-            defaultValue="kamal123@gmail.com"
-            InputProps={{
-              readOnly: true,
+            InputLabelProps={{
+              shrink: true,
             }}
           />
-
-          <div className="col-start-2 col-end-3 items-center justify-end flex">
-            <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
-              variant="contained"
-              color="info"
-            >
-              Clear
-            </Button>
-          </div>
         </div>
       </section>
 
