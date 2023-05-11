@@ -14,9 +14,9 @@ import {
 } from "@mui/material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import PlaceOrder from "../../pages/Customer/PlaceOrder/PlaceOrder";
-import PendingOrders from "../../pages/Customer/PendingOrders";
-import OrdersHistory from "../../pages/Customer/OrdersHistory";
+import PlaceOrder from "../../pages/CustomerPages/PlaceOrder/PlaceOrder";
+import PendingOrders from "../../pages/CustomerPages/PendingOrders";
+import OrdersHistory from "../../pages/CustomerPages/OrdersHistory";
 
 const Customer = () => {
   return (
