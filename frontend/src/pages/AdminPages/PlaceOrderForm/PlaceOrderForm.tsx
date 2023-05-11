@@ -255,7 +255,7 @@ const PlaceOrderForm = () => {
             }}
           />
 
-          <div className="col-end-3 col-start-1 justify-center items-center flex">
+          <div className="col-end-3 col-start-1 justify-center items-center flex mb-3">
             {itemImage && (
               <img
                 id="itemImage"
