@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import FoodMenu from "../../pages/Common/FoodMenu";
-import ManageCustomer from "../../pages/Admin/ManageCustomer";
-import ManageItem from "../../pages/Admin/ManageItem";
-import PlaceOrderForm from "../../pages/Admin/PlaceOrderForm";
+import ManageCustomer from "../../pages/AdminPages/ManageCustomer";
+import ManageItem from "../../pages/AdminPages/ManageItem";
+import PlaceOrderForm from "../../pages/AdminPages/PlaceOrderForm";
 
 const Admin = () => {
   return (
