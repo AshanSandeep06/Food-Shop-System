@@ -37,8 +37,8 @@ const PlaceOrderForm = () => {
   return (
     <section>
       <section>
-        <div>
-          <h1>Invoice Details</h1>
+        <div className="text-center text-white bg-[#0D6EFC] p-2 font-light rounded-[8px] text-[24px]">
+          <h1 className="font-medium">Invoice Details</h1>
         </div>
 
         <div>
