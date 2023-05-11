@@ -267,6 +267,7 @@ const PlaceOrderForm = () => {
           </div>
 
           <TextField
+          className="col-end-3 col-start-1"
             label="Selected Quantity"
             type="text"
             variant="outlined"
