@@ -41,6 +41,14 @@ const Header = (props: HeaderProps) => {
     right: false,
   });
 
+  const [loginState, setLoginState] = React.useState({
+    right: false,
+  });
+
+  const [registerState, setRegisterState] = React.useState({
+    right: false,
+  });
+
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -54,9 +62,23 @@ const Header = (props: HeaderProps) => {
       }
 
       setCartState({ ...cartState, [anchor]: open });
+      setLoginState({ ...loginState, [anchor]: open });
+      setRegisterState({ ...registerState, [anchor]: open });
     };
 
-  const list = (anchor: Anchor) => (
+  const list2 = (anchor: Anchor) => (
+    <Box
+      sx={{
+        backgroundColor: "blue",
+        width: 375,
+        position: "relative",
+        backdropFilter: "static",
+      }}
+      role="presentation"
+    ></Box>
+  );
+
+  const list1 = (anchor: Anchor) => (
     <Box
       sx={{ width: 375, position: "relative", backdropFilter: "static" }}
       role="presentation"
@@ -190,7 +212,7 @@ const Header = (props: HeaderProps) => {
                 onClose={toggleDrawer(anchor, true)}
                 onOpen={toggleDrawer(anchor, true)}
               >
-                {list(anchor)}
+                {list1(anchor)}
               </SwipeableDrawer>
             </React.Fragment>
           ))}
