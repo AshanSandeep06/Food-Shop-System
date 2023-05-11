@@ -58,7 +58,10 @@ const PlaceOrderForm = () => {
           <h1 className="font-medium">Invoice Details</h1>
         </div>
 
-        <div id="invoiceDetails" className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div
+          id="invoiceDetails"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+        >
           <TextField
             label="Order ID"
             type="text"
@@ -258,7 +261,7 @@ const PlaceOrderForm = () => {
             }}
           />
 
-          <div className="flex justify-center items-center col-start-1 col-end-3 mb-2">
+          <div className="flex justify-center items-center col-span-1 sm:col-span-2 mb-2">
             {itemImage && (
               <img
                 id="itemImage"
@@ -270,7 +273,7 @@ const PlaceOrderForm = () => {
           </div>
 
           <TextField
-            className="col-end-3 col-start-1"
+            className="md:col-end-3 md:col-start-1"
             label="Selected Quantity"
             type="number"
             variant="outlined"
@@ -279,7 +282,7 @@ const PlaceOrderForm = () => {
             required
           />
 
-          <div className="flex sm:justify-between items-center col-start-1 col-end-3 flex-wrap justify-center gap-[22px] sm:gap-[0px]">
+          <div className="flex sm:justify-between items-center col-span-1 sm:col-span-2 flex-wrap justify-center gap-[22px] sm:gap-[0px]">
             <Button
               className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px] sm:!mr-[55px]"
               variant="contained"
