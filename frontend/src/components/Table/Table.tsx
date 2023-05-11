@@ -62,7 +62,7 @@ const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
               </tr>
             </thead>
 
-            <tbody style={tableHeight}>
+            <tbody style={tableHeight} className="cursor-pointer">
               {tblData.map((dataRow, index) => (
                 <tr key={index} style={tblDataRow}>
                   {dataRow.map((data, index) => (

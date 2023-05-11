@@ -12,13 +12,14 @@ const OrderRequests = () => {
           "Order ID",
           "Customer ID",
           "Name",
-          "Contact Number",
+          "Contact",
           "Sub Total",
           "Delivery Fee",
           "Total Charge",
           "Order Location",
           "Order Status",
-          "Action",
+          "Accept",
+          "Deny",
         ]}
         tblData={[
           [
