@@ -267,18 +267,12 @@ const PlaceOrderForm = () => {
           </div>
 
           <TextField
-            label="Qty On Hand"
+            label="Selected Quantity"
             type="text"
             variant="outlined"
             name="qtyOnHand"
-            placeholder="Qty On Hand"
+            placeholder="Selected Quantity"
             required
-            InputProps={{
-              readOnly: true,
-            }}
-            InputLabelProps={{
-              shrink: true,
-            }}
           />
         </div>
       </section>
