@@ -306,7 +306,125 @@ const PlaceOrderForm = () => {
         </div>
       </section>
 
-      <section></section>
+      <section className="border-2 border-red-600 p-5 bg-white shadow-lg">
+        <div className="text-center text-white bg-[#0D6EFC] p-2 mb-6 font-light rounded-[8px] text-[24px]">
+          <h1 className="font-medium">Select Items</h1>
+        </div>
+
+        <div id="invoiceDetails" className="grid grid-cols-2 gap-5">
+          <FormControl>
+            <InputLabel id="demo-simple-select-label">Item Code</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Customer ID"
+              className="!font-poppins"
+              value={selectedItemCode}
+              onChange={handleChangeItemCode}
+            >
+              <MenuItem className="!font-poppins" value={1}>
+                I00-001
+              </MenuItem>
+              <MenuItem className="!font-poppins" value={2}>
+                I00-002
+              </MenuItem>
+            </Select>
+          </FormControl>
+
+          <TextField
+            label="Item Name"
+            type="text"
+            variant="outlined"
+            name="itemName"
+            placeholder="Item Name"
+            required
+            InputProps={{
+              readOnly: true,
+            }}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+
+          <TextField
+            label="Unit Price"
+            type="text"
+            variant="outlined"
+            name="unitPrice"
+            placeholder="Unit Price"
+            required
+            InputProps={{
+              readOnly: true,
+            }}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+
+          <TextField
+            label="Qty On Hand"
+            type="text"
+            variant="outlined"
+            name="qtyOnHand"
+            placeholder="Qty On Hand"
+            required
+            InputProps={{
+              readOnly: true,
+            }}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+
+          <div className="flex justify-center items-center col-start-1 col-end-3 mb-2">
+            {itemImage && (
+              <img
+                id="itemImage"
+                src={itemImage}
+                className="object-contain h-[140px]"
+                // ref={itemImageRef}
+              />
+            )}
+          </div>
+
+          <TextField
+            className="col-end-3 col-start-1"
+            label="Selected Quantity"
+            type="number"
+            variant="outlined"
+            name="qtyOnHand"
+            placeholder="Selected Quantity"
+            required
+          />
+
+          <div className="flex justify-between items-center col-start-1 col-end-3">
+            <Button
+              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px] !mr-[88px]"
+              variant="contained"
+              color="warning"
+            >
+              Clear
+            </Button>
+
+            <Button
+              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px]"
+              variant="contained"
+              color="primary"
+            >
+              Update
+            </Button>
+
+            <Button
+              className="!px-[12px] !capitalize !font-poppins !font-normal !text-[15px]"
+              variant="contained"
+              color="success"
+              endIcon={<AddShoppingCartIcon />}
+            >
+              Add To Cart
+            </Button>
+          </div>
+        </div>
+      </section>
     </section>
   );
 };
