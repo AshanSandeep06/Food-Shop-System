@@ -8,6 +8,12 @@ const PlaceOrderForm = () => {
     new Date().toISOString().split("T")[0]
   );
 
+  let date: Date = new Date();
+
+  const [currentTime, setcurrentTime] = useState<string>(
+    date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+  );
+
   useEffect(() => {
     setInterval(() => {
       setcurrentDate(new Date().toISOString().split("T")[0]);
@@ -43,6 +49,22 @@ const PlaceOrderForm = () => {
             placeholder="Order Date"
             required
             value={currentDate}
+            InputProps={{
+              readOnly: true,
+            }}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+
+          <TextField
+            label="Order Time"
+            type="time"
+            variant="outlined"
+            name="orderTime"
+            placeholder="Order Time"
+            required
+            value={currentTime}
             InputProps={{
               readOnly: true,
             }}
