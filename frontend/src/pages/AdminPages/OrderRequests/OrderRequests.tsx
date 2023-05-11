@@ -18,7 +18,7 @@ const OrderRequests = () => {
           "Total Charge",
           "Order Location",
           "Order Status",
-          "Option",
+          "Action",
         ]}
         tblData={[
           [
