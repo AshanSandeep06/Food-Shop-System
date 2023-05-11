@@ -52,7 +52,7 @@ const PlaceOrderForm = () => {
   }
 
   return (
-    <section className="grid grid-cols-3 gap-6">
+    <section className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
       <section className="h-max border-2 border-red-600 px-5 pt-5 pb-8 bg-white shadow-lg">
         <div className="text-center text-white bg-[#0D6EFC] p-2 mb-6 font-light rounded-[8px] text-[24px]">
           <h1 className="font-medium">Invoice Details</h1>
@@ -308,7 +308,7 @@ const PlaceOrderForm = () => {
         </div>
       </section>
 
-      <section className="h-max border-2 border-red-600 px-5 pt-5 pb-8 bg-white shadow-lg">
+      <section className="lg:col-start-1 lg:col-span-2 xl:col-start-auto xl:col-span-1 h-max border-2 border-red-600 px-5 pt-5 pb-8 bg-white shadow-lg">
         <div className="text-center text-white bg-[#0D6EFC] p-2 mb-6 font-light rounded-[8px] text-[24px]">
           <h1 className="font-medium">Billing Details</h1>
         </div>
