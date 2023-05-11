@@ -42,7 +42,7 @@ const PlaceOrderForm = () => {
           <h1 className="font-medium">Invoice Details</h1>
         </div>
 
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-5">
           <TextField
             label="Order ID"
             type="text"
@@ -160,13 +160,15 @@ const PlaceOrderForm = () => {
             }}
           />
 
-          <Button
-            className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
-            variant="contained"
-            color="info"
-          >
-            Clear
-          </Button>
+          <div className="col-start-2 col-end-3 items-center justify-end flex">
+            <Button
+              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
+              variant="contained"
+              color="info"
+            >
+              Clear
+            </Button>
+          </div>
         </div>
       </section>
 
