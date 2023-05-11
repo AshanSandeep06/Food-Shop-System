@@ -72,6 +72,19 @@ const PlaceOrderForm = () => {
               shrink: true,
             }}
           />
+
+          <TextField
+            label="Customer ID"
+            type="text"
+            variant="outlined"
+            name="customerId"
+            placeholder="Customer ID"
+            required
+            defaultValue="C00-001"
+            InputProps={{
+              readOnly: true,
+            }}
+          />
         </div>
       </section>
 
