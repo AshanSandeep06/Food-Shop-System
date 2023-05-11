@@ -279,9 +279,9 @@ const PlaceOrderForm = () => {
             required
           />
 
-          <div className="flex justify-between items-center col-start-1 col-end-3">
+          <div className="flex sm:justify-between items-center col-start-1 col-end-3 flex-wrap justify-center gap-[22px] sm:gap-[0px]">
             <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px] !mr-[55px]"
+              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px] sm:!mr-[55px]"
               variant="contained"
               color="warning"
             >
@@ -365,9 +365,9 @@ const PlaceOrderForm = () => {
             required
           />
 
-          <div className="flex justify-between items-center col-start-1 col-end-3">
+          <div className="flex sm:justify-between items-center col-start-1 col-end-3 flex-wrap justify-center gap-[22px] sm:gap-[0px]">
             <Button
-              className="!px-[12px] !capitalize !font-poppins !font-normal !text-[15px] !mr-[88px]"
+              className="!px-[12px] !capitalize !font-poppins !font-normal !text-[15px] sm:!mr-[88px] mr-[0px]"
               variant="outlined"
               color="error"
               endIcon={<DeleteIcon />}
