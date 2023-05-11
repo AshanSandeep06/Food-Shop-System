@@ -13,6 +13,8 @@ import {
 import "./PlaceOrderForm.css";
 import chickenPlate from "../../../assets/img/chicken-01.png";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const PlaceOrderForm = () => {
   const [currentDate, setCurrentDate] = useState<string>(
@@ -371,17 +373,19 @@ const PlaceOrderForm = () => {
 
           <div className="flex justify-between items-center col-start-1 col-end-3">
             <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px] !mr-[88px]"
+              className="!px-[12px] !capitalize !font-poppins !font-normal !text-[15px] !mr-[88px]"
               variant="outlined"
               color="error"
+              endIcon={<DeleteIcon />}
             >
               Cancel Order
             </Button>
 
             <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px]"
+              className="!px-[12px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
               color="success"
+              endIcon={<CheckCircleIcon />}
             >
               Place Order
             </Button>
