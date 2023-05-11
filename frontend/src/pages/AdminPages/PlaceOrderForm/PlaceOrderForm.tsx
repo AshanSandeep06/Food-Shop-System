@@ -107,7 +107,18 @@ const PlaceOrderForm = () => {
             </Select>
           </FormControl>
 
-          
+          <TextField
+            label="Order ID"
+            type="text"
+            variant="outlined"
+            name="orderId"
+            placeholder="Order ID"
+            required
+            defaultValue="OID-001"
+            InputProps={{
+              readOnly: true,
+            }}
+          />
         </div>
       </section>
 
