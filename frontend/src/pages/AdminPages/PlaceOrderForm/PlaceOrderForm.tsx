@@ -177,7 +177,7 @@ const PlaceOrderForm = () => {
             <Button
               className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
               variant="contained"
-              color="info"
+              color="warning"
             >
               Clear
             </Button>
@@ -269,7 +269,7 @@ const PlaceOrderForm = () => {
           <TextField
             className="col-end-3 col-start-1"
             label="Selected Quantity"
-            type="text"
+            type="number"
             variant="outlined"
             name="qtyOnHand"
             placeholder="Selected Quantity"
@@ -280,7 +280,7 @@ const PlaceOrderForm = () => {
             <Button
               className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px] !mr-[88px]"
               variant="contained"
-              color="info"
+              color="warning"
             >
               Clear
             </Button>
@@ -288,17 +288,18 @@ const PlaceOrderForm = () => {
             <Button
               className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
               variant="contained"
-              color="info"
+              color="primary"
             >
-              Clear
+              Update
             </Button>
 
             <Button
               className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
               variant="contained"
-              color="info"
+              color="success"
+              endIcon={}
             >
-              Clear
+              Add To Cart
             </Button>
           </div>
         </div>
