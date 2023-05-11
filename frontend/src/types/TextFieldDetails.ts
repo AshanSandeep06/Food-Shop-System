@@ -4,4 +4,5 @@ export type TextFieldDetails = {
     name: string;
     placeHolderText: string;
     defaultValue?: string
+    focused?: boolean
   };

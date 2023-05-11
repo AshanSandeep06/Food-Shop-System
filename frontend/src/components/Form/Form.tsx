@@ -25,6 +25,7 @@ const Form = (props: FormProps) => {
             placeholder={textField.placeHolderText}
             required
             defaultValue={textField.defaultValue}
+            focused={textField.focused}
           />
         ))}
 
