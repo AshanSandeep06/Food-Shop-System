@@ -53,7 +53,7 @@ const PlaceOrderForm = () => {
 
   return (
     <section className="grid grid-cols-3">
-      <section className="border-2 border-red-600 p-5 bg-white shadow-lg">
+      <section className="h-max border-2 border-red-600 px-5 pt-5 pb-8 bg-white shadow-lg">
         <div className="text-center text-white bg-[#0D6EFC] p-2 mb-6 font-light rounded-[8px] text-[24px]">
           <h1 className="font-medium">Invoice Details</h1>
         </div>
@@ -188,7 +188,7 @@ const PlaceOrderForm = () => {
         </div>
       </section>
 
-      <section className="border-2 border-red-600 p-5 bg-white shadow-lg">
+      <section className="h-max border-2 border-red-600 px-5 pt-5 pb-8 bg-white shadow-lg">
         <div className="text-center text-white bg-[#0D6EFC] p-2 mb-6 font-light rounded-[8px] text-[24px]">
           <h1 className="font-medium">Select Items</h1>
         </div>
@@ -308,7 +308,7 @@ const PlaceOrderForm = () => {
         </div>
       </section>
 
-      <section className="border-2 border-red-600 p-5 bg-white shadow-lg">
+      <section className="h-max border-2 border-red-600 px-5 pt-5 pb-8 bg-white shadow-lg">
         <div className="text-center text-white bg-[#0D6EFC] p-2 mb-6 font-light rounded-[8px] text-[24px]">
           <h1 className="font-medium">Billing Details</h1>
         </div>
