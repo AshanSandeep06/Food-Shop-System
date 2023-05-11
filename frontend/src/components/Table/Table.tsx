@@ -1,14 +1,15 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { MouseEventHandler } from "react";
 
 type TableProps = {
   tblName: string;
   tblHeight: string;
   tblHeaders: string[];
   tblData: Array<string[] | any[]>;
+  handleTblRowClick?: MouseEventHandler<HTMLTableRowElement>;
 };
 
-const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
+const Table = ({ tblName, tblHeight, tblHeaders, tblData, handleTblRowClick }: TableProps) => {
   // let tblHeaderStyles = `grid grid-cols-${tblHeaders.length} h-full`;
   let tblHeaderStyles = {
     display: "grid",
@@ -64,7 +65,7 @@ const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
 
             <tbody style={tableHeight} className="cursor-pointer">
               {tblData.map((dataRow, index) => (
-                <tr key={index} style={tblDataRow}>
+                <tr onClick={handleTblRowClick} key={index} style={tblDataRow}>
                   {dataRow.map((data, index) => (
                     <td
                       key={index}
