@@ -70,11 +70,27 @@ const Table = ({ tblName, tblHeight, tblHeaders, tblData }: TableProps) => {
                       key={index}
                       className="border border-slate-300 p-2 flex items-center justify-center"
                     >
-                      {data == "Cancel" ? (
+                      {data === "Cancel" ? (
                         <Button
                           className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
                           variant="contained"
                           color="error"
+                        >
+                          {data}
+                        </Button>
+                      ) : data == "Deny" ? (
+                        <Button
+                          className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
+                          variant="contained"
+                          color="error"
+                        >
+                          {data}
+                        </Button>
+                      ) : data == "Accept" ? (
+                        <Button
+                          className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
+                          variant="contained"
+                          color="success"
                         >
                           {data}
                         </Button>
