@@ -108,13 +108,13 @@ const PlaceOrderForm = () => {
           </FormControl>
 
           <TextField
-            label="Order ID"
+            label="Customer Name"
             type="text"
             variant="outlined"
-            name="orderId"
-            placeholder="Order ID"
+            name="customerName"
+            placeholder="Customer Name"
             required
-            defaultValue="OID-001"
+            defaultValue="Kamal Perera"
             InputProps={{
               readOnly: true,
             }}
