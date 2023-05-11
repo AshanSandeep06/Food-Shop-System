@@ -14,10 +14,6 @@ const PlaceOrderForm = () => {
     }, 1000);
   }, []);
 
-  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // setSelectedDate(event.target.value);
-  };
-
   return (
     <section>
       <section>
