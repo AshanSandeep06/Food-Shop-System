@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const PlaceOrderForm = () => {
-  return (
-    <div>PlaceOrderForm</div>
-  )
-}
+  return <div>PlaceOrderForm</div>;
+};
 
 export default PlaceOrderForm;
