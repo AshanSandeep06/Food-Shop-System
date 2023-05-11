@@ -18,7 +18,7 @@ const PlaceOrderForm = () => {
     new Date().toISOString().split("T")[0]
   );
 
-  const [itemImage, setItemImage] = useState<File | null>(null);
+  const [itemImage, setItemImage] = useState<string>("");
 
   const nowDate = new Date();
   const nowTime = nowDate.toLocaleTimeString("en-US", { hour12: false });
@@ -32,6 +32,7 @@ const PlaceOrderForm = () => {
     setInterval(() => {
       setCurrentDate(new Date().toISOString().split("T")[0]);
       setCurrentTime(new Date().toLocaleTimeString("en-US", { hour12: false }));
+      setItemImage(chickenPlate);
     }, 1000);
   }, []);
 
@@ -44,10 +45,8 @@ const PlaceOrderForm = () => {
     setSelectedItemCode(event.target.value as string);
 
     // Set the Item Image Here.
-    setItemImage(null);
+    setItemImage(chickenPlate);
   }
-
-  const imageURL = itemImage && URL.createObjectURL(itemImage);
 
   return (
     <section className="grid grid-cols-3">
@@ -257,11 +256,11 @@ const PlaceOrderForm = () => {
           />
 
           <div>
-            {imageURL && (
+            {itemImage && (
               <img
                 id="itemImage"
-                src={imageURL}
-                className="object-contain h-[319px]"
+                src={itemImage}
+                className="object-contain h-[140px]"
                 // ref={itemImageRef}
               />
             )}
