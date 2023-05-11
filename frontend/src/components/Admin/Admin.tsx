@@ -7,7 +7,7 @@ import PlaceOrderForm from "../../pages/AdminPages/PlaceOrderForm";
 
 const Admin = () => {
   return (
-    <main className="mt-20 gap-2 w-full pt-5 pb-9 px-10 bg-[#FAFAFF]">
+    <main className="mt-20 gap-2 w-full pt-5 pb-9 px-7 bg-[#FAFAFF]">
       <Routes>
         <Route path="/home" element={<FoodMenu />}></Route>
         <Route path="/manage_customer" element={<ManageCustomer />}></Route>
