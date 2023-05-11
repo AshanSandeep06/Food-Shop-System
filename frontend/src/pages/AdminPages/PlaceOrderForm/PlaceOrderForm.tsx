@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Form from "../../../components/Form/Form";
 import BackspaceIcon from "@mui/icons-material/Backspace";
-import { TextField } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  TextField,
+} from "@mui/material";
 
 const PlaceOrderForm = () => {
   const [currentDate, setCurrentDate] = useState<string>(
@@ -13,12 +20,19 @@ const PlaceOrderForm = () => {
 
   const [currentTime, setCurrentTime] = useState<string>(nowTime);
 
+  const [selectedCustomerID, setSelectedCustomerID] = useState<string>("");
+
   useEffect(() => {
     setInterval(() => {
       setCurrentDate(new Date().toISOString().split("T")[0]);
       setCurrentTime(new Date().toLocaleTimeString("en-US", { hour12: false }));
     }, 1000);
   }, []);
+
+  const handleChangeCustomerID = (event: SelectChangeEvent) => {
+    setSelectedCustomerID(event.target.value as string);
+    // alert(event.target.value as string);
+  };
 
   return (
     <section>
@@ -73,18 +87,25 @@ const PlaceOrderForm = () => {
             }}
           />
 
-          <TextField
-            label="Customer ID"
-            type="text"
-            variant="outlined"
-            name="customerId"
-            placeholder="Customer ID"
-            required
-            defaultValue="C00-001"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
+          <FormControl className="w-1/4">
+            <InputLabel id="demo-simple-select-label">Customer</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Customer"
+              className="!font-poppins"
+              value={selectedCustomerID}
+              onChange={handleChangeCustomerID}
+            >
+              {/* <MenuItem value={customerId}>Customer ID</MenuItem> */}
+              <MenuItem className="!font-poppins" value={1}>
+                C00-001
+              </MenuItem>
+              <MenuItem className="!font-poppins" value={2}>
+                C00-002
+              </MenuItem>
+            </Select>
+          </FormControl>
         </div>
       </section>
 
