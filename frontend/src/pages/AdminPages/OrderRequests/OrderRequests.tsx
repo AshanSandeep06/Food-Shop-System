@@ -14,6 +14,7 @@ import { TransitionProps } from "@mui/material/transitions";
 import { motion } from "framer-motion";
 import iceCreamImage from "../../../assets/img/icecream-01.png";
 import CartItem from "../../../components/CartItem";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -117,11 +118,18 @@ const OrderRequests = () => {
           onClose={handleClose}
           aria-describedby="alert-dialog-slide-description"
         >
-          <DialogTitle className="!font-poppins">{"Cart Item List"}</DialogTitle>
+          <DialogTitle className="!font-poppins text-center flex justify-between">
+            <h5>Cart Items List</h5>
+            <Button
+              onClick={handleClose}
+              type="button"
+              endIcon={<CloseIcon className="text-black" />}
+            ></Button>
+          </DialogTitle>
 
           <DialogContent>
-            <div className="flex h-[calc(100vh-70px)] flex-col bg-[#F5EEE9] gap-8">
-              <div className="flex flex-col pt-5 pl-5 pr-5 gap-3 h-[528px] overflow-y-scroll scrollbar-hidden scroll-smooth">
+            <div className="flex flex-col bg-[#F5EEE9] gap-8">
+              <div className="flex flex-col py-5 pl-5 pr-5 gap-3 h-[480px] overflow-y-scroll scroll-smooth">
                 {/* cart items */}
                 <CartItem />
                 <CartItem />
@@ -134,15 +142,6 @@ const OrderRequests = () => {
                 <CartItem />
                 <CartItem />
                 <CartItem />
-              </div>
-
-              <div className="px-16">
-                <button
-                  className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600
-            text-gray-50 text-lg my-2 hover:shadow-lg"
-                >
-                  Continue
-                </button>
               </div>
             </div>
           </DialogContent>
