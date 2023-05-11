@@ -62,7 +62,7 @@ const App = () => {
       {/* ========== Admin Page ========== */}
       <Header
         buttons={[logoutLink]}
-        links={["home", "manage_customer", "manage_item", "admin_placeOrder"]}
+        links={["home", "manage_customer", "manage_item", "place_order"]}
       />
       <Admin />
     </div>
