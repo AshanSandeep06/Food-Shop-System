@@ -1,7 +1,9 @@
 import React from "react";
 
 const PlaceOrderForm = () => {
-  return <div>PlaceOrderForm</div>;
+  return (
+    <section></section>
+  );
 };
 
 export default PlaceOrderForm;
