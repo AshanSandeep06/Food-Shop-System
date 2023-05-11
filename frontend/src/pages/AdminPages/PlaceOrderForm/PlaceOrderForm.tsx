@@ -316,8 +316,8 @@ const PlaceOrderForm = () => {
           <h1 className="font-medium">Billing Details</h1>
         </div>
 
-        <div id="billingDetails" className="grid grid-cols-2 gap-5">
-          <div className="flex justify-start items-center col-start-1 col-end-3">
+        <div id="billingDetails" className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="flex justify-start items-center md:col-start-1 md:col-end-3">
             <span className="text-start p-1 text-red-700 !text-[25px] font-medium">
               Total :
             </span>
@@ -368,7 +368,7 @@ const PlaceOrderForm = () => {
             required
           />
 
-          <div className="flex sm:justify-between items-center col-start-1 col-end-3 flex-wrap justify-center gap-[22px] sm:gap-[0px]">
+          <div className="flex sm:justify-between items-center col-span-1 sm:col-span-2 flex-wrap justify-center gap-[22px] sm:gap-[0px]">
             <Button
               className="!px-[12px] !capitalize !font-poppins !font-normal !text-[15px] sm:!mr-[88px] mr-[0px]"
               variant="outlined"
