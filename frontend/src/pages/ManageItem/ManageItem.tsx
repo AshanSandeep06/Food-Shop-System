@@ -60,21 +60,25 @@ const ManageItem = () => {
   }));
 
   const handleSetItemImage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let file = e.target.files;
-    let reader = new FileReader();
+    // let file = e.target.files;
+    // let reader = new FileReader();
 
-    if (FileReader && file && file.length) {
-      reader.onload = function () {
-        if (itemImageRef.current) {
-          itemImageRef.current.setAttribute("src", String(reader.result));
-        }
-      };
-      reader.readAsDataURL(file[0]);
-    } else {
-      if (itemImageRef.current) {
-        itemImageRef.current.setAttribute("src", "");
-      }
-    }
+    // if (FileReader && file && file.length) {
+    //   reader.onload = function () {
+    //     if (itemImageRef.current) {
+    //       itemImageRef.current.setAttribute("src", String(reader.result));
+    //     }
+    //   };
+    //   reader.readAsDataURL(file[0]);
+    // } else {
+    //   if (itemImageRef.current) {
+    //     itemImageRef.current.setAttribute("src", "");
+    //   }
+    // }
+
+    // ---------------------------------------------------
+
+    
   };
 
   return (
