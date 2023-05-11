@@ -4,6 +4,7 @@ import FoodMenu from "../../pages/Common/FoodMenu";
 import ManageCustomer from "../../pages/AdminPages/ManageCustomer";
 import ManageItem from "../../pages/AdminPages/ManageItem";
 import PlaceOrderForm from "../../pages/AdminPages/PlaceOrderForm";
+import OrderRequests from "../../pages/AdminPages/OrderRequests";
 
 const Admin = () => {
   return (
