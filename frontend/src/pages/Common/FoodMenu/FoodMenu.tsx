@@ -9,11 +9,11 @@ import RiceBowlIcon from "@mui/icons-material/RiceBowl";
 import IcecreamIcon from "@mui/icons-material/Icecream";
 import StaticImages from "../../../components/StaticImages/StaticImages";
 import { StaticFoodsList } from "../../../types/StaticFoodItems";
-import apple from "../../assets/img/apple.png";
-import iceCream from "../../assets/img/icecream-01.png";
-import banana from "../../assets/img/banana.png";
-import strawberries from "../../assets/img/strawberries-01.png";
-import chicken from "../../assets/img/chicken-01.png";
+import apple from "../../../assets/img/apple.png";
+import iceCream from "../../../assets/img/icecream-01.png";
+import banana from "../../../assets/img/banana.png";
+import strawberries from "../../../assets/img/strawberries-01.png";
+import chicken from "../../../assets/img/chicken-01.png";
 import Food from "../../../components/Food";
 import $ from "jquery";
 
