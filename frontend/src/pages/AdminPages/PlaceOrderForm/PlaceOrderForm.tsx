@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Form from "../../../components/Form/Form";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import {
+  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -158,6 +159,14 @@ const PlaceOrderForm = () => {
               readOnly: true,
             }}
           />
+
+          <Button
+            className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
+            variant="contained"
+            color="info"
+          >
+            Clear
+          </Button>
         </div>
       </section>
 
