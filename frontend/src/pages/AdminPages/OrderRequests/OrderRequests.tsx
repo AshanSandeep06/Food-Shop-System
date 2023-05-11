@@ -11,6 +11,9 @@ import {
 import React from "react";
 import Table from "../../../components/Table";
 import { TransitionProps } from "@mui/material/transitions";
+import { motion } from "framer-motion";
+import iceCreamImage from "../../../assets/img/icecream-01.png";
+import CartItem from "../../../components/CartItem";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -103,7 +106,6 @@ const OrderRequests = () => {
             "Deny",
           ],
         ]}
-
         handleTblRowClick={handleClickOpen}
       />
 
@@ -115,16 +117,38 @@ const OrderRequests = () => {
           onClose={handleClose}
           aria-describedby="alert-dialog-slide-description"
         >
-          <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+          <DialogTitle className="!font-poppins">{"Cart Item List"}</DialogTitle>
+
           <DialogContent>
-            <DialogContentText id="alert-dialog-slide-description">
-              Let Google help apps determine location. This means sending
-              anonymous location data to Google, even when no apps are running.
-            </DialogContentText>
+            <div className="flex h-[calc(100vh-70px)] flex-col bg-[#F5EEE9] gap-8">
+              <div className="flex flex-col pt-5 pl-5 pr-5 gap-3 h-[528px] overflow-y-scroll scrollbar-hidden scroll-smooth">
+                {/* cart items */}
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+              </div>
+
+              <div className="px-16">
+                <button
+                  className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600
+            text-gray-50 text-lg my-2 hover:shadow-lg"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
           </DialogContent>
+
           <DialogActions>
-            <Button onClick={handleClose}>Disagree</Button>
-            <Button onClick={handleClose}>Agree</Button>
+            <Button onClick={handleClose}>Close</Button>
           </DialogActions>
         </Dialog>
       </div>
