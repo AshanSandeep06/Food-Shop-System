@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../FoodMenu/FoodMenu.css";
+import "./FoodMenu.css";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LiquorIcon from "@mui/icons-material/Liquor";
@@ -7,14 +7,14 @@ import SetMealIcon from "@mui/icons-material/SetMeal";
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import RiceBowlIcon from "@mui/icons-material/RiceBowl";
 import IcecreamIcon from "@mui/icons-material/Icecream";
-import StaticImages from "../../components/StaticImages/StaticImages";
-import { StaticFoodsList } from "../../types/StaticFoodItems";
+import StaticImages from "../../../components/StaticImages/StaticImages";
+import { StaticFoodsList } from "../../../types/StaticFoodItems";
 import apple from "../../assets/img/apple.png";
 import iceCream from "../../assets/img/icecream-01.png";
 import banana from "../../assets/img/banana.png";
 import strawberries from "../../assets/img/strawberries-01.png";
 import chicken from "../../assets/img/chicken-01.png";
-import Food from "../../components/Food";
+import Food from "../../../components/Food";
 import $ from "jquery";
 
 const FoodMenu = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import FoodMenu from "../../pages/FoodMenu";
+import FoodMenu from "../../pages/Common/FoodMenu";
 import ManageCustomer from "../../pages/ManageCustomer";
 import ManageItem from "../../pages/ManageItem";
 import PlaceOrderForm from "../../pages/Admin/PlaceOrderForm";

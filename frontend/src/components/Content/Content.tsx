@@ -1,6 +1,6 @@
 import React from "react";
 import Dashboard from "../Dashboard";
-import FoodMenu from "../../pages/FoodMenu/FoodMenu";
+import FoodMenu from "../../pages/Common/FoodMenu/FoodMenu";
 
 const Content = () => {
   return (

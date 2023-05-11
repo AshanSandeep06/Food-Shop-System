@@ -1,5 +1,5 @@
 import React from "react";
-import FoodMenu from "../../pages/FoodMenu/FoodMenu";
+import FoodMenu from "../../pages/Common/FoodMenu/FoodMenu";
 import { Route, Routes } from "react-router-dom";
 import {
   Box,
