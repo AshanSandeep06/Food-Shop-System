@@ -278,7 +278,7 @@ const PlaceOrderForm = () => {
 
           <div className="flex justify-between items-center col-start-1 col-end-3">
             <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px] space-x-2"
+              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px] !mr-[88px]"
               variant="contained"
               color="info"
             >
