@@ -316,7 +316,10 @@ const PlaceOrderForm = () => {
           <h1 className="font-medium">Billing Details</h1>
         </div>
 
-        <div id="billingDetails" className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div
+          id="billingDetails"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+        >
           <div className="flex justify-start items-center md:col-start-1 md:col-end-3">
             <span className="text-start p-1 text-red-700 !text-[25px] font-medium">
               Total :
@@ -389,6 +392,8 @@ const PlaceOrderForm = () => {
           </div>
         </div>
       </section>
+
+      <section className="h-max border-2 border-red-600 px-5 pt-5 pb-8 bg-white shadow-lg"></section>
     </section>
   );
 };
