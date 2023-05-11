@@ -19,7 +19,7 @@ import BackspaceIcon from "@mui/icons-material/Backspace";
 import Table from "../../../components/Table";
 import "./ManageItem.css";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
-import iceCreamImg from "../../assets/img/icecream-01.png";
+import iceCreamImg from "../../../assets/img/icecream-01.png";
 import { motion } from "framer-motion";
 import { read } from "fs";
 import $ from "jquery";
