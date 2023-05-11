@@ -265,6 +265,21 @@ const PlaceOrderForm = () => {
               />
             )}
           </div>
+
+          <TextField
+            label="Qty On Hand"
+            type="text"
+            variant="outlined"
+            name="qtyOnHand"
+            placeholder="Qty On Hand"
+            required
+            InputProps={{
+              readOnly: true,
+            }}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
         </div>
       </section>
 
