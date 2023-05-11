@@ -276,35 +276,29 @@ const PlaceOrderForm = () => {
             required
           />
 
-          <div className="">
-            <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
-              variant="contained"
-              color="info"
-            >
-              Clear
-            </Button>
-          </div>
+          <Button
+            className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
+            variant="contained"
+            color="info"
+          >
+            Clear
+          </Button>
 
-          <div className="">
-            <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
-              variant="contained"
-              color="info"
-            >
-              Clear
-            </Button>
-          </div>
+          <Button
+            className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
+            variant="contained"
+            color="info"
+          >
+            Clear
+          </Button>
 
-          <div className="col-start-2 col-end-3 items-center justify-end flex">
-            <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
-              variant="contained"
-              color="info"
-            >
-              Clear
-            </Button>
-          </div>
+          <Button
+            className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
+            variant="contained"
+            color="info"
+          >
+            Clear
+          </Button>
         </div>
       </section>
 
