@@ -37,7 +37,7 @@ type HeaderProps = {
 const Header = (props: HeaderProps) => {
   type Anchor = "right";
 
-  const [state, setState] = React.useState({
+  const [cartState, setCartState] = React.useState({
     right: false,
   });
 
@@ -53,7 +53,7 @@ const Header = (props: HeaderProps) => {
         return;
       }
 
-      setState({ ...state, [anchor]: open });
+      setCartState({ ...cartState, [anchor]: open });
     };
 
   const list = (anchor: Anchor) => (
@@ -184,7 +184,7 @@ const Header = (props: HeaderProps) => {
               </IconButton>
               <SwipeableDrawer
                 anchor={anchor}
-                open={state[anchor]}
+                open={cartState[anchor]}
                 // TO CLOSE canvas
                 // onClose={toggleDrawer(anchor, false)}
                 onClose={toggleDrawer(anchor, true)}
