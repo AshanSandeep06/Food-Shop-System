@@ -121,16 +121,16 @@ const OrderRequests = () => {
           <DialogTitle className="!font-poppins text-center flex justify-between">
             <h5>Cart Items List</h5>
             <Button
+              className="!font-semibold"
               onClick={handleClose}
               type="button"
               endIcon={<CloseIcon className="text-black" />}
             ></Button>
           </DialogTitle>
 
-          <DialogContent>
+          <DialogContent className="!pb-2">
             <div className="flex flex-col bg-[#F5EEE9] gap-8">
               <div className="flex flex-col py-5 pl-5 pr-5 gap-3 h-[480px] overflow-y-scroll scroll-smooth">
-                {/* cart items */}
                 <CartItem />
                 <CartItem />
                 <CartItem />
@@ -146,8 +146,15 @@ const OrderRequests = () => {
             </div>
           </DialogContent>
 
-          <DialogActions>
-            <Button onClick={handleClose}>Close</Button>
+          <DialogActions className="!pb-5 !pr-5">
+            <Button
+              className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
+              variant="contained"
+              color="primary"
+              onClick={handleClose}
+            >
+              Close
+            </Button>
           </DialogActions>
         </Dialog>
       </div>
