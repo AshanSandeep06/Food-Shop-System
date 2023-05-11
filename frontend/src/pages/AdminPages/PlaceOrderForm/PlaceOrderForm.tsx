@@ -19,7 +19,7 @@ const PlaceOrderForm = () => {
                 name: "orderId",
                 placeHolderText: "Order ID",
                 defaultValue: "OID-001",
-                readOnly:true
+                readOnly: true,
               },
 
               {
