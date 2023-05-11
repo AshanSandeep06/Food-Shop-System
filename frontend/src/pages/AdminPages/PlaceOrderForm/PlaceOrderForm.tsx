@@ -312,114 +312,78 @@ const PlaceOrderForm = () => {
         </div>
 
         <div id="billingDetails" className="grid grid-cols-2 gap-5">
-          <FormControl>
-            <InputLabel id="demo-simple-select-label">Item Code</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              label="Customer ID"
-              className="!font-poppins"
-              value={selectedItemCode}
-              onChange={handleChangeItemCode}
-            >
-              <MenuItem className="!font-poppins" value={1}>
-                I00-001
-              </MenuItem>
-              <MenuItem className="!font-poppins" value={2}>
-                I00-002
-              </MenuItem>
-            </Select>
-          </FormControl>
-
-          <TextField
-            label="Item Name"
-            type="text"
-            variant="outlined"
-            name="itemName"
-            placeholder="Item Name"
-            required
-            InputProps={{
-              readOnly: true,
-            }}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-
-          <TextField
-            label="Unit Price"
-            type="text"
-            variant="outlined"
-            name="unitPrice"
-            placeholder="Unit Price"
-            required
-            InputProps={{
-              readOnly: true,
-            }}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-
-          <TextField
-            label="Qty On Hand"
-            type="text"
-            variant="outlined"
-            name="qtyOnHand"
-            placeholder="Qty On Hand"
-            required
-            InputProps={{
-              readOnly: true,
-            }}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-
-          <div className="flex justify-center items-center col-start-1 col-end-3 mb-2">
-            {itemImage && (
-              <img
-                id="itemImage"
-                src={itemImage}
-                className="object-contain h-[140px]"
-              />
-            )}
+          <div>
+            <span className="text-start p-1 text-red-700 !text-[25px] font-medium">
+              Total :
+            </span>
+            <span className="text-center text-black p-1 !text-[25px] font-medium">
+              0 LKR
+            </span>
           </div>
 
           <TextField
-            className="col-end-3 col-start-1"
-            label="Selected Quantity"
+            label="Discount"
             type="number"
             variant="outlined"
-            name="qtyOnHand"
-            placeholder="Selected Quantity"
+            name="discount"
+            placeholder="Discount"
             required
+          />
+
+          <TextField
+            label="Sub Total (LKR)"
+            type="text"
+            variant="outlined"
+            name="subTotal"
+            placeholder="Sub Total"
+            required
+            InputProps={{
+              readOnly: true,
+            }}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+
+          <TextField
+            label="Cash (LKR)"
+            type="text"
+            variant="outlined"
+            name="cash"
+            placeholder="Cash"
+            required
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+
+          <TextField
+            label="Balance (LKR)"
+            type="text"
+            variant="outlined"
+            name="balance"
+            placeholder="Balance"
+            required
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
 
           <div className="flex justify-between items-center col-start-1 col-end-3">
             <Button
               className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px] !mr-[88px]"
-              variant="contained"
-              color="warning"
+              variant="outlined"
+              color="error"
             >
-              Clear
+              Cancel Order
             </Button>
 
             <Button
               className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px]"
               variant="contained"
-              color="primary"
-            >
-              Update
-            </Button>
-
-            <Button
-              className="!px-[12px] !capitalize !font-poppins !font-normal !text-[15px]"
-              variant="contained"
               color="success"
-              endIcon={<AddShoppingCartIcon />}
             >
-              Add To Cart
+              Place Order
             </Button>
           </div>
         </div>
