@@ -6,7 +6,7 @@ const OrderRequests = () => {
   return (
     <section>
       <Table
-        tblName="My Pending Orders"
+        tblName="Manage Order Requests"
         tblHeight="auto"
         tblHeaders={[
           "Order ID",
