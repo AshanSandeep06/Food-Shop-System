@@ -78,8 +78,11 @@ const ManageItem = () => {
 
     // ---------------------------------------------------
 
-    
+    const imageFile = e.target.files?.[0];
+    setItemImage(imageFile || null);
   };
+
+  const imageURL = itemImage && URL.createObjectURL(itemImage);
 
   return (
     <section>
