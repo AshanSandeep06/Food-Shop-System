@@ -10,7 +10,7 @@ const PlaceOrderForm = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setcurrentDate();
+      setcurrentDate(new Date().toISOString().split("T")[0]);
     }, 1000);
   }, []);
 
