@@ -255,7 +255,7 @@ const PlaceOrderForm = () => {
             }}
           />
 
-          <div className="">
+          <div className="flex justify-center items-center col-start-1 col-end-3">
             {itemImage && (
               <img
                 id="itemImage"
@@ -276,9 +276,9 @@ const PlaceOrderForm = () => {
             required
           />
 
-          <div>
+          <div className="flex justify-between items-center col-start-1 col-end-3">
             <Button
-              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px]"
+              className="!px-[20px] !capitalize !font-poppins !font-normal !text-[16px] space-x-2"
               variant="contained"
               color="info"
             >
