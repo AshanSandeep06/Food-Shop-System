@@ -191,7 +191,7 @@ const PlaceOrderForm = () => {
           <h1 className="font-medium">Select Items</h1>
         </div>
 
-        <div id="invoiceDetails" className="grid grid-cols-2 gap-5">
+        <div id="itemDetails" className="grid grid-cols-2 gap-5">
           <FormControl>
             <InputLabel id="demo-simple-select-label">Item Code</InputLabel>
             <Select
@@ -311,7 +311,7 @@ const PlaceOrderForm = () => {
           <h1 className="font-medium">Billing Details</h1>
         </div>
 
-        <div id="invoiceDetails" className="grid grid-cols-2 gap-5">
+        <div id="billingDetails" className="grid grid-cols-2 gap-5">
           <FormControl>
             <InputLabel id="demo-simple-select-label">Item Code</InputLabel>
             <Select
