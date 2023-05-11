@@ -5,5 +5,5 @@ export type TextFieldDetails = {
     placeHolderText: string;
     defaultValue?: string
     focused?: boolean
-    disabled?:boolean
+    readOnly?:boolean
   };

@@ -18,7 +18,8 @@ const PlaceOrderForm = () => {
                 textFieldType: "text",
                 name: "orderId",
                 placeHolderText: "Order ID",
-                defaultValue: "",
+                defaultValue: "OID-001",
+                readOnly:true
               },
 
               {
