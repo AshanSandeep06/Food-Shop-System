@@ -8,16 +8,15 @@ const PlaceOrderForm = () => {
     new Date().toISOString().split("T")[0]
   );
 
-  let date: Date = new Date();
+  const nowDate = new Date();
+  const nowTime = nowDate.toLocaleTimeString("en-US", { hour12: false });
 
-  const [currentTime, setCurrentTime] = useState<string>(
-    date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
-  );
+  const [currentTime, setCurrentTime] = useState<string>(nowTime);
 
   useEffect(() => {
     setInterval(() => {
       setCurrentDate(new Date().toISOString().split("T")[0]);
-      setCurrentTime("");
+      setCurrentTime(new Date().toLocaleTimeString("en-US", { hour12: false }));
     }, 1000);
   }, []);
 
