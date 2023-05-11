@@ -432,7 +432,12 @@ const PlaceOrderForm = () => {
             [
               "I00-001",
               "Ice Cream",
-              "Sunil Bandara",
+              <img
+                src={chickenPlate}
+                alt="foodImage"
+                className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
+                style={{ transform: "none" }}
+              />,
               "Vanilla & Chocalate",
               "450.00",
               "2",
@@ -446,7 +451,12 @@ const PlaceOrderForm = () => {
             [
               "I00-001",
               "Ice Cream",
-              "Sunil Bandara",
+              <img
+                src={chickenPlate}
+                alt="foodImage"
+                className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
+                style={{ transform: "none" }}
+              />,
               "Vanilla & Chocalate",
               "450.00",
               "2",
@@ -460,7 +470,12 @@ const PlaceOrderForm = () => {
             [
               "I00-001",
               "Ice Cream",
-              "Sunil Bandara",
+              <img
+                src={chickenPlate}
+                alt="foodImage"
+                className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
+                style={{ transform: "none" }}
+              />,
               "Vanilla & Chocalate",
               "450.00",
               "2",
