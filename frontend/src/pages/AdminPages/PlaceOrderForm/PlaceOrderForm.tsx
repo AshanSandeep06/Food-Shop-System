@@ -382,7 +382,6 @@ const PlaceOrderForm = () => {
                 id="itemImage"
                 src={itemImage}
                 className="object-contain h-[140px]"
-                // ref={itemImageRef}
               />
             )}
           </div>
