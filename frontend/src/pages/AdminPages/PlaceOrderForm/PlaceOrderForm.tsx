@@ -314,7 +314,7 @@ const PlaceOrderForm = () => {
         </div>
 
         <div id="billingDetails" className="grid grid-cols-2 gap-5">
-          <div>
+          <div className="flex justify-start items-center col-start-1 col-end-3">
             <span className="text-start p-1 text-red-700 !text-[25px] font-medium">
               Total :
             </span>
@@ -354,9 +354,6 @@ const PlaceOrderForm = () => {
             name="cash"
             placeholder="Cash"
             required
-            InputLabelProps={{
-              shrink: true,
-            }}
           />
 
           <TextField
@@ -366,9 +363,6 @@ const PlaceOrderForm = () => {
             name="balance"
             placeholder="Balance"
             required
-            InputLabelProps={{
-              shrink: true,
-            }}
           />
 
           <div className="flex justify-between items-center col-start-1 col-end-3">
