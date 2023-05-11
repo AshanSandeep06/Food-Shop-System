@@ -88,11 +88,11 @@ const PlaceOrderForm = () => {
           />
 
           <FormControl className="w-1/4">
-            <InputLabel id="demo-simple-select-label">Customer</InputLabel>
+            <InputLabel id="demo-simple-select-label">Customer ID</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              label="Customer"
+              label="Customer ID"
               className="!font-poppins"
               value={selectedCustomerID}
               onChange={handleChangeCustomerID}
