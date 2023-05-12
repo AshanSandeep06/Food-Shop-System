@@ -531,7 +531,6 @@ const Header = (props: HeaderProps) => {
                       >
                         {/* Register Form */}
                         <div
-                          ref={resetFormRef}
                           className="px-5 pt-3 flex flex-col justify-center"
                         >
                           <div className="mb-4 grid grid-cols-12 justify-center items-center px-2 py-1">
