@@ -94,6 +94,27 @@ const Header = (props: HeaderProps) => {
     </Box>
   );
 
+  const list3 = (anchor: Anchor) => (
+    <Box
+      sx={{
+        backgroundColor: "red",
+        width: 375,
+        position: "relative",
+        backdropFilter: "static",
+      }}
+      role="presentation"
+    >
+      <span>
+        <button
+          className="cursor-pointer"
+          onClick={toggleDrawer(anchor, false)}
+        >
+          <ArrowBackIcon />
+        </button>
+      </span>
+    </Box>
+  );
+
   const list1 = (anchor: Anchor) => (
     <Box
       sx={{ width: 375, position: "relative", backdropFilter: "static" }}
@@ -237,26 +258,52 @@ const Header = (props: HeaderProps) => {
         <div className="h-full flex items-center justify-center gap-5">
           {props.buttons.map((buttonText, index) =>
             buttonText == "login" ? (
-              <Button
-                id="btnLogin"
-                key={index}
-                className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
-                variant="outlined"
-                color="primary"
-                endIcon={<LoginIcon />}
-              >
-                {buttonText}
-              </Button>
+              (["right"] as const).map((anchor) => (
+                <React.Fragment key={anchor}>
+                  <Button
+                    id="btnLogin"
+                    key={index}
+                    className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
+                    variant="outlined"
+                    color="primary"
+                    endIcon={<LoginIcon />}
+                  >
+                    {buttonText}
+                  </Button>
+
+                  <SwipeableDrawer
+                    anchor={anchor}
+                    open={loginState[anchor]}
+                    onClose={toggleDrawer(anchor, true)}
+                    onOpen={toggleDrawer(anchor, true)}
+                  >
+                    {list2(anchor)}
+                  </SwipeableDrawer>
+                </React.Fragment>
+              ))
             ) : buttonText == "register" ? (
-              <Button
-                key={index}
-                className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
-                variant="contained"
-                color="success"
-                endIcon={<HowToRegIcon />}
-              >
-                {buttonText}
-              </Button>
+              (["right"] as const).map((anchor) => (
+                <React.Fragment key={anchor}>
+                  <Button
+                    key={index}
+                    className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
+                    variant="contained"
+                    color="success"
+                    endIcon={<HowToRegIcon />}
+                  >
+                    {buttonText}
+                  </Button>
+
+                  <SwipeableDrawer
+                    anchor={anchor}
+                    open={registerState[anchor]}
+                    onClose={toggleDrawer(anchor, true)}
+                    onOpen={toggleDrawer(anchor, true)}
+                  >
+                    {list3(anchor)}
+                  </SwipeableDrawer>
+                </React.Fragment>
+              ))
             ) : buttonText == "my Profile" ? (
               <MyButton
                 key={index}
