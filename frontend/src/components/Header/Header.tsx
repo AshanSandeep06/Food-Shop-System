@@ -11,6 +11,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ChickenPlate from "../../assets/img/chicken-01.png";
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 import {
   Box,
   Button,
@@ -252,7 +253,7 @@ const Header = (props: HeaderProps) => {
                 className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
                 variant="contained"
                 color="success"
-                endIcon={<LoginIcon />}
+                endIcon={<HowToRegIcon />}
               >
                 {buttonText}
               </Button>
