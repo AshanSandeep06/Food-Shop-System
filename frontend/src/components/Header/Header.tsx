@@ -57,7 +57,7 @@ const Header = (props: HeaderProps) => {
   });
 
   const [registerState, setRegisterState] = React.useState({
-    right: false,
+    bottom: false,
   });
 
   useEffect(() => {
@@ -102,7 +102,7 @@ const Header = (props: HeaderProps) => {
     };
 
   const toggleDrawer3 =
-    (anchor: Anchor, open: boolean) =>
+    (anchor: string, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
         event &&
@@ -504,7 +504,7 @@ const Header = (props: HeaderProps) => {
                 </React.Fragment>
               ))
             ) : buttonText == "register" ? (
-              (["right"] as const).map((anchor) => (
+              (["bottom"] as const).map((anchor) => (
                 <React.Fragment key={anchor}>
                   <Button
                     key={index}
@@ -512,7 +512,7 @@ const Header = (props: HeaderProps) => {
                     variant="contained"
                     color="success"
                     endIcon={<PersonAddIcon />}
-                    onClick={toggleDrawer3(anchor, true)}
+                    onClick={toggleDrawer3("bottom", true)}
                   >
                     {buttonText}
                   </Button>
