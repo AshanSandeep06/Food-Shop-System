@@ -51,7 +51,10 @@ const App = () => {
       </a>
 
       {/* ========== Home Page ========== */}
-      <Header buttons={[loginLink]} links={["home", "food_Menu", "contact"]} />
+      <Header
+        buttons={["login", "register"]}
+        links={["home", "food_Menu", "contact"]}
+      />
       <Content />
       <Footer />
 

@@ -37,6 +37,11 @@ type HeaderProps = {
 const Header = (props: HeaderProps) => {
   type Anchor = "right";
 
+  const style1 =
+    "flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg";
+  const style2 =
+    "flex items-center gap-3 px-[15px] py-[6px] rounded-[6px] bg-blue-700 !text-white";
+
   const [cartState, setCartState] = React.useState({
     right: false,
   });
