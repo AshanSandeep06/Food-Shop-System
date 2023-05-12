@@ -13,6 +13,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ChickenPlate from "../../assets/img/chicken-01.png";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import CloseIcon from "@mui/icons-material/Close";
+import BackspaceIcon from "@mui/icons-material/Backspace";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import {
   Box,
   Button,
@@ -33,6 +35,7 @@ import MyButton from "../MyButton/MyButton";
 import CartItem from "../CartItem/CartItem";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LoginForm from "../LoginForm/LoginForm";
+import Form from "../Form/Form";
 
 type HeaderProps = {
   buttons: string[];
@@ -545,51 +548,58 @@ const Header = (props: HeaderProps) => {
                             </span>
                           </div>
 
-                          <div className="grid gap-5 mb-2 !px-[10px]">
-                            <TextField
-                              label="Username"
-                              type="text"
-                              variant="outlined"
-                              name="username"
-                              placeholder="Username"
-                              required
-                            />
-
-                            <TextField
-                              label="New Password"
-                              type="text"
-                              variant="outlined"
-                              name="newPassword"
-                              placeholder="New Password"
-                              required
-                            />
-
-                            <TextField
-                              label="Confirm New Password"
-                              type="text"
-                              variant="outlined"
-                              name="confirmNewPassword"
-                              placeholder="Confirm New Password"
-                              required
-                            />
-                          </div>
-
-                          <div className="my-5 flex justify-around items-center">
-                            <Button
-                              className="!px-[30px] !capitalize !font-poppins !font-normal !text-[16px] !bg-[#0d6efd]"
-                              variant="contained"
-                            >
-                              Reset
-                            </Button>
-
-                            <Button
-                              className="!px-[30px] !capitalize !font-poppins !font-normal !text-[16px]"
-                              variant="contained"
-                              color="error"
-                            >
-                              Cancel
-                            </Button>
-                          </div>
+                          <Form
+                            textFieldsArray={[
+                              {
+                                label: "Full Name",
+                                textFieldType: "text",
+                                name: "fullName",
+                                placeHolderText: "Full Name",
+                              },
+                              {
+                                label: "Username",
+                                textFieldType: "text",
+                                name: "username",
+                                placeHolderText: "Username",
+                              },
+                              {
+                                label: "Password",
+                                textFieldType: "password",
+                                name: "password",
+                                placeHolderText: "Password",
+                              },
+                              {
+                                label: "Address",
+                                textFieldType: "text",
+                                name: "address",
+                                placeHolderText: "Address",
+                              },
+                              {
+                                label: "Contact Number",
+                                textFieldType: "text",
+                                name: "contact",
+                                placeHolderText: "Contact Number",
+                              },
+                              {
+                                label: "Email",
+                                textFieldType: "text",
+                                name: "email",
+                                placeHolderText: "Email",
+                              },
+                            ]}
+                            buttonsArray={[
+                              {
+                                color: "success",
+                                icon: <PersonAddIcon />,
+                                text: "Register",
+                              },
+                              {
+                                color: "error",
+                                icon: <BackspaceIcon />,
+                                text: "Cancel",
+                              },
+                            ]}
+                          />
                         </div>
                       </Box>
                     }
