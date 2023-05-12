@@ -32,8 +32,9 @@ const LoginForm = () => {
           </span>
         </div>
 
-        <div className="grid gap-4 mb-6">
+        <div className="grid gap-4 mb-6 !font-poppins">
           <TextField
+            className="!font-poppins"
             label="Username"
             type="text"
             variant="outlined"
@@ -44,6 +45,7 @@ const LoginForm = () => {
 
           <TextField
             label="Password"
+            className="!font-poppins"
             type="text"
             variant="outlined"
             name="password"
