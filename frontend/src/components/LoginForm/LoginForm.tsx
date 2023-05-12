@@ -38,16 +38,15 @@ const LoginForm = () => {
         />
       </div>
 
-      <div className="flex justify-around flex-wrap">
+      <div className="flex justify-around items-center flex-wrap">
         <div
           id="rdbRememberMe"
           style={{ gap: "9px" }}
           className="col-md-5 form-check d-flex justify-content-center"
         >
           <input
-            className="form-check-input"
+            className="form-check-input !w-[16px] !h-[16px] relative top-[2px] mr-[7px]"
             type="checkbox"
-            value=""
             id="flexCheckChecked"
             checked
           />
