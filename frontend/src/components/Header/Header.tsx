@@ -315,7 +315,6 @@ const Header = (props: HeaderProps) => {
                   >
                     <Box
                       sx={{
-                        width: "400px",
                         position: "relative",
                         backdropFilter: "static",
                       }}
