@@ -38,7 +38,7 @@ const LoginForm = () => {
         />
       </div>
 
-      <div>
+      <div className="flex justify-around flex-wrap">
         <div
           id="rdbRememberMe"
           style={{ gap: "9px" }}
@@ -72,9 +72,9 @@ const LoginForm = () => {
         </div>
       </div>
 
-      <div>
+      <div className="my-5 flex justify-center items-center">
         <Button
-          className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px] !bg-[#0d6efd]"
+          className="!px-[30px] !capitalize !font-poppins !font-normal !text-[16px] !bg-[#0d6efd]"
           variant="contained"
         >
           Login
