@@ -105,7 +105,6 @@ const Header = (props: HeaderProps) => {
   const list2 = (anchor: Anchor) => (
     <Box
       sx={{
-        width: 375,
         position: "relative",
         backdropFilter: "static",
       }}
