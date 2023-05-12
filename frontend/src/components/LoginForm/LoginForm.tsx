@@ -76,7 +76,30 @@ const LoginForm = () => {
         </Button>
       </div>
 
-      <div></div>
+      <div>
+        <div
+          className="col-md-6 text-sm-end text-center"
+          style={{ paddingRight: "0px" }}
+        >
+          <label>Not a Member ?</label>
+        </div>
+
+        <div
+          className="col-md-6 text-sm-start text-center d-flex justify-content-center justify-content-sm-start"
+          style={{ paddingLeft: "10px" }}
+        >
+          <button
+            id="btnRegisterNow"
+            className="btn btn-success"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#registerForm"
+            aria-controls="staticBackdrop"
+          >
+            Register Now
+          </button>
+        </div>
+      </div>
     </aside>
   );
 };
