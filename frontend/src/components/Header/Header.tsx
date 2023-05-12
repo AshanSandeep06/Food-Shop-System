@@ -30,6 +30,7 @@ import { relative } from "path";
 import MyButton from "../MyButton/MyButton";
 import CartItem from "../CartItem/CartItem";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LoginForm from "../LoginForm/LoginForm";
 
 type HeaderProps = {
   buttons: string[];
@@ -104,21 +105,13 @@ const Header = (props: HeaderProps) => {
   const list2 = (anchor: Anchor) => (
     <Box
       sx={{
-        backgroundColor: "blue",
         width: 375,
         position: "relative",
         backdropFilter: "static",
       }}
       role="presentation"
     >
-      <span>
-        <button
-          className="cursor-pointer"
-          onClick={toggleDrawer2(anchor, false)}
-        >
-          <ArrowBackIcon />
-        </button>
-      </span>
+      <LoginForm />
     </Box>
   );
 

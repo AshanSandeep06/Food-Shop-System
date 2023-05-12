@@ -1,12 +1,15 @@
 import { Button, TextField } from "@mui/material";
 import React from "react";
+import CloseIcon from "@mui/icons-material/Close";
 
 const LoginForm = () => {
   return (
     <aside>
       <div>
         <h1>Login Form</h1>
-        <span>Icon</span>
+        <span>
+          <CloseIcon />
+        </span>
       </div>
 
       <div>
