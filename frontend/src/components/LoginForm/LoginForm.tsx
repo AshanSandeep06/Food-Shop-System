@@ -130,7 +130,7 @@ const LoginForm = () => {
         className="px-5 pt-3 flex flex-col justify-center"
       >
         <div className="mb-4 grid grid-cols-12 justify-center items-center px-2 py-1">
-          <h1 className="pl-10 col-span-10 text-center text-[25px] font-medium flex justify-center">
+          <h1 className="col-span-10 text-center text-[25px] font-medium flex justify-center">
             Reset Password Form
           </h1>
           <span className="p-2 col-span-2">
@@ -141,7 +141,7 @@ const LoginForm = () => {
           </span>
         </div>
 
-        <div className="grid gap-4 mb-2">
+        <div className="grid gap-5 mb-2 !px-[10px]">
           <TextField
             label="Username"
             type="text"
