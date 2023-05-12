@@ -8,8 +8,8 @@ const LoginForm = () => {
   const resetFormRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (loginFormRef.current) {
-      loginFormRef.current.style.display = "none";
+    if (resetFormRef.current) {
+        resetFormRef.current.style.display = "none";
     }
   }, []);
 
