@@ -18,28 +18,24 @@ const LoginForm = () => {
         </span>
       </div>
 
-      <div>
-        <div>
-          <TextField
-            label="Username"
-            type="text"
-            variant="outlined"
-            name="username"
-            placeholder="Username"
-            required
-          />
-        </div>
+      <div className="border-2 border-blue-600 grid">
+        <TextField
+          label="Username"
+          type="text"
+          variant="outlined"
+          name="username"
+          placeholder="Username"
+          required
+        />
 
-        <div>
-          <TextField
-            label="Password"
-            type="text"
-            variant="outlined"
-            name="password"
-            placeholder="Password"
-            required
-          />
-        </div>
+        <TextField
+          label="Password"
+          type="text"
+          variant="outlined"
+          name="password"
+          placeholder="Password"
+          required
+        />
       </div>
 
       <div>
