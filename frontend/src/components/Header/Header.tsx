@@ -236,19 +236,25 @@ const Header = (props: HeaderProps) => {
         <div className="h-full flex items-center justify-center gap-5">
           {props.buttons.map((buttonText, index) =>
             buttonText == "login" ? (
-              <MyButton
+              <Button
                 key={index}
-                resource={buttonText}
-                icon={<LoginIcon className="!text-[20px]" />}
-                styles={style1}
-              />
+                className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
+                variant="outlined"
+                color="primary"
+                endIcon={<LoginIcon />}
+              >
+                {buttonText}
+              </Button>
             ) : buttonText == "register" ? (
-              <MyButton
+              <Button
                 key={index}
-                resource={buttonText}
-                icon={<LoginIcon className="!text-[20px]" />}
-                styles={style1}
-              />
+                className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
+                variant="contained"
+                color="success"
+                endIcon={<LoginIcon />}
+              >
+                {buttonText}
+              </Button>
             ) : buttonText == "my Profile" ? (
               <MyButton
                 key={index}
