@@ -56,7 +56,7 @@ const Header = (props: HeaderProps) => {
     right: false,
   });
 
-  const toggleDrawer =
+  const toggleDrawer1 =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
@@ -69,7 +69,35 @@ const Header = (props: HeaderProps) => {
       }
 
       setCartState({ ...cartState, [anchor]: open });
+    };
+
+    const toggleDrawer2 =
+    (anchor: Anchor, open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event &&
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
+
       setLoginState({ ...loginState, [anchor]: open });
+    };
+
+    const toggleDrawer3 =
+    (anchor: Anchor, open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event &&
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
+
       setRegisterState({ ...registerState, [anchor]: open });
     };
 
@@ -86,7 +114,7 @@ const Header = (props: HeaderProps) => {
       <span>
         <button
           className="cursor-pointer"
-          onClick={toggleDrawer(anchor, false)}
+          onClick={toggleDrawer2(anchor, false)}
         >
           <ArrowBackIcon />
         </button>
@@ -107,7 +135,7 @@ const Header = (props: HeaderProps) => {
       <span>
         <button
           className="cursor-pointer"
-          onClick={toggleDrawer(anchor, false)}
+          onClick={toggleDrawer3(anchor, false)}
         >
           <ArrowBackIcon />
         </button>
@@ -128,7 +156,7 @@ const Header = (props: HeaderProps) => {
             <button
               className="cursor-pointer"
               // To Close the Canvas
-              onClick={toggleDrawer(anchor, false)}
+              onClick={toggleDrawer1(anchor, false)}
             >
               <ArrowBackIcon />
             </button>
@@ -235,7 +263,7 @@ const Header = (props: HeaderProps) => {
               <IconButton
                 aria-label="cart"
                 className="!pb-[13px]"
-                onClick={toggleDrawer(anchor, true)}
+                onClick={toggleDrawer1(anchor, true)}
               >
                 <StyledBadge badgeContent={"0"} color="error">
                   <ShoppingCartIcon className="!text-[rgb(81,81,81)]" />
@@ -246,8 +274,8 @@ const Header = (props: HeaderProps) => {
                 open={cartState[anchor]}
                 // TO CLOSE canvas
                 // onClose={toggleDrawer(anchor, false)}
-                onClose={toggleDrawer(anchor, true)}
-                onOpen={toggleDrawer(anchor, true)}
+                onClose={toggleDrawer1(anchor, true)}
+                onOpen={toggleDrawer1(anchor, true)}
               >
                 {list1(anchor)}
               </SwipeableDrawer>
@@ -267,6 +295,7 @@ const Header = (props: HeaderProps) => {
                     variant="outlined"
                     color="primary"
                     endIcon={<LoginIcon />}
+                    onClick={toggleDrawer2(anchor, true)}
                   >
                     {buttonText}
                   </Button>
@@ -274,8 +303,8 @@ const Header = (props: HeaderProps) => {
                   <SwipeableDrawer
                     anchor={anchor}
                     open={loginState[anchor]}
-                    onClose={toggleDrawer(anchor, true)}
-                    onOpen={toggleDrawer(anchor, true)}
+                    onClose={toggleDrawer2(anchor, true)}
+                    onOpen={toggleDrawer2(anchor, true)}
                   >
                     {list2(anchor)}
                   </SwipeableDrawer>
@@ -290,6 +319,7 @@ const Header = (props: HeaderProps) => {
                     variant="contained"
                     color="success"
                     endIcon={<HowToRegIcon />}
+                    onClick={toggleDrawer3(anchor, true)}
                   >
                     {buttonText}
                   </Button>
@@ -297,8 +327,8 @@ const Header = (props: HeaderProps) => {
                   <SwipeableDrawer
                     anchor={anchor}
                     open={registerState[anchor]}
-                    onClose={toggleDrawer(anchor, true)}
-                    onOpen={toggleDrawer(anchor, true)}
+                    onClose={toggleDrawer3(anchor, true)}
+                    onOpen={toggleDrawer3(anchor, true)}
                   >
                     {list3(anchor)}
                   </SwipeableDrawer>
