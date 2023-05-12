@@ -23,7 +23,7 @@ const LoginForm = (props: LoginFormProps) => {
   const handleCloseLoginForm = (anchor: Anchor) => {
     if (props.closeLoginForm) {
       console.log(props.closeLoginForm);
-      props.closeLoginForm(anchor, false);
+      props.closeLoginForm("right", false);
     }
   };
 
@@ -39,11 +39,12 @@ const LoginForm = (props: LoginFormProps) => {
             Login Form
           </h1>
           <span className="p-2 col-span-2">
-            <CloseIcon
-              id="btnClose"
-              className="cursor-pointer !w-[32px] !h-[32px]"
-              onClick={() => handleCloseLoginForm("right")}
-            />
+            <button onClick={() => handleCloseLoginForm("right")}>
+              <CloseIcon
+                id="btnClose"
+                className="cursor-pointer !w-[32px] !h-[32px]"
+              />
+            </button>
           </span>
         </div>
 
