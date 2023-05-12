@@ -519,7 +519,80 @@ const Header = (props: HeaderProps) => {
                     onClose={toggleDrawer3(anchor, true)}
                     onOpen={toggleDrawer3(anchor, true)}
                   >
-                    {list3(anchor)}
+                    {
+                      <Box
+                        sx={{
+                          width: "400px",
+                          position: "relative",
+                          backdropFilter: "static",
+                        }}
+                        role="presentation"
+                      >
+                        {/* Reset Password Form */}
+                        <div
+                          ref={resetFormRef}
+                          className="px-5 pt-3 flex flex-col justify-center"
+                        >
+                          <div className="mb-4 grid grid-cols-12 justify-center items-center px-2 py-1">
+                            <h1 className="col-span-10 text-center text-[25px] font-medium flex justify-center">
+                              Reset Password Form
+                            </h1>
+                            <span className="p-2 col-span-2">
+                              <CloseIcon
+                                id="btnClose"
+                                className="cursor-pointer !w-[32px] !h-[32px]"
+                              />
+                            </span>
+                          </div>
+
+                          <div className="grid gap-5 mb-2 !px-[10px]">
+                            <TextField
+                              label="Username"
+                              type="text"
+                              variant="outlined"
+                              name="username"
+                              placeholder="Username"
+                              required
+                            />
+
+                            <TextField
+                              label="New Password"
+                              type="text"
+                              variant="outlined"
+                              name="newPassword"
+                              placeholder="New Password"
+                              required
+                            />
+
+                            <TextField
+                              label="Confirm New Password"
+                              type="text"
+                              variant="outlined"
+                              name="confirmNewPassword"
+                              placeholder="Confirm New Password"
+                              required
+                            />
+                          </div>
+
+                          <div className="my-5 flex justify-around items-center">
+                            <Button
+                              className="!px-[30px] !capitalize !font-poppins !font-normal !text-[16px] !bg-[#0d6efd]"
+                              variant="contained"
+                            >
+                              Reset
+                            </Button>
+
+                            <Button
+                              className="!px-[30px] !capitalize !font-poppins !font-normal !text-[16px]"
+                              variant="contained"
+                              color="error"
+                            >
+                              Cancel
+                            </Button>
+                          </div>
+                        </div>
+                      </Box>
+                    }
                   </SwipeableDrawer>
                 </React.Fragment>
               ))
