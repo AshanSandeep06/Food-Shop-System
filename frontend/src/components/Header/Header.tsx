@@ -441,11 +441,14 @@ const Header = (props: HeaderProps) => {
                           <h1 className="col-span-10 text-center text-[25px] font-medium flex justify-center">
                             Reset Password Form
                           </h1>
+
                           <span className="p-2 col-span-2">
-                            <CloseIcon
-                              id="btnClose"
-                              className="cursor-pointer !w-[32px] !h-[32px]"
-                            />
+                            <button onClick={toggleDrawer3(anchor, false)}>
+                              <CloseIcon
+                                id="btnClose"
+                                className="cursor-pointer !w-[32px] !h-[32px]"
+                              />
+                            </button>
                           </span>
                         </div>
 
