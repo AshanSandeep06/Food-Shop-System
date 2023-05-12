@@ -531,11 +531,11 @@ const Header = (props: HeaderProps) => {
                         {/* Register Form */}
                         <div className="px-5 pt-3 flex flex-col justify-center">
                           <div className="mb-4 grid grid-cols-12 justify-center items-center px-2 py-1">
-                            <h1 className="col-span-10 text-center text-[25px] font-medium flex justify-center">
-                              Register Form
+                            <h1 className="col-span-11 text-center text-[22px] font-medium flex justify-center">
+                              Customer Register Form
                             </h1>
 
-                            <span className="p-2 col-span-2">
+                            <span className="p-2 col-span-1">
                               <button onClick={toggleDrawer3(anchor, false)}>
                                 <CloseIcon
                                   id="btnClose"
