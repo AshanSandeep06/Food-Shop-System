@@ -1,16 +1,25 @@
 import { Button, TextField } from "@mui/material";
-import React, { MouseEventHandler, useRef } from "react";
+import React, { MouseEventHandler, useEffect, useRef } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import "./LoginForm.css";
 
 const LoginForm = () => {
-    const loginFormRef = useRef<HTMLDivElement>(null);
-    const resetFormRef = useRef<HTMLDivElement>(null);
+  const loginFormRef = useRef<HTMLDivElement>(null);
+  const resetFormRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (resetFormRef.current) {
+      resetFormRef.current.style.display = "none";
+    }
+  }, []);
 
   return (
     <>
       {/* Login Form */}
-      <div ref={loginFormRef} className="px-5 pt-3 flex flex-col justify-center">
+      <div
+        ref={loginFormRef}
+        className="px-5 pt-3 flex flex-col justify-center"
+      >
         <div className="mb-4 grid grid-cols-12 justify-center items-center px-2 py-1">
           <h1 className="pl-10 col-span-10 text-center text-[25px] font-medium flex justify-center">
             Login Form
@@ -114,7 +123,10 @@ const LoginForm = () => {
       </div>
 
       {/* Reset Password Form */}
-      <div ref={resetFormRef} className="px-5 pt-3 flex flex-col justify-center">
+      <div
+        ref={resetFormRef}
+        className="px-5 pt-3 flex flex-col justify-center"
+      >
         <div className="mb-4 grid grid-cols-12 justify-center items-center px-2 py-1">
           <h1 className="pl-10 col-span-10 text-center text-[25px] font-medium flex justify-center">
             Login Form
