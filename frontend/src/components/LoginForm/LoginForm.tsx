@@ -4,10 +4,13 @@ import CloseIcon from "@mui/icons-material/Close";
 import "./LoginForm.css";
 
 const LoginForm = () => {
+    const loginFormRef = useRef<HTMLDivElement>(null);
+    const resetFormRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       {/* Login Form */}
-      <aside className="px-5 pt-3 flex flex-col justify-center">
+      <div ref={loginFormRef} className="px-5 pt-3 flex flex-col justify-center">
         <div className="mb-4 grid grid-cols-12 justify-center items-center px-2 py-1">
           <h1 className="pl-10 col-span-10 text-center text-[25px] font-medium flex justify-center">
             Login Form
@@ -108,10 +111,10 @@ const LoginForm = () => {
             </button>
           </div>
         </div>
-      </aside>
+      </div>
 
       {/* Reset Password Form */}
-      <aside className="px-5 pt-3 flex flex-col justify-center">
+      <div ref={resetFormRef} className="px-5 pt-3 flex flex-col justify-center">
         <div className="mb-4 grid grid-cols-12 justify-center items-center px-2 py-1">
           <h1 className="pl-10 col-span-10 text-center text-[25px] font-medium flex justify-center">
             Login Form
@@ -212,7 +215,7 @@ const LoginForm = () => {
             </button>
           </div>
         </div>
-      </aside>
+      </div>
     </>
   );
 };
