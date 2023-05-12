@@ -1,14 +1,15 @@
 import { Button, TextField } from "@mui/material";
-import React from "react";
+import React, { MouseEventHandler, useRef } from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import "./LoginForm.css"
 
 const LoginForm = () => {
   return (
     <aside>
-      <div>
-        <h1>Login Form</h1>
-        <span>
-          <CloseIcon />
+      <div className="border-2 border-red-600 flex justify-center p-4">
+        <h1 className="text-center text-[25px] font-medium">Login Form</h1>
+        <span className="p-2">
+          <CloseIcon id="btnClose" className="cursor-pointer !w-[32px] !h-[32px]" />
         </span>
       </div>
 
