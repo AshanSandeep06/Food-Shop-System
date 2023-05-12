@@ -1,5 +1,5 @@
 import { Button, SwipeableDrawer, TextField } from "@mui/material";
-import React, { MouseEventHandler, useEffect, useRef } from "react";
+import React, { MouseEventHandler, useEffect, useRef, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import "./LoginForm.css";
 import { ArrowFunction } from "typescript";
@@ -16,7 +16,7 @@ const LoginForm = (props: LoginFormProps) => {
 
   useEffect(() => {
     if (resetFormRef.current) {
-      resetFormRef.current.style.display = "none";
+      resetFormRef.current.style.display = "none!important";
     }
   }, []);
 
