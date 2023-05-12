@@ -6,7 +6,7 @@ import "./LoginForm.css";
 const LoginForm = () => {
   return (
     <aside className="p-6">
-      <div className="grid grid-cols-12 border-2 border-red-600 justify-center items-center p-2">
+      <div className="mb-4 grid grid-cols-12 border-2 border-red-600 justify-center items-center p-2">
         <h1 className="pl-10 col-span-10 text-center text-[25px] font-medium flex justify-center">
           Login Form
         </h1>
@@ -18,7 +18,7 @@ const LoginForm = () => {
         </span>
       </div>
 
-      <div className="border-2 border-blue-600 grid">
+      <div className="border-2 border-blue-600 grid gap-4 mb-5">
         <TextField
           label="Username"
           type="text"
