@@ -9,7 +9,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (loginFormRef.current) {
-        loginFormRef.current.style.display = "none";
+      loginFormRef.current.style.display = "none";
     }
   }, []);
 
@@ -131,7 +131,7 @@ const LoginForm = () => {
       >
         <div className="mb-4 grid grid-cols-12 justify-center items-center px-2 py-1">
           <h1 className="pl-10 col-span-10 text-center text-[25px] font-medium flex justify-center">
-            Login Form
+            Reset Password Form
           </h1>
           <span className="p-2 col-span-2">
             <CloseIcon
@@ -141,7 +141,7 @@ const LoginForm = () => {
           </span>
         </div>
 
-        <div className="grid gap-4 mb-6">
+        <div className="grid gap-4 mb-2">
           <TextField
             label="Username"
             type="text"
@@ -152,82 +152,39 @@ const LoginForm = () => {
           />
 
           <TextField
-            label="Password"
+            label="New Password"
             type="text"
             variant="outlined"
-            name="password"
-            placeholder="Password"
+            name="newPassword"
+            placeholder="New Password"
+            required
+          />
+
+          <TextField
+            label="Confirm New Password"
+            type="text"
+            variant="outlined"
+            name="confirmNewPassword"
+            placeholder="Confirm New Password"
             required
           />
         </div>
 
-        <div className="flex justify-around items-center flex-wrap">
-          <div
-            id="rdbRememberMe"
-            style={{ gap: "9px" }}
-            className="col-md-5 form-check d-flex justify-content-center"
-          >
-            <input
-              className="form-check-input !w-[16px] !h-[16px] relative top-[2px] mr-[7px]"
-              type="checkbox"
-              id="flexCheckChecked"
-              checked
-            />
-            <label className="form-check-label" htmlFor="flexCheckChecked">
-              Remember Me
-            </label>
-          </div>
-
-          <div className="col-md-6 text-center">
-            <button
-              id="btnForgotPassword"
-              style={{
-                backgroundColor: "transparent",
-                border: "none",
-                color: "#0d6efd",
-                position: "relative",
-                left: "10px",
-              }}
-            >
-              Forgot Password ?
-            </button>
-          </div>
-        </div>
-
-        <div className="my-5 flex justify-center items-center">
+        <div className="my-5 flex justify-around items-center">
           <Button
             className="!px-[30px] !capitalize !font-poppins !font-normal !text-[16px] !bg-[#0d6efd]"
             variant="contained"
           >
-            Login
+            Reset
           </Button>
-        </div>
 
-        <div className="flex justify-center items-center flex-wrap">
-          <div
-            className="col-md-6 text-sm-end text-center"
-            style={{ paddingRight: "0px" }}
+          <Button
+            className="!px-[30px] !capitalize !font-poppins !font-normal !text-[16px]"
+            variant="contained"
+            color="error"
           >
-            <label>Not a Member ?</label>
-          </div>
-
-          <div
-            className="col-md-6 text-sm-start text-center d-flex justify-content-center justify-content-sm-start"
-            style={{ paddingLeft: "10px" }}
-          >
-            <button
-              id="btnForgotPassword"
-              style={{
-                backgroundColor: "transparent",
-                border: "none",
-                color: "#0d6efd",
-                position: "relative",
-                left: "10px",
-              }}
-            >
-              Register Now
-            </button>
-          </div>
+            Cancel
+          </Button>
         </div>
       </div>
     </>
