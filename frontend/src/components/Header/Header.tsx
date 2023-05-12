@@ -28,9 +28,10 @@ import MailIcon from "@mui/icons-material/Mail";
 import { relative } from "path";
 import MyButton from "../MyButton/MyButton";
 import CartItem from "../CartItem/CartItem";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 type HeaderProps = {
-  buttons: React.ReactNode[];
+  buttons: string[];
   links: string[];
 };
 
@@ -233,7 +234,37 @@ const Header = (props: HeaderProps) => {
         </ul>
 
         <div className="h-full flex items-center justify-center gap-5">
-          {props.buttons.map((button, index) => button)}
+          {props.buttons.map((buttonText, index) =>
+            buttonText == "login" ? (
+              <MyButton
+                key={index}
+                resource={buttonText}
+                icon={<LoginIcon className="!text-[20px]" />}
+                styles={style1}
+              />
+            ) : buttonText == "register" ? (
+              <MyButton
+                key={index}
+                resource={buttonText}
+                icon={<LoginIcon className="!text-[20px]" />}
+                styles={style1}
+              />
+            ) : buttonText == "my Profile" ? (
+              <MyButton
+                key={index}
+                resource="my Profile"
+                icon={<AccountCircleIcon className="!text-[20px]" />}
+                styles={style2}
+              />
+            ) : (
+              <MyButton
+                key={index}
+                resource={buttonText}
+                icon={<LoginIcon className="!text-[20px]" />}
+                styles={style1}
+              />
+            )
+          )}
 
           {(["right"] as const).map((anchor) => (
             <React.Fragment key={anchor}>
