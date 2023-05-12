@@ -66,3 +66,8 @@ header {
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
 }
+
+#btnLogin:hover {
+  background-color: #0d6efd;
+  color: white;
+}

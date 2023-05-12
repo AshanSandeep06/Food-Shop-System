@@ -237,8 +237,9 @@ const Header = (props: HeaderProps) => {
           {props.buttons.map((buttonText, index) =>
             buttonText == "login" ? (
               <Button
+                id="btnLogin"
                 key={index}
-                className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
+                className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px] hover:bg-[#0D6EFD]"
                 variant="outlined"
                 color="primary"
                 endIcon={<LoginIcon />}
