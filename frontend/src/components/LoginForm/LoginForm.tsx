@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import React from "react";
 
 const LoginForm = () => {
@@ -65,6 +65,15 @@ const LoginForm = () => {
             Forgot Password ?
           </button>
         </div>
+      </div>
+
+      <div>
+        <Button
+          className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px] !bg-[#0d6efd]"
+          variant="contained"
+        >
+          Login
+        </Button>
       </div>
 
       <div></div>
