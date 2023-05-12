@@ -22,7 +22,6 @@ const LoginForm = (props: LoginFormProps) => {
 
   const handleCloseLoginForm = (anchor: Anchor) => {
     if (props.closeLoginForm) {
-      alert("Triggered");
       console.log(props.closeLoginForm);
       props.closeLoginForm(anchor, false);
     }
