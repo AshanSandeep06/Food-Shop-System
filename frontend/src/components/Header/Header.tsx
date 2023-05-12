@@ -239,7 +239,7 @@ const Header = (props: HeaderProps) => {
               <Button
                 id="btnLogin"
                 key={index}
-                className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px] hover:bg-[#0D6EFD]"
+                className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
                 variant="outlined"
                 color="primary"
                 endIcon={<LoginIcon />}
