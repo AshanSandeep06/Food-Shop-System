@@ -511,7 +511,7 @@ const Header = (props: HeaderProps) => {
                     className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
                     variant="contained"
                     color="success"
-                    endIcon={<HowToRegIcon />}
+                    endIcon={<PersonAddIcon />}
                     onClick={toggleDrawer3(anchor, true)}
                   >
                     {buttonText}
@@ -533,7 +533,7 @@ const Header = (props: HeaderProps) => {
                       >
                         {/* Register Form */}
                         <div className="px-5 pt-3 flex flex-col justify-center">
-                          <div className="mb-4 grid grid-cols-12 justify-center items-center px-2 py-1">
+                          <div className="mb-5 grid grid-cols-12 justify-center items-center px-2 py-1">
                             <h1 className="col-span-11 text-center text-[22px] font-medium flex justify-center">
                               Customer Register Form
                             </h1>
