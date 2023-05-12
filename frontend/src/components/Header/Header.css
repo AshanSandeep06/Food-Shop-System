@@ -71,3 +71,8 @@ header {
   background-color: #0d6efd;
   color: white;
 }
+
+label,
+input {
+  font-family: "Poppins", sans-serif !important;
+}

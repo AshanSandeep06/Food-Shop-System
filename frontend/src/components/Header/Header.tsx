@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
@@ -12,6 +12,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ChickenPlate from "../../assets/img/chicken-01.png";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Box,
   Button,
@@ -23,6 +24,7 @@ import {
   ListItemIcon,
   ListItemText,
   SwipeableDrawer,
+  TextField,
 } from "@mui/material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
@@ -39,6 +41,9 @@ type HeaderProps = {
 
 const Header = (props: HeaderProps) => {
   type Anchor = "right";
+
+  const loginFormRef = useRef<HTMLDivElement>(null);
+  const resetFormRef = useRef<HTMLDivElement>(null);
 
   const style1 =
     "flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg";
@@ -72,7 +77,7 @@ const Header = (props: HeaderProps) => {
       setCartState({ ...cartState, [anchor]: open });
     };
 
-    const toggleDrawer2 =
+  const toggleDrawer2 =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
@@ -87,7 +92,7 @@ const Header = (props: HeaderProps) => {
       setLoginState({ ...loginState, [anchor]: open });
     };
 
-    const toggleDrawer3 =
+  const toggleDrawer3 =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
@@ -105,7 +110,7 @@ const Header = (props: HeaderProps) => {
   const list2 = (anchor: Anchor) => (
     <Box
       sx={{
-        width: '400px',
+        width: "400px",
         position: "relative",
         backdropFilter: "static",
       }}
