@@ -111,7 +111,7 @@ const Header = (props: HeaderProps) => {
       }}
       role="presentation"
     >
-      <LoginForm />
+      <LoginForm closeLoginForm={toggleDrawer2} />
     </Box>
   );
 

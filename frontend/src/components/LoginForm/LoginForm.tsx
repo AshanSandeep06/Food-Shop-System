@@ -2,16 +2,31 @@ import { Button, TextField } from "@mui/material";
 import React, { MouseEventHandler, useEffect, useRef } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import "./LoginForm.css";
+import { ArrowFunction } from "typescript";
 
-const LoginForm = () => {
+type Anchor = "right";
+
+type LoginFormProps = {
+  closeLoginForm: (anchor: Anchor, open: boolean) => void;
+};
+
+const LoginForm = (props: LoginFormProps) => {
   const loginFormRef = useRef<HTMLDivElement>(null);
   const resetFormRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (resetFormRef.current) {
-        resetFormRef.current.style.display = "none";
+      resetFormRef.current.style.display = "none";
     }
   }, []);
+
+  const handleCloseLoginForm = (anchor: Anchor) => {
+    if (props.closeLoginForm) {
+      alert("Triggered");
+      console.log(props.closeLoginForm);
+      props.closeLoginForm(anchor, false);
+    }
+  };
 
   return (
     <>
@@ -28,6 +43,7 @@ const LoginForm = () => {
             <CloseIcon
               id="btnClose"
               className="cursor-pointer !w-[32px] !h-[32px]"
+              onClick={() => handleCloseLoginForm("right")}
             />
           </span>
         </div>
