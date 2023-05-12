@@ -36,7 +36,7 @@ const LoginForm = () => {
           <TextField
             className="!font-poppins"
             label="Username"
-            type="text"
+            type="search"
             variant="outlined"
             name="username"
             placeholder="Username"
@@ -46,7 +46,7 @@ const LoginForm = () => {
           <TextField
             label="Password"
             className="!font-poppins"
-            type="text"
+            type="search"
             variant="outlined"
             name="password"
             placeholder="Password"
