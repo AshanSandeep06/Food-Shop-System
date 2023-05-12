@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Button, SwipeableDrawer, TextField } from "@mui/material";
 import React, { MouseEventHandler, useEffect, useRef } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import "./LoginForm.css";
@@ -38,6 +38,7 @@ const LoginForm = (props: LoginFormProps) => {
           <h1 className="pl-10 col-span-10 text-center text-[25px] font-medium flex justify-center">
             Login Form
           </h1>
+
           <span className="p-2 col-span-2">
             <button onClick={() => handleCloseLoginForm("right")}>
               <CloseIcon
