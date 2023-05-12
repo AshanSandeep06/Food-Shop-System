@@ -265,31 +265,6 @@ const Header = (props: HeaderProps) => {
               />
             )
           )}
-
-          {(["right"] as const).map((anchor) => (
-            <React.Fragment key={anchor}>
-              <IconButton
-                aria-label="cart"
-                className="!pb-[13px]"
-                onClick={toggleDrawer(anchor, true)}
-              >
-                <StyledBadge badgeContent={"0"} color="error">
-                  <ShoppingCartIcon className="!text-[rgb(81,81,81)]" />
-                </StyledBadge>
-              </IconButton>
-
-              <SwipeableDrawer
-                anchor={anchor}
-                open={cartState[anchor]}
-                // TO CLOSE canvas
-                // onClose={toggleDrawer(anchor, false)}
-                onClose={toggleDrawer(anchor, true)}
-                onOpen={toggleDrawer(anchor, true)}
-              >
-                {list2(anchor)}
-              </SwipeableDrawer>
-            </React.Fragment>
-          ))}
         </div>
       </div>
     </header>
