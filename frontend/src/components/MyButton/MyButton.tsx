@@ -17,7 +17,13 @@ const MyButton = (props: MyButtonProps) => {
     >
       <button className={props.styles}>
         {props.icon}
-        {props.resource[0].toUpperCase() + props.resource.substring(1)}
+        {props.resource.split("_")[1]
+          ? props.resource[0].toUpperCase() +
+            props.resource.split("_")[0].substring(1) +
+            " " +
+            props.resource.split("_")[1][0].toUpperCase() +
+            props.resource.split("_")[1].substring(1)
+          : props.resource[0].toUpperCase() + props.resource.substring(1)}
       </button>
     </NavLink>
   );

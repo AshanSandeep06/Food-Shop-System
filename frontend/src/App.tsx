@@ -62,7 +62,7 @@ const App = () => {
 
       {/* ========== Customer Page ========== */}
       <Header
-        buttons={["logout", "my Profile"]}
+        buttons={["logout", "my_profile"]}
         links={["home", "pending_orders", "orders_history"]}
       />
       <Customer />

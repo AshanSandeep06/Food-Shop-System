@@ -605,10 +605,10 @@ const Header = (props: HeaderProps) => {
                   </SwipeableDrawer>
                 </React.Fragment>
               ))
-            ) : buttonText == "my Profile" ? (
+            ) : buttonText == "my_profile" ? (
               <MyButton
                 key={index}
-                resource="my Profile"
+                resource={buttonText}
                 icon={<AccountCircleIcon className="!text-[20px]" />}
                 styles={style2}
               />
