@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { StaticFoodsList } from "../../types/StaticFoodItems";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import "./Food.css";
 
 const Food = (props: StaticFoodsList) => {
   return (
@@ -31,9 +32,13 @@ const Food = (props: StaticFoodsList) => {
             </span>
           </p>
 
-          <span className="bg-[rgb(232,0,19)] rounded-full border-white w-10 h-10 flex justify-center items-center">
+          <motion.span
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.1 }}
+            className="cartIcon bg-[rgb(232,0,19)] rounded-full border-white w-10 h-10 flex justify-center items-center"
+          >
             <AddShoppingCartIcon className="text-[#ece1e1]" />
-          </span>
+          </motion.span>
         </div>
       ))}
     </div>
