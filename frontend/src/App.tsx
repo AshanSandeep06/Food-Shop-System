@@ -51,16 +51,23 @@ const App = () => {
       </a>
 
       {/* ========== Home Page ========== */}
-      <Header
+      {/* <Header
         buttons={["login", "register"]}
         links={["home", "food_Menu", "contact"]}
       />
       <Content />
-      <Footer />
+      <Footer /> */}
+
+      {/* ------------------------------------------------------------------------------------ */}
 
       {/* ========== Customer Page ========== */}
-      {/* <Header buttons={[logoutLink, myProfileButton]} links={["home", "pending_orders", "orders_history"]}/> */}
-      {/* <Customer /> */}
+      <Header
+        buttons={["Logout", "My Profile"]}
+        links={["home", "pending_orders", "orders_history"]}
+      />
+      <Customer />
+
+      {/* ------------------------------------------------------------------------------------ */}
 
       {/* ========== Admin Page ========== */}
       {/* <Header
@@ -74,6 +81,8 @@ const App = () => {
         ]}
       /> */}
       {/* <Admin /> */}
+
+      {/* ------------------------------------------------------------------------------------ */}
     </div>
   );
 };
