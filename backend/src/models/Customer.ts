@@ -33,6 +33,6 @@ const CustomerSchema = new Schema({
         type: String,
         required: true,
     },
-});
+}, {timestamps: true});
 
 export const Customer = model<ICustomer>("Customer", CustomerSchema);
