@@ -616,7 +616,7 @@ const Header = (props: HeaderProps) => {
               <MyButton
                 key={index}
                 resource={buttonText}
-                icon={<LoginIcon className="!text-[20px]" />}
+                icon={<LogoutIcon className="!text-[20px]" />}
                 styles={style1}
               />
             )
