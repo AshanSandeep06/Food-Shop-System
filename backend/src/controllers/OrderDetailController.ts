@@ -1,17 +1,15 @@
 import { Request, Response, RequestHandler } from 'express';
 
-const OrderDetailController = () => {
-    const getAllOrderDetails: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+export default class OrderDetailController {
+    getAllOrderDetails: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 
-    const saveOrderDetail: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+    saveOrderDetail: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 
-    const searchOrderDetail: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+    searchOrderDetail: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 };
-
-export default OrderDetailController;
