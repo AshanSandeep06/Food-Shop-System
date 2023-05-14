@@ -5,6 +5,7 @@ export interface IItem extends Document {
     itemType: string;
     itemName: string;
     description: string;
+    itemImage: string
     unitPrice: number;
     qtyOnHand: number;
 };
@@ -26,6 +27,11 @@ const ItemSchema = new Schema({
     },
 
     description: {
+        type: String,
+        required: true,
+    },
+
+    itemImage: {
         type: String,
         required: true,
     },
