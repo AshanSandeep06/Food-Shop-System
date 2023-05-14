@@ -5,7 +5,7 @@ export interface IItem extends Document {
     itemType: string;
     itemName: string;
     description: string;
-    itemImage: string
+    itemImage: string;
     unitPrice: number;
     qtyOnHand: number;
 };
