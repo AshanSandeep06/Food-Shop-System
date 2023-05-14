@@ -1,21 +1,19 @@
 import { Request, Response, RequestHandler } from 'express';
 
-const UserController = () => {
-    const saveUser: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+export default class UserController {
+    saveUser: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 
-    const updateUser: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+    updateUser: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 
-    const deleteUser: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+    deleteUser: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 
-    const searchUser: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+    searchUser: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 };
-
-export default UserController;
