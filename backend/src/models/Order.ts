@@ -5,6 +5,7 @@ export interface IOrder extends Document {
     orderDate: string;
     orderTime: string;
     subTotal: number;
+    deliveryFee: number;
     discount: number;
     totalCost: number;
     orderStatus: string;
