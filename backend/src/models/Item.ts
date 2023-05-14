@@ -2,6 +2,7 @@ import { Schema, model, Document } from "mongoose";
 
 export interface IItem extends Document {
     itemCode: string;
+    itemType: string;
     itemName: string;
     description: string;
     unitPrice: number;
@@ -10,6 +11,11 @@ export interface IItem extends Document {
 
 const ItemSchema = new Schema({
     itemCode: {
+        type: String,
+        required: true,
+    },
+
+    itemType: {
         type: String,
         required: true,
     },

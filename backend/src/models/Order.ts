@@ -4,8 +4,12 @@ export interface IOrder extends Document {
     orderID: string;
     orderDate: string;
     orderTime: string;
+    subTotal: number;
+    discount: number;
+    totalCost: number;
+    orderStatus: string;
     customerID: string;
-}
+};
 
 const OrderSchema = new Schema({
     orderID: {
@@ -19,6 +23,26 @@ const OrderSchema = new Schema({
     },
 
     orderTime: {
+        type: String,
+        required: true,
+    },
+
+    subTotal: {
+        type: Number,
+        required: true,
+    },
+
+    discount: {
+        type: Number,
+        required: true,
+    },
+
+    totalCost: {
+        type: Number,
+        required: true,
+    },
+
+    orderStatus: {
         type: String,
         required: true,
     },
