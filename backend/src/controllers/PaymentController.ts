@@ -1,25 +1,23 @@
 import { Request, Response, RequestHandler } from 'express';
 
-const PaymentController = () => {
-    const getAllPayments: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+export default class PaymentController {
+    getAllPayments: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 
-    const savePayment: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+    savePayment: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 
-    const updatePayment: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+    updatePayment: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 
-    const deletePayment: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+    deletePayment: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 
-    const searchPayment: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+    searchPayment: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };
 };
-
-export default PaymentController;
