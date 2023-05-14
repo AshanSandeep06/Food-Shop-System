@@ -2,9 +2,10 @@ import { Document, Schema, model } from "mongoose";
 
 export interface IOrderDetail extends Document {
     orderID: string;
-    orderDate: string;
-    orderTime: string;
-    customerID: string;
+    itemCode: string;
+    itemType: string;
+    unitPrice: number;
+    orderedQty: number;
 }
 
 const OrderDetailSchema = new Schema({
@@ -13,18 +14,23 @@ const OrderDetailSchema = new Schema({
         required: true,
     },
 
-    orderDate: {
+    itemCode: {
         type: String,
         required: true,
     },
 
-    orderTime: {
+    itemType: {
         type: String,
         required: true,
     },
 
-    customerID: {
-        type: String,
+    unitPrice: {
+        type: Number,
+        required: true,
+    },
+
+    orderedQty: {
+        type: Number,
         required: true,
     },
 }, {timestamps: true});
