@@ -6,6 +6,7 @@ export interface IReservation extends Document {
     reservationDate: string;
     reservationTime: string;
     totalParticipants: number;
+    reservationStatus: string;
 };
 
 const ReservationSchema = new Schema({
@@ -32,7 +33,12 @@ const ReservationSchema = new Schema({
     totalParticipants: {
         type: Number,
         required: true,
-    }
+    },
+
+    reservationStatus: {
+        type: String,
+        required: true,
+    },
 });
 
 export const Reservation = model<IReservation>("Reservation", ReservationSchema);
