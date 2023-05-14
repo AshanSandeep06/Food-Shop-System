@@ -1,5 +1,3 @@
-const CustomerRoutes = () => {
-    
-};
+export default class CustomerRoutes {
 
-export default CustomerRoutes;
+};
