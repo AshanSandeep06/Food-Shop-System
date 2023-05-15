@@ -37,6 +37,7 @@ const ManageItem = () => {
   const [qtyOnHand, setQtyOnHand] = useState<number>(0.0);
   const [discount, setDiscount] = useState<number>(0.0);
   const [itemImage, setItemImage] = useState<string | null>(null);
+  const [itemImageChooser, setItemImageChooser] = useState<string>("");
 
   // For file chooser
   const [fileData, setFileData] = useState<File | undefined | null>();
@@ -93,6 +94,7 @@ const ManageItem = () => {
 
     // ---------------------------------------------------
 
+    setItemImageChooser(event.target.value);
     const file = event.target.files?.[0];
     setFileData(file);
     console.log(file);
@@ -115,6 +117,7 @@ const ManageItem = () => {
     setQtyOnHand(0);
     setDiscount(0.0);
     setItemImage("");
+    setItemImageChooser("");
     setFileData(null);
     setSelectedType("");
   };
@@ -326,6 +329,7 @@ const ManageItem = () => {
             variant="outlined"
             required
             className="!mt-7 !cursor-pointer !mb-5"
+            value={itemImageChooser}
             name="itemImageChooser"
             onChange={handleSetItemImage}
           />
