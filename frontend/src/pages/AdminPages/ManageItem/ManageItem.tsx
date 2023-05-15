@@ -265,16 +265,15 @@ const ManageItem = () => {
               value: qtyOnHand,
               onChange: (event: ChangeEvent<HTMLInputElement>) => {
                 const { name, value, type } = event.target;
-                const qtyOnHand = type == "number" ? parseInt(value) : value;
-                if (name == "unitPrice" && isNaN(Number(value))) {
+                if (name == "qtyOnHand" && isNaN(parseInt(value))) {
                   setQtyOnHand(0);
                   return;
                 }
 
-                if (name == "qtyOnHand" && Number(qtyOnHand) < 0) {
+                if (name == "qtyOnHand" && parseInt(value) < 0) {
                   return;
                 }
-                setQtyOnHand(Number(qtyOnHand));
+                setQtyOnHand(parseInt(value));
               },
             },
             {
