@@ -200,7 +200,7 @@ const ManageItem = () => {
             variant="outlined"
             name="itemImageChooser"
             required
-            className="!mt-7 !cursor-pointer"
+            className="!mt-7 !cursor-pointer !mb-5"
             onChange={handleSetItemImage}
           />
         </div>
