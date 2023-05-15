@@ -104,7 +104,16 @@ const ManageItem = () => {
 
   // For clear Item TextFields
   const handleClearFields = () => {
-    console.log("Hello There......");
+    setSearchItem("");
+    setItemCode("");
+    setItemName("");
+    setDescription("");
+    setUnitPrice("");
+    setQtyOnHand(0);
+    setDiscount(0.0);
+    setItemImage("");
+    setItemImageChooser("");
+    setSelectedType("");
   };
 
   return (
