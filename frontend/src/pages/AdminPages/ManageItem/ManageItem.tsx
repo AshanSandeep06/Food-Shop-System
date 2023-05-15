@@ -227,6 +227,7 @@ const ManageItem = () => {
             "Description",
             "Unit Price",
             "QtyOnHand",
+            "Discount",
           ]}
           tblData={[
             [
@@ -242,6 +243,7 @@ const ManageItem = () => {
               "Chocalate and Vanilla",
               350.0,
               50,
+              0
             ],
 
             [
@@ -257,6 +259,7 @@ const ManageItem = () => {
               "Chocalate and Vanilla",
               350.0,
               50,
+              0
             ],
           ]}
         />
