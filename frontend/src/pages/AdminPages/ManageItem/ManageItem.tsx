@@ -102,6 +102,11 @@ const ManageItem = () => {
 
   // const imageURL = itemImage && URL.createObjectURL(itemImage);
 
+  // For clear Item TextFields
+  const handleClearFields = () => {
+    console.log("Hello There......");
+  };
+
   return (
     <section>
       <section>
@@ -303,7 +308,12 @@ const ManageItem = () => {
             { color: "success", icon: <AddCircleIcon />, text: "Save" },
             { color: "primary", icon: <AutorenewIcon />, text: "Update" },
             { color: "error", icon: <DeleteIcon />, text: "Delete" },
-            { color: "warning", icon: <BackspaceIcon />, text: "Clear" },
+            {
+              color: "warning",
+              icon: <BackspaceIcon />,
+              text: "Clear",
+              onClick: handleClearFields,
+            },
           ]}
         />
       </section>
