@@ -11,7 +11,7 @@ import {
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import React, { useRef, useState } from "react";
+import React, { ChangeEvent, useRef, useState } from "react";
 import Form from "../../../components/Form";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
@@ -100,6 +100,10 @@ const ManageItem = () => {
     setSelectedType(event.target.value as string);
   };
 
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
+    //
+  }
+
   // const imageURL = itemImage && URL.createObjectURL(itemImage);
 
   return (
@@ -142,6 +146,7 @@ const ManageItem = () => {
               style={{ fontFamily: "Poppins" }}
               name="searchItem"
               value={searchItem}
+              onChange={handleInputChange}
             />
           </FormControl>
         </div>
@@ -167,6 +172,7 @@ const ManageItem = () => {
               placeHolderText: "Item Code",
               name: "itemCode",
               value: itemCode,
+              onChange: handleInputChange
             },
             {
               label: "Item Name",
@@ -174,6 +180,7 @@ const ManageItem = () => {
               placeHolderText: "Item Name",
               name: "itemName",
               value: itemName,
+              onChange: handleInputChange
             },
             {
               label: "Description",
@@ -181,6 +188,7 @@ const ManageItem = () => {
               placeHolderText: "Description",
               name: "description",
               value: description,
+              onChange: handleInputChange
             },
             {
               label: "Unit Price",
@@ -188,6 +196,7 @@ const ManageItem = () => {
               placeHolderText: "Unit Price",
               name: "unitPrice",
               value: unitPrice,
+              onChange: handleInputChange
             },
             {
               label: "QtyOnHand",
@@ -195,6 +204,7 @@ const ManageItem = () => {
               placeHolderText: "QtyOnHand",
               name: "qtyOnHand",
               value: qtyOnHand,
+              onChange: handleInputChange
             },
             {
               label: "Discount",
@@ -203,6 +213,7 @@ const ManageItem = () => {
               readOnly: true,
               name: "discount",
               value: discount,
+              onChange: handleInputChange
             },
           ]}
           buttonsArray={[]}

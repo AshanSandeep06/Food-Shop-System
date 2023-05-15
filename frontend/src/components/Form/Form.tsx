@@ -26,6 +26,7 @@ const Form = (props: FormProps) => {
             required
             defaultValue={textField.defaultValue}
             value={textField.value}
+            onChange={textField.onChange}
             focused={textField.focused}
             InputProps={{
               readOnly: textField.readOnly,

@@ -3,6 +3,7 @@ export type TextFieldDetails = {
     textFieldType: string;
     name: string;
     value?: string | number;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
     placeHolderText: string;
     defaultValue?: string
     focused?: boolean
