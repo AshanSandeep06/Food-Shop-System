@@ -33,7 +33,7 @@ const ManageItem = () => {
   const [itemCode, setItemCode] = useState<string>("");
   const [itemName, setItemName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  const [unitPrice, setUnitPrice] = useState<number>(0.0);
+  const [unitPrice, setUnitPrice] = useState<string>("0.00");
   const [qtyOnHand, setQtyOnHand] = useState<number>(0.0);
   const [discount, setDiscount] = useState<number>(0.0);
   const [itemImage, setItemImage] = useState<string | null>(null);
@@ -210,7 +210,32 @@ const ManageItem = () => {
               name: "unitPrice",
               value: unitPrice,
               onChange: (event: ChangeEvent<HTMLInputElement>) => {
-                setUnitPrice(Number(event.target.value));
+                const { name, value, type } = event.target;
+                let price = "0.00";
+
+                if (name == "unitPrice" && isNaN(Number(value))) {
+                  if (value == ".") {
+                    price = Number(unitPrice) + value;
+                    setUnitPrice(price);
+                    return;
+                  }
+
+                  price = "0.00";
+                  setUnitPrice(price);
+                  console.log(value);
+                  return;
+                }
+
+                if (name == "unitPrice" && parseFloat(value) < 0) {
+                  return;
+                }
+
+                if (value == ".") {
+                  price = unitPrice + value;
+                } else {
+                  price = value;
+                }
+                setUnitPrice(price);
               },
             },
             {
