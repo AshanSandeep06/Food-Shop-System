@@ -33,9 +33,9 @@ const ManageItem = () => {
   const [itemCode, setItemCode] = useState<string>("");
   const [itemName, setItemName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  const [unitPrice, setUnitPrice] = useState<string>("");
-  const [qtyOnHand, setQtyOnHand] = useState<string>("");
-  const [discount, setDiscount] = useState<string>("");
+  const [unitPrice, setUnitPrice] = useState<string>("0.00");
+  const [qtyOnHand, setQtyOnHand] = useState<number>(0.0);
+  const [discount, setDiscount] = useState<number>(0.0);
   const [itemImage, setItemImage] = useState<string | null>(null);
   const [itemImageChooser, setItemImageChooser] = useState<string>("");
 
@@ -108,9 +108,9 @@ const ManageItem = () => {
     setItemCode("");
     setItemName("");
     setDescription("");
-    setUnitPrice("");
-    setQtyOnHand("");
-    setDiscount("");
+    setUnitPrice("0.00");
+    setQtyOnHand(0);
+    setDiscount(0.00);
     setItemImage("");
     setItemImageChooser("");
     setSelectedType("");
@@ -269,7 +269,7 @@ const ManageItem = () => {
                 if (name == "qtyOnHand" && Number(qtyOnHand) < 0) {
                   return;
                 }
-                setQtyOnHand(Number(qtyOnHand).toFixed(2));
+                setQtyOnHand(Number(qtyOnHand));
               },
             },
             {
@@ -280,7 +280,7 @@ const ManageItem = () => {
               name: "discount",
               value: discount,
               onChange: (event: ChangeEvent<HTMLInputElement>) => {
-                setDiscount(Number(event.target.value).toFixed(2));
+                setDiscount(Number(event.target.value));
               },
             },
           ]}
