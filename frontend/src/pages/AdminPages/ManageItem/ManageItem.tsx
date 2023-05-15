@@ -28,6 +28,8 @@ const ManageItem = () => {
   // const itemImageRef = useRef<HTMLImageElement>(null);
   const [itemImage, setItemImage] = useState<File | null>(null);
 
+  
+
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "& .MuiInputBase-input": {
       borderRadius: 4,
