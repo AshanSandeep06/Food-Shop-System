@@ -24,6 +24,7 @@ import iceCreamImg from "../../../assets/img/icecream-01.png";
 import { motion } from "framer-motion";
 import { read } from "fs";
 import $ from "jquery";
+import axios from "../../../axios";
 
 const ManageItem = () => {
   // const itemImageRef = useRef<HTMLImageElement>(null);
@@ -127,6 +128,19 @@ const ManageItem = () => {
     if (itemCode && itemName && description && unitPrice && qtyOnHand) {
       if (fileData && itemImage) {
         //
+        const formData: FormData = new FormData();
+        let itemImageName =
+          itemCode + "_" + itemName + "-image." + fileData.name.split(".")[1];
+        formData.append("itemImage", fileData, itemImageName);
+
+        axios
+          .post("item/saveItemImages", formData)
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       } else {
         alert("Please select Item Image and try again..!");
       }
