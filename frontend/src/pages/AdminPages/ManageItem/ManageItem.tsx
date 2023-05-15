@@ -110,7 +110,7 @@ const ManageItem = () => {
     setDescription("");
     setUnitPrice("0.00");
     setQtyOnHand(0);
-    setDiscount(0.00);
+    setDiscount(0.0);
     setItemImage("");
     setItemImageChooser("");
     setSelectedType("");
@@ -266,6 +266,11 @@ const ManageItem = () => {
               onChange: (event: ChangeEvent<HTMLInputElement>) => {
                 const { name, value, type } = event.target;
                 const qtyOnHand = type == "number" ? parseInt(value) : value;
+                if (name == "unitPrice" && isNaN(Number(value))) {
+                  setQtyOnHand(0);
+                  return;
+                }
+
                 if (name == "qtyOnHand" && Number(qtyOnHand) < 0) {
                   return;
                 }
