@@ -118,8 +118,13 @@ const ManageItem = () => {
 
   // Save Item
   const handleSaveItem = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if(itemCode && itemName && description && unitPrice && qtyOnHand && itemImage && itemImageChooser){
-      // alert("Item has been saved successfully");
+    if(itemCode && itemName && description && unitPrice && qtyOnHand){
+      if(itemImage && itemImageChooser){
+        //
+
+      }else {
+        alert("Please select Item Image and try again..!");
+      }
     }else {
       alert("Item is not Saved");
       // console.log(itemCode+" "+itemName+" "+description+" "+unitPrice+" "+qtyOnHand+" "+itemImage+" "+itemImageChooser);
