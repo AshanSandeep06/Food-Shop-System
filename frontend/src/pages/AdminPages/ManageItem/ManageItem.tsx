@@ -33,9 +33,9 @@ const ManageItem = () => {
   const [itemCode, setItemCode] = useState<string>("");
   const [itemName, setItemName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  const [unitPrice, setUnitPrice] = useState<number>(0.00);
-  const [qtyOnHand, setQtyOnHand] = useState<number>(0.00);
-  const [discount, setDiscount] = useState<number>(0.00);
+  const [unitPrice, setUnitPrice] = useState<number>(0.0);
+  const [qtyOnHand, setQtyOnHand] = useState<number>(0.0);
+  const [discount, setDiscount] = useState<number>(0.0);
   const [itemImage, setItemImage] = useState<string | null>(null);
   const [itemImageChooser, setItemImageChooser] = useState<string>("");
 
@@ -101,7 +101,12 @@ const ManageItem = () => {
   };
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
-    //
+    const { name, value, type } = event.target;
+
+    const qtyOnHand = type == "number" ? parseInt(value) : value;
+    if (name == "qtyOnHand" && Number(qtyOnHand) < 0) {
+      return;
+    }
   }
 
   // const imageURL = itemImage && URL.createObjectURL(itemImage);
@@ -146,7 +151,9 @@ const ManageItem = () => {
               style={{ fontFamily: "Poppins" }}
               name="searchItem"
               value={searchItem}
-              onChange={handleInputChange}
+              onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                setSearchItem(event.target.value);
+              }}
             />
           </FormControl>
         </div>
@@ -172,7 +179,9 @@ const ManageItem = () => {
               placeHolderText: "Item Code",
               name: "itemCode",
               value: itemCode,
-              onChange: handleInputChange
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setItemCode(event.target.value);
+              },
             },
             {
               label: "Item Name",
@@ -180,7 +189,9 @@ const ManageItem = () => {
               placeHolderText: "Item Name",
               name: "itemName",
               value: itemName,
-              onChange: handleInputChange
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setItemName(event.target.value);
+              },
             },
             {
               label: "Description",
@@ -188,7 +199,9 @@ const ManageItem = () => {
               placeHolderText: "Description",
               name: "description",
               value: description,
-              onChange: handleInputChange
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setDescription(event.target.value);
+              },
             },
             {
               label: "Unit Price",
@@ -196,7 +209,9 @@ const ManageItem = () => {
               placeHolderText: "Unit Price",
               name: "unitPrice",
               value: unitPrice,
-              onChange: handleInputChange
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setUnitPrice(Number(event.target.value));
+              },
             },
             {
               label: "QtyOnHand",
@@ -204,7 +219,14 @@ const ManageItem = () => {
               placeHolderText: "QtyOnHand",
               name: "qtyOnHand",
               value: qtyOnHand,
-              onChange: handleInputChange
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                const { name, value, type } = event.target;
+                const qtyOnHand = type == "number" ? parseInt(value) : value;
+                if (name == "qtyOnHand" && Number(qtyOnHand) < 0) {
+                  return;
+                }
+                setQtyOnHand(Number(qtyOnHand));
+              },
             },
             {
               label: "Discount",
@@ -213,7 +235,9 @@ const ManageItem = () => {
               readOnly: true,
               name: "discount",
               value: discount,
-              onChange: handleInputChange
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setDiscount(Number(event.target.value));
+              },
             },
           ]}
           buttonsArray={[]}
