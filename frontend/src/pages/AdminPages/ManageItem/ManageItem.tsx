@@ -100,15 +100,6 @@ const ManageItem = () => {
     setSelectedType(event.target.value as string);
   };
 
-  function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
-    const { name, value, type } = event.target;
-
-    const qtyOnHand = type == "number" ? parseInt(value) : value;
-    if (name == "qtyOnHand" && Number(qtyOnHand) < 0) {
-      return;
-    }
-  }
-
   // const imageURL = itemImage && URL.createObjectURL(itemImage);
 
   return (
