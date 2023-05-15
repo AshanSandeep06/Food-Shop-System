@@ -71,6 +71,7 @@ const Form = (props: FormProps) => {
               variant="contained"
               color={button.color}
               endIcon={button.icon}
+              onClick={button.onClick}
             >
               {button.text}
             </Button>
