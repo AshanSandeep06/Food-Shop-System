@@ -11,7 +11,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { NavLink } from "react-router-dom";
 import MyButton from "./components/MyButton";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import Admin from "./components/Admin/Admin";
+import Admin from "./components/Admin";
 
 const App = () => {
   const style1 =
