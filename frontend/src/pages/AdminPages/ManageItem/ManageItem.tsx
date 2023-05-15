@@ -37,7 +37,9 @@ const ManageItem = () => {
   const [qtyOnHand, setQtyOnHand] = useState<number>(0.0);
   const [discount, setDiscount] = useState<number>(0.0);
   const [itemImage, setItemImage] = useState<string | null>(null);
-  const [itemImageChooser, setItemImageChooser] = useState<string>("");
+
+  // For file chooser
+  const [fileData, setFileData] = useState<File | undefined | null>();
 
   const [seletedType, setSelectedType] = useState<string>("");
 
@@ -72,7 +74,7 @@ const ManageItem = () => {
     },
   }));
 
-  const handleSetItemImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSetItemImage = (event: React.ChangeEvent<HTMLInputElement>) => {
     // let file = e.target.files;
     // let reader = new FileReader();
 
@@ -91,9 +93,10 @@ const ManageItem = () => {
 
     // ---------------------------------------------------
 
-    setItemImageChooser(e.target.value);
-    const imageFile = e.target.files?.[0];
-    setItemImage((imageFile && URL.createObjectURL(imageFile)) || null);
+    const file = event.target.files?.[0];
+    setFileData(file);
+    console.log(file);
+    setItemImage((file && URL.createObjectURL(file)) || null);
   };
 
   const handleChangeType = (event: SelectChangeEvent) => {
@@ -112,20 +115,19 @@ const ManageItem = () => {
     setQtyOnHand(0);
     setDiscount(0.0);
     setItemImage("");
-    setItemImageChooser("");
+    setFileData(null);
     setSelectedType("");
   };
 
   // Save Item
   const handleSaveItem = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if(itemCode && itemName && description && unitPrice && qtyOnHand){
-      if(itemImage && itemImageChooser){
+    if (itemCode && itemName && description && unitPrice && qtyOnHand) {
+      if (fileData && itemImage) {
         //
-
-      }else {
+      } else {
         alert("Please select Item Image and try again..!");
       }
-    }else {
+    } else {
       alert("Item is not Saved");
       // console.log(itemCode+" "+itemName+" "+description+" "+unitPrice+" "+qtyOnHand+" "+itemImage+" "+itemImageChooser);
     }
@@ -325,7 +327,6 @@ const ManageItem = () => {
             required
             className="!mt-7 !cursor-pointer !mb-5"
             name="itemImageChooser"
-            value={itemImageChooser}
             onChange={handleSetItemImage}
           />
         </div>
