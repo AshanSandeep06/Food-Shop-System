@@ -170,6 +170,14 @@ const ManageItem = () => {
               placeHolderText: "QtyOnHand",
               defaultValue: "0",
             },
+            {
+              label: "Discount",
+              textFieldType: "text",
+              name: "discount",
+              placeHolderText: "Discount",
+              defaultValue: "0",
+              readOnly: true,
+            },
           ]}
           buttonsArray={[]}
         />
