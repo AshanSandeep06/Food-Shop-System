@@ -7,3 +7,7 @@
 span {
   margin-left: 4px !important;
 }
+
+#txtSearchItem + fieldset > legend {
+  width: 0px!important;
+}

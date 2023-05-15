@@ -144,7 +144,7 @@ const ManageItem = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <FormControl sx={{ m: 1 }} variant="standard" className="w-full">
+          {/* <FormControl sx={{ m: 1 }} variant="standard" className="w-full">
             <InputLabel htmlFor="demo-customized-textbox">Age</InputLabel>
             <BootstrapInput
               id="demo-customized-textbox"
@@ -155,7 +155,21 @@ const ManageItem = () => {
                 setSearchItem(event.target.value);
               }}
             />
-          </FormControl>
+          </FormControl> */}
+
+          <TextField
+            id="txtSearchItem"
+            className="w-full"
+            label=""
+            placeholder=""
+            type="text"
+            variant="outlined"
+            name={searchItem}
+            value={searchItem}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              setSearchItem(event.target.value);
+            }}
+          />
         </div>
 
         <div className="md:flex sm:justify-start sm:col-start-3 sm:col-end-4 items-center grid col-start-1 col-end-2 justify-center">
