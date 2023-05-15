@@ -116,6 +116,10 @@ const ManageItem = () => {
     setSelectedType("");
   };
 
+  // Save Item
+  const handleSaveItem = (event: React.MouseEvent<HTMLButtonElement>) => {
+  };
+
   return (
     <section>
       <section>
@@ -318,7 +322,12 @@ const ManageItem = () => {
         <Form
           textFieldsArray={[]}
           buttonsArray={[
-            { color: "success", icon: <AddCircleIcon />, text: "Save" },
+            {
+              color: "success",
+              icon: <AddCircleIcon />,
+              text: "Save",
+              onClick: handleSaveItem,
+            },
             { color: "primary", icon: <AutorenewIcon />, text: "Update" },
             { color: "error", icon: <DeleteIcon />, text: "Delete" },
             {
