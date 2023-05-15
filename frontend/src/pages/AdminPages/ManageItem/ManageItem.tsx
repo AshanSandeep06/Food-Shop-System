@@ -5,6 +5,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  SelectChangeEvent,
   TextField,
   createTheme,
   styled,
@@ -32,11 +33,13 @@ const ManageItem = () => {
   const [itemCode, setItemCode] = useState<string>("");
   const [itemName, setItemName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  const [unitPrice, setUnitPrice] = useState<number>(0.0);
-  const [qtyOnHand, setQtyOnHand] = useState<number>(0.0);
-  const [discount, setDiscount] = useState<number>(0.0);
+  const [unitPrice, setUnitPrice] = useState<number>(0.00);
+  const [qtyOnHand, setQtyOnHand] = useState<number>(0.00);
+  const [discount, setDiscount] = useState<number>(0.00);
   const [itemImage, setItemImage] = useState<string | null>(null);
   const [itemImageChooser, setItemImageChooser] = useState<string>("");
+
+  const [seletedType, setSelectedType] = useState<string>("");
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "& .MuiInputBase-input": {
@@ -93,6 +96,10 @@ const ManageItem = () => {
     setItemImage((imageFile && URL.createObjectURL(imageFile)) || null);
   };
 
+  const handleChangeType = (event: SelectChangeEvent) => {
+    setSelectedType(event.target.value as string);
+  };
+
   // const imageURL = itemImage && URL.createObjectURL(itemImage);
 
   return (
@@ -113,6 +120,8 @@ const ManageItem = () => {
               id="demo-simple-select"
               label="Item"
               className="!font-poppins"
+              value={seletedType}
+              onChange={handleChangeType}
             >
               {/* <MenuItem value={itemCode}>Customer ID</MenuItem> */}
               <MenuItem className="!font-poppins" value={1}>
@@ -157,46 +166,43 @@ const ManageItem = () => {
               textFieldType: "text",
               placeHolderText: "Item Code",
               name: "itemCode",
-              value: itemCode
-            
+              value: itemCode,
             },
             {
               label: "Item Name",
               textFieldType: "text",
               placeHolderText: "Item Name",
               name: "itemName",
-              value: itemName
+              value: itemName,
             },
             {
               label: "Description",
               textFieldType: "text",
               placeHolderText: "Description",
               name: "description",
-              value: description
+              value: description,
             },
             {
               label: "Unit Price",
               textFieldType: "text",
               placeHolderText: "Unit Price",
               name: "unitPrice",
-              value: unitPrice
+              value: unitPrice,
             },
             {
               label: "QtyOnHand",
               textFieldType: "number",
               placeHolderText: "QtyOnHand",
-              defaultValue: "0",
               name: "qtyOnHand",
-              value: qtyOnHand
+              value: qtyOnHand,
             },
             {
               label: "Discount",
               textFieldType: "text",
               placeHolderText: "Discount",
-              defaultValue: "0",
               readOnly: true,
               name: "discount",
-              value: discount
+              value: discount,
             },
           ]}
           buttonsArray={[]}
