@@ -26,9 +26,17 @@ import $ from "jquery";
 
 const ManageItem = () => {
   // const itemImageRef = useRef<HTMLImageElement>(null);
-  const [itemImage, setItemImage] = useState<File | null>(null);
 
-  
+  // Defines initial states(initial values)
+  const [searchItem, setSearchItem] = useState<string>("");
+  const [itemCode, setItemCode] = useState<string>("");
+  const [itemName, setItemName] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [unitPrice, setUnitPrice] = useState<number>(0.0);
+  const [qtyOnHand, setQtyOnHand] = useState<number>(0.0);
+  const [discount, setDiscount] = useState<number>(0.0);
+  const [itemImage, setItemImage] = useState<string | null>(null);
+  const [itemImageChooser, setItemImageChooser] = useState<string>("");
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "& .MuiInputBase-input": {
@@ -80,11 +88,12 @@ const ManageItem = () => {
 
     // ---------------------------------------------------
 
+    setItemImageChooser(e.target.value);
     const imageFile = e.target.files?.[0];
-    setItemImage(imageFile || null);
+    setItemImage((imageFile && URL.createObjectURL(imageFile)) || null);
   };
 
-  const imageURL = itemImage && URL.createObjectURL(itemImage);
+  // const imageURL = itemImage && URL.createObjectURL(itemImage);
 
   return (
     <section>
@@ -122,6 +131,8 @@ const ManageItem = () => {
             <BootstrapInput
               id="demo-customized-textbox"
               style={{ fontFamily: "Poppins" }}
+              name="searchItem"
+              value={searchItem}
             />
           </FormControl>
         </div>
@@ -144,41 +155,48 @@ const ManageItem = () => {
             {
               label: "Item Code",
               textFieldType: "text",
-              name: "itemCode",
               placeHolderText: "Item Code",
+              name: "itemCode",
+              value: itemCode
+            
             },
             {
               label: "Item Name",
               textFieldType: "text",
-              name: "itemName",
               placeHolderText: "Item Name",
+              name: "itemName",
+              value: itemName
             },
             {
               label: "Description",
               textFieldType: "text",
-              name: "description",
               placeHolderText: "Description",
+              name: "description",
+              value: description
             },
             {
               label: "Unit Price",
               textFieldType: "text",
-              name: "unitPrice",
               placeHolderText: "Unit Price",
+              name: "unitPrice",
+              value: unitPrice
             },
             {
               label: "QtyOnHand",
               textFieldType: "number",
-              name: "qtyOnHand",
               placeHolderText: "QtyOnHand",
               defaultValue: "0",
+              name: "qtyOnHand",
+              value: qtyOnHand
             },
             {
               label: "Discount",
               textFieldType: "text",
-              name: "discount",
               placeHolderText: "Discount",
               defaultValue: "0",
               readOnly: true,
+              name: "discount",
+              value: discount
             },
           ]}
           buttonsArray={[]}
@@ -188,10 +206,10 @@ const ManageItem = () => {
       <section className="mb-6 sm:grid sm:grid-cols-1 lg:flex lg:items-end lg:justify-center">
         <div className="flex flex-col">
           <label className="mb-3 text-[17px]">Upload Item Image</label>
-          {imageURL && (
+          {itemImage && (
             <img
               id="itemImage"
-              src={imageURL}
+              src={itemImage}
               className="object-contain h-[319px]"
               // ref={itemImageRef}
             />
@@ -200,9 +218,10 @@ const ManageItem = () => {
             id="uploadItemImageChooser"
             type="file"
             variant="outlined"
-            name="itemImageChooser"
             required
             className="!mt-7 !cursor-pointer !mb-5"
+            name="itemImageChooser"
+            value={itemImageChooser}
             onChange={handleSetItemImage}
           />
         </div>
@@ -245,7 +264,7 @@ const ManageItem = () => {
               "Chocalate and Vanilla",
               350.0,
               50,
-              0
+              0,
             ],
 
             [
@@ -261,7 +280,7 @@ const ManageItem = () => {
               "Chocalate and Vanilla",
               350.0,
               50,
-              0
+              0,
             ],
           ]}
         />
