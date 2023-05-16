@@ -113,7 +113,6 @@ export default class ItemController {
     deleteItem: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         try{
             // Delete Item
-            //Destructuring assignment
             const { itemCode } = req.params;
 
             let item = await Item.findOne({ itemCode: itemCode });
@@ -134,6 +133,22 @@ export default class ItemController {
     };
 
     searchItem: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
-        return res;
+        try{
+            // Search Item
+            const { itemCode } = req.params;
+            let item = await Item.findOne({ itemCode: itemCode });
+            if(item){
+                return res.status(200).json({message: "Item has been loaded", response: item});
+            }else{
+                return res.status(200).json({message: "There is no Item exists by this Item Code - "+itemCode});
+            }
+
+        }catch(error: unknown){
+            if(error instanceof Error){
+                return res.status(500).json({message: error.message});
+            }else{
+                return res.status(500).json({message: "Unknown error Occured..!"});
+            }
+        }
     };
 };
