@@ -33,7 +33,6 @@ const ItemSchema = new Schema({
 
     itemImage: {
         type: String,
-        required: true,
     },
 
     unitPrice: {

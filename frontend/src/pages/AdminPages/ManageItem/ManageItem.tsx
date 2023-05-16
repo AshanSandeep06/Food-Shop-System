@@ -210,7 +210,20 @@ const ManageItem = () => {
       let newItem = {
         itemCode: itemCode,
         itemType: itemType,
+        itemName: itemName,
+        description: description,
+        unitPrice: unitPrice,
+        qtyOnHand: qtyOnHand,
       };
+
+      axios
+        .post("item", newItem)
+        .then((res) => {
+          console.log(res.data.message);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
 
       if (fileData && itemImage) {
         console.log(fileData);
@@ -223,7 +236,7 @@ const ManageItem = () => {
         console.log(fileData);
 
         axios
-          .put("item", formData)
+          .put("item/saveItemImages/"+itemCode, formData)
           .then((res) => {
             console.log(res);
           })
