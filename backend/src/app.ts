@@ -5,6 +5,9 @@ import express, {Request, Response} from 'express';
 import db from 'mongoose';
 import { json, urlencoded } from 'body-parser';
 import cors from 'cors';
+import routes from "./routes";
+import multer from 'multer';
+import path from "path";
 
 const app = express();
 
@@ -22,6 +25,24 @@ app.use(cors({
 app.use(json());
 
 app.use(urlencoded({ extended: true }));
+
+const fileStorage = multer.diskStorage({
+    destination: (req, file, callback) => {
+        // const directoryPath = path.join(__dirname, 'assets', 'img', 'uploads', 'itemImages');
+        callback(null, "F:\\Vscode Projects\\Food Shop System\\frontend\\src\\assets\\img\\uploads\\itemImages\\");
+    },
+
+    filename: (req, file, callback) => {
+        callback(null, file.originalname);
+    },
+});
+
+const upload = multer({ storage: fileStorage });
+
+app.put("/api/v1/item", upload.single("itemImage"), (req:Request, res:Response) => {
+    console.log(req.file);
+    res.send("File Upload Successfully..!");
+});
 
 app.use((error: Error, req: Request, res: Response) => {
     res.status(500).json({ message: error.message });
