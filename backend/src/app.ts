@@ -26,11 +26,11 @@ app.use(json());
 
 app.use(urlencoded({ extended: true }));
 
+app.use("/", routes);
+
 app.use((error: Error, req: Request, res: Response) => {
     res.status(500).json({ message: error.message });
 });
-
-app.use("/", routes);
 
 db.connect(process.env.MONGO_DB_URL!)
 .then(() => {

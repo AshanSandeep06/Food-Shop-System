@@ -11,7 +11,7 @@ import {
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import React, { ChangeEvent, useRef, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import Form from "../../../components/Form";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
@@ -44,6 +44,10 @@ const ManageItem = () => {
   const [fileData, setFileData] = useState<any>();
 
   const [seletedType, setSelectedType] = useState<string>("");
+  const [itemType, setItemType] = useState<string>("");
+
+  // For Load All Items
+  const [allItemsList, setAllItemsList] = useState<Array<string[] | any[]>>([]);
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "& .MuiInputBase-input": {
@@ -76,6 +80,79 @@ const ManageItem = () => {
     },
   }));
 
+  useEffect(() => {
+    getAllItems();
+  }, []);
+
+  const getAllItems = () => {
+    axios
+      .get("item")
+      .then((res) => {
+        console.log(res.data.response);
+
+        let allItems = [];
+
+        // allItems = [
+        //   [
+        //     "I00-001",
+        //     "Ice-Cream",
+        //     <motion.img
+        //       whileHover={{ scale: 1.1 }}
+        //       whileTap={{ scale: 1.1 }}
+        //       src={iceCreamImg}
+        //       alt="foodImage"
+        //       className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
+        //     />,
+        //     "Chocalate and Vanilla",
+        //     350.0,
+        //     50,
+        //     0,
+        //   ],
+
+        //   [
+        //     "I00-002",
+        //     "Ice-Cream",
+        //     <motion.img
+        //       whileHover={{ scale: 1.1 }}
+        //       whileTap={{ scale: 1.1 }}
+        //       src={iceCreamImg}
+        //       alt="foodImage"
+        //       className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
+        //     />,
+        //     "Chocalate and Vanilla",
+        //     350.0,
+        //     50,
+        //     0,
+        //   ],
+        // ];
+
+        for (let i = 0; i > res.data.response.length; i++) {
+          allItems.push([
+            res.data.response[i].itemCode,
+            res.data.response[i].itemType,
+            res.data.response[i].itemName,
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.1 }}
+              src={res.data.response[i].itemImage}
+              alt="foodImage"
+              className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
+            />,
+            res.data.response[i].description,
+            res.data.response[i].unitPrice,
+            res.data.response[i].qtyOnHand,
+            // Discount
+            0,
+          ]);
+        }
+
+        setAllItemsList(allItems);
+      })
+      .catch((error) => {
+        alert("Error is : " + error);
+      });
+  };
+
   const handleSetItemImage = (event: React.ChangeEvent<HTMLInputElement>) => {
     // let file = e.target.files;
     // let reader = new FileReader();
@@ -106,6 +183,10 @@ const ManageItem = () => {
     setSelectedType(event.target.value as string);
   };
 
+  const handleChangeItemType = (event: SelectChangeEvent) => {
+    setItemType(event.target.value as string);
+  };
+
   // const imageURL = itemImage && URL.createObjectURL(itemImage);
 
   // For clear Item TextFields
@@ -126,13 +207,18 @@ const ManageItem = () => {
   // Save Item
   const handleSaveItem = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (itemCode && itemName && description && unitPrice && qtyOnHand) {
+      let newItem = {
+        itemCode: itemCode,
+        itemType: itemType,
+      };
+
       if (fileData && itemImage) {
         console.log(fileData);
         //
         const formData: FormData = new FormData();
-        // let itemImageName =
-        //   itemCode + "_" + itemName + "-image." + fileData.name.split(".")[1];
-        formData.append("itemImage", fileData);
+        let itemImageName =
+          itemCode + "_" + itemName + "-image." + fileData.name.split(".")[1];
+        formData.append("itemImage", fileData, itemImageName);
 
         console.log(fileData);
 
@@ -224,6 +310,41 @@ const ManageItem = () => {
             Search Item
           </Button>
         </div>
+      </section>
+
+      <section className="grid grid-cols-1 lg:grid-cols-3 pb-6 px-6 lg:px-12 mb-1">
+        <FormControl className="">
+          <InputLabel id="demo-simple-select-label">
+            Select Item Type
+          </InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="cmbItemType"
+            label="Item"
+            className="!font-poppins"
+            value={itemType}
+            onChange={handleChangeItemType}
+          >
+            <MenuItem className="!font-poppins" value={1}>
+              Chicken
+            </MenuItem>
+            <MenuItem className="!font-poppins" value={2}>
+              Beverages
+            </MenuItem>
+            <MenuItem className="!font-poppins" value={3}>
+              Fish
+            </MenuItem>
+            <MenuItem className="!font-poppins" value={4}>
+              Rice
+            </MenuItem>
+            <MenuItem className="!font-poppins" value={5}>
+              Burgers
+            </MenuItem>
+            <MenuItem className="!font-poppins" value={6}>
+              Ice Cream
+            </MenuItem>
+          </Select>
+        </FormControl>
       </section>
 
       <section>
@@ -337,6 +458,7 @@ const ManageItem = () => {
               id="itemImage"
               src={itemImage}
               className="object-contain h-[319px]"
+              alt="selectedImage"
               // ref={itemImageRef}
             />
           )}
@@ -378,6 +500,7 @@ const ManageItem = () => {
           tblHeight="auto"
           tblHeaders={[
             "Item Code",
+            "Item Type",
             "Name",
             "View",
             "Description",
@@ -385,39 +508,7 @@ const ManageItem = () => {
             "QtyOnHand",
             "Discount",
           ]}
-          tblData={[
-            [
-              "I00-001",
-              "Ice-Cream",
-              <motion.img
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 1.1 }}
-                src={iceCreamImg}
-                alt="foodImage"
-                className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
-              />,
-              "Chocalate and Vanilla",
-              350.0,
-              50,
-              0,
-            ],
-
-            [
-              "I00-001",
-              "Ice-Cream",
-              <motion.img
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 1.1 }}
-                src={iceCreamImg}
-                alt="foodImage"
-                className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
-              />,
-              "Chocalate and Vanilla",
-              350.0,
-              50,
-              0,
-            ],
-          ]}
+          tblData={allItemsList.map((itemArray) => itemArray)}
         />
       </section>
     </section>

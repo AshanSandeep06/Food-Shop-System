@@ -34,7 +34,7 @@ export default class ItemRoutes {
         this.router.put("/", this.ItemController.updateItem);
         this.router.put("/saveItemImages/:itemCode", upload.single("itemImage"), this.ItemController.saveItemImages);
         this.router.delete("/:itemCode", this.ItemController.deleteItem);
-        this.router.get("/:itemCode", this.ItemController.searchItem);
+        this.router.get("/getItem/:itemCode", this.ItemController.searchItem);
     };
 
     public getRouter = (): Router => {

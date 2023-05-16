@@ -9,5 +9,9 @@ span {
 }
 
 #txtSearchItem + fieldset > legend {
-  width: 0px!important;
+  width: 0px !important;
+}
+
+#cmbItemType + input + svg + fieldset > legend {
+  width: 108px !important;
 }
