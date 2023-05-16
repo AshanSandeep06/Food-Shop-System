@@ -26,27 +26,11 @@ app.use(json());
 
 app.use(urlencoded({ extended: true }));
 
-const fileStorage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        // const directoryPath = path.join(__dirname, 'assets', 'img', 'uploads', 'itemImages');
-        callback(null, "F:\\Vscode Projects\\Food Shop System\\frontend\\src\\assets\\img\\uploads\\itemImages\\");
-    },
-
-    filename: (req, file, callback) => {
-        callback(null, file.originalname);
-    },
-});
-
-const upload = multer({ storage: fileStorage });
-
-app.put("/api/v1/item", upload.single("itemImage"), (req:Request, res:Response) => {
-    console.log(req.file);
-    res.send("File Upload Successfully..!");
-});
-
 app.use((error: Error, req: Request, res: Response) => {
     res.status(500).json({ message: error.message });
 });
+
+app.use("/", routes);
 
 db.connect(process.env.MONGO_DB_URL!)
 .then(() => {
