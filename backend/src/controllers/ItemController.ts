@@ -9,6 +9,10 @@ export default class ItemController {
         return res;
     };
 
+    saveItemImages: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+        return res;
+    };
+
     updateItem: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         return res;
     };

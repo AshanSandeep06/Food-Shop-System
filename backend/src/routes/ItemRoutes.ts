@@ -13,6 +13,7 @@ export default class ItemRoutes {
         this.router.get("/", this.ItemController.getAllItems);
         this.router.post("/", this.ItemController.saveItem);
         this.router.put("/", this.ItemController.updateItem);
+        this.router.put("/saveItemImages/:itemCode", this.ItemController.saveItemImages);
         this.router.delete("/:itemCode", this.ItemController.deleteItem);
         this.router.get("/:itemCode", this.ItemController.searchItem);
     };
