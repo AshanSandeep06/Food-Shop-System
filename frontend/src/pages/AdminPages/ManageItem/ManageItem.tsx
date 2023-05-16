@@ -127,7 +127,6 @@ const ManageItem = () => {
   const handleSaveItem = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (itemCode && itemName && description && unitPrice && qtyOnHand) {
       if (fileData && itemImage) {
-
         console.log(fileData);
         //
         const formData: FormData = new FormData();
@@ -341,26 +340,13 @@ const ManageItem = () => {
               // ref={itemImageRef}
             />
           )}
-          {/* <TextField
+          <TextField
             id="uploadItemImageChooser"
             type="file"
             variant="outlined"
             required
             className="!mt-7 !cursor-pointer !mb-5"
-            value={itemImageChooser}
-            name="itemImageChooser"
-            onChange={handleSetItemImage}
-          
-          /> */}
-          <input
-            id="uploadItemImageChooser"
-            type="file"
-            // variant="outlined"
-            required
-            className="!mt-7 !cursor-pointer !mb-5"
-            // value={itemImageChooser}
             name="itemImage"
-            multiple
             onChange={handleSetItemImage}
           />
         </div>
