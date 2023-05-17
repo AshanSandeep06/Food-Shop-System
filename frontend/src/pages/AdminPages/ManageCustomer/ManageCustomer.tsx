@@ -283,6 +283,58 @@ const ManageCustomer = () => {
     }
   };
 
+  const handleSearchCustomer = () => {
+    if (searchCustomer) {
+      if (seletedType == "1") {
+        axios
+          .get("customer/getByCustomerID" + searchCustomer)
+          .then((res) => {
+            setCustomerID(res.data.response.customerID);
+            setCustomerName(res.data.response.customerName);
+            setUsername(res.data.response.username);
+            setPassword(res.data.response.password);
+            setAddress(res.data.response.address);
+            setContactNumber(res.data.response.contactNumber);
+            setEmail(res.data.response.email);
+          })
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: error.response.data.message,
+            });
+            getAllCustomers();
+          });
+      } else {
+        axios
+          .get("customer/getByContactNumber" + searchCustomer)
+          .then((res) => {
+            setCustomerID(res.data.response.customerID);
+            setCustomerName(res.data.response.customerName);
+            setUsername(res.data.response.username);
+            setPassword(res.data.response.password);
+            setAddress(res.data.response.address);
+            setContactNumber(res.data.response.contactNumber);
+            setEmail(res.data.response.email);
+          })
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: error.response.data.message,
+            });
+            getAllCustomers();
+          });
+      }
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Try again..",
+        text: "Please inputs a item Code to Search and try again..",
+      });
+    }
+  };
+
   return (
     <section>
       <section>
@@ -336,6 +388,7 @@ const ManageCustomer = () => {
             variant="contained"
             color="info"
             endIcon={<SearchIcon />}
+            onClick={handleSearchCustomer}
           >
             Search Customer
           </Button>

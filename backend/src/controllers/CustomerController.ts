@@ -170,7 +170,7 @@ export default class CustomerController {
         }
     };
 
-    searchCustomer: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+    searchCustomerByCustomerID: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         try{
             // Search Customer
             const { customerID } = req.params;
@@ -179,6 +179,26 @@ export default class CustomerController {
                 return res.status(200).json({message: "Customer has been loaded", response: customer});
             }else{
                 return res.status(500).json({message: "There is no Customer exists by this Customer ID - "+customerID });
+            }
+
+        }catch(error: unknown){
+            if(error instanceof Error){
+                return res.status(500).json({message: error.message});
+            }else{
+                return res.status(500).json({message: "Unknown error Occured..!"});
+            }
+        }
+    };
+
+    searchCustomerByContactNumber: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+        try{
+            // Search Customer
+            const { contactNumber } = req.params;
+            let customer = await Customer.findOne({ contactNumber: contactNumber });
+            if(customer){
+                return res.status(200).json({message: "Customer has been loaded", response: customer});
+            }else{
+                return res.status(500).json({message: "There is no Customer exists by this Contact Number - "+contactNumber });
             }
 
         }catch(error: unknown){
