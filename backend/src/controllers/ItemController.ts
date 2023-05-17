@@ -65,7 +65,6 @@ export default class ItemController {
                     item.itemImage = req.file?.originalname;
                     item = await item.save();
                     if(item){
-                        // console.log(item);
                         return res.status(200).json({ message: "Item Images has been Successfully Saved" });
                     }else {
                         return res.status(200).json({ message: "Oops, Please try again..!" });
