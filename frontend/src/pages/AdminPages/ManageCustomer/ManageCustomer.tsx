@@ -68,6 +68,17 @@ const ManageCustomer = () => {
     setSelectedType(event.target.value as string);
   };
 
+  const handleTableRowClick = (tableRow: Array<String | any>) => {
+    console.log(tableRow);
+    setCustomerID(tableRow[0]);
+    setUsername(tableRow[2]);
+    setPassword(tableRow[3]);
+    setCustomerName(tableRow[4]);
+    setAddress(tableRow[5]);
+    setContactNumber(tableRow[6]);
+    setEmail(tableRow[7]);
+  };
+
   return (
     <section>
       <section>
@@ -223,37 +234,8 @@ const ManageCustomer = () => {
             "Contact",
             "Email",
           ]}
-          tblData={[
-            [
-              "C00-001",
-              "user",
-              "user123",
-              "Kamal Perera",
-              "46/D, Makuluwa, Galle",
-              "0753841883",
-              "kamal123@gmail.com",
-            ],
-
-            [
-              "C00-001",
-              "user",
-              "user123",
-              "Kamal Perera",
-              "46/D, Makuluwa, Galle",
-              "0753841883",
-              "kamal123@gmail.com",
-            ],
-
-            [
-              "C00-001",
-              "user",
-              "user123",
-              "Kamal Perera",
-              "46/D, Makuluwa, Galle",
-              "0753841883",
-              "kamal123@gmail.com",
-            ],
-          ]}
+          tblData={allCustomersList.map((customerArray) => customerArray)}
+          handleTblRowClick={handleTableRowClick}
         />
       </section>
     </section>
