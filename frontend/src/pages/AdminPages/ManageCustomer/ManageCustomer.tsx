@@ -296,8 +296,6 @@ const ManageCustomer = () => {
                 setCustomerName(resp.data.response.customerName);
                 setUsername(res.data.response.username);
                 setPassword(res.data.response.password);
-                setUsername(resp.data.response.username);
-                setPassword(resp.data.response.password);
                 setAddress(resp.data.response.address);
                 setContactNumber(resp.data.response.contactNumber);
                 setEmail(resp.data.response.email);
