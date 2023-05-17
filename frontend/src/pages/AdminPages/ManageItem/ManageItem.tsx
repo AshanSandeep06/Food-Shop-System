@@ -156,7 +156,7 @@ const ManageItem = () => {
       .catch((error) => {
         alert("Error is : " + error);
       });
-    handleClearFields();
+    // handleClearFields();
   };
 
   const handleSetItemImage = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -288,11 +288,13 @@ const ManageItem = () => {
       axios
         .put("item/saveItemImages/" + itemCode, formData)
         .then((res) => {
-          Swal.fire(
-            "Sucessfully Uploaded",
-            "Your item image has been Uploaded.",
-            "success"
-          );
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: res.data.message,
+            showConfirmButton: false,
+            timer: 1500,
+          });
           getAllItems();
         })
         .catch((error) => {
@@ -332,14 +334,6 @@ const ManageItem = () => {
         .put("item", newItem)
         .then((res) => {
           Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: res.data.message,
-            showConfirmButton: false,
-            timer: 1500,
-          });
-
-          Swal.fire({
             title: "Are you sure?",
             text: "Do You Want to Update Item Image ?",
             icon: "question",
@@ -351,6 +345,13 @@ const ManageItem = () => {
             if (result.isConfirmed) {
               uploadItemImage();
             } else {
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: res.data.message,
+                showConfirmButton: false,
+                timer: 1500,
+              });
               getAllItems();
             }
           });

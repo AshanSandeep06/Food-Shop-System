@@ -27,7 +27,7 @@ export default class ItemController {
             let item = await Item.findOne({ itemCode: itemCode });
             if(!item) {
                 // Save Item only the item code is not existing
-                item = new Item({ 
+                item = new Item({
                     itemCode: itemCode,
                     itemType: itemType,
                     itemName: itemName,
@@ -88,11 +88,19 @@ export default class ItemController {
     updateItem: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         try {
             // Update Item
-            const { itemCode } = req.body;
-            let updatedItem = await Item.findOneAndUpdate(itemCode, req.body, {new: true});
+            const { itemCode, itemType, itemName, description, unitPrice, qtyOnHand } = req.body;
 
-            if(updatedItem) {
-                console.log("Updated Item : "+updatedItem);
+            let item = await Item.findOne({ itemCode: itemCode });
+
+            if(item) {
+                item.itemType = itemType;
+                item.itemName = itemName;
+                item.description = description;
+                item.unitPrice = unitPrice;
+                item.qtyOnHand = qtyOnHand;
+
+                item = await item.save();
+                console.log(item);
                 return res.status(200).json({ message: "Item has been Successfully Updated" });
             }else {
                 return res.status(500).json({ message: "There is no Item belongs to this "+itemCode+" item Code" });
