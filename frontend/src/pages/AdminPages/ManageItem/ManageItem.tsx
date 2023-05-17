@@ -366,6 +366,51 @@ const ManageItem = () => {
     }
   };
 
+  const handleDeleteItem = () => {
+    if (itemCode) {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "Do You Want to delete this item..",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          axios
+            .delete("item/" + itemCode)
+            .then((res) => {
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: res.data.message,
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              getAllItems();
+            })
+            .catch((error) => {
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: error.response.data.message,
+              });
+              getAllItems();
+            });
+        } else {
+          getAllItems();
+        }
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Try again..",
+        text: "Please try again with giving Item Code to Complete delete operation",
+      });
+    }
+  };
+
   const handleTableRowClick = (tableRow: Array<String | any>) => {
     // Table Row Click
     console.log(tableRow);
@@ -435,9 +480,6 @@ const ManageItem = () => {
               {/* <MenuItem value={itemCode}>Customer ID</MenuItem> */}
               <MenuItem className="!font-poppins" value={1}>
                 Item Code
-              </MenuItem>
-              <MenuItem className="!font-poppins" value={2}>
-                Item Name
               </MenuItem>
             </Select>
           </FormControl>
@@ -661,7 +703,12 @@ const ManageItem = () => {
               text: "Update",
               onClick: handleUpdateItem,
             },
-            { color: "error", icon: <DeleteIcon />, text: "Delete" },
+            {
+              color: "error",
+              icon: <DeleteIcon />,
+              text: "Delete",
+              onClick: handleDeleteItem,
+            },
             {
               color: "warning",
               icon: <BackspaceIcon />,
