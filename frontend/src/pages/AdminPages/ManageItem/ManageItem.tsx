@@ -155,6 +155,7 @@ const ManageItem = () => {
       .catch((error) => {
         alert("Error is : " + error);
       });
+      handleClearFields();
   };
 
   const handleSetItemImage = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -511,6 +512,7 @@ const ManageItem = () => {
             required
             className="!mt-7 !cursor-pointer !mb-5"
             name="itemImage"
+            value={itemImageChooser}
             onChange={handleSetItemImage}
           />
         </div>
