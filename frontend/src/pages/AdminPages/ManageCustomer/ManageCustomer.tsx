@@ -287,7 +287,7 @@ const ManageCustomer = () => {
     if (searchCustomer) {
       if (seletedType == "1") {
         axios
-          .get("customer/getByCustomerID" + searchCustomer)
+          .get("customer/getByCustomerID/" + searchCustomer)
           .then((res) => {
             setCustomerID(res.data.response.customerID);
             setCustomerName(res.data.response.customerName);
@@ -305,9 +305,9 @@ const ManageCustomer = () => {
             });
             getAllCustomers();
           });
-      } else {
+      } else if(seletedType == "2"){
         axios
-          .get("customer/getByContactNumber" + searchCustomer)
+          .get("customer/getByContactNumber/" + searchCustomer)
           .then((res) => {
             setCustomerID(res.data.response.customerID);
             setCustomerName(res.data.response.customerName);
@@ -325,6 +325,12 @@ const ManageCustomer = () => {
             });
             getAllCustomers();
           });
+      }else {
+        Swal.fire({
+          icon: "error",
+          title: "Try again..",
+          text: "Please select Customer ID or Contact Number before you search",
+        });
       }
     } else {
       Swal.fire({

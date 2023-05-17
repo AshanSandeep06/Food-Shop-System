@@ -15,8 +15,8 @@ export default class CustomerRoutes {
         this.router.post("/", this.CustomerController.saveCustomer);
         this.router.put("/", this.CustomerController.updateCustomer);
         this.router.delete("/:customerID", this.CustomerController.deleteCustomer);
-        this.router.get("getByCustomerID/:customerID", this.CustomerController.searchCustomerByCustomerID);
-        this.router.get("getByContactNumber/:contactNumber", this.CustomerController.searchCustomerByContactNumber);
+        this.router.get("/getByCustomerID/:customerID", this.CustomerController.searchCustomerByCustomerID);
+        this.router.get("/getByContactNumber/:contactNumber", this.CustomerController.searchCustomerByContactNumber);
     };
 
     public getRouter = (): Router => {
