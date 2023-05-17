@@ -288,14 +288,23 @@ const ManageCustomer = () => {
       if (seletedType == "1") {
         axios
           .get("customer/getByCustomerID/" + searchCustomer)
-          .then((res) => {
-            setCustomerID(res.data.response.customerID);
-            setCustomerName(res.data.response.customerName);
-            setUsername(res.data.response.username);
-            setPassword(res.data.response.password);
-            setAddress(res.data.response.address);
-            setContactNumber(res.data.response.contactNumber);
-            setEmail(res.data.response.email);
+          .then((resp) => {
+            axios
+              .get("user/getUserByCustomerID/" + resp.data.response.customerID)
+              .then((res) => {
+                setCustomerID(resp.data.response.customerID);
+                setCustomerName(resp.data.response.customerName);
+                setUsername(res.data.response.username);
+                setPassword(res.data.response.password);
+                setUsername(resp.data.response.username);
+                setPassword(resp.data.response.password);
+                setAddress(resp.data.response.address);
+                setContactNumber(resp.data.response.contactNumber);
+                setEmail(resp.data.response.email);
+              })
+              .catch((error) => {
+                console.log(error);
+              });
           })
           .catch((error) => {
             Swal.fire({
@@ -305,17 +314,28 @@ const ManageCustomer = () => {
             });
             getAllCustomers();
           });
-      } else if(seletedType == "2"){
+      } else if (seletedType == "2") {
         axios
           .get("customer/getByContactNumber/" + searchCustomer)
           .then((res) => {
-            setCustomerID(res.data.response.customerID);
-            setCustomerName(res.data.response.customerName);
-            setUsername(res.data.response.username);
-            setPassword(res.data.response.password);
-            setAddress(res.data.response.address);
-            setContactNumber(res.data.response.contactNumber);
-            setEmail(res.data.response.email);
+            axios
+              .get("user/getUserByCustomerID/" + res.data.response.customerID)
+              .then((resp) => {
+                if (
+                  resp.data.response.customerID == res.data.response.customerID
+                ) {
+                  setCustomerID(res.data.response.customerID);
+                  setCustomerName(res.data.response.customerName);
+                  setUsername(resp.data.response.username);
+                  setPassword(resp.data.response.password);
+                  setAddress(res.data.response.address);
+                  setContactNumber(res.data.response.contactNumber);
+                  setEmail(res.data.response.email);
+                }
+              })
+              .catch((error) => {
+                console.log(error);
+              });
           })
           .catch((error) => {
             Swal.fire({
@@ -325,7 +345,7 @@ const ManageCustomer = () => {
             });
             getAllCustomers();
           });
-      }else {
+      } else {
         Swal.fire({
           icon: "error",
           title: "Try again..",

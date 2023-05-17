@@ -16,7 +16,7 @@ export default class UserRoutes {
         this.router.post("/", this.UserController.saveUser);
         this.router.put("/", this.UserController.updateUser);
         this.router.delete("/:username", this.UserController.deleteUser);
-        this.router.get("/:username", this.UserController.searchUser);
+        this.router.get("getUserByCustomerID/:customerID", this.UserController.searchUserByCustomerID);
     };
 
     public getRouter = (): Router => {
