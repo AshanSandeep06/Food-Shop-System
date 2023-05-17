@@ -4,6 +4,7 @@ export interface IUser extends Document {
     username: string;
     password: string;
     role: string;
+    customerID: string;
 }
 
 const UserSchema = new Schema({
@@ -21,6 +22,11 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
+
+    customerID: {
+        type: String,
+        required: true,
+    }
 }, {timestamps: true});
 
 export const User = model<IUser>("User", UserSchema);
