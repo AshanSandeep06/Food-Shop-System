@@ -12,6 +12,7 @@ export default class UserRoutes {
     }
 
     private configRoutes = (): void => {
+        this.router.get("/", this.UserController.getAllUsers);
         this.router.post("/", this.UserController.saveUser);
         this.router.put("/", this.UserController.updateUser);
         this.router.delete("/:username", this.UserController.deleteUser);

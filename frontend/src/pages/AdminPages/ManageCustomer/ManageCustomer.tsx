@@ -74,7 +74,7 @@ const ManageCustomer = () => {
     axios
       .get("customer")
       .then((res) => {
-        let allCustomers = [];
+        let allCustomers: Array<string[]> = [];
 
         for (let i = 0; i < res.data.response.length; i++) {
           allCustomers.push([
@@ -88,7 +88,22 @@ const ManageCustomer = () => {
           ]);
         }
 
-        setAllCustomersList(allCustomers);
+        axios
+          .get("user")
+          .then((res) => {
+            for (let i = 0; i < res.data.response.length; i++) {
+              for (let j = 0; j < allCustomers.length; j++) {
+                let customer = allCustomers[j];
+                if (customer[0] == res.data.response[i].customerID) {
+                  customer[1] = res.data.response[i].username;
+                  customer[2] = res.data.response[i].password;
+                }
+              }
+            }
+
+            setAllCustomersList(allCustomers);
+          })
+          .catch(() => {});
       })
       .catch((error) => {
         alert("Error is : " + error);
@@ -141,7 +156,7 @@ const ManageCustomer = () => {
         address: address,
         contactNumber: contactNumber,
         email: email,
-        role: "Customer"
+        role: "Customer",
       };
 
       axios
@@ -191,7 +206,7 @@ const ManageCustomer = () => {
         address: address,
         contactNumber: contactNumber,
         email: email,
-        role: "Customer"
+        role: "Customer",
       };
 
       axios
