@@ -1,5 +1,5 @@
 import { Button, TextField, createTheme } from "@mui/material";
-import React from "react";
+import React, { FormEvent } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { TextFieldDetails } from "../../types/TextFieldDetails";
@@ -67,6 +67,7 @@ const Form = (props: FormProps) => {
           {props.buttonsArray.map((button, index) => (
             <Button
               key={index}
+              type="button"
               className="!px-[15px] !capitalize !font-poppins !font-normal !text-[16px]"
               variant="contained"
               color={button.color}
