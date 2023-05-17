@@ -6,12 +6,13 @@ import {
   MenuItem,
   Select,
   SelectChangeEvent,
+  TextField,
   createTheme,
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Form from "../../../components/Form";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
@@ -100,13 +101,18 @@ const ManageCustomer = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <FormControl sx={{ m: 1 }} variant="standard" className="w-full">
-            <InputLabel htmlFor="demo-customized-textbox">Age</InputLabel>
-            <BootstrapInput
-              id="demo-customized-textbox"
-              style={{ fontFamily: "Poppins" }}
-            />
-          </FormControl>
+          <TextField
+            id="txtSearchCustomer"
+            className="w-full"
+            label=""
+            placeholder=""
+            type="text"
+            variant="outlined"
+            value={searchCustomer}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              setSearchCustomer(event.target.value);
+            }}
+          />
         </div>
 
         <div className="md:flex sm:justify-start sm:col-start-3 sm:col-end-4 items-center grid col-start-1 col-end-2 justify-center">
@@ -129,42 +135,70 @@ const ManageCustomer = () => {
               textFieldType: "text",
               name: "customerId",
               placeHolderText: "Customer ID",
+              value: customerID,
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setCustomerID(event.target.value);
+              },
             },
             {
               label: "Username",
               textFieldType: "text",
               name: "username",
               placeHolderText: "Username",
+              value: username,
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setUsername(event.target.value);
+              },
             },
             {
               label: "Password",
               textFieldType: "text",
               name: "password",
               placeHolderText: "Password",
+              value: password,
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setPassword(event.target.value);
+              },
             },
             {
               label: "Name",
               textFieldType: "text",
               name: "name",
               placeHolderText: "Name",
+              value: customerName,
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setCustomerName(event.target.value);
+              },
             },
             {
               label: "Address",
               textFieldType: "text",
               name: "address",
               placeHolderText: "Address",
+              value: address,
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setAddress(event.target.value);
+              },
             },
             {
               label: "Contact Number",
               textFieldType: "text",
               name: "contactNumber",
               placeHolderText: "Contact Number",
+              value: contactNumber,
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setContactNumber(event.target.value);
+              },
             },
             {
               label: "Email",
               textFieldType: "text",
               name: "email",
               placeHolderText: "Email",
+              value: email,
+              onChange: (event: ChangeEvent<HTMLInputElement>) => {
+                setEmail(event.target.value);
+              },
             },
           ]}
           buttonsArray={[

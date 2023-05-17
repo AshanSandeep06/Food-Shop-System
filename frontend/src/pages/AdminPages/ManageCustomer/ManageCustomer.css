@@ -3,3 +3,16 @@
     width: 570px;
   }
 }
+
+span {
+  margin-left: 4px !important;
+}
+
+#txtSearchCustomer + fieldset > legend {
+  width: 0px !important;
+}
+
+#cmbItemType + input + svg + fieldset > legend {
+  width: 108px !important;
+}
+
