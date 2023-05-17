@@ -1,5 +1,7 @@
 import { Request, Response, RequestHandler } from 'express';
 import { Customer } from '../models/Customer';
+import mongoose, { ClientSession } from 'mongoose';
+import { User } from '../models/User';
 
 export default class CustomerController {
     getAllCustomers: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
@@ -18,8 +20,13 @@ export default class CustomerController {
     };
 
     saveCustomer: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+        let session: ClientSession | null = null;
+        
         try {
             const { customerID, customerName, address, contactNumber, email } = req.body;
+
+            session = await mongoose.startSession();
+            session.startTransaction();
 
             let customer = await Customer.findOne({ customerID: customerID });
             if(!customer) {
@@ -32,12 +39,25 @@ export default class CustomerController {
                 });
 
                 customer = await customer.save();
-                return res.status(200).json({ message: "Customer has been Successfully Saved" });
-            }else {
-                return res.status(500).json({ message: "This "+customerID+" - Customer is Already Exist, Therefore can't be added" });
             }
 
+            let newUser = new User(req.body);
+            newUser = await newUser.save();
+
+            await session.commitTransaction();
+            session.endSession();
+
+            return res.status(200).json({ message: "Customer has been Successfully Saved" });
+
         }catch (error: unknown){
+            if(session != null){
+                try{
+                    await session.abortTransaction();
+                }catch(abortError){
+                    console.log(`Error aborting transaction: ${abortError}`);
+                }
+            }
+
             if(error instanceof Error){
                 return res.status(500).json({ message: error.message });
             }else {
