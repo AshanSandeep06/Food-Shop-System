@@ -16,12 +16,36 @@ import strawberries from "../../../assets/img/strawberries-01.png";
 import chicken from "../../../assets/img/chicken-01.png";
 import Food from "../../../components/Food";
 import $ from "jquery";
+import axios from "../../../axios";
 
 const FoodMenu = () => {
   const [data, setData] = useState<StaticFoodsList>({ items: [] });
 
+  const getAllItems = () => {
+    axios
+      .get("item")
+      .then((res) => {
+        let allItems: StaticFoodsList = { items: [] };
+        let imagePath = "/img/uploads/itemImages/";
+
+        for (let i = 0; i < res.data.response.length; i++) {
+          allItems.items.push({
+            _id: res.data.response[i].itemCode,
+            title: res.data.response[i].itemName,
+            description: res.data.response[i].description,
+            price: res.data.response[i].unitPrice,
+            imagePath: imagePath + res.data.response[i].itemImage,
+          });
+        }
+        setData(allItems);
+      })
+      .catch((error) => {
+        alert("Error is : " + error);
+      });
+  };
+
   useEffect(() => {
-    setData(staticData);
+    getAllItems();
   }, []);
 
   // Dummy Data
