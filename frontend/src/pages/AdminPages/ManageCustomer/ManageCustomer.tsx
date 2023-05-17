@@ -103,12 +103,12 @@ const ManageCustomer = () => {
   const handleTableRowClick = (tableRow: Array<String | any>) => {
     console.log(tableRow);
     setCustomerID(tableRow[0]);
-    setUsername(tableRow[2]);
-    setPassword(tableRow[3]);
-    setCustomerName(tableRow[4]);
-    setAddress(tableRow[5]);
-    setContactNumber(tableRow[6]);
-    setEmail(tableRow[7]);
+    setUsername(tableRow[1]);
+    setPassword(tableRow[2]);
+    setCustomerName(tableRow[3]);
+    setAddress(tableRow[4]);
+    setContactNumber(tableRow[5]);
+    setEmail(tableRow[6]);
   };
 
   const handleClearFields = () => {
@@ -141,10 +141,11 @@ const ManageCustomer = () => {
         address: address,
         contactNumber: contactNumber,
         email: email,
+        role: "Customer"
       };
 
       axios
-        .post("item", newCustomer)
+        .post("customer", newCustomer)
         .then((res) => {
           Swal.fire({
             position: "top-end",
@@ -190,10 +191,11 @@ const ManageCustomer = () => {
         address: address,
         contactNumber: contactNumber,
         email: email,
+        role: "Customer"
       };
 
       axios
-        .put("item", newCustomer)
+        .put("customer", newCustomer)
         .then((res) => {
           Swal.fire({
             position: "top-end",
@@ -234,7 +236,7 @@ const ManageCustomer = () => {
       }).then((result) => {
         if (result.isConfirmed) {
           axios
-            .delete("item/" + customerID)
+            .delete("customer/" + customerID)
             .then((res) => {
               Swal.fire({
                 position: "top-end",
