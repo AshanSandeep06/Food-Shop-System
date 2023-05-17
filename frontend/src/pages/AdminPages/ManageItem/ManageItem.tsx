@@ -156,7 +156,7 @@ const ManageItem = () => {
       .catch((error) => {
         alert("Error is : " + error);
       });
-    // handleClearFields();
+    handleClearFields();
   };
 
   const handleSetItemImage = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -288,13 +288,6 @@ const ManageItem = () => {
       axios
         .put("item/saveItemImages/" + itemCode, formData)
         .then((res) => {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: res.data.message,
-            showConfirmButton: false,
-            timer: 1500,
-          });
           getAllItems();
         })
         .catch((error) => {
