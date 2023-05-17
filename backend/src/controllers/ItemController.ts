@@ -21,7 +21,7 @@ export default class ItemController {
         try {
             // Save Item
             // Destructuring assignment
-            const { itemCode, itemType, itemName, description, unitPrice, qtyOnHand } = req.body;
+            const { itemCode, itemType, itemName, description, itemImage, unitPrice, qtyOnHand } = req.body;
 
             // Check the whether relevant item already exists or not
             let item = await Item.findOne({ itemCode: itemCode });
@@ -32,12 +32,13 @@ export default class ItemController {
                     itemType: itemType,
                     itemName: itemName,
                     description: description,
+                    itemImage: itemImage,
                     unitPrice: unitPrice,
                     qtyOnHand: qtyOnHand
                 });
 
                 item = await item.save();
-                return res.status(200).json({ message: "Item has been Successfully Added" });
+                return res.status(200).json({ message: "Item has been Successfully Saved" });
             }else {
                 return res.status(200).json({ message: "This "+itemCode+" - Item is Already Exist, Therefore can't be added" });
             }
@@ -54,18 +55,26 @@ export default class ItemController {
     saveItemImages: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         try {
             // Save Item Images
-            const { itemCode, itemType, itemName, description, unitPrice, qtyOnHand } = req.body;
-
-                console.log(req.file);
-                console.log(req.file?.filename);
-                console.log(req.file?.originalname);
+            const { itemCode } = req.params;
 
             // Check the whether relevant item already exists or not
             let item = await Item.findOne({ itemCode: itemCode });
-            if(!item) {
-                return res.status(200).json({ message: "Item has been Successfully Added" });
+            if(item) {
+                if(req.file?.originalname) {
+                    console.log(item);
+                    item.itemImage = req.file?.originalname;
+                    item = await item.save();
+                    if(item){
+                        // console.log(item);
+                        return res.status(200).json({ message: "Item Images has been Successfully Saved" });
+                    }else {
+                        return res.status(200).json({ message: "Oops, Please try again..!" });
+                    }
+                }else {
+                    return res.status(200).json({ message: "Something Went wrong, Please Upload Image..!" });
+                }
             }else {
-                return res.status(200).json({ message: "This Item is Already Exist, Therefore can't be added" });
+                return res.status(200).json({ message: "There is no Item exist for this "+itemCode+" item Code to Upload Images" });
             }
 
         }catch (error: unknown){
@@ -80,22 +89,11 @@ export default class ItemController {
     updateItem: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
         try {
             // Update Item
-            const { itemCode, itemType, itemName, description, unitPrice, qtyOnHand } = req.body;
-            let item = await Item.findOne({ itemCode: itemCode });
+            const { itemCode } = req.body;
+            let updatedItem = await Item.findOneAndUpdate(itemCode, req.body, {new: true});
 
-            if(item) {
-                // Save Item only the item code is not existing
-                item = new Item({
-                    itemCode: itemCode,
-                    itemType: itemType,
-                    itemName: itemName,
-                    description: description,
-                    unitPrice: unitPrice,
-                    qtyOnHand: qtyOnHand
-                });
-
-                await item.updateOne();
-
+            if(updatedItem) {
+                console.log("Updated Item : "+updatedItem);
                 return res.status(200).json({ message: "Item has been Successfully Updated" });
             }else {
                 return res.status(200).json({ message: "There is no Item belongs to this "+itemCode+" item Code" });
@@ -115,9 +113,9 @@ export default class ItemController {
             // Delete Item
             const { itemCode } = req.params;
 
-            let item = await Item.findOne({ itemCode: itemCode });
-            if(item){
-                await item.deleteOne();
+            let deletedItem = await Item.findOneAndDelete({itemCode: itemCode});
+            if(deletedItem){
+                console.log("Deleted Item : "+deletedItem);
                 return res.status(200).json({message: "Item has been Successfully Deleted"});
             }else{
                 return res.status(200).json({message: "There is no Item to be Deleted"});

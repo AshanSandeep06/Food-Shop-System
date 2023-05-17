@@ -25,6 +25,7 @@ import { motion } from "framer-motion";
 import { read } from "fs";
 import $ from "jquery";
 import axios from "../../../axios";
+import { log } from "console";
 
 const ManageItem = () => {
   // const itemImageRef = useRef<HTMLImageElement>(null);
@@ -45,6 +46,7 @@ const ManageItem = () => {
 
   const [seletedType, setSelectedType] = useState<string>("");
   const [itemType, setItemType] = useState<string>("");
+  const [selectedItemType, setSelectedItemType] = useState<string>("");
 
   // For Load All Items
   const [allItemsList, setAllItemsList] = useState<Array<string[] | any[]>>([]);
@@ -89,6 +91,7 @@ const ManageItem = () => {
       .get("item")
       .then((res) => {
         console.log(res.data.response);
+        console.log(res.data.response.length);
 
         let allItems = [];
 
@@ -126,7 +129,7 @@ const ManageItem = () => {
         //   ],
         // ];
 
-        for (let i = 0; i > res.data.response.length; i++) {
+        for (let i = 0; i < res.data.response.length; i++) {
           allItems.push([
             res.data.response[i].itemCode,
             res.data.response[i].itemType,
@@ -184,7 +187,24 @@ const ManageItem = () => {
   };
 
   const handleChangeItemType = (event: SelectChangeEvent) => {
-    setItemType(event.target.value as string);
+    setSelectedItemType(event.target.value as string);
+
+    let selectedItemValue = Number(event.target.value);
+    let itemType =
+      selectedItemValue == 1
+        ? "Chicken"
+        : selectedItemValue == 2
+        ? "Beverages"
+        : selectedItemValue == 3
+        ? "Fish"
+        : selectedItemValue == 4
+        ? "Rice"
+        : selectedItemValue == 5
+        ? "Burgers"
+        : selectedItemValue == 6
+        ? "Ice Cream"
+        : "";
+    setItemType(itemType);
   };
 
   // const imageURL = itemImage && URL.createObjectURL(itemImage);
@@ -206,12 +226,20 @@ const ManageItem = () => {
 
   // Save Item
   const handleSaveItem = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (itemCode && itemName && description && unitPrice && qtyOnHand) {
+    if (
+      itemType &&
+      itemCode &&
+      itemName &&
+      description &&
+      unitPrice &&
+      qtyOnHand
+    ) {
       let newItem = {
         itemCode: itemCode,
         itemType: itemType,
         itemName: itemName,
         description: description,
+        itemImage: "",
         unitPrice: unitPrice,
         qtyOnHand: qtyOnHand,
       };
@@ -220,35 +248,34 @@ const ManageItem = () => {
         .post("item", newItem)
         .then((res) => {
           console.log(res.data.message);
+          uploadItemImage();
         })
         .catch((error) => {
           console.log(error);
         });
-
-      if (fileData && itemImage) {
-        console.log(fileData);
-        //
-        const formData: FormData = new FormData();
-        let itemImageName =
-          itemCode + "_" + itemName + "-image." + fileData.name.split(".")[1];
-        formData.append("itemImage", fileData, itemImageName);
-
-        console.log(fileData);
-
-        axios
-          .put("item/saveItemImages/"+itemCode, formData)
-          .then((res) => {
-            console.log(res);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      } else {
-        alert("Please select Item Image and try again..!");
-      }
     } else {
       alert("Item is not Saved");
       // console.log(itemCode+" "+itemName+" "+description+" "+unitPrice+" "+qtyOnHand+" "+itemImage+" "+itemImageChooser);
+    }
+  };
+
+  const uploadItemImage = () => {
+    if (fileData && itemImage) {
+      const formData: FormData = new FormData();
+      let itemImageName =
+        itemCode + "_" + itemName + "-image." + fileData.name.split(".")[1];
+      formData.append("itemImage", fileData, itemImageName);
+
+      axios
+        .put("item/saveItemImages/" + itemCode, formData)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      alert("Please select Item Image and try again..!");
     }
   };
 
@@ -335,7 +362,7 @@ const ManageItem = () => {
             id="cmbItemType"
             label="Item"
             className="!font-poppins"
-            value={itemType}
+            value={selectedItemType}
             onChange={handleChangeItemType}
           >
             <MenuItem className="!font-poppins" value={1}>
