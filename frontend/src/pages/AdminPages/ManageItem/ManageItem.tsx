@@ -417,6 +417,7 @@ const ManageItem = () => {
         .get("item/getItem/" + searchItem)
         .then((res) => {
           // Search Item
+          let imagePath = "/img/uploads/itemImages/";
           setItemCode(res.data.response.itemCode);
 
           let selectedItemType =
@@ -452,12 +453,11 @@ const ManageItem = () => {
           setItemType(itemType);
 
           setItemName(res.data.response.itemName);
-          setItemImage(res.data.response.itemImage);
+          setItemImage(imagePath + res.data.response.itemImage);
           setDescription(res.data.response.description);
           setUnitPrice(res.data.response.unitPrice);
           setQtyOnHand(res.data.response.qtyOnHand);
           setDiscount(0);
-          getAllItems();
         })
         .catch((error) => {
           Swal.fire({
