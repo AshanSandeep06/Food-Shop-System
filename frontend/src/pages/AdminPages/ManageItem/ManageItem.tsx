@@ -411,6 +411,71 @@ const ManageItem = () => {
     }
   };
 
+  const handleSearchItem = () => {
+    if (searchItem) {
+      axios
+        .get("item/getItem/" + searchItem)
+        .then((res) => {
+          // Search Item
+          setItemCode(res.data.response.itemCode);
+
+          let selectedItemType =
+            res.data.response.itemType == "Chicken"
+              ? "1"
+              : res.data.response.itemType == "Beverages"
+              ? "2"
+              : res.data.response.itemType == "Fish"
+              ? "3"
+              : res.data.response.itemType == "Rice"
+              ? "4"
+              : res.data.response.itemType == "Burgers"
+              ? "5"
+              : res.data.response.itemType == "Ice Cream"
+              ? "6"
+              : "7";
+          setSelectedItemType(selectedItemType);
+
+          let itemType =
+            selectedItemType == "1"
+              ? "Chicken"
+              : selectedItemType == "2"
+              ? "Beverages"
+              : selectedItemType == "3"
+              ? "Fish"
+              : selectedItemType == "4"
+              ? "Rice"
+              : selectedItemType == "5"
+              ? "Burgers"
+              : selectedItemType == "6"
+              ? "Ice Cream"
+              : "";
+          setItemType(itemType);
+
+          setItemName(res.data.response.itemName);
+          setItemImage(res.data.response.itemImage);
+          setDescription(res.data.response.description);
+          setUnitPrice(res.data.response.unitPrice);
+          setQtyOnHand(res.data.response.qtyOnHand);
+          setDiscount(0);
+          getAllItems();
+        })
+        .catch((error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.response.data.message,
+          });
+          getAllItems();
+        });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Try again..",
+        text: "Please inputs a item Code to Search and try again..",
+      });
+    }
+  };
+
   const handleTableRowClick = (tableRow: Array<String | any>) => {
     // Table Row Click
     console.log(tableRow);
@@ -506,7 +571,6 @@ const ManageItem = () => {
             placeholder=""
             type="text"
             variant="outlined"
-            name={searchItem}
             value={searchItem}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               setSearchItem(event.target.value);
@@ -520,6 +584,7 @@ const ManageItem = () => {
             variant="contained"
             color="info"
             endIcon={<SearchIcon />}
+            onClick={handleSearchItem}
           >
             Search Item
           </Button>
