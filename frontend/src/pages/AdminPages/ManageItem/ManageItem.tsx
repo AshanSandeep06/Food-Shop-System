@@ -258,12 +258,15 @@ const ManageItem = () => {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: error,
+            text: error.response.data.message,
           });
         });
     } else {
-      alert("Item is not Saved");
-      // console.log(itemCode+" "+itemName+" "+description+" "+unitPrice+" "+qtyOnHand+" "+itemImage+" "+itemImageChooser);
+      Swal.fire({
+        icon: "error",
+        title: "Try again..",
+        text: "Please input values to all input Fields",
+      });
     }
   };
 
@@ -277,8 +280,6 @@ const ManageItem = () => {
       axios
         .put("item/saveItemImages/" + itemCode, formData)
         .then((res) => {
-          console.log(res.data.message);
-
           Swal.fire({
             position: "top-end",
             icon: "success",
@@ -293,7 +294,7 @@ const ManageItem = () => {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: error,
+            text: error.response.data.message,
           });
         });
     } else {
@@ -321,7 +322,22 @@ const ManageItem = () => {
         ? "6"
         : "7";
     setSelectedItemType(selectedItemType);
-    // selectedItemValue == 1
+
+    let itemType =
+      selectedItemType == "1"
+        ? "Chicken"
+        : selectedItemType == "2"
+        ? "Beverages"
+        : selectedItemType == "3"
+        ? "Fish"
+        : selectedItemType == "4"
+        ? "Rice"
+        : selectedItemType == "5"
+        ? "Burgers"
+        : selectedItemType == "6"
+        ? "Ice Cream"
+        : "";
+    setItemType(itemType);
 
     setItemName(tableRow[2]);
     setItemImage(tableRow[3].props.src);
