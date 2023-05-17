@@ -5,12 +5,13 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  SelectChangeEvent,
   createTheme,
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
-import React from "react";
+import React, { useState } from "react";
 import Form from "../../../components/Form";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
@@ -20,6 +21,17 @@ import Table from "../../../components/Table";
 import "./ManageCustomer.css";
 
 const ManageCustomer = () => {
+  const [searchCustomer, setSearchCustomer] = useState<string>("");
+  const [customerID, setCustomerID] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [customerName, setCustomerName] = useState<string>("");
+  const [address, setAddress] = useState<string>("");
+  const [contactNumber, setContactNumber] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [seletedType, setSelectedType] = useState<string>("");
+  const [allCustomersList, setAllCustomersList] = useState<Array<string[]>>([]);
+
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "& .MuiInputBase-input": {
       borderRadius: 4,
@@ -51,6 +63,10 @@ const ManageCustomer = () => {
     },
   }));
 
+  const handleChangeType = (event: SelectChangeEvent) => {
+    setSelectedType(event.target.value as string);
+  };
+
   return (
     <section>
       <section>
@@ -69,6 +85,8 @@ const ManageCustomer = () => {
               id="demo-simple-select"
               label="Customer"
               className="!font-poppins"
+              value={seletedType}
+              onChange={handleChangeType}
             >
               {/* <MenuItem value={customerId}>Customer ID</MenuItem> */}
               <MenuItem className="!font-poppins" value={1}>
