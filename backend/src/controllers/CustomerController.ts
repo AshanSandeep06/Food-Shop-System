@@ -39,6 +39,8 @@ export default class CustomerController {
                 });
 
                 customer = await customer.save();
+            }else {
+                return res.status(500).json({ message: "This "+customerID+" - Customer is Already Exist, Therefore can't be added" });
             }
 
             let newUser = new User(req.body);
@@ -67,9 +69,14 @@ export default class CustomerController {
     };
 
     updateCustomer: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
+        let session: ClientSession | null = null;
+
         try {
             // Update Customer
-            const { customerID, customerName, address, contactNumber, email } = req.body;
+            const { customerID, customerName, address, contactNumber, email, username, password, role } = req.body;
+
+            session = await mongoose.startSession();
+            session.startTransaction();
 
             let customer = await Customer.findOne({ customerID: customerID });
 
@@ -81,12 +88,34 @@ export default class CustomerController {
 
                 customer = await customer.save();
                 console.log(customer);
-                return res.status(200).json({ message: "Customer has been Successfully Updated" });
             }else {
                 return res.status(500).json({ message: "There is no Customer belongs to this "+customerID+" Customer ID" });
             }
 
+            let user = await User.findOne({ username: username });
+            if (user){
+                user.password = password;
+                user.role = role;
+                user.customerID = customerID;
+                user = await user.save();
+            }else {
+                return res.status(500).json({ message: "There is no User belongs to this "+username+" - Username" });
+            }
+
+            await session.commitTransaction();
+            session.endSession();
+
+            return res.status(200).json({ message: "Customer has been Successfully Updated" });
+
         }catch(error: unknown) {
+            if(session != null){
+                try{
+                    await session.abortTransaction();
+                }catch(abortError){
+                    console.log(`Error aborting transaction: ${abortError}`);
+                }
+            }
+
             if(error instanceof Error) {
                 return res.status(500).json({ message: error.message });
             }else {
@@ -96,23 +125,47 @@ export default class CustomerController {
     };
 
     deleteCustomer: RequestHandler = async(req: Request, res: Response): Promise<Response> => {
-        try{
+        let session: ClientSession | null = null;
+
+        try {
             // Delete Customer
             const { customerID } = req.params;
+
+            session = await mongoose.startSession();
+            session.startTransaction();
 
             let deletedCustomer = await Customer.findOneAndDelete({ customerID: customerID });
             if(deletedCustomer){
                 console.log("Deleted Customer : "+deletedCustomer);
-                return res.status(200).json({message: "Customer has been Successfully Deleted"});
             }else{
                 return res.status(500).json({message: "There is no Customer to be Deleted"});
             }
 
-        }catch(error: unknown){
-            if(error instanceof Error){
-                return res.status(500).json({message: error.message});
-            }else{
-                return res.status(500).json({message: "Unknown error Occured..!"});
+            let deletedUser = await User.findOneAndDelete({ customerID: customerID });
+            if(deletedUser){
+                console.log("Deleted User : "+deletedUser);
+            }else {
+                return res.status(500).json({ message: "There is no User belongs to this "+customerID+" - Customer ID" });
+            }
+
+            await session.commitTransaction();
+            session.endSession();
+
+            return res.status(200).json({message: "Customer has been Successfully Deleted"});
+
+        }catch(error: unknown) {
+            if(session != null){
+                try{
+                    await session.abortTransaction();
+                }catch(abortError){
+                    console.log(`Error aborting transaction: ${abortError}`);
+                }
+            }
+
+            if(error instanceof Error) {
+                return res.status(500).json({ message: error.message });
+            }else {
+                return res.status(500).json({ message: "Unknown Error Occured..!" });
             }
         }
     };
