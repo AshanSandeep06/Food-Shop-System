@@ -40,7 +40,7 @@ export default class ItemController {
                 item = await item.save();
                 return res.status(200).json({ message: "Item has been Successfully Saved" });
             }else {
-                return res.status(200).json({ message: "This "+itemCode+" - Item is Already Exist, Therefore can't be added" });
+                return res.status(500).json({ message: "This "+itemCode+" - Item is Already Exist, Therefore can't be added" });
             }
 
         }catch (error: unknown){
@@ -67,13 +67,13 @@ export default class ItemController {
                     if(item){
                         return res.status(200).json({ message: "Item Images has been Successfully Saved" });
                     }else {
-                        return res.status(200).json({ message: "Oops, Please try again..!" });
+                        return res.status(500).json({ message: "Oops, Please try again..!" });
                     }
                 }else {
-                    return res.status(200).json({ message: "Something Went wrong, Please Upload Image..!" });
+                    return res.status(500).json({ message: "Something Went wrong, Please Upload Image..!" });
                 }
             }else {
-                return res.status(200).json({ message: "There is no Item exist for this "+itemCode+" item Code to Upload Images" });
+                return res.status(500).json({ message: "There is no Item exist for this "+itemCode+" item Code to Upload Images" });
             }
 
         }catch (error: unknown){
@@ -95,7 +95,7 @@ export default class ItemController {
                 console.log("Updated Item : "+updatedItem);
                 return res.status(200).json({ message: "Item has been Successfully Updated" });
             }else {
-                return res.status(200).json({ message: "There is no Item belongs to this "+itemCode+" item Code" });
+                return res.status(500).json({ message: "There is no Item belongs to this "+itemCode+" item Code" });
             }
 
         }catch(error: unknown) {
@@ -117,7 +117,7 @@ export default class ItemController {
                 console.log("Deleted Item : "+deletedItem);
                 return res.status(200).json({message: "Item has been Successfully Deleted"});
             }else{
-                return res.status(200).json({message: "There is no Item to be Deleted"});
+                return res.status(500).json({message: "There is no Item to be Deleted"});
             }
 
         }catch(error: unknown){
@@ -137,7 +137,7 @@ export default class ItemController {
             if(item){
                 return res.status(200).json({message: "Item has been loaded", response: item});
             }else{
-                return res.status(200).json({message: "There is no Item exists by this Item Code - "+itemCode});
+                return res.status(500).json({message: "There is no Item exists by this Item Code - "+itemCode});
             }
 
         }catch(error: unknown){

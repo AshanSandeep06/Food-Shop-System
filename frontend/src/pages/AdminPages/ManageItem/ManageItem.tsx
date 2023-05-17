@@ -26,6 +26,7 @@ import { read } from "fs";
 import $, { event } from "jquery";
 import axios from "../../../axios";
 import { log } from "console";
+import Swal from "sweetalert2";
 
 const ManageItem = () => {
   // const itemImageRef = useRef<HTMLImageElement>(null);
@@ -230,7 +231,7 @@ const ManageItem = () => {
   // Save Item
   const handleSaveItem = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (
-      itemType &&
+      selectedItemType &&
       itemCode &&
       itemName &&
       description &&
@@ -254,7 +255,11 @@ const ManageItem = () => {
           uploadItemImage();
         })
         .catch((error) => {
-          console.log(error);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error,
+          });
         });
     } else {
       alert("Item is not Saved");
@@ -273,10 +278,23 @@ const ManageItem = () => {
         .put("item/saveItemImages/" + itemCode, formData)
         .then((res) => {
           console.log(res.data.message);
+
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: res.data.message,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+
           getAllItems();
         })
         .catch((error) => {
-          console.log(error);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error,
+          });
         });
     } else {
       alert("Please select Item Image and try again..!");
