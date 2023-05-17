@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import Form from "../../../components/Form";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
@@ -20,6 +20,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import Table from "../../../components/Table";
 import "./ManageCustomer.css";
+import axios from "../../../axios";
+import Swal from "sweetalert2";
 
 const ManageCustomer = () => {
   const [searchCustomer, setSearchCustomer] = useState<string>("");
@@ -64,6 +66,36 @@ const ManageCustomer = () => {
     },
   }));
 
+  useEffect(() => {
+    getAllCustomers();
+  }, []);
+
+  const getAllCustomers = () => {
+    axios
+      .get("customer")
+      .then((res) => {
+        let allCustomers = [];
+
+        for (let i = 0; i < res.data.response.length; i++) {
+          allCustomers.push([
+            res.data.response[i].customerID,
+            res.data.response[i].username,
+            res.data.response[i].password,
+            res.data.response[i].customerName,
+            res.data.response[i].address,
+            res.data.response[i].contactNumber,
+            res.data.response[i].email,
+          ]);
+        }
+
+        setAllCustomersList(allCustomers);
+      })
+      .catch((error) => {
+        alert("Error is : " + error);
+      });
+    handleClearFields();
+  };
+
   const handleChangeType = (event: SelectChangeEvent) => {
     setSelectedType(event.target.value as string);
   };
@@ -91,11 +123,148 @@ const ManageCustomer = () => {
     setSelectedType("");
   };
 
-  const handleSaveCustomer = () => {};
+  const handleSaveCustomer = () => {
+    if (
+      customerID &&
+      username &&
+      password &&
+      customerName &&
+      address &&
+      contactNumber &&
+      email
+    ) {
+      let newCustomer = {
+        customerID: customerID,
+        username: username,
+        password: password,
+        customerName: customerName,
+        address: address,
+        contactNumber: contactNumber,
+        email: email,
+      };
 
-  const handleUpdateCustomer = () => {};
+      axios
+        .post("item", newCustomer)
+        .then((res) => {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: res.data.message,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          getAllCustomers();
+        })
+        .catch((error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.response.data.message,
+          });
+          getAllCustomers();
+        });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Try again..",
+        text: "Please input values to all input Fields",
+      });
+    }
+  };
 
-  const handleDeleteCustomer = () => {};
+  const handleUpdateCustomer = () => {
+    if (
+      customerID &&
+      username &&
+      password &&
+      customerName &&
+      address &&
+      contactNumber &&
+      email
+    ) {
+      let newCustomer = {
+        customerID: customerID,
+        username: username,
+        password: password,
+        customerName: customerName,
+        address: address,
+        contactNumber: contactNumber,
+        email: email,
+      };
+
+      axios
+        .put("item", newCustomer)
+        .then((res) => {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: res.data.message,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          getAllCustomers();
+        })
+        .catch((error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.response.data.message,
+          });
+          getAllCustomers();
+        });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Try again..",
+        text: "Please input values to all input Fields",
+      });
+    }
+  };
+
+  const handleDeleteCustomer = () => {
+    if (customerID) {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "Do You Want to delete this Customer..",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          axios
+            .delete("item/" + customerID)
+            .then((res) => {
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: res.data.message,
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              getAllCustomers();
+            })
+            .catch((error) => {
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: error.response.data.message,
+              });
+              getAllCustomers();
+            });
+        } else {
+          getAllCustomers();
+        }
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Try again..",
+        text: "Please try again with giving Customer ID to Complete delete operation",
+      });
+    }
+  };
 
   return (
     <section>
