@@ -5,7 +5,7 @@ import multer from "multer";
 const fileStorage = multer.diskStorage({
     destination: (req, file, callback) => {
         // const directoryPath = path.join(__dirname, 'assets', 'img', 'uploads', 'itemImages');
-        callback(null, "F:\\Vscode Projects\\Food Shop System\\frontend\\src\\assets\\img\\uploads\\itemImages\\");
+        callback(null, "F:\\Vscode Projects\\Food Shop System\\frontend\\public\\img\\uploads\\itemImages\\");
     },
 
     filename: (req, file, callback) => {

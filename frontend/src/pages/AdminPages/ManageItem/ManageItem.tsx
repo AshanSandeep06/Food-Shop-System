@@ -23,7 +23,7 @@ import FastfoodIcon from "@mui/icons-material/Fastfood";
 import iceCreamImg from "../../../assets/img/icecream-01.png";
 import { motion } from "framer-motion";
 import { read } from "fs";
-import $ from "jquery";
+import $, { event } from "jquery";
 import axios from "../../../axios";
 import { log } from "console";
 
@@ -94,6 +94,7 @@ const ManageItem = () => {
         console.log(res.data.response.length);
 
         let allItems = [];
+        let imagePath = "/img/uploads/itemImages/";
 
         // allItems = [
         //   [
@@ -137,7 +138,7 @@ const ManageItem = () => {
             <motion.img
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1.1 }}
-              src={res.data.response[i].itemImage}
+              src={imagePath + res.data.response[i].itemImage}
               alt="foodImage"
               className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
             />,
@@ -269,7 +270,8 @@ const ManageItem = () => {
       axios
         .put("item/saveItemImages/" + itemCode, formData)
         .then((res) => {
-          console.log(res);
+          console.log(res.data.message);
+          getAllItems();
         })
         .catch((error) => {
           console.log(error);

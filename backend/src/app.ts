@@ -11,16 +11,18 @@ import path from "path";
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:3000"];
-app.use(cors({
-    origin: (origin, callback) => {
-        if(allowedOrigins.indexOf(origin!) !== -1 || !origin){
-            callback(null, true);
-        }else {
-            callback(new Error("Not Allowed by CORS"));
-        }
-    }
-}));
+// const allowedOrigins = ["http://localhost:3000"];
+// app.use(cors({
+//     origin: (origin, callback) => {
+//         if(allowedOrigins.indexOf(origin!) !== -1 || !origin){
+//             callback(null, true);
+//         }else {
+//             callback(new Error("Not Allowed by CORS"));
+//         }
+//     }
+// }));
+
+app.use(cors());
 
 app.use(json());
 
