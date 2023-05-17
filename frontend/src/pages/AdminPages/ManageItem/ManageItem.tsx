@@ -155,7 +155,7 @@ const ManageItem = () => {
       .catch((error) => {
         alert("Error is : " + error);
       });
-      handleClearFields();
+    handleClearFields();
   };
 
   const handleSetItemImage = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -280,6 +280,11 @@ const ManageItem = () => {
     } else {
       alert("Please select Item Image and try again..!");
     }
+  };
+
+  const handleTableRowClick = (tableRow: any) => {
+    // Table Row Click
+    console.log(tableRow);
   };
 
   return (
@@ -553,6 +558,7 @@ const ManageItem = () => {
             "Discount",
           ]}
           tblData={allItemsList.map((itemArray) => itemArray)}
+          handleTblRowClick={handleTableRowClick}
         />
       </section>
     </section>

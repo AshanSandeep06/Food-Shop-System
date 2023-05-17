@@ -6,10 +6,20 @@ type TableProps = {
   tblHeight: string;
   tblHeaders: string[];
   tblData: Array<string[] | any[]>;
-  handleTblRowClick?: MouseEventHandler<HTMLTableRowElement>;
+  handleTblRowClick?: (tableRow: Array<String | any>) => void;
 };
 
 const Table = ({ tblName, tblHeight, tblHeaders, tblData, handleTblRowClick }: TableProps) => {
+
+  const handleRowClick = (tableRow: any) => {
+    const textValue = tableRow;
+    // console.log(textValue);
+    if (handleTblRowClick) {
+      handleTblRowClick(tableRow);
+    }
+  };
+
+
   // let tblHeaderStyles = `grid grid-cols-${tblHeaders.length} h-full`;
   let tblHeaderStyles = {
     display: "grid",
@@ -65,7 +75,7 @@ const Table = ({ tblName, tblHeight, tblHeaders, tblData, handleTblRowClick }: T
 
             <tbody style={tableHeight} className="cursor-pointer">
               {tblData.map((dataRow, index) => (
-                <tr onClick={handleTblRowClick} key={index} style={tblDataRow}>
+                <tr onClick={() => handleRowClick(dataRow)} key={index} style={tblDataRow}>
                   {dataRow.map((data, index) => (
                     <td
                       key={index}
