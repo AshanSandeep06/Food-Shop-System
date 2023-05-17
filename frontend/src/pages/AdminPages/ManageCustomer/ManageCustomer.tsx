@@ -79,6 +79,24 @@ const ManageCustomer = () => {
     setEmail(tableRow[7]);
   };
 
+  const handleClearFields = () => {
+    setSearchCustomer("");
+    setCustomerID("");
+    setUsername("");
+    setPassword("");
+    setCustomerName("");
+    setAddress("");
+    setContactNumber("");
+    setEmail("");
+    setSelectedType("");
+  };
+
+  const handleSaveCustomer = () => {};
+
+  const handleUpdateCustomer = () => {};
+
+  const handleDeleteCustomer = () => {};
+
   return (
     <section>
       <section>
@@ -213,10 +231,30 @@ const ManageCustomer = () => {
             },
           ]}
           buttonsArray={[
-            { color: "success", icon: <AddCircleIcon />, text: "Save" },
-            { color: "primary", icon: <AutorenewIcon />, text: "Update" },
-            { color: "error", icon: <DeleteIcon />, text: "Delete" },
-            { color: "warning", icon: <BackspaceIcon />, text: "Clear" },
+            {
+              color: "success",
+              icon: <AddCircleIcon />,
+              text: "Save",
+              onClick: handleSaveCustomer,
+            },
+            {
+              color: "primary",
+              icon: <AutorenewIcon />,
+              text: "Update",
+              onClick: handleUpdateCustomer,
+            },
+            {
+              color: "error",
+              icon: <DeleteIcon />,
+              text: "Delete",
+              onClick: handleDeleteCustomer,
+            },
+            {
+              color: "warning",
+              icon: <BackspaceIcon />,
+              text: "Clear",
+              onClick: handleClearFields,
+            },
           ]}
         />
       </section>
