@@ -232,6 +232,7 @@ const ManageItem = () => {
   const handleSaveItem = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (
       selectedItemType &&
+      itemType &&
       itemCode &&
       itemName &&
       description &&
@@ -251,7 +252,13 @@ const ManageItem = () => {
       axios
         .post("item", newItem)
         .then((res) => {
-          console.log(res.data.message);
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: res.data.message,
+            showConfirmButton: false,
+            timer: 1500,
+          });
           uploadItemImage();
         })
         .catch((error) => {
@@ -260,6 +267,7 @@ const ManageItem = () => {
             title: "Oops...",
             text: error.response.data.message,
           });
+          getAllItems();
         });
     } else {
       Swal.fire({
@@ -280,14 +288,11 @@ const ManageItem = () => {
       axios
         .put("item/saveItemImages/" + itemCode, formData)
         .then((res) => {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: res.data.message,
-            showConfirmButton: false,
-            timer: 1500,
-          });
-
+          Swal.fire(
+            "Sucessfully Uploaded",
+            "Your item image has been Uploaded.",
+            "success"
+          );
           getAllItems();
         })
         .catch((error) => {
@@ -296,9 +301,74 @@ const ManageItem = () => {
             title: "Oops...",
             text: error.response.data.message,
           });
+          getAllItems();
         });
     } else {
       alert("Please select Item Image and try again..!");
+    }
+  };
+
+  // Update Item
+  const handleUpdateItem = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (
+      selectedItemType &&
+      itemType &&
+      itemCode &&
+      itemName &&
+      description &&
+      unitPrice &&
+      qtyOnHand
+    ) {
+      let newItem = {
+        itemCode: itemCode,
+        itemType: itemType,
+        itemName: itemName,
+        description: description,
+        unitPrice: unitPrice,
+        qtyOnHand: qtyOnHand,
+      };
+
+      axios
+        .put("item", newItem)
+        .then((res) => {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: res.data.message,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+
+          Swal.fire({
+            title: "Are you sure?",
+            text: "Do You Want to Update Item Image ?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Update it!",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              uploadItemImage();
+            } else {
+              getAllItems();
+            }
+          });
+        })
+        .catch((error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.response.data.message,
+          });
+          getAllItems();
+        });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Try again..",
+        text: "Please input values to all input Fields",
+      });
     }
   };
 
@@ -591,7 +661,12 @@ const ManageItem = () => {
               text: "Save",
               onClick: handleSaveItem,
             },
-            { color: "primary", icon: <AutorenewIcon />, text: "Update" },
+            {
+              color: "primary",
+              icon: <AutorenewIcon />,
+              text: "Update",
+              onClick: handleUpdateItem,
+            },
             { color: "error", icon: <DeleteIcon />, text: "Delete" },
             {
               color: "warning",
