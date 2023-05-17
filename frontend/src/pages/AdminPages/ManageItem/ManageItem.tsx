@@ -224,6 +224,7 @@ const ManageItem = () => {
     setItemImageChooser("");
     setFileData(null);
     setSelectedType("");
+    setSelectedItemType("");
   };
 
   // Save Item
@@ -282,9 +283,34 @@ const ManageItem = () => {
     }
   };
 
-  const handleTableRowClick = (tableRow: any) => {
+  const handleTableRowClick = (tableRow: Array<String | any>) => {
     // Table Row Click
     console.log(tableRow);
+    setItemCode(tableRow[0]);
+
+    let selectedItemType =
+      tableRow[1] == "Chicken"
+        ? "1"
+        : tableRow[1] == "Beverages"
+        ? "2"
+        : tableRow[1] == "Fish"
+        ? "3"
+        : tableRow[1] == "Rice"
+        ? "4"
+        : tableRow[1] == "Burgers"
+        ? "5"
+        : tableRow[1] == "Ice Cream"
+        ? "6"
+        : "7";
+    setSelectedItemType(selectedItemType);
+    // selectedItemValue == 1
+
+    setItemName(tableRow[2]);
+    setItemImage(tableRow[3].props.src);
+    setDescription(tableRow[4]);
+    setUnitPrice(tableRow[5]);
+    setQtyOnHand(tableRow[6]);
+    setDiscount(tableRow[7]);
   };
 
   return (
