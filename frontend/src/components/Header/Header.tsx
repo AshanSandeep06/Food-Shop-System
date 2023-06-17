@@ -267,6 +267,7 @@ const Header = (props: HeaderProps) => {
           {/* =========== Off Canvas =========== */}
           {(["right"] as const).map((anchor) => (
             <React.Fragment key={anchor}>
+
               <IconButton
                 aria-label="cart"
                 className="!pb-[13px]"
@@ -276,6 +277,8 @@ const Header = (props: HeaderProps) => {
                   <ShoppingCartIcon className="!text-[rgb(81,81,81)]" />
                 </StyledBadge>
               </IconButton>
+              
+
               <SwipeableDrawer
                 anchor={anchor}
                 open={cartState[anchor]}
