@@ -5,17 +5,14 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./Food.css";
 import { useSelector, useDispatch } from "react-redux";
 import state from "sweetalert/typings/modules/state";
-import { setCartCount } from "../../globalSlice";
+import { setCartCount, setCartItems } from "../../globalSlice";
 import $ from "jquery";
 import { useRef } from "react";
 
 const Food = (props: StaticFoodsList) => {
   let globalCartCount = useSelector((state: any) => state.global);
+  let cartItems = useSelector((state: any) => state.global);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    console.log("sdsdsdd");
-  }, []);
 
   const handleClick = (e: any) => {
     dispatch(setCartCount(++globalCartCount));

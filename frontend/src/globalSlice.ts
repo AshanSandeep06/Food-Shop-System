@@ -7,8 +7,12 @@ const globalSlice = createSlice({
         setCartCount: (state, action) => {
             return action.payload;
         },
+
+        setCartItems: (state, action) => {
+            return action.payload;
+        }
     }
 });
 
-export const { setCartCount }  = globalSlice.actions;
+export const { setCartCount, setCartItems }  = globalSlice.actions;
 export default globalSlice.reducer;
