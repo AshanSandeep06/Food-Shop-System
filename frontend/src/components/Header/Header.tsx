@@ -36,6 +36,8 @@ import CartItem from "../CartItem/CartItem";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LoginForm from "../LoginForm/LoginForm";
 import Form from "../Form/Form";
+import { useSelector, useDispatch } from "react-redux";
+import { setCartCount } from "../../globalSlice";
 
 type HeaderProps = {
   buttons: string[];
@@ -60,11 +62,16 @@ const Header = (props: HeaderProps) => {
     bottom: false,
   });
 
+  const globalCartCount = useSelector((state: any) => state.global);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     if (resetFormRef.current) {
       resetFormRef.current.style.display = "none";
     }
-  }, [loginState["right"]]);
+
+    // dispatch(setCartCount("0"));
+  }, [loginState["right"], dispatch]);
 
   const style1 =
     "flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg";
@@ -227,13 +234,17 @@ const Header = (props: HeaderProps) => {
     },
   }));
 
+  function clickMe() {
+    console.log(globalCartCount);
+  }
+
   return (
     // <!--Header-->
     // backdrop-blur-md  bg-[hsla(0,0%,100%,.4)]
     <header className="flex w-full h-20 !text-[rgb(81,81,81)] z-10 fixed top-0">
       <div className="w-1/4 h-full flex items-center gap-2.5 pl-[38px]">
         <img src={logo} alt="UserImage" className="w-10 h-10" />
-        <NavLink to={"/home"}>
+        <NavLink to={"/home"} onClick={clickMe}>
           <h1
             style={{ letterSpacing: "2px" }}
             className="h-max mb-[1px] !text-2xl !text-black"
@@ -267,17 +278,15 @@ const Header = (props: HeaderProps) => {
           {/* =========== Off Canvas =========== */}
           {(["right"] as const).map((anchor) => (
             <React.Fragment key={anchor}>
-
               <IconButton
                 aria-label="cart"
                 className="!pb-[13px]"
                 onClick={toggleDrawer1(anchor, true)}
               >
-                <StyledBadge badgeContent={"0"} color="error">
+                <StyledBadge badgeContent={globalCartCount} color="error">
                   <ShoppingCartIcon className="!text-[rgb(81,81,81)]" />
                 </StyledBadge>
               </IconButton>
-              
 
               <SwipeableDrawer
                 anchor={anchor}

@@ -12,6 +12,8 @@ import { NavLink } from "react-router-dom";
 import MyButton from "./components/MyButton";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Admin from "./components/Admin";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const App = () => {
   const style1 =
@@ -45,32 +47,33 @@ const App = () => {
   );
 
   return (
-    <div className="App">
-      <a href="#" id="scroll_up_btn">
-        <ArrowUpwardIcon />
-      </a>
+    <Provider store={store}>
+      <div className="App">
+        <a href="#" id="scroll_up_btn">
+          <ArrowUpwardIcon />
+        </a>
 
-      {/* ========== Home Page ========== */}
-      <Header
-        buttons={["login", "register"]}
-        links={["home", "food_Menu", "contact"]}
-      />
-      <Content />
-      <Footer />
+        {/* ========== Home Page ========== */}
+        <Header
+          buttons={["login", "register"]}
+          links={["home", "food_Menu", "contact"]}
+        />
+        <Content />
+        <Footer />
 
-      {/* ------------------------------------------------------------------------------------ */}
+        {/* ------------------------------------------------------------------------------------ */}
 
-      {/* ========== Customer Page ========== */}
-      {/* <Header
+        {/* ========== Customer Page ========== */}
+        {/* <Header
         buttons={["logout", "my_profile"]}
         links={["home", "pending_orders", "orders_history"]}
       />
       <Customer /> */}
 
-      {/* ------------------------------------------------------------------------------------ */}
+        {/* ------------------------------------------------------------------------------------ */}
 
-      {/* ========== Admin Page ========== */}
-      {/* <Header
+        {/* ========== Admin Page ========== */}
+        {/* <Header
         buttons={["logout"]}
         links={[
           "home",
@@ -82,8 +85,9 @@ const App = () => {
       />
       <Admin /> */}
 
-      {/* ------------------------------------------------------------------------------------ */}
-    </div>
+        {/* ------------------------------------------------------------------------------------ */}
+      </div>
+    </Provider>
   );
 };
 

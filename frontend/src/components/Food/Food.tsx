@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { StaticFoodsList } from "../../types/StaticFoodItems";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./Food.css";
+import { useSelector, useDispatch } from "react-redux";
+import state from "sweetalert/typings/modules/state";
+import { setCartCount } from "../../globalSlice";
 
 const Food = (props: StaticFoodsList) => {
+  let globalCartCount = useSelector((state: any) => state.global);
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(setCartCount(globalCartCount));
+  // }, [dispatch]);
+
+  const handleClick = () => {
+    // INCREASE CART COUNT
+    dispatch(setCartCount(++globalCartCount));
+  };
+
   return (
     <div className="w-full h-full flex items-center justify-center top-6 left-0 lg:px-30 lg:pt-4 gap-5 md:gap-8 flex-wrap text-[#4a4343] xl:-translate-x-2 mb-12">
       {props.items.map((item) => (
@@ -33,6 +48,7 @@ const Food = (props: StaticFoodsList) => {
           </p>
 
           <motion.span
+            onClick={handleClick}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 1.1 }}
             className="cartIcon bg-[rgb(232,0,19)] rounded-full border-white w-10 h-10 flex justify-center items-center"
