@@ -1,5 +1,5 @@
 export type StaticFoodItems = {
-    _id: number;
+    _id: string;
     title: string;
     description: string;
     price: string;

@@ -6,24 +6,28 @@ import "./Food.css";
 import { useSelector, useDispatch } from "react-redux";
 import state from "sweetalert/typings/modules/state";
 import { setCartCount } from "../../globalSlice";
+import $ from "jquery";
+import { useRef } from "react";
 
 const Food = (props: StaticFoodsList) => {
   let globalCartCount = useSelector((state: any) => state.global);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(setCartCount(globalCartCount));
-  // }, [dispatch]);
+  useEffect(() => {
+    console.log("sdsdsdd");
+  }, []);
 
-  const handleClick = () => {
-    // INCREASE CART COUNT
+  const handleClick = (e: any) => {
     dispatch(setCartCount(++globalCartCount));
+
+    console.log($(e.target).parent().parent());
   };
 
   return (
     <div className="w-full h-full flex items-center justify-center top-6 left-0 lg:px-30 lg:pt-4 gap-5 md:gap-8 flex-wrap text-[#4a4343] xl:-translate-x-2 mb-12">
       {props.items.map((item) => (
         <div
+          id={item._id}
           key={item._id}
           className="mt-10 cursor-pointer !h-[265px] !w-[275px] lg:min-w-[250px] drop-shadow-lg p-2 bg-[rgba(256,256,256,0.4)] backdrop-blur-md rounded-xl flex flex-col items-center justify-center"
         >
@@ -53,7 +57,7 @@ const Food = (props: StaticFoodsList) => {
             whileTap={{ scale: 1.1 }}
             className="cartIcon bg-[rgb(232,0,19)] rounded-full border-white w-10 h-10 flex justify-center items-center"
           >
-            <AddShoppingCartIcon className="text-[#ece1e1]" />
+            <AddShoppingCartIcon className="text-[#ece1e1] !w-full !h-full !p-2" />
           </motion.span>
         </div>
       ))}

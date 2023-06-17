@@ -2,18 +2,26 @@ import React from "react";
 import ChickenPlate from "../../assets/img/chicken-01.png";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const CartItem = () => {
+type CartItemState = {}
+
+type CartItemProps = {
+  itemImage: string,
+  itemName: string,
+  unitPrice: number,
+}
+
+const CartItem = (props: CartItemProps) => {
   return (
     <div className="pl-3 gap-2 flex items-center justify-start drop-shadow-lg bg-[rgba(256,256,256,0.4)] backdrop-blur-md rounded-xl">
       <img
-        src={ChickenPlate}
+        src={props.itemImage}
         alt="foodImage"
         className="mr-[6px] w-20 h-20 max-w-[65px] rounded-full object-contain"
       />
       <div className="flex flex-col mr-[6px]">
-        <span>Chicken Plate</span>
+        <span>{props.itemName}</span>
         <span>
-          850
+          {props.unitPrice}
           <span className="text-[#ed1e2f] text-[13px]"> LKR</span>
         </span>
       </div>

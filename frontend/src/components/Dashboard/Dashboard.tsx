@@ -14,7 +14,7 @@ const Dashboard = () => {
   const staticData: StaticFoodsList = {
     items: [
       {
-        _id: 1,
+        _id: "1",
         title: "Ice Cream",
         description: "Choclate & Vanilla",
         price: "350",
@@ -22,7 +22,7 @@ const Dashboard = () => {
       },
 
       {
-        _id: 2,
+        _id: "2",
         title: "Strawberries",
         description: "Fresh Strawberries",
         price: "800",
@@ -30,7 +30,7 @@ const Dashboard = () => {
       },
 
       {
-        _id: 3,
+        _id: "3",
         title: "Banana",
         description: "Fresh Banana",
         price: "400",
@@ -38,7 +38,7 @@ const Dashboard = () => {
       },
 
       {
-        _id: 4,
+        _id: "4",
         title: "Apple",
         description: "Fresh Apples",
         price: "200",

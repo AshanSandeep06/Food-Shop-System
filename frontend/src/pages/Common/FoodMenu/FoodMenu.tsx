@@ -49,49 +49,49 @@ const FoodMenu = () => {
   }, []);
 
   // Dummy Data
-  const staticData: StaticFoodsList = {
-    items: [
-      {
-        _id: 1,
-        title: "Ice Cream",
-        description: "Choclate & Vanilla",
-        price: "350",
-        imagePath: iceCream,
-      },
+  // const staticData: StaticFoodsList = {
+  //   items: [
+  //     {
+  //       _id: 1,
+  //       title: "Ice Cream",
+  //       description: "Choclate & Vanilla",
+  //       price: "350",
+  //       imagePath: iceCream,
+  //     },
 
-      {
-        _id: 2,
-        title: "Strawberries",
-        description: "Fresh Strawberries",
-        price: "800",
-        imagePath: strawberries,
-      },
+  //     {
+  //       _id: 2,
+  //       title: "Strawberries",
+  //       description: "Fresh Strawberries",
+  //       price: "800",
+  //       imagePath: strawberries,
+  //     },
 
-      {
-        _id: 3,
-        title: "Banana",
-        description: "Fresh Banana",
-        price: "400",
-        imagePath: banana,
-      },
+  //     {
+  //       _id: 3,
+  //       title: "Banana",
+  //       description: "Fresh Banana",
+  //       price: "400",
+  //       imagePath: banana,
+  //     },
 
-      {
-        _id: 4,
-        title: "Apple",
-        description: "Fresh Apples",
-        price: "200",
-        imagePath: apple,
-      },
+  //     {
+  //       _id: 4,
+  //       title: "Apple",
+  //       description: "Fresh Apples",
+  //       price: "200",
+  //       imagePath: apple,
+  //     },
 
-      {
-        _id: 5,
-        title: "Chicken",
-        description: "BBQ Chicken",
-        price: "850",
-        imagePath: chicken,
-      },
-    ],
-  };
+  //     {
+  //       _id: 5,
+  //       title: "Chicken",
+  //       description: "BBQ Chicken",
+  //       price: "850",
+  //       imagePath: chicken,
+  //     },
+  //   ],
+  // };
 
   const setClickStyles = () => {
     $("#container > div").on("click", function () {
