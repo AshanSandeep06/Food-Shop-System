@@ -20,7 +20,11 @@ const Food = (props: StaticFoodsList) => {
   const handleClick = (e: any) => {
     dispatch(setCartCount(++globalCartCount));
 
-    console.log($(e.target).parent().parent());
+    if ($(e.target).parent().parent()[0].id) {
+      console.log($(e.target).parent().parent()[0].id);
+    } else if ($(e.target).parent().parent().parent()[0].id) {
+      console.log($(e.target).parent().parent().parent()[0].id);
+    }
   };
 
   return (
