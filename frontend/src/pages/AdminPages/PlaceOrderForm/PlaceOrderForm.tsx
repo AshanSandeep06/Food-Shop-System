@@ -17,11 +17,28 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Table from "../../../components/Table";
+import axios from "../../../axios";
+import { Customer } from "../../../types/Customer";
+import { Item } from "../../../types/Item";
+import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
+import {
+  setCartItems,
+  addNewCartItems,
+  removeAllCartItems,
+  setCartCount,
+  removeFromCart,
+} from "../../../globalSlice";
+import { OrderDetail } from "../../../types/OrderDetail";
+import { Order } from "../../../types/Order";
+const { DateTime } = require("luxon");
 
 const PlaceOrderForm = () => {
   const [currentDate, setCurrentDate] = useState<string>(
     new Date().toISOString().split("T")[0]
   );
+
+  const imagePath = "/img/uploads/itemImages/";
 
   const [itemImage, setItemImage] = useState<string>("");
 
@@ -33,25 +50,300 @@ const PlaceOrderForm = () => {
   const [selectedCustomerID, setSelectedCustomerID] = useState<string>("");
   const [selectedItemCode, setSelectedItemCode] = useState<string>("");
 
+  const [orderID, setOrderID] = useState<string>("");
+  const [allCustomers, setAllCustomers] = useState<Customer[]>([]);
+  const [allItems, setAllItems] = useState<Item[]>([]);
+
+  const [cusName, setCusName] = useState<string>("");
+  const [cusAddress, setCusAddress] = useState<string>("");
+  const [cusContact, setCusContact] = useState<string>("");
+  const [cusEmail, setCusEmail] = useState<string>("");
+
+  const [itemName, setItemName] = useState<string>("");
+  const [unitPrice, setUnitPrice] = useState<number>(0.0);
+  const [qtyOnHand, setQtyOnHand] = useState<number>(0.0);
+  const [description, setDescription] = useState<string>("");
+  const [selectedQuantity, setSelectedQuantity] = useState<number>(0);
+
+  const [subTotal, setSubTotal] = useState<number>(0);
+  const [total, setTotal] = useState<number>(0);
+  const [cash, setCash] = useState<number>(0);
+  const [balance, setBalance] = useState<number>();
+
+  const cart = useSelector((state: any) => state.cartItems);
+  const cartCount: string = useSelector((state: any) => state.cartCount);
+  const dispatch = useDispatch();
+
+  const [cartItemsList, setCartItemsList] = useState<Array<string[] | any[]>>(
+    []
+  );
+  let tempCartItemsList: (any[] | string[])[] = [];
+
+  const generateNewOrderID = () => {
+    axios
+      .get("order/generateNewOrderID")
+      .then((res) => {
+        setOrderID(res.data.response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const loadAllCustomers = () => {
+    axios
+      .get("customer")
+      .then((res) => {
+        setAllCustomers(res.data.response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const getAllItems = () => {
+    axios
+      .get("item")
+      .then((res) => {
+        setAllItems(res.data.response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleRemoveItemFromCart = (itemCode: string) => {
+    dispatch(setCartCount(parseInt(cartCount) - 1));
+    dispatch(removeFromCart(itemCode));
+  };
+
+  const loadAllItems = () => {
+    axios
+      .get("item")
+      .then((res) => {
+        let allItems = [];
+        let imagePath = "/img/uploads/itemImages/";
+
+        for (let i = 0; i < res.data.response.length; i++) {
+          allItems.push([
+            res.data.response[i].itemCode,
+            res.data.response[i].itemName,
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.1 }}
+              src={imagePath + res.data.response[i].itemImage}
+              alt="foodImage"
+              className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
+            />,
+            res.data.response[i].description,
+            res.data.response[i].unitPrice,
+            0,
+            0,
+            <span>
+              <button
+                onClick={() =>
+                  handleRemoveItemFromCart(res.data.response[i].itemCode)
+                }
+                className="flex justify-center items-center w-8 h-8 rounded-lg text-gray-50 bg-[rgb(232,0,19)]"
+              >
+                <DeleteIcon className="!text-[25px]" />
+              </button>
+            </span>,
+          ]);
+        }
+
+        setInitialData(allItems);
+      })
+      .catch((error) => {
+        alert("Error is : " + error);
+      });
+  };
+
+  const setInitialData = (allItems: (any[] | string[])[]) => {
+    for (let dataRow of allItems) {
+      for (let cartItem of cart.cartItems) {
+        if (dataRow[0] == cartItem.itemCode) {
+          dataRow[5] = cartItem.quantity;
+          tempCartItemsList.push(dataRow);
+          break;
+        }
+      }
+    }
+
+    let subTotal = 0;
+    setTotal(0);
+    // set subtotal and total
+    for (let itemRow of tempCartItemsList) {
+      var totalItemPrice = parseFloat(itemRow[4]) * parseFloat(itemRow[5]);
+      itemRow[6] = totalItemPrice;
+      console.log(totalItemPrice);
+      subTotal = subTotal + totalItemPrice;
+    }
+
+    setSubTotal(subTotal);
+    setTotal(subTotal);
+
+    setCartItemsList(tempCartItemsList);
+  };
+
   useEffect(() => {
     setInterval(() => {
       setCurrentDate(new Date().toISOString().split("T")[0]);
       setCurrentTime(new Date().toLocaleTimeString("en-US", { hour12: false }));
-      setItemImage(chickenPlate);
+      // setItemImage(chickenPlate);
     }, 1000);
-  }, []);
+
+    generateNewOrderID();
+    loadAllCustomers();
+    getAllItems();
+    loadAllItems();
+  }, [cart.cartItems]);
 
   const handleChangeCustomerID = (event: SelectChangeEvent) => {
     setSelectedCustomerID(event.target.value as string);
-    // alert(event.target.value as string);
+    // let customers: Customer[] = allCustomers;
+    for (let i = 0; i < allCustomers.length; i++) {
+      if ((event.target.value as string) == allCustomers[i].customerID) {
+        setCusName(allCustomers[i].customerName);
+        setCusAddress(allCustomers[i].address);
+        setCusContact(allCustomers[i].contactNumber);
+        setCusEmail(allCustomers[i].email);
+      }
+    }
   };
 
   function handleChangeItemCode(event: SelectChangeEvent) {
     setSelectedItemCode(event.target.value as string);
 
-    // Set the Item Image Here.
-    setItemImage(chickenPlate);
+    for (let i = 0; i < allItems.length; i++) {
+      if ((event.target.value as string) == allItems[i].itemCode) {
+        setItemName(allItems[i].itemName);
+        setUnitPrice(allItems[i].unitPrice);
+        setQtyOnHand(allItems[i].qtyOnHand);
+        setDescription(allItems[i].description);
+        setItemImage(imagePath + allItems[i].itemImage);
+      }
+    }
   }
+
+  const handleClearInvoiceDetails = () => {
+    generateNewOrderID();
+    loadAllCustomers();
+
+    setSelectedCustomerID("");
+    setCusName("");
+    setCusAddress("");
+    setCusContact("");
+    setCusEmail("");
+  };
+
+  const handleClearSelectItems = () => {
+    loadAllItems();
+
+    setSelectedItemCode("");
+    setItemName("");
+    setUnitPrice(0.0);
+    setQtyOnHand(0.0);
+    setItemImage("");
+    setDescription("");
+    setSelectedQuantity(0);
+  };
+
+  const handleSelectedQuantity = (e: any) => {
+    setSelectedQuantity(e.target.value);
+  };
+
+  const handleOnChangeCash = (e: any) => {
+    setCash(e.target.value);
+
+    let balance = e.target.value - total;
+    setBalance(balance);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(
+      addNewCartItems({
+        itemCode: selectedItemCode,
+        itemImage: itemImage,
+        itemName: itemName,
+        unitPrice: unitPrice,
+        quantity: selectedQuantity,
+      })
+    );
+  };
+
+  const handleCancelOrder = () => {
+    dispatch(removeAllCartItems());
+    dispatch(setCartCount(String(0)));
+
+    handleClearSelectItems();
+    handleClearInvoiceDetails();
+
+    setSubTotal(0);
+    setTotal(0);
+    setCash(0);
+    setBalance(0);
+  };
+
+  const handlePlaceOrder = () => {
+    setCurrentDate(DateTime.now().toISODate());
+    setCurrentTime(DateTime.local().toLocaleString(DateTime.TIME_SIMPLE));
+
+    axios
+      .get("order/generateNewOrderID")
+      .then((res) => {
+        setOrderID(res.data.response);
+
+        let orderDetails: OrderDetail[] = [];
+        for (let cartItem of cart.cartItems) {
+          orderDetails.push({
+            orderID: res.data.response,
+            itemCode: cartItem.itemCode,
+            itemName: cartItem.itemName,
+            unitPrice: cartItem.unitPrice,
+            orderedQty: cartItem.quantity,
+          });
+        }
+
+        // Place Order function
+        let newOrder: Order = {
+          orderID: res.data.response,
+          orderDate: DateTime.now().toISODate(),
+          orderTime: DateTime.local().toLocaleString(DateTime.TIME_SIMPLE),
+          subTotal: subTotal,
+          deliveryFee: 0,
+          totalCost: total,
+          orderStatus: "Pending",
+          deliveryLocation: "None",
+          customerID: selectedCustomerID,
+          orderDetails: orderDetails,
+        };
+
+        console.log(newOrder);
+
+        axios
+          .post("order", newOrder, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+          .then((res) => {
+            alert(res.data.message);
+            console.log(res);
+            handleCancelOrder();
+          })
+          .catch((error) => {
+            console.log("Error Invoked");
+            console.log(error);
+            handleCancelOrder();
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+        console.log("Error Invoked");
+        handleCancelOrder();
+      });
+  };
 
   return (
     <section>
@@ -72,7 +364,7 @@ const PlaceOrderForm = () => {
               name="orderId"
               placeholder="Order ID"
               required
-              defaultValue="OID-001"
+              value={orderID}
               InputProps={{
                 readOnly: true,
               }}
@@ -121,12 +413,21 @@ const PlaceOrderForm = () => {
                 onChange={handleChangeCustomerID}
               >
                 {/* <MenuItem value={customerId}>Customer ID</MenuItem> */}
-                <MenuItem className="!font-poppins" value={1}>
+                {/* <MenuItem className="!font-poppins" value={1}>
                   C00-001
                 </MenuItem>
                 <MenuItem className="!font-poppins" value={2}>
                   C00-002
-                </MenuItem>
+                </MenuItem> */}
+                {allCustomers.map((c1) => (
+                  <MenuItem
+                    key={c1.customerID}
+                    className="!font-poppins"
+                    value={c1.customerID}
+                  >
+                    {c1.customerID}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
 
@@ -137,7 +438,7 @@ const PlaceOrderForm = () => {
               name="customerName"
               placeholder="Customer Name"
               required
-              defaultValue="Kamal Perera"
+              value={cusName}
               InputProps={{
                 readOnly: true,
               }}
@@ -150,7 +451,7 @@ const PlaceOrderForm = () => {
               name="customerAddress"
               placeholder="Customer Address"
               required
-              defaultValue="46/D, Makuluwa, Galle"
+              value={cusAddress}
               InputProps={{
                 readOnly: true,
               }}
@@ -163,7 +464,7 @@ const PlaceOrderForm = () => {
               name="customerContact"
               placeholder="Contact Number"
               required
-              defaultValue="0758906762"
+              value={cusContact}
               InputProps={{
                 readOnly: true,
               }}
@@ -176,7 +477,7 @@ const PlaceOrderForm = () => {
               name="customerEmail"
               placeholder="Email"
               required
-              defaultValue="kamal123@gmail.com"
+              value={cusEmail}
               InputProps={{
                 readOnly: true,
               }}
@@ -187,6 +488,7 @@ const PlaceOrderForm = () => {
                 className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px]"
                 variant="contained"
                 color="warning"
+                onClick={handleClearInvoiceDetails}
               >
                 Clear
               </Button>
@@ -213,12 +515,15 @@ const PlaceOrderForm = () => {
                 value={selectedItemCode}
                 onChange={handleChangeItemCode}
               >
-                <MenuItem className="!font-poppins" value={1}>
-                  I00-001
-                </MenuItem>
-                <MenuItem className="!font-poppins" value={2}>
-                  I00-002
-                </MenuItem>
+                {allItems.map((item) => (
+                  <MenuItem
+                    key={item.itemCode}
+                    className="!font-poppins"
+                    value={item.itemCode}
+                  >
+                    {item.itemCode}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
 
@@ -228,6 +533,7 @@ const PlaceOrderForm = () => {
               variant="outlined"
               name="itemName"
               placeholder="Item Name"
+              value={itemName}
               required
               InputProps={{
                 readOnly: true,
@@ -243,6 +549,7 @@ const PlaceOrderForm = () => {
               variant="outlined"
               name="unitPrice"
               placeholder="Unit Price"
+              value={unitPrice}
               required
               InputProps={{
                 readOnly: true,
@@ -258,6 +565,7 @@ const PlaceOrderForm = () => {
               variant="outlined"
               name="qtyOnHand"
               placeholder="Qty On Hand"
+              value={qtyOnHand}
               required
               InputProps={{
                 readOnly: true,
@@ -283,6 +591,7 @@ const PlaceOrderForm = () => {
               type="text"
               variant="outlined"
               name="description"
+              value={description}
               placeholder="Description"
               required
               InputProps={{
@@ -298,6 +607,8 @@ const PlaceOrderForm = () => {
               type="number"
               variant="outlined"
               name="qtyOnHand"
+              value={selectedQuantity}
+              onChange={handleSelectedQuantity}
               placeholder="Selected Quantity"
               required
             />
@@ -307,6 +618,7 @@ const PlaceOrderForm = () => {
                 className="!px-[20px] !capitalize !font-poppins !font-normal !text-[15px] sm:!mr-[55px]"
                 variant="contained"
                 color="warning"
+                onClick={handleClearSelectItems}
               >
                 Clear
               </Button>
@@ -324,6 +636,7 @@ const PlaceOrderForm = () => {
                 variant="contained"
                 color="success"
                 endIcon={<AddShoppingCartIcon />}
+                onClick={handleAddToCart}
               >
                 Add To Cart
               </Button>
@@ -342,29 +655,21 @@ const PlaceOrderForm = () => {
           >
             <div className="flex justify-start items-center md:col-start-1 md:col-end-3">
               <span className="text-start p-1 text-red-700 !text-[25px] font-medium">
-                Total :
+                Sub Total :
               </span>
               <span className="text-center text-black p-1 !text-[25px] font-medium">
-                0 LKR
+                {`${subTotal} LKR`}
               </span>
             </div>
 
             <TextField
-              label="Discount"
-              type="number"
-              variant="outlined"
-              name="discount"
-              placeholder="Discount"
-              required
-            />
-
-            <TextField
-              label="Sub Total (LKR)"
+              label="Total (LKR)"
               type="text"
               variant="outlined"
-              name="subTotal"
-              placeholder="Sub Total"
+              name="total"
+              placeholder="Total"
               required
+              value={total}
               InputProps={{
                 readOnly: true,
               }}
@@ -378,8 +683,10 @@ const PlaceOrderForm = () => {
               type="text"
               variant="outlined"
               name="cash"
+              value={cash}
               placeholder="Cash"
               required
+              onChange={handleOnChangeCash}
             />
 
             <TextField
@@ -387,8 +694,15 @@ const PlaceOrderForm = () => {
               type="text"
               variant="outlined"
               name="balance"
+              value={balance + " LKR"}
               placeholder="Balance"
               required
+              InputProps={{
+                readOnly: true,
+              }}
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
 
             <div className="flex sm:justify-between items-center col-span-1 sm:col-span-2 flex-wrap justify-center gap-[22px] sm:gap-[0px]">
@@ -397,6 +711,7 @@ const PlaceOrderForm = () => {
                 variant="outlined"
                 color="error"
                 endIcon={<DeleteIcon />}
+                onClick={handleCancelOrder}
               >
                 Cancel Order
               </Button>
@@ -406,6 +721,7 @@ const PlaceOrderForm = () => {
                 variant="contained"
                 color="success"
                 endIcon={<CheckCircleIcon />}
+                onClick={handlePlaceOrder}
               >
                 Place Order
               </Button>
@@ -428,65 +744,67 @@ const PlaceOrderForm = () => {
             "Total (LKR)",
             "Option",
           ]}
-          tblData={[
-            [
-              "I00-001",
-              "Ice Cream",
-              <img
-                src={chickenPlate}
-                alt="foodImage"
-                className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
-                style={{ transform: "none" }}
-              />,
-              "Vanilla & Chocalate",
-              "450.00",
-              "2",
-              "900.00",
-              <span>
-                <button className="flex justify-center items-center w-8 h-8 rounded-lg text-gray-50 bg-[rgb(232,0,19)]">
-                  <DeleteIcon className="!text-[25px]" />
-                </button>
-              </span>,
-            ],
-            [
-              "I00-001",
-              "Ice Cream",
-              <img
-                src={chickenPlate}
-                alt="foodImage"
-                className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
-                style={{ transform: "none" }}
-              />,
-              "Vanilla & Chocalate",
-              "450.00",
-              "2",
-              "900.00",
-              <span>
-                <button className="flex justify-center items-center w-8 h-8 rounded-lg text-gray-50 bg-[rgb(232,0,19)]">
-                  <DeleteIcon className="!text-[25px]" />
-                </button>
-              </span>,
-            ],
-            [
-              "I00-001",
-              "Ice Cream",
-              <img
-                src={chickenPlate}
-                alt="foodImage"
-                className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
-                style={{ transform: "none" }}
-              />,
-              "Vanilla & Chocalate",
-              "450.00",
-              "2",
-              "900.00",
-              <span>
-                <button className="flex justify-center items-center w-8 h-8 rounded-lg text-gray-50 bg-[rgb(232,0,19)]">
-                  <DeleteIcon className="!text-[25px]" />
-                </button>
-              </span>,
-            ],
-          ]}
+          // tblData={[
+          //   [
+          //     "I00-001",
+          //     "Ice Cream",
+          //     <img
+          //       src={chickenPlate}
+          //       alt="foodImage"
+          //       className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
+          //       style={{ transform: "none" }}
+          //     />,
+          //     "Vanilla & Chocalate",
+          //     "450.00",
+          //     "2",
+          //     "900.00",
+          //     <span>
+          //       <button className="flex justify-center items-center w-8 h-8 rounded-lg text-gray-50 bg-[rgb(232,0,19)]">
+          //         <DeleteIcon className="!text-[25px]" />
+          //       </button>
+          //     </span>,
+          //   ],
+          //   [
+          //     "I00-001",
+          //     "Ice Cream",
+          //     <img
+          //       src={chickenPlate}
+          //       alt="foodImage"
+          //       className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
+          //       style={{ transform: "none" }}
+          //     />,
+          //     "Vanilla & Chocalate",
+          //     "450.00",
+          //     "2",
+          //     "900.00",
+          //     <span>
+          //       <button className="flex justify-center items-center w-8 h-8 rounded-lg text-gray-50 bg-[rgb(232,0,19)]">
+          //         <DeleteIcon className="!text-[25px]" />
+          //       </button>
+          //     </span>,
+          //   ],
+          //   [
+          //     "I00-001",
+          //     "Ice Cream",
+          //     <img
+          //       src={chickenPlate}
+          //       alt="foodImage"
+          //       className="w-40 lg:w-40 h-40 object-contain cursor-pointer"
+          //       style={{ transform: "none" }}
+          //     />,
+          //     "Vanilla & Chocalate",
+          //     "450.00",
+          //     "2",
+          //     "900.00",
+          //     <span>
+          //       <button className="flex justify-center items-center w-8 h-8 rounded-lg text-gray-50 bg-[rgb(232,0,19)]">
+          //         <DeleteIcon className="!text-[25px]" />
+          //       </button>
+          //     </span>,
+          //   ],
+          // ]}
+
+          tblData={cartItemsList.map((itemArray) => itemArray)}
         />
       </section>
     </section>

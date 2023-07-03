@@ -8,7 +8,7 @@ import {
   DialogTitle,
   Slide,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Table from "../../../components/Table";
 import { TransitionProps } from "@mui/material/transitions";
 import { motion } from "framer-motion";
@@ -18,6 +18,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import ChickenPlate from "../../../assets/img/chicken-01.png";
 import DeleteIcon from "@mui/icons-material/Delete";
 import OrderedItem from "../../../components/OrderedItem/OrderedItem";
+import axios from "../../../axios/";
+import { Customer } from "../../../types/Customer";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -29,6 +31,108 @@ const Transition = React.forwardRef(function Transition(
 });
 
 const OrderRequests = () => {
+  // For Load All Orders
+  const [allOrders, setAllOrders] = React.useState<Array<string[] | any[]>>([]);
+
+  // const getCustomer = (customerID: string) => {
+  //   let customer: Customer = {
+  //     customerID: "",
+  //     customerName: "",
+  //     address: "",
+  //     contactNumber: "",
+  //     email: "",
+  //   };
+
+  //   axios
+  //     .get("customer/getByCustomerID/" + customerID)
+  //     .then((res) => {
+  //       customer = res.data.response;
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error Invoked : " + error);
+  //     });
+
+  //   return customer;
+  // };
+
+  const handleAcceptOrder = (orderID: string) => {
+    axios
+      .put("/order/" + orderID + "/" + "Accepted")
+      .then((res) => {
+        console.log(res.data.message);
+        getAllOrderRequests();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleDenyOrder = (orderID: string) => {
+    axios
+      .put("/order/" + orderID + "/" + "Denied")
+      .then((res) => {
+        console.log(res.data.message);
+        getAllOrderRequests();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const getAllOrderRequests = () => {
+    axios
+      .get("order")
+      .then((res) => {
+        console.log(res.data.response);
+
+        let allOrders = [];
+        let allOrdersArray = res.data.response;
+        for (let i = 0; i < allOrdersArray.length; i++) {
+          if (allOrdersArray[i].orderStatus == "Pending") {
+            allOrders.push([
+              allOrdersArray[i].orderID,
+              allOrdersArray[i].customerID,
+              allOrdersArray[i].subTotal + " LKR",
+              allOrdersArray[i].deliveryFee + " LKR",
+              allOrdersArray[i].totalCost + " LKR",
+              allOrdersArray[i].orderLocation,
+              <Chip
+                label={allOrdersArray[i].orderStatus}
+                color="primary"
+                style={{ fontFamily: "Poppins" }}
+              />,
+              <Button
+                onClick={() => handleAcceptOrder(allOrdersArray[i].orderID)}
+                className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
+                variant="contained"
+                color="success"
+              >
+                Accept
+              </Button>,
+              <Button
+                onClick={() => handleDenyOrder(allOrdersArray[i].orderID)}
+                className="!px-[10px] !capitalize !font-poppins !font-normal !text-[15px]"
+                variant="contained"
+                color="error"
+              >
+                Deny
+              </Button>,
+            ]);
+          }
+        }
+
+        setAllOrders(allOrders);
+      })
+      .catch((error) => {
+        console.log("Error Invoked : " + error);
+      });
+  };
+
+  React.useEffect(() => {
+    // Load All Order Requests
+    getAllOrderRequests();
+  }, []);
+
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -47,8 +151,6 @@ const OrderRequests = () => {
         tblHeaders={[
           "Order ID",
           "Customer ID",
-          "Name",
-          "Contact",
           "Sub Total",
           "Delivery Fee",
           "Total Charge",
@@ -57,59 +159,8 @@ const OrderRequests = () => {
           "Accept",
           "Deny",
         ]}
-        tblData={[
-          [
-            "OID-001",
-            "C00-001",
-            "Sunil Bandara",
-            "0774592741",
-            "1500.00",
-            "250.00",
-            "1750.00",
-            "46/D, Makuluwa, Galle",
-            <Chip
-              label="Pending"
-              color="primary"
-              style={{ fontFamily: "Poppins" }}
-            />,
-            "Accept",
-            "Deny",
-          ],
-          [
-            "OID-001",
-            "C00-001",
-            "Sunil Bandara",
-            "0774592741",
-            "1500.00",
-            "250.00",
-            "1750.00",
-            "46/D, Makuluwa, Galle",
-            <Chip
-              label="Pending"
-              color="primary"
-              style={{ fontFamily: "Poppins" }}
-            />,
-            "Accept",
-            "Deny",
-          ],
-          [
-            "OID-001",
-            "C00-001",
-            "Sunil Bandara",
-            "0774592741",
-            "1500.00",
-            "250.00",
-            "1750.00",
-            "46/D, Makuluwa, Galle",
-            <Chip
-              label="Pending"
-              color="primary"
-              style={{ fontFamily: "Poppins" }}
-            />,
-            "Accept",
-            "Deny",
-          ],
-        ]}
+        tblData={allOrders.map((orders) => orders)}
+        // tblData={allItemsList.map((itemArray) => itemArray)}
         handleTblRowClick={handleClickOpen}
       />
 
@@ -122,7 +173,7 @@ const OrderRequests = () => {
           aria-describedby="alert-dialog-slide-description"
         >
           <DialogTitle className="!font-poppins text-center flex justify-between">
-            <h5>Cart Items List</h5>
+            <p>Cart Items List</p>
             <Button
               className="!font-semibold"
               onClick={handleClose}

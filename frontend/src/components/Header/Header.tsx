@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Header.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LoginIcon from "@mui/icons-material/Login";
@@ -15,6 +15,7 @@ import HowToRegIcon from "@mui/icons-material/HowToReg";
 import CloseIcon from "@mui/icons-material/Close";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import $ from "jquery";
 import {
   Box,
   Button,
@@ -37,7 +38,10 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LoginForm from "../LoginForm/LoginForm";
 import Form from "../Form/Form";
 import { useSelector, useDispatch } from "react-redux";
-import { setCartCount } from "../../globalSlice";
+import CartDetails, {
+  removeAllCartItems,
+  setCartCount,
+} from "../../globalSlice";
 
 type HeaderProps = {
   buttons: string[];
@@ -62,7 +66,8 @@ const Header = (props: HeaderProps) => {
     bottom: false,
   });
 
-  const globalCartCount = useSelector((state: any) => state.global);
+  let globalCartCount = useSelector((state: any) => state.cartCount);
+  const cart = useSelector((state: any) => state.cartItems);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -91,6 +96,13 @@ const Header = (props: HeaderProps) => {
       }
 
       setCartState({ ...cartState, [anchor]: open });
+
+      if (event.target) {
+        if ($(event.target).text() == "Clear") {
+          dispatch(removeAllCartItems());
+          dispatch(setCartCount(String(0)));
+        }
+      }
     };
 
   const toggleDrawer2 =
@@ -181,30 +193,37 @@ const Header = (props: HeaderProps) => {
           </span>
 
           <span>
-            <MyButton
-              resource={"clear"}
-              icon={null}
-              styles={
-                "flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg"
-              }
-            />
+            <button
+              onClick={toggleDrawer1(anchor, false)}
+              className="flex items-center gap-3 border border-slate-200 px-[15px] py-[6px] rounded-lg"
+            >
+              Clear
+            </button>
           </span>
         </div>
 
         <div className="flex h-[calc(100vh-70px)] flex-col bg-[#F5EEE9] gap-8">
           <div className="flex flex-col pt-5 pl-5 pr-5 gap-3 h-[528px] overflow-y-scroll scrollbar-hidden scroll-smooth">
             {/* cart items */}
-            {/* <CartItem />
-            <CartItem />
-            <CartItem /> */}
+
+            {cart.cartItems.map((item: CartDetails) => (
+              <CartItem
+                id={item.itemCode}
+                key={item.itemCode}
+                itemImage={item.itemImage}
+                itemName={item.itemName}
+                unitPrice={item.unitPrice}
+              />
+            ))}
           </div>
 
           <div className="px-16">
             <button
+              onClick={toggleDrawer1(anchor, false)}
               className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600
             text-gray-50 text-lg my-2 hover:shadow-lg"
             >
-              Continue
+              <Link to={"/purchase_order"}>Continue</Link>
             </button>
           </div>
         </div>
@@ -226,17 +245,13 @@ const Header = (props: HeaderProps) => {
     },
   }));
 
-  function clickMe() {
-    console.log(globalCartCount);
-  }
-
   return (
     // <!--Header-->
     // backdrop-blur-md  bg-[hsla(0,0%,100%,.4)]
     <header className="flex w-full h-20 !text-[rgb(81,81,81)] z-10 fixed top-0">
       <div className="w-1/4 h-full flex items-center gap-2.5 pl-[38px]">
         <img src={logo} alt="UserImage" className="w-10 h-10" />
-        <NavLink to={"/home"} onClick={clickMe}>
+        <NavLink to={"/home"}>
           <h1
             style={{ letterSpacing: "2px" }}
             className="h-max mb-[1px] !text-2xl !text-black"

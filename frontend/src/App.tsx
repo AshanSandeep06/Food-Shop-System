@@ -54,36 +54,36 @@ const App = () => {
         </a>
 
         {/* ========== Home Page ========== */}
-        <Header
+        {/* <Header
           buttons={["login", "register"]}
           links={["home", "food_Menu", "contact"]}
         />
         <Content />
-        <Footer />
+        <Footer /> */}
 
         {/* ------------------------------------------------------------------------------------ */}
 
         {/* ========== Customer Page ========== */}
         {/* <Header
-        buttons={["logout", "my_profile"]}
-        links={["home", "pending_orders", "orders_history"]}
-      />
-      <Customer /> */}
+          buttons={["logout", "my_profile"]}
+          links={["home", "pending_orders", "orders_history"]}
+        />
+        <Customer /> */}
 
         {/* ------------------------------------------------------------------------------------ */}
 
         {/* ========== Admin Page ========== */}
-        {/* <Header
-        buttons={["logout"]}
-        links={[
-          "home",
-          "manage_customer",
-          "manage_item",
-          "place_order",
-          "order_requests",
-        ]}
-      />
-      <Admin /> */}
+        <Header
+          buttons={["logout"]}
+          links={[
+            "home",
+            "manage_customer",
+            "manage_item",
+            "purchase_order",
+            "order_requests",
+          ]}
+        />
+        <Admin />
 
         {/* ------------------------------------------------------------------------------------ */}
       </div>

@@ -3,7 +3,7 @@ import { Document, Schema, model } from "mongoose";
 export interface IOrderDetail extends Document {
     orderID: string;
     itemCode: string;
-    itemType: string;
+    itemName: string;
     unitPrice: number;
     orderedQty: number;
 }
@@ -19,7 +19,7 @@ const OrderDetailSchema = new Schema({
         required: true,
     },
 
-    itemType: {
+    itemName: {
         type: String,
         required: true,
     },

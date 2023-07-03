@@ -8,20 +8,60 @@ import state from "sweetalert/typings/modules/state";
 import { setCartCount, setCartItems } from "../../globalSlice";
 import $ from "jquery";
 import { useRef } from "react";
+import { log } from "console";
 
 const Food = (props: StaticFoodsList) => {
-  let globalCartCount = useSelector((state: any) => state.global);
-  let cartItems = useSelector((state: any) => state.global);
+  let globalCartCount = useSelector((state: any) => state.cartCount);
+  let cart = useSelector((state: any) => state.cartItems);
+
   const dispatch = useDispatch();
 
   const handleClick = (e: any) => {
-    dispatch(setCartCount(++globalCartCount));
+    let count = 0;
 
-    if ($(e.target).parent().parent()[0].id) {
-      console.log($(e.target).parent().parent()[0].id);
-    } else if ($(e.target).parent().parent().parent()[0].id) {
-      console.log($(e.target).parent().parent().parent()[0].id);
+    let element = $(e.target).parent().parent();
+    if (element[0].id) {
+      for (let item of cart.cartItems) {
+        if (item.itemCode == element[0].id) {
+          count++;
+        }
+      }
+
+      if (count == 0) {
+        dispatch(setCartCount(++globalCartCount));
+        dispatch(
+          setCartItems({
+            itemCode: element[0].id,
+            itemImage: element.children(":eq(0)").attr("src"),
+            itemName: element.children(":eq(1)").text(),
+            unitPrice: element.children(":eq(3)").text().split(" ")[0],
+            quantity: 1
+          })
+        );
+      }
+    } else if (element.parent()[0].id) {
+      for (let item of cart.cartItems) {
+        if (item.itemCode == element.parent()[0].id) {
+          count++;
+        }
+      }
+
+      if (count == 0) {
+        dispatch(setCartCount(++globalCartCount));
+        // dispatch(setCartItems(element.parent()[0].id));
+
+        dispatch(
+          setCartItems({
+            itemCode: element.parent()[0].id,
+            itemImage: element.parent().children(":eq(0)").attr("src"),
+            itemName: element.parent().children(":eq(1)").text(),
+            unitPrice: element.parent().children(":eq(3)").text().split(" ")[0],
+            quantity: 1
+          })
+        );
+      }
     }
+    count = 0;
   };
 
   return (

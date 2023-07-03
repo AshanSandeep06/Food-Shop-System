@@ -1,10 +1,11 @@
 // To Configure Redux store
 import { configureStore } from '@reduxjs/toolkit';
-import globalReducer from "./globalSlice";
+import { globalSlice1Reducer, globalSlice2Reducer } from './globalSlice'
 
 const store = configureStore({
     reducer: {
-        global: globalReducer
+        cartCount: globalSlice1Reducer,
+        cartItems: globalSlice2Reducer,
     },
 });
 

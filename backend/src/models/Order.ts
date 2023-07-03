@@ -6,9 +6,9 @@ export interface IOrder extends Document {
     orderTime: string;
     subTotal: number;
     deliveryFee: number;
-    discount: number;
     totalCost: number;
     orderStatus: string;
+    orderLocation: string;
     customerID: string;
 };
 
@@ -33,7 +33,7 @@ const OrderSchema = new Schema({
         required: true,
     },
 
-    discount: {
+    deliveryFee: {
         type: Number,
         required: true,
     },
@@ -44,6 +44,11 @@ const OrderSchema = new Schema({
     },
 
     orderStatus: {
+        type: String,
+        required: true,
+    },
+
+    orderLocation: {
         type: String,
         required: true,
     },

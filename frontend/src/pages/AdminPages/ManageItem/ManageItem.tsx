@@ -323,6 +323,9 @@ const ManageItem = () => {
         qtyOnHand: qtyOnHand,
       };
 
+      console.log("Update : "+qtyOnHand);
+      
+
       axios
         .put("item", newItem)
         .then((res) => {
